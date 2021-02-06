@@ -9,7 +9,7 @@ namespace Bovelo
     public abstract class Bike
     {
         public int serial_number; 
-        public List<Part>;  //create Part 
+        public List<Part> PartList = new List<Part>() ;  //create Part 
         public int price; 
     }
     public class Roadbike : Bike

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bike.cs" />
+    <Compile Include="Part.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
