@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Bovelo
 {
@@ -12,14 +13,14 @@ namespace Bovelo
 
     public class Tire : Part 
     {
-        int size;
-        string grooves; 
+        public int size;
+        public string grooves; 
     }
      public class Frame : Part 
     {
-        string rigidity;
-        int size;
-        string color;    //maybe use ConsoleColor type ? 
+        public string rigidity;
+        public int size;
+        public Color color;   
     }
     public class Luggage_rack : Part 
     {
@@ -31,7 +32,7 @@ namespace Bovelo
     }
     public class Mudguard : Part 
     {
-        string type;
+        public string type;
     }
 
     public class Seat : Part
@@ -50,7 +51,7 @@ namespace Bovelo
 
     } 
 
-    public class Basic_Kit : Part
+    public class Basic_Kit : Part   //Might rather use a Composition relationship instead of aggregation 
     {
         public Seat seat;
         public Pedal pedal;
