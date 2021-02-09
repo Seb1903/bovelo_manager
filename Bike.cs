@@ -13,15 +13,15 @@ namespace Bovelo
         public List<Part> PartList = new List<Part>() ;  //create Part 
         public int price;
 
-        public Frame frame = new Frame();    //Rather use aggregation insteat of composittion 
-        public Tire tire = new Tire();
-        public Basic_Kit Basic_Kit = new Basic_Kit();
+        public Frame frame ;    
+        public Tire tire;
+        public Basic_Kit Basic_Kit;
     }
     public class Roadbike : Bike
     {
-        public Luggage_rack luggage_rack = new Luggage_rack();
-        public Lighting lighting = new Lighting();
-        public Mudguard mudguard = new Mudguard();
+        public Luggage_rack luggage_rack ;
+        public Lighting lighting ;
+        public Mudguard mudguard ;
         public Roadbike(int size, Color color) 
         {
             this.frame.color = color;
