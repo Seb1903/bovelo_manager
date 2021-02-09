@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Bovelo
 {
-    public abstract class Bike
+    public abstract class Bike    //Noir, Bleu foncé et bleu clair     // Pas de prix des pièces  // couleurs pour garde-boue et cadre 
     {
         public int serial_number;
         public List<Part> PartList = new List<Part>();  //create Part 
