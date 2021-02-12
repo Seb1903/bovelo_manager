@@ -350,4 +350,5 @@ MigrationBackup/
 .ionide/
 
 BoveloProject/Database.cs
+BoveloProject\Database.cs
 Database.cs
