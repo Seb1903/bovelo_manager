@@ -84,56 +84,56 @@ namespace Bovelo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(591, 45);
+            this.textBox1.Location = new System.Drawing.Point(591, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(591, 97);
+            this.textBox2.Location = new System.Drawing.Point(591, 48);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(591, 150);
+            this.textBox3.Location = new System.Drawing.Point(591, 82);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 26);
             this.textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(591, 199);
+            this.textBox4.Location = new System.Drawing.Point(591, 140);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 26);
             this.textBox4.TabIndex = 7;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(591, 233);
+            this.textBox5.Location = new System.Drawing.Point(591, 192);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 26);
             this.textBox5.TabIndex = 8;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(591, 279);
+            this.textBox6.Location = new System.Drawing.Point(591, 233);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 26);
             this.textBox6.TabIndex = 9;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(591, 325);
+            this.textBox7.Location = new System.Drawing.Point(591, 279);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 26);
             this.textBox7.TabIndex = 10;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(591, 357);
+            this.textBox8.Location = new System.Drawing.Point(591, 326);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 26);
             this.textBox8.TabIndex = 11;
@@ -152,7 +152,7 @@ namespace Bovelo
             this.textBox10.Size = new System.Drawing.Size(100, 26);
             this.textBox10.TabIndex = 13;
             // 
-            // Database
+            // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +170,7 @@ namespace Bovelo
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Database";
+            this.Name = "AddClient";
             this.Text = "Form4";
             this.ResumeLayout(false);
             this.PerformLayout();

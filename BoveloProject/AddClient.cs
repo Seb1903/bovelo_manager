@@ -47,8 +47,8 @@ namespace Bovelo
 
             
 
-            Database db = new Database();
-            MySqlConnection conn = new MySqlConnection(db.MyConnection);
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
 
             try
 
