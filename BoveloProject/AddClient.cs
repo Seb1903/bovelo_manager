@@ -45,11 +45,10 @@ namespace Bovelo
                 MessageBox.Show(ex.Message);
             }
 
-            //string connStr = "server=localhost;user=root;database=bovelo;port=3306;password=root"; 
+            
 
-            string connStr = "server=193.191.240.67;user=3BE-GRP5;database=bovelo;port=63305;password=ECAMecam2020";
-
-            MySqlConnection conn = new MySqlConnection(connStr);
+            Database db = new Database();
+            MySqlConnection conn = new MySqlConnection(db.MyConnection);
 
             try
 
