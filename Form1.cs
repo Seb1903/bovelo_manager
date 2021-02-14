@@ -10,13 +10,22 @@ using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public partial class Bovelo : Form
+    public class Basket_bike
     {
-        public Bovelo()
+        public string Category { get; set; }
+        public string Color { get; set; }
+        public string Size { get; set; }
+        public int Quantity { get; set; }
+    }
+
+    public partial class Form1 : Form
+    {
+        public Form1()
         {
             InitializeComponent();
         }
 
+        string category_chosen;
 
         private void category_choice(object sender, EventArgs e)
         {
@@ -24,27 +33,24 @@ namespace Bovelo
             {
                 description.Text = "le vélo est un city";
             }
+            else if (category.Text == "Explorer")
+            {
+                description.Text = "le vélo est un explorer";
+            }
             else
             {
-                description.Text = "le vélo n'est pas un city";
+                description.Text = "le vélo est un adventure";
             }
+
+            category_chosen = category.Text;
         }
 
-
-        private void addBasket_button(object sender, EventArgs e)
-        {
-
-        }
-
-        private void showBasket_button(object sender, EventArgs e)
-        {
-
-        }
+        int quantity_chosen;
 
 
         private void quantity_scroll(object sender, EventArgs e)
         {
-
+            quantity_chosen = Decimal.ToInt32(quantity.Value);
         }
 
         string size_chosen;
@@ -76,9 +82,18 @@ namespace Bovelo
             color_chosen = color3.Text;
         }
 
-        private void validate_button(object sender, EventArgs e)
+        private void addBasket_button(object sender, EventArgs e)
         {
-            MessageBox.Show(color_chosen + size_chosen);
+            if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
+            {
+                Basket_bike basketBike = new Basket_bike() { Category = category_chosen, Color = color_chosen, Size = size_chosen, Quantity = quantity_chosen };
+            }
+            // MessageBox.Show("La catégorie est : " + basket_bike.Category);
+        }
+
+        private void showBasket_button(object sender, EventArgs e)
+        {
+            
         }
     }
 }

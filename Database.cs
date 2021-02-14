@@ -7,19 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Bovelo
 {
-    public partial class Form2 : Form
+    public class Database
     {
-        public Form2()
-        {
-            InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        public string MyConnection = "server=193.191.240.67;user=3BE-GRP5;database=bovelo;port=63305;password=ECAMecam5050";
     }
 }

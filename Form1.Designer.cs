@@ -1,7 +1,7 @@
 ﻿
 namespace Bovelo
 {
-    partial class Bovelo
+    partial class Form1
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -31,6 +31,9 @@ namespace Bovelo
         {
             this.category = new System.Windows.Forms.ComboBox();
             this.table_colors = new System.Windows.Forms.TableLayoutPanel();
+            this.color1 = new System.Windows.Forms.RadioButton();
+            this.color2 = new System.Windows.Forms.RadioButton();
+            this.color3 = new System.Windows.Forms.RadioButton();
             this.category_label = new System.Windows.Forms.Label();
             this.color_label = new System.Windows.Forms.Label();
             this.size_label = new System.Windows.Forms.Label();
@@ -38,13 +41,9 @@ namespace Bovelo
             this.quantity = new System.Windows.Forms.NumericUpDown();
             this.addBasket = new System.Windows.Forms.Button();
             this.showBasket = new System.Windows.Forms.Button();
-            this.validate = new System.Windows.Forms.Button();
             this.size1 = new System.Windows.Forms.RadioButton();
             this.size2 = new System.Windows.Forms.RadioButton();
             this.description = new System.Windows.Forms.Label();
-            this.color1 = new System.Windows.Forms.RadioButton();
-            this.color2 = new System.Windows.Forms.RadioButton();
-            this.color3 = new System.Windows.Forms.RadioButton();
             this.table_colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +83,50 @@ namespace Bovelo
             this.table_colors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.table_colors.Size = new System.Drawing.Size(290, 59);
             this.table_colors.TabIndex = 3;
+            // 
+            // color1
+            // 
+            this.color1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.color1.BackColor = System.Drawing.Color.Black;
+            this.color1.ForeColor = System.Drawing.Color.White;
+            this.color1.Location = new System.Drawing.Point(3, 3);
+            this.color1.Name = "color1";
+            this.color1.Size = new System.Drawing.Size(90, 53);
+            this.color1.TabIndex = 0;
+            this.color1.TabStop = true;
+            this.color1.Text = "Black";
+            this.color1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.color1.UseVisualStyleBackColor = false;
+            this.color1.CheckedChanged += new System.EventHandler(this.color1_check);
+            // 
+            // color2
+            // 
+            this.color2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.color2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.color2.ForeColor = System.Drawing.Color.White;
+            this.color2.Location = new System.Drawing.Point(99, 3);
+            this.color2.Name = "color2";
+            this.color2.Size = new System.Drawing.Size(90, 53);
+            this.color2.TabIndex = 1;
+            this.color2.TabStop = true;
+            this.color2.Text = "Dark blue";
+            this.color2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.color2.UseVisualStyleBackColor = false;
+            this.color2.CheckedChanged += new System.EventHandler(this.color2_check);
+            // 
+            // color3
+            // 
+            this.color3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.color3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.color3.Location = new System.Drawing.Point(195, 3);
+            this.color3.Name = "color3";
+            this.color3.Size = new System.Drawing.Size(92, 53);
+            this.color3.TabIndex = 2;
+            this.color3.TabStop = true;
+            this.color3.Text = "Light Blue";
+            this.color3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.color3.UseVisualStyleBackColor = false;
+            this.color3.CheckedChanged += new System.EventHandler(this.color3_check);
             // 
             // category_label
             // 
@@ -145,7 +188,7 @@ namespace Bovelo
             // 
             this.addBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBasket.Location = new System.Drawing.Point(435, 334);
+            this.addBasket.Location = new System.Drawing.Point(486, 372);
             this.addBasket.MaximumSize = new System.Drawing.Size(105, 23);
             this.addBasket.MinimumSize = new System.Drawing.Size(105, 23);
             this.addBasket.Name = "addBasket";
@@ -159,7 +202,7 @@ namespace Bovelo
             // 
             this.showBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showBasket.Location = new System.Drawing.Point(435, 378);
+            this.showBasket.Location = new System.Drawing.Point(614, 372);
             this.showBasket.MaximumSize = new System.Drawing.Size(105, 23);
             this.showBasket.MinimumSize = new System.Drawing.Size(105, 23);
             this.showBasket.Name = "showBasket";
@@ -168,20 +211,6 @@ namespace Bovelo
             this.showBasket.Text = "Show basket";
             this.showBasket.UseVisualStyleBackColor = true;
             this.showBasket.Click += new System.EventHandler(this.showBasket_button);
-            // 
-            // validate
-            // 
-            this.validate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.validate.Location = new System.Drawing.Point(603, 378);
-            this.validate.MaximumSize = new System.Drawing.Size(105, 23);
-            this.validate.MinimumSize = new System.Drawing.Size(105, 23);
-            this.validate.Name = "validate";
-            this.validate.Size = new System.Drawing.Size(105, 23);
-            this.validate.TabIndex = 13;
-            this.validate.Text = "Validate";
-            this.validate.UseVisualStyleBackColor = true;
-            this.validate.Click += new System.EventHandler(this.validate_button);
             // 
             // size1
             // 
@@ -215,51 +244,7 @@ namespace Bovelo
             this.description.Size = new System.Drawing.Size(0, 13);
             this.description.TabIndex = 17;
             // 
-            // color1
-            // 
-            this.color1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.color1.BackColor = System.Drawing.Color.Black;
-            this.color1.ForeColor = System.Drawing.Color.White;
-            this.color1.Location = new System.Drawing.Point(3, 3);
-            this.color1.Name = "color1";
-            this.color1.Size = new System.Drawing.Size(90, 53);
-            this.color1.TabIndex = 0;
-            this.color1.TabStop = true;
-            this.color1.Text = "Black";
-            this.color1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.color1.UseVisualStyleBackColor = false;
-            this.color1.CheckedChanged += new System.EventHandler(this.color1_check);
-            // 
-            // color2
-            // 
-            this.color2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.color2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.color2.ForeColor = System.Drawing.Color.White;
-            this.color2.Location = new System.Drawing.Point(99, 3);
-            this.color2.Name = "color2";
-            this.color2.Size = new System.Drawing.Size(90, 53);
-            this.color2.TabIndex = 1;
-            this.color2.TabStop = true;
-            this.color2.Text = "Dark blue";
-            this.color2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.color2.UseVisualStyleBackColor = false;
-            this.color2.CheckedChanged += new System.EventHandler(this.color2_check);
-            // 
-            // color3
-            // 
-            this.color3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.color3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.color3.Location = new System.Drawing.Point(195, 3);
-            this.color3.Name = "color3";
-            this.color3.Size = new System.Drawing.Size(92, 53);
-            this.color3.TabIndex = 2;
-            this.color3.TabStop = true;
-            this.color3.Text = "Light Blue";
-            this.color3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.color3.UseVisualStyleBackColor = false;
-            this.color3.CheckedChanged += new System.EventHandler(this.color3_check);
-            // 
-            // Bovelo
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +252,6 @@ namespace Bovelo
             this.Controls.Add(this.description);
             this.Controls.Add(this.size2);
             this.Controls.Add(this.size1);
-            this.Controls.Add(this.validate);
             this.Controls.Add(this.showBasket);
             this.Controls.Add(this.addBasket);
             this.Controls.Add(this.quantity);
@@ -280,8 +264,8 @@ namespace Bovelo
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(762, 465);
             this.MinimumSize = new System.Drawing.Size(762, 465);
-            this.Name = "Bovelo";
-            this.Text = "Bovelo";
+            this.Name = "Form1";
+            this.Text = " ";
             this.table_colors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).EndInit();
             this.ResumeLayout(false);
@@ -299,7 +283,6 @@ namespace Bovelo
         private System.Windows.Forms.NumericUpDown quantity;
         private System.Windows.Forms.Button addBasket;
         private System.Windows.Forms.Button showBasket;
-        private System.Windows.Forms.Button validate;
         private System.Windows.Forms.RadioButton size2;
         private System.Windows.Forms.RadioButton size1;
         private System.Windows.Forms.Label description;
