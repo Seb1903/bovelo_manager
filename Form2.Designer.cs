@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bike_list_label = new System.Windows.Forms.Label();
             this.validate = new System.Windows.Forms.Button();
+            this.bike_list_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // bike_list_label
-            // 
-            this.bike_list_label.AutoSize = true;
-            this.bike_list_label.Location = new System.Drawing.Point(13, 13);
-            this.bike_list_label.Name = "bike_list_label";
-            this.bike_list_label.Size = new System.Drawing.Size(35, 13);
-            this.bike_list_label.TabIndex = 0;
-            this.bike_list_label.Text = "label1";
-            this.bike_list_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // validate
             // 
@@ -55,26 +45,34 @@
             this.validate.Text = "Validate";
             this.validate.UseVisualStyleBackColor = true;
             // 
+            // bike_list_label
+            // 
+            this.bike_list_label.AutoSize = true;
+            this.bike_list_label.Location = new System.Drawing.Point(13, 13);
+            this.bike_list_label.Name = "bike_list_label";
+            this.bike_list_label.Size = new System.Drawing.Size(0, 13);
+            this.bike_list_label.TabIndex = 15;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 426);
-            this.Controls.Add(this.validate);
             this.Controls.Add(this.bike_list_label);
+            this.Controls.Add(this.validate);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(762, 465);
             this.MinimumSize = new System.Drawing.Size(762, 465);
             this.Name = "Form2";
             this.Text = "Basket";
+            this.Load += new System.EventHandler(this.BasketForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label bike_list_label;
         private System.Windows.Forms.Button validate;
+        private System.Windows.Forms.Label bike_list_label;
     }
 }

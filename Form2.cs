@@ -17,9 +17,12 @@ namespace Bovelo
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void BasketForm_Load(object sender, EventArgs e)
         {
-            
+            // faire une boucle qui affiche tous les vélos
+
+            bike_list_label.Text = Form1.Basket_bikes[0].Category;
+            // MessageBox.Show("La catégorie est : " + Form1.basketBike.Category);
         }
     }
 }

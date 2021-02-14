@@ -10,14 +10,6 @@ using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public class Basket_bike
-    {
-        public string Category { get; set; }
-        public string Color { get; set; }
-        public string Size { get; set; }
-        public int Quantity { get; set; }
-    }
-
     public partial class Form1 : Form
     {
         public Form1()
@@ -25,7 +17,7 @@ namespace Bovelo
             InitializeComponent();
         }
 
-        string category_chosen;
+        public string category_chosen;
 
         private void category_choice(object sender, EventArgs e)
         {
@@ -82,18 +74,33 @@ namespace Bovelo
             color_chosen = color3.Text;
         }
 
-        private void addBasket_button(object sender, EventArgs e)
+        public static List<Basket_bike> Basket_bikes = new List<Basket_bike>();
+        // public static Basket_bike basketBike;
+
+        public void addBasket_button(object sender, EventArgs e)
         {
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
                 Basket_bike basketBike = new Basket_bike() { Category = category_chosen, Color = color_chosen, Size = size_chosen, Quantity = quantity_chosen };
+                Basket_bikes.Add(basketBike);
             }
-            // MessageBox.Show("La catégorie est : " + basket_bike.Category);
+            MessageBox.Show("La catégorie est : " + Basket_bikes[0].Category);
         }
+
+        public static string SetValueForText1 = "";
 
         private void showBasket_button(object sender, EventArgs e)
         {
-            
+            Form2 basketForm = new Form2();
+            basketForm.Show();
         }
+    }
+
+    public class Basket_bike
+    {
+        public string Category { get; set; }
+        public string Color { get; set; }
+        public string Size { get; set; }
+        public int Quantity { get; set; }
     }
 }
