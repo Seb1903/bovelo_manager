@@ -80,10 +80,7 @@ namespace Bovelo
                 MessageBox.Show(ex.Message);
             }
 
-            show_table();
-
-            
-
+            show_table(); //call function defined earlier to connect to database and show data on a label 
             }
 
         
