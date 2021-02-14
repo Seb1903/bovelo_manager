@@ -1,6 +1,6 @@
 ﻿namespace Bovelo
 {
-    partial class Form2
+    partial class BasketForm
     {
         /// <summary>
         /// Required designer variable.
@@ -53,7 +53,7 @@
             this.bike_list_label.Size = new System.Drawing.Size(0, 13);
             this.bike_list_label.TabIndex = 15;
             // 
-            // Form2
+            // BasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +63,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(762, 465);
             this.MinimumSize = new System.Drawing.Size(762, 465);
-            this.Name = "Form2";
+            this.Name = "BasketForm";
             this.Text = "Basket";
             this.Load += new System.EventHandler(this.BasketForm_Load);
             this.ResumeLayout(false);

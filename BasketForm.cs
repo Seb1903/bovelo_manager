@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public partial class Form2 : Form
+    public partial class BasketForm : Form
     {
-        public Form2()
+        public BasketForm()
         {
             InitializeComponent();
         }
@@ -21,8 +21,7 @@ namespace Bovelo
         {
             // faire une boucle qui affiche tous les vélos
 
-            bike_list_label.Text = Form1.Basket_bikes[0].Category;
-            // MessageBox.Show("La catégorie est : " + Form1.basketBike.Category);
+            bike_list_label.Text = CatalogForm.Basket_bikes[0].Category;
         }
     }
 }

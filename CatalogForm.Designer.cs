@@ -1,7 +1,7 @@
 ﻿
 namespace Bovelo
 {
-    partial class Form1
+    partial class CatalogForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -244,7 +244,7 @@ namespace Bovelo
             this.description.Size = new System.Drawing.Size(0, 13);
             this.description.TabIndex = 17;
             // 
-            // Form1
+            // CatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -264,8 +264,8 @@ namespace Bovelo
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(762, 465);
             this.MinimumSize = new System.Drawing.Size(762, 465);
-            this.Name = "Form1";
-            this.Text = " ";
+            this.Name = "CatalogForm";
+            this.Text = " Catalog";
             this.table_colors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).EndInit();
             this.ResumeLayout(false);
