@@ -19,9 +19,48 @@ namespace Bovelo
 
         private void BasketForm_Load(object sender, EventArgs e)
         {
-            // faire une boucle qui affiche tous les vélos
+            int position = 1;
+            foreach(BasketItem item in CatalogForm.basket)
+            {
+                Label bikeCategoryLbl = new Label();
+                NumericUpDown quantityBtn = new NumericUpDown();
+                Button removeBtn = new Button();
 
-            bike_list_label.Text = CatalogForm.Basket_bikes[0].Category;
+                bikeCategoryLbl.Text = item.category;
+                bikeCategoryLbl.Top = position * 25;
+                bikeCategoryLbl.Left = 10;
+
+                quantityBtn.Value = item.quantity;
+                quantityBtn.Top = position * 25;
+                quantityBtn.Left = 200;
+
+                removeBtn.Text = "remove";
+                removeBtn.Top = position * 25;
+                removeBtn.Left = 300;
+
+                position++;
+
+                this.Controls.Add(bikeCategoryLbl);
+                this.Controls.Add(quantityBtn);
+                //this.Controls.Add(removeBtn);
+            }
+            
+        }
+
+        private void validate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void empty_cart_btn_Click(object sender, EventArgs e)
+        {
+            CatalogForm.basket.Clear();
         }
     }
 }

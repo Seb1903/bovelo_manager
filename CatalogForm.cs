@@ -22,8 +22,7 @@ namespace Bovelo
         string size_chosen;
         string color_chosen;
 
-        public static List<Basket_bike> Basket_bikes = new List<Basket_bike>();
-
+        public static List<BasketItem> basket = new List<BasketItem>();
         private void category_choice(object sender, EventArgs e)
         {
             if (category.Text == "City")
@@ -76,24 +75,26 @@ namespace Bovelo
         {
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
-                Basket_bike basketBike = new Basket_bike() { Category = category_chosen, Color = color_chosen, Size = size_chosen, Quantity = quantity_chosen };
-                Basket_bikes.Add(basketBike);
+                BasketItem item = new BasketItem() {category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen};
+                basket.Add(item);
+                Console.WriteLine("Item added successfully !");
             }
-            // MessageBox.Show("La catégorie est : " + Basket_bikes[0].Category);
         }
 
         private void showBasket_button(object sender, EventArgs e)
         {
+            this.Hide();
             BasketForm basketForm = new BasketForm();
-            basketForm.Show();
+            basketForm.ShowDialog();
+            this.Show();
         }
     }
 
-    public class Basket_bike
+    public class BasketItem
     {
-        public string Category { get; set; }
-        public string Color { get; set; }
-        public string Size { get; set; }
-        public int Quantity { get; set; }
+        public string category { get; set; }
+        public string color { get; set; }
+        public string size { get; set; }
+        public int quantity { get; set; }
     }
 }
