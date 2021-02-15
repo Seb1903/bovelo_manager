@@ -33,7 +33,7 @@ namespace Bovelo
             this.adress = SetAdress(country, city, street, number, zipcode);
             this.phoneNumber = phoneNumber;
             this.emailAdress = emailAdress;
-            this.clientID = SetClientID();
+
         }
 
         private string SetAdress(string country, string city, string street, int number, int zipcode)
@@ -41,9 +41,6 @@ namespace Bovelo
             string adress = country + " " + street + " " + "n°" + number.ToString() + " " + zipcode.ToString() + " " + city;
             return adress;
         }
-        private int SetClientID()
-        {
 
-        }
     }
 }
