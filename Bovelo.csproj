@@ -48,16 +48,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bike.cs" />
-    <Compile Include="Clients.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Part.cs" />
+    <Compile Include="AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    
     <Compile Include="BasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BasketForm.Designer.cs">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Orders.cs" />
-    <Compile Include="Part.cs" />
+    
     <Compile Include="CatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +71,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    
     <EmbeddedResource Include="CatalogForm.resx">
       <DependentUpon>CatalogForm.cs</DependentUpon>
     </EmbeddedResource>
