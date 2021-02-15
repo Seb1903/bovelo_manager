@@ -47,7 +47,7 @@ namespace Bovelo
             this.textBox_country = new System.Windows.Forms.TextBox();
             this.textBox_city = new System.Windows.Forms.TextBox();
             this.textBox_street = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox_phonenumber = new System.Windows.Forms.TextBox();
             this.label_last_name = new System.Windows.Forms.Label();
             this.label_country = new System.Windows.Forms.Label();
             this.label_city = new System.Windows.Forms.Label();
@@ -133,13 +133,13 @@ namespace Bovelo
             this.textBox_street.Size = new System.Drawing.Size(149, 20);
             this.textBox_street.TabIndex = 8;
             // 
-            // textBox7
+            // textBox_phonenumber
             // 
-            this.textBox7.Location = new System.Drawing.Point(156, 250);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(111, 20);
-            this.textBox7.TabIndex = 10;
+            this.textBox_phonenumber.Location = new System.Drawing.Point(156, 250);
+            this.textBox_phonenumber.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_phonenumber.Name = "textBox_phonenumber";
+            this.textBox_phonenumber.Size = new System.Drawing.Size(111, 20);
+            this.textBox_phonenumber.TabIndex = 10;
             // 
             // label_last_name
             // 
@@ -270,7 +270,7 @@ namespace Bovelo
             this.Controls.Add(this.label_city);
             this.Controls.Add(this.label_country);
             this.Controls.Add(this.label_last_name);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox_phonenumber);
             this.Controls.Add(this.textBox_street);
             this.Controls.Add(this.textBox_city);
             this.Controls.Add(this.textBox_country);
@@ -299,7 +299,7 @@ namespace Bovelo
         private TextBox textBox_country;
         private TextBox textBox_city;
         private TextBox textBox_street;
-        private TextBox textBox7;
+        private TextBox textBox_phonenumber;
         private Label label_last_name;
         private Label label_country;
         private Label label_city;
