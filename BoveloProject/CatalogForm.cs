@@ -88,6 +88,11 @@ namespace Bovelo
             basketForm.ShowDialog();
             this.Show();
         }
+
+        private void CatalogForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class BasketItem
