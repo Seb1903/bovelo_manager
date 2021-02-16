@@ -18,7 +18,7 @@ To have more clarity in the operation of the application, we made other diagrams
 - [The Sequence Diagram](https://app.lucidchart.com/documents/image/570fe02b-57dd-400f-bd7d-0c7af648c352/0/1000/1)  
 - [The Class Diagram](https://lucid.app/documents/view/c6953fb9-22ae-4676-a6b1-a276b2a08189)  
 
-## How the app works
+## Requirements
 
 Now it's time to try this app. You have to clone the repository in a local folder on your computer. Then create a new file named `Database.cs` and copy the bellow lines of code to paste it.
 
@@ -53,13 +53,13 @@ Once you've done that, change the following values (don't share your information
 
 And now enjoy the app !
 
-## Group
+## Group Members
 
 ```text
-18003 Noël Logan
-18090 Demarcin Louis  
-18332 Denis Maximilien  
-18360 Martinez Balbuena Sébastien  
-18365 Mitrovic Nikola  
-20264 Penning Chloé
+Demarcin Louis [18090]
+Denis Maximilien [18332]
+Martinez Balbuena Sébastien [18360]
+Mitrovic Nikola [18365]
+Noël Logan [18003]
+Penning Chloé [20264]
 ```
