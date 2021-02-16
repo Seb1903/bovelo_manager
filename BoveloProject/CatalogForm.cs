@@ -110,7 +110,7 @@ namespace Bovelo
 
         private void showBasket_button(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide(); 
             BasketForm basketForm = new BasketForm();
             basketForm.ShowDialog();
             this.Show();
