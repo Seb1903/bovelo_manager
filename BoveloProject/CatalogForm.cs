@@ -73,39 +73,7 @@ namespace Bovelo
 
         public void addBasket_button(object sender, EventArgs e)
         {
-            if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
-            {
-                if (!basket.Any())
-                {
-                    BasketItem item = new BasketItem() { category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen };
-                    basket.Add(item);
-                    MessageBox.Show("Item was added succesfully");
-                }
-                
-                else
-                {
-                    for (int i = 0; i < basket.Count; i++)
-                    {
-                        
-                        if (basket[i].category == category_chosen && basket[i].color == color_chosen && basket[i].size == size_chosen)
-                        {
-                            MessageBox.Show("A bike with these features already exists");
-                        }
-
-                        else
-                        {
-                            BasketItem item = new BasketItem() { category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen };
-                            basket.Add(item);
-                            i++;
-                            MessageBox.Show("Item was added succesfully");
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Not all features were selected");
-            }
+            addItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
         }
 
         private void showBasket_button(object sender, EventArgs e)
@@ -115,6 +83,29 @@ namespace Bovelo
             basketForm.ShowDialog();
             this.Show();
         }
+
+        private void addItem(string category_chosen, string color_chosen, string size_chosen, int quantity_chosen)
+        {
+            if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
+            {
+                bool state = basket.Exists(bike => bike.Equality(category_chosen, color_chosen, size_chosen)); // true if equals
+
+                if (state)
+                {
+                    MessageBox.Show("A bike with these features already exists");
+                }
+                else
+                {
+                    BasketItem item = new BasketItem() { category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen };
+                    basket.Add(item);
+                    MessageBox.Show("Item was added succesfully");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not all features were selected");
+            }
+        }
     }
 
     public class BasketItem
@@ -123,5 +114,10 @@ namespace Bovelo
         public string color { get; set; }
         public string size { get; set; }
         public int quantity { get; set; }
+
+        public bool Equality (string category_chosen, string color_chosen, string size_chosen)
+        {
+            return (this.category == category_chosen) && (this.color == color_chosen) && (this.size == size_chosen); // tout est pareil
+        }
     }
 }
