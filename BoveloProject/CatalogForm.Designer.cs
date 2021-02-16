@@ -1,7 +1,7 @@
 ﻿
 namespace Bovelo
 {
-    partial class Bovelo
+    partial class CatalogForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -181,7 +181,6 @@ namespace Bovelo
             this.validate.TabIndex = 13;
             this.validate.Text = "Validate";
             this.validate.UseVisualStyleBackColor = true;
-            this.validate.Click += new System.EventHandler(this.validate_button);
             // 
             // size1
             // 

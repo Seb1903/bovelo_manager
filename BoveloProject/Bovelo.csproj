@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bike.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Database.cs" />
@@ -55,14 +58,12 @@
     <Compile Include="AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="BasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BasketForm.Designer.cs">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="CatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +75,6 @@
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="CatalogForm.resx">
       <DependentUpon>CatalogForm.cs</DependentUpon>
     </EmbeddedResource>
