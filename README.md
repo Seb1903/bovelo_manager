@@ -56,10 +56,10 @@ And now enjoy the app !
 ## Group
 
 ```text
-18003 Noël Logan
-18090 Demarcin Louis  
-18332 Denis Maximilien  
-18360 Martinez Balbuena Sébastien  
-18365 Mitrovic Nikola  
-20264 Penning Chloé
+Demarcin Louis [18090]
+Denis Maximilien [18332]
+Martinez Balbuena Sébastien [18360]
+Mitrovic Nikola [18365]
+Noël Logan [18003]
+Penning Chloé [20264]
 ```
