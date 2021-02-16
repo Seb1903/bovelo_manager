@@ -37,6 +37,7 @@ namespace Bovelo
                 removeBtn.Text = "remove";
                 removeBtn.Top = position * 25;
                 removeBtn.Left = 400;
+                removeBtn.Click += new EventHandler(this.removeBtn_Click, item);
 
                 position++;
 
@@ -46,12 +47,14 @@ namespace Bovelo
             }
             
         }
-
-        private void validate_Click(object sender, EventArgs e)
+        private void removeBtn_Click(object sender, EventArgs e, BasketItem item)
         {
-
+            Button button = sender as Button;
+            BasketItem itemr = item as BasketItem;
+            
+            CatalogForm.basket.Remove(itemr); Console.WriteLine("removed item");
+                    
         }
-
         private void back_Click(object sender, EventArgs e)
         {
             this.Hide();
