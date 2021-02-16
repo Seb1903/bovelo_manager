@@ -75,9 +75,36 @@ namespace Bovelo
         {
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
-                BasketItem item = new BasketItem() {category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen};
-                basket.Add(item);
-                Console.WriteLine("Item added successfully !");
+                if (!basket.Any())
+                {
+                    BasketItem item = new BasketItem() { category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen };
+                    basket.Add(item);
+                    MessageBox.Show("Item was added succesfully");
+                }
+                
+                else
+                {
+                    for (int i = 0; i < basket.Count; i++)
+                    {
+                        
+                        if (basket[i].category == category_chosen && basket[i].color == color_chosen && basket[i].size == size_chosen)
+                        {
+                            MessageBox.Show("A bike with these features already exists");
+                        }
+
+                        else
+                        {
+                            BasketItem item = new BasketItem() { category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen };
+                            basket.Add(item);
+                            i++;
+                            MessageBox.Show("Item was added succesfully");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not all features were selected");
             }
         }
 

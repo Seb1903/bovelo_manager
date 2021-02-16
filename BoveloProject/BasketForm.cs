@@ -42,7 +42,7 @@ namespace Bovelo
 
                 this.Controls.Add(bikeCategoryLbl);
                 this.Controls.Add(quantityBtn);
-                //this.Controls.Add(removeBtn);
+                this.Controls.Add(removeBtn);
             }
             
         }
@@ -62,5 +62,6 @@ namespace Bovelo
         {
             CatalogForm.basket.Clear();
         }
+
     }
 }
