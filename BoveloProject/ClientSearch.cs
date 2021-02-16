@@ -13,10 +13,11 @@ namespace Bovelo
 {
     public partial class ClientSearch : Form
     {
+        string search_criteria = "client_lastname";
         public ClientSearch()
         {
             InitializeComponent();
-            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client where client_lastname like '{0}%'", textBox1.Text));
+            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client"));
         }
 
         private static DataTable GetData(string sqlCommand)
@@ -58,13 +59,14 @@ namespace Bovelo
             }
             catch{
                 label2.Text = "";
+                search_criteria = dataGridView1.Columns[e.ColumnIndex].Name;
             }
             
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client where client_lastname like '{0}%'",textBox1.Text));
+            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client where {0} like '{1}%'",search_criteria ,textBox1.Text));
         }
     }
 }
