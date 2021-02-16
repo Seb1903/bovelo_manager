@@ -73,14 +73,27 @@ namespace Bovelo
 
         public void addBasket_button(object sender, EventArgs e)
         {
+            bool itemAlreadyInBasket = false;
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
-                BasketItem item = new BasketItem() {category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen};
-                basket.Add(item);
-                Console.WriteLine("Item added successfully !");
+                BasketItem newItem = new BasketItem() {category = category_chosen, color = color_chosen, size = size_chosen, quantity = quantity_chosen};
+                foreach (BasketItem item in basket)
+                {
+                    if (item.category == newItem.category && item.color == newItem.color && item.size == newItem.size)
+                    {
+                        item.quantity += newItem.quantity;
+                        itemAlreadyInBasket = true;
+                        Console.WriteLine("Item already in basket, update quantity successfully!");
+                        break;
+                    }
+                }
+                if (!itemAlreadyInBasket)
+                {
+                    basket.Add(newItem);
+                    Console.WriteLine("Item added to basket successfully!");
+                }
             }
         }
-
         private void showBasket_button(object sender, EventArgs e)
         {
             this.Hide();
