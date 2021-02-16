@@ -38,12 +38,7 @@ namespace Bovelo
 {
 public class Database
 {
-public string MyConnection = "\
-                            server=<IP_address>;\
-                            port=<Port>;\
-                            user=<Username>;\
-                            password=<Password>\
-                            database=<DATABASE_NAME>;";
+public string MyConnection = "server=XXX.XXX.XXX.XX;user=3BE-GRP5;database=bovelo;port=XXXXX;password=************";
 }
 }
 ```
