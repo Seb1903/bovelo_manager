@@ -119,7 +119,7 @@
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.bike_list_label);
             this.Controls.Add(this.validate_btn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(760, 459);
             this.MinimumSize = new System.Drawing.Size(760, 459);
             this.Name = "BasketForm";
