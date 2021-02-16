@@ -30,17 +30,17 @@ namespace Bovelo
             this.street = street;
             this.number = number;
             this.zipcode = zipcode;
-            this.adress = SetAdress(country, city, street, number, zipcode);
             this.phoneNumber = phoneNumber;
             this.emailAdress = emailAdress;
-
+            //this.adress = SetAdress(country, city, street, number, zipcode);
         }
 
+        /*
         private string SetAdress(string country, string city, string street, int number, int zipcode)
         {
             string adress = country + " " + street + " " + "n°" + number.ToString() + " " + zipcode.ToString() + " " + city;
             return adress;
         }
-
+        */
     }
 }
