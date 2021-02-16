@@ -36,13 +36,13 @@ namespace Bovelo
 
                 removeBtn.Text = "remove";
                 removeBtn.Top = position * 25;
-                removeBtn.Left = 300;
+                removeBtn.Left = 400;
 
                 position++;
 
                 this.Controls.Add(bikeCategoryLbl);
                 this.Controls.Add(quantityBtn);
-                //this.Controls.Add(removeBtn);
+                this.Controls.Add(removeBtn);
             }
             
         }

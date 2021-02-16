@@ -17,7 +17,7 @@ namespace Bovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddClient());
+            Application.Run(new CatalogForm());
         }
     }
 }
