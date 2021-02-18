@@ -51,6 +51,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bike.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientSearch.cs">
       <SubType>Form</SubType>
@@ -58,7 +59,6 @@
     <Compile Include="ClientSearch.Designer.cs">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="AddClient.Designer.cs">

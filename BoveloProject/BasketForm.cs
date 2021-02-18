@@ -110,5 +110,15 @@ namespace Bovelo
         {
             // Confirm order
         }
+
+        private void button_newClient_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button_selectClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
