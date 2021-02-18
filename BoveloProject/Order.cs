@@ -10,21 +10,19 @@ namespace Bovelo
     public class Order
     {
         //coucou
-        public List<Bike> listBike = new List<Bike>();
+        public List<BuyableItem> basket;
         public int orderNumber;
         public string date;
         public string deliveryDate;
         public Client client;
         public double totalPrice;
 
-        public Order(List<Bike> bikes, Client client)
+        public Order()
         {
             this.date = DateTime.Now.ToString();
-            this.listBike = bikes;
-            this.client = client;
-            this.totalPrice = SetPrice(bikes);
+            this.basket = new List<BuyableItem>;
         }
-
+        /*
         private int SetPrice(List<Bike> bikes)
         {
             int SumPrice = 0;
@@ -33,6 +31,11 @@ namespace Bovelo
                 SumPrice += bike.price;
             }
             return SumPrice;
+        }
+        */
+        public void AddProduct(BuyableItem buyableItem)
+        {
+            basket.Add(buyableItem);
         }
     }
 }
