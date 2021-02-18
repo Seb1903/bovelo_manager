@@ -22,7 +22,8 @@ namespace Bovelo
         string size_chosen;
         string color_chosen;
 
-        public static List<BasketItem> basket = new List<BasketItem>();
+        //public static List<BasketItem> basket = new List<BasketItem>();
+        public static Order order = new Order();
         private void category_choice(object sender, EventArgs e)
         {
             if (category.Text == "City")
@@ -71,7 +72,7 @@ namespace Bovelo
             color_chosen = color3.Text;
         }
 
-        public void addBasket_button(object sender, EventArgs e)
+        /*public void addBasket_button(object sender, EventArgs e)
         {
             // addItem(category_chosen, color_chosen, size_chosen, quantity_chosen);     Method from Chloé
             bool itemAlreadyInBasket = false; 
@@ -94,6 +95,14 @@ namespace Bovelo
                     Console.WriteLine("Item added to basket successfully!");
                 }
             }
+        }*/
+        private void addBasket_button(object sender, EventArgs e)
+        {
+            if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
+            {
+                BuyableItem newItem = new BuyableItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
+                order.AddProduct(newItem);
+            }
         }
         private void showBasket_button(object sender, EventArgs e)
         {
@@ -103,7 +112,7 @@ namespace Bovelo
             this.Show();
         }
 
-        private void addItem(string category_chosen, string color_chosen, string size_chosen, int quantity_chosen)
+        /*private void addItem(string category_chosen, string color_chosen, string size_chosen, int quantity_chosen)
         {
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
@@ -124,6 +133,7 @@ namespace Bovelo
             {
                 MessageBox.Show("Not all features were selected");
             }
+        }*/
         private void CatalogForm_Load(object sender, EventArgs e)
         {
 

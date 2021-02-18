@@ -9,8 +9,7 @@ namespace Bovelo
 {
     public class Order
     {
-        //coucou
-        public List<BuyableItem> basket;
+        public List<BuyableItem> content;
         public int orderNumber;
         public string date;
         public string deliveryDate;
@@ -20,30 +19,35 @@ namespace Bovelo
         public Order()
         {
             this.date = DateTime.Now.ToString();
-            this.basket = new List<BuyableItem>;
+            this.content = new List<BuyableItem>();
         }
-        /*
-        private int SetPrice(List<Bike> bikes)
+        public void AddProduct(BuyableItem newItem)
         {
-            int SumPrice = 0;
-            foreach (Bike bike in bikes)
+            bool itemAlreadyInBasket = false;
+            foreach (BuyableItem item in content)
             {
-                SumPrice += bike.price;
+                if (item.category == newItem.category && item.color == newItem.color && item.size == newItem.size)
+                {
+                    item.quantity += newItem.quantity;
+                    itemAlreadyInBasket = true;
+                    Console.WriteLine("Item already in basket, update quantity successfully!");
+                    break;
+                }
             }
-            return SumPrice;
+            if (!itemAlreadyInBasket)
+            {
+                content.Add(newItem);
+                Console.WriteLine("Item added to basket successfully!");
+            }
         }
-        */
-        public void AddProduct(BuyableItem buyableItem)
+        public void DeleleteProduct(BuyableItem buyableItem)
         {
-            basket.Add(buyableItem);
-        }
-        public void DelProduct(BuyableItem buyableItem)
-        {
-            basket.Remove(buyableItem);
+            content.Remove(buyableItem);
+            Console.WriteLine("Item Removed");
         }
         public void EmptyBasket()
         {
-            basket.Clear();
+            content.Clear();
         }
         public void AddClient(Client client)
         {

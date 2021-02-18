@@ -23,7 +23,7 @@ namespace Bovelo
         private void showBasket()
         {
             int position = 1;
-            foreach (BasketItem item in CatalogForm.basket)
+            foreach (BuyableItem item in CatalogForm.order.content)
             {
                 Label bikeCategoryLbl = new Label();
                 NumericUpDown quantityBtn = new NumericUpDown();
@@ -63,7 +63,7 @@ namespace Bovelo
         }
         private void CheckEmptyCart()
         {
-            if (CatalogForm.basket.Count == 0)
+            if (CatalogForm.order.content.Count == 0)
             {
                 DialogResult result = MessageBox.Show("Your cart is empty! Would you like to go back to catalog?", "Cart Info", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -73,21 +73,20 @@ namespace Bovelo
                 }
             }
         }
-        private void removeBtn_Click(object sender, EventArgs e, BasketItem item)
+        private void removeBtn_Click(object sender, EventArgs e, BuyableItem item)
         {
-            CatalogForm.basket.Remove(item); 
-            Console.WriteLine("Item Removed");
+            CatalogForm.order.DeleleteProduct(item); 
+       
             UpdateForm();
             CheckEmptyCart();
         }
-        private void quantity_scroll(object sender, EventArgs e, BasketItem item)
+        private void quantity_scroll(object sender, EventArgs e, BuyableItem item)
         {
             NumericUpDown quantityBtn = sender as NumericUpDown;
             int newQuantity = Decimal.ToInt32(quantityBtn.Value);
             if (newQuantity == 0)
             {
-                CatalogForm.basket.Remove(item);
-                Console.WriteLine("Item Removed");
+                CatalogForm.order.DeleleteProduct(item);
                 UpdateForm();
             }
             else
@@ -104,7 +103,7 @@ namespace Bovelo
         }
         private void empty_cart_btn_Click(object sender, EventArgs e)
         {
-            CatalogForm.basket.Clear();
+            CatalogForm.order.EmptyBasket();
         }
         private void validate_Click(object sender, EventArgs e)
         {
