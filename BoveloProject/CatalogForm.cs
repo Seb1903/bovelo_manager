@@ -97,10 +97,12 @@ namespace Bovelo
         }
         private void showBasket_button(object sender, EventArgs e)
         {
-            this.Hide(); 
             BasketForm basketForm = new BasketForm();
-            basketForm.ShowDialog();
-            this.Show();
+            basketForm.Location = this.Location;
+            basketForm.StartPosition = FormStartPosition.Manual;
+            basketForm.FormClosing += delegate { this.Show(); };
+            basketForm.Show();
+            this.Hide();
         }
 
         private void addItem(string category_chosen, string color_chosen, string size_chosen, int quantity_chosen)
@@ -124,6 +126,7 @@ namespace Bovelo
             {
                 MessageBox.Show("Not all features were selected");
             }
+        }
         private void CatalogForm_Load(object sender, EventArgs e)
         {
 
