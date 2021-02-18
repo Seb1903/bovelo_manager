@@ -37,5 +37,17 @@ namespace Bovelo
         {
             basket.Add(buyableItem);
         }
+        public void DelProduct(BuyableItem buyableItem)
+        {
+            basket.Remove(buyableItem);
+        }
+        public void EmptyBasket()
+        {
+            basket.Clear();
+        }
+        public void AddClient(Client client)
+        {
+            this.client = client;
+        }
     }
 }
