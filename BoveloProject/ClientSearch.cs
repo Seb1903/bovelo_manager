@@ -18,6 +18,9 @@ namespace Bovelo
         {
             InitializeComponent();
             dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client"));
+            string[] search_criterions;
+            search_criterions = new string[] { "client_lastname", "client_firstname", "client_city", "client_street", "client_emailAddress" };
+            comboBox1.Items.AddRange(search_criterions);
         }
 
         private static DataTable GetData(string sqlCommand)
@@ -59,7 +62,7 @@ namespace Bovelo
             }
             catch{
                 label2.Text = "";
-                search_criteria = dataGridView1.Columns[e.ColumnIndex].Name;
+                //search_criteria = dataGridView1.Columns[e.ColumnIndex].Name;
             }
             
         }
@@ -67,6 +70,11 @@ namespace Bovelo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client where {0} like '{1}%'",search_criteria ,textBox1.Text));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            search_criteria = comboBox1.SelectedItem.ToString();
         }
     }
 }
