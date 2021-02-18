@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Bovelo
 {
@@ -29,9 +30,13 @@ namespace Bovelo
             {
                 if (item.category == newItem.category && item.color == newItem.color && item.size == newItem.size)
                 {
-                    item.quantity += newItem.quantity;
+                    DialogResult result = MessageBox.Show("A bike with these features already exists. Do you still want to add it to basket?", "Cart Info", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        item.quantity += newItem.quantity;
+                        Console.WriteLine("Update quantity successfully!");
+                    }
                     itemAlreadyInBasket = true;
-                    Console.WriteLine("Item already in basket, update quantity successfully!");
                     break;
                 }
             }
