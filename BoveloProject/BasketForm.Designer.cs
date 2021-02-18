@@ -49,7 +49,6 @@
             this.validate_btn.TabIndex = 14;
             this.validate_btn.Text = "Confirm";
             this.validate_btn.UseVisualStyleBackColor = true;
-            this.validate_btn.Click += new System.EventHandler(this.validate_Click);
             // 
             // bike_list_label
             // 

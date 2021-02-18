@@ -44,6 +44,7 @@ namespace Bovelo
             this.size1 = new System.Windows.Forms.RadioButton();
             this.size2 = new System.Windows.Forms.RadioButton();
             this.description = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.table_colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).BeginInit();
             this.SuspendLayout();
@@ -244,11 +245,21 @@ namespace Bovelo
             this.description.Size = new System.Drawing.Size(0, 13);
             this.description.TabIndex = 17;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 354);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            // 
             // CatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 426);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.description);
             this.Controls.Add(this.size2);
             this.Controls.Add(this.size1);
@@ -289,6 +300,7 @@ namespace Bovelo
         private System.Windows.Forms.RadioButton color1;
         private System.Windows.Forms.RadioButton color2;
         private System.Windows.Forms.RadioButton color3;
+        private System.Windows.Forms.Label label1;
     }
 }
 
