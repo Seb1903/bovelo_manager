@@ -51,6 +51,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bike.cs" />
+    <Compile Include="BuyableItem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientSearch.cs">
       <SubType>Form</SubType>
