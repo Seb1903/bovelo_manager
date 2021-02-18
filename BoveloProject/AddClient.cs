@@ -56,7 +56,7 @@ namespace Bovelo
         private void button1_Click(object sender, EventArgs e)
         {
             Client client = new Client(this.textBox_firstname.Text, this.textBox_lastname.Text, this.textBox_country.Text, this.textBox_city.Text, this.textBox_street.Text,Convert.ToInt32(this.numericUpDown1.Value), Convert.ToInt32(this.numericUpDown_zipcode.Value) , this.textBox_phonenumber.Text, this.textBox_email.Text);
-            
+            client.Save();
 
             show_table(); //call function defined earlier to connect to database and show data on a label 
             }

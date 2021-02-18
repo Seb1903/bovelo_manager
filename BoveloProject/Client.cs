@@ -34,7 +34,7 @@ namespace Bovelo
             this.phoneNumber = phoneNumber;
             this.emailAdress = emailAdress;
         }
-        private void Save()
+        public void Save()
         {
             try
             {
