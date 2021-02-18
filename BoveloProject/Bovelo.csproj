@@ -51,8 +51,14 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bike.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ClientSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientSearch.Designer.cs">
+      <DependentUpon>ClientSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="AddClient.Designer.cs">
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BasketForm.resx">
       <DependentUpon>BasketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientSearch.resx">
+      <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
