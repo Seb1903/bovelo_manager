@@ -50,7 +50,7 @@ namespace Bovelo
             // 
             // category
             // 
-            this.category.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.category.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.category.FormattingEnabled = true;
@@ -58,18 +58,17 @@ namespace Bovelo
             "City",
             "Explorer",
             "Adventure"});
-            this.category.Location = new System.Drawing.Point(20, 62);
-            this.category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.category.MaximumSize = new System.Drawing.Size(448, 0);
-            this.category.MinimumSize = new System.Drawing.Size(448, 0);
+            this.category.Location = new System.Drawing.Point(13, 40);
+            this.category.MaximumSize = new System.Drawing.Size(300, 0);
+            this.category.MinimumSize = new System.Drawing.Size(300, 0);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(448, 28);
+            this.category.Size = new System.Drawing.Size(300, 21);
             this.category.TabIndex = 1;
             this.category.SelectedIndexChanged += new System.EventHandler(this.category_choice);
             // 
             // table_colors
             // 
-            this.table_colors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.table_colors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.table_colors.ColumnCount = 3;
             this.table_colors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -78,12 +77,11 @@ namespace Bovelo
             this.table_colors.Controls.Add(this.color1, 0, 0);
             this.table_colors.Controls.Add(this.color2, 1, 0);
             this.table_colors.Controls.Add(this.color3, 2, 0);
-            this.table_colors.Location = new System.Drawing.Point(632, 62);
-            this.table_colors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.table_colors.Location = new System.Drawing.Point(421, 40);
             this.table_colors.Name = "table_colors";
             this.table_colors.RowCount = 1;
             this.table_colors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table_colors.Size = new System.Drawing.Size(435, 91);
+            this.table_colors.Size = new System.Drawing.Size(290, 59);
             this.table_colors.TabIndex = 3;
             // 
             // color1
@@ -91,10 +89,9 @@ namespace Bovelo
             this.color1.Appearance = System.Windows.Forms.Appearance.Button;
             this.color1.BackColor = System.Drawing.Color.Black;
             this.color1.ForeColor = System.Drawing.Color.White;
-            this.color1.Location = new System.Drawing.Point(4, 5);
-            this.color1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.color1.Location = new System.Drawing.Point(3, 3);
             this.color1.Name = "color1";
-            this.color1.Size = new System.Drawing.Size(135, 81);
+            this.color1.Size = new System.Drawing.Size(90, 53);
             this.color1.TabIndex = 0;
             this.color1.TabStop = true;
             this.color1.Text = "Black";
@@ -107,10 +104,9 @@ namespace Bovelo
             this.color2.Appearance = System.Windows.Forms.Appearance.Button;
             this.color2.BackColor = System.Drawing.Color.MidnightBlue;
             this.color2.ForeColor = System.Drawing.Color.White;
-            this.color2.Location = new System.Drawing.Point(149, 5);
-            this.color2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.color2.Location = new System.Drawing.Point(99, 3);
             this.color2.Name = "color2";
-            this.color2.Size = new System.Drawing.Size(135, 81);
+            this.color2.Size = new System.Drawing.Size(90, 53);
             this.color2.TabIndex = 1;
             this.color2.TabStop = true;
             this.color2.Text = "Dark blue";
@@ -122,10 +118,9 @@ namespace Bovelo
             // 
             this.color3.Appearance = System.Windows.Forms.Appearance.Button;
             this.color3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.color3.Location = new System.Drawing.Point(294, 5);
-            this.color3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.color3.Location = new System.Drawing.Point(195, 3);
             this.color3.Name = "color3";
-            this.color3.Size = new System.Drawing.Size(137, 81);
+            this.color3.Size = new System.Drawing.Size(91, 53);
             this.color3.TabIndex = 2;
             this.color3.TabStop = true;
             this.color3.Text = "Light Blue";
@@ -135,75 +130,69 @@ namespace Bovelo
             // 
             // category_label
             // 
-            this.category_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.category_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.category_label.AutoSize = true;
-            this.category_label.Location = new System.Drawing.Point(20, 20);
-            this.category_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.category_label.Location = new System.Drawing.Point(13, 13);
             this.category_label.Name = "category_label";
-            this.category_label.Size = new System.Drawing.Size(73, 20);
+            this.category_label.Size = new System.Drawing.Size(49, 13);
             this.category_label.TabIndex = 4;
             this.category_label.Text = "Category";
             // 
             // color_label
             // 
-            this.color_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.color_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.color_label.AutoSize = true;
-            this.color_label.Location = new System.Drawing.Point(636, 20);
-            this.color_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.color_label.Location = new System.Drawing.Point(424, 13);
             this.color_label.Name = "color_label";
-            this.color_label.Size = new System.Drawing.Size(46, 20);
+            this.color_label.Size = new System.Drawing.Size(31, 13);
             this.color_label.TabIndex = 5;
             this.color_label.Text = "Color";
             // 
             // size_label
             // 
-            this.size_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.size_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.size_label.AutoSize = true;
-            this.size_label.Location = new System.Drawing.Point(636, 202);
-            this.size_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.size_label.Location = new System.Drawing.Point(424, 131);
             this.size_label.Name = "size_label";
-            this.size_label.Size = new System.Drawing.Size(40, 20);
+            this.size_label.Size = new System.Drawing.Size(27, 13);
             this.size_label.TabIndex = 6;
             this.size_label.Text = "Size";
             // 
             // quantity_label
             // 
-            this.quantity_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.quantity_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.quantity_label.AutoSize = true;
-            this.quantity_label.Location = new System.Drawing.Point(636, 340);
-            this.quantity_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.quantity_label.Location = new System.Drawing.Point(424, 221);
             this.quantity_label.Name = "quantity_label";
-            this.quantity_label.Size = new System.Drawing.Size(68, 20);
+            this.quantity_label.Size = new System.Drawing.Size(46, 13);
             this.quantity_label.TabIndex = 9;
             this.quantity_label.Text = "Quantity";
             // 
             // quantity
             // 
-            this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantity.Location = new System.Drawing.Point(627, 392);
-            this.quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.quantity.MaximumSize = new System.Drawing.Size(452, 0);
-            this.quantity.MinimumSize = new System.Drawing.Size(452, 0);
+            this.quantity.Location = new System.Drawing.Point(418, 255);
+            this.quantity.MaximumSize = new System.Drawing.Size(301, 0);
+            this.quantity.MinimumSize = new System.Drawing.Size(301, 0);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(452, 26);
+            this.quantity.Size = new System.Drawing.Size(301, 20);
             this.quantity.TabIndex = 10;
             this.quantity.ValueChanged += new System.EventHandler(this.quantity_scroll);
             // 
             // addBasket
             // 
-            this.addBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.addBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBasket.Location = new System.Drawing.Point(652, 514);
-            this.addBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.addBasket.MaximumSize = new System.Drawing.Size(158, 35);
-            this.addBasket.MinimumSize = new System.Drawing.Size(158, 35);
+            this.addBasket.Location = new System.Drawing.Point(614, 334);
+            this.addBasket.MaximumSize = new System.Drawing.Size(105, 23);
+            this.addBasket.MinimumSize = new System.Drawing.Size(105, 23);
             this.addBasket.Name = "addBasket";
-            this.addBasket.Size = new System.Drawing.Size(158, 35);
+            this.addBasket.Size = new System.Drawing.Size(105, 23);
             this.addBasket.TabIndex = 11;
             this.addBasket.Text = "Add to basket";
             this.addBasket.UseVisualStyleBackColor = true;
@@ -211,14 +200,13 @@ namespace Bovelo
             // 
             // showBasket
             // 
-            this.showBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.showBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showBasket.Location = new System.Drawing.Point(835, 514);
-            this.showBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showBasket.MaximumSize = new System.Drawing.Size(158, 35);
-            this.showBasket.MinimumSize = new System.Drawing.Size(158, 35);
+            this.showBasket.Location = new System.Drawing.Point(485, 334);
+            this.showBasket.MaximumSize = new System.Drawing.Size(105, 23);
+            this.showBasket.MinimumSize = new System.Drawing.Size(105, 23);
             this.showBasket.Name = "showBasket";
-            this.showBasket.Size = new System.Drawing.Size(158, 35);
+            this.showBasket.Size = new System.Drawing.Size(105, 23);
             this.showBasket.TabIndex = 12;
             this.showBasket.Text = "Show basket";
             this.showBasket.UseVisualStyleBackColor = true;
@@ -227,10 +215,9 @@ namespace Bovelo
             // size1
             // 
             this.size1.AutoSize = true;
-            this.size1.Location = new System.Drawing.Point(627, 255);
-            this.size1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.size1.Location = new System.Drawing.Point(418, 166);
             this.size1.Name = "size1";
-            this.size1.Size = new System.Drawing.Size(58, 24);
+            this.size1.Size = new System.Drawing.Size(42, 17);
             this.size1.TabIndex = 15;
             this.size1.TabStop = true;
             this.size1.Text = "26\"";
@@ -240,10 +227,9 @@ namespace Bovelo
             // size2
             // 
             this.size2.AutoSize = true;
-            this.size2.Location = new System.Drawing.Point(852, 255);
-            this.size2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.size2.Location = new System.Drawing.Point(568, 166);
             this.size2.Name = "size2";
-            this.size2.Size = new System.Drawing.Size(58, 24);
+            this.size2.Size = new System.Drawing.Size(42, 17);
             this.size2.TabIndex = 16;
             this.size2.TabStop = true;
             this.size2.Text = "28\"";
@@ -253,17 +239,16 @@ namespace Bovelo
             // description
             // 
             this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(20, 148);
-            this.description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.description.Location = new System.Drawing.Point(13, 96);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(0, 20);
+            this.description.Size = new System.Drawing.Size(0, 13);
             this.description.TabIndex = 17;
             // 
             // CatalogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 629);
+            this.ClientSize = new System.Drawing.Size(744, 420);
             this.Controls.Add(this.description);
             this.Controls.Add(this.size2);
             this.Controls.Add(this.size1);
@@ -276,8 +261,9 @@ namespace Bovelo
             this.Controls.Add(this.category_label);
             this.Controls.Add(this.table_colors);
             this.Controls.Add(this.category);
-            this.MaximumSize = new System.Drawing.Size(1132, 685);
-            this.MinimumSize = new System.Drawing.Size(1132, 685);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(760, 459);
+            this.MinimumSize = new System.Drawing.Size(760, 459);
             this.Name = "CatalogForm";
             this.Text = "Bovelo";
             this.Load += new System.EventHandler(this.CatalogForm_Load);
