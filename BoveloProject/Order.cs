@@ -63,25 +63,31 @@ namespace Bovelo
         {
             try
             {
+                //just for the bike table not yet for the command table
+                
                 Database db = new Database();   //Let's us protect the password by having a class database with a public string containing the credentials
                 foreach (BuyableItem item in content)
                 {
-                    //This is my connection string i have assigned the database file address path  
-                    //This is my insert query in which i am taking input from the user through windows forms  
-                    string Query = "insert into table_bike(bike_type,bike_color,bike_size) values('" + item.category + "','" + item.color + "','" + item.size + "');";
-                    //This is  MySqlConnection here i have created the object and pass my connection string.  
-                    MySqlConnection MyConn2 = new MySqlConnection(db.MyConnection);
-                    //This is command class which will handle the query and connection object.  
-                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                    MySqlDataReader MyReader2;
-                    MyConn2.Open();
-                    MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
-
-                    Console.WriteLine("Save Data");
-                    while (MyReader2.Read())
+                    for (int i = 0; i < item.quantity; i++)
                     {
+                        //This is my connection string i have assigned the database file address path  
+                        //This is my insert query in which i am taking input from the user through windows forms  
+                        string Query = "insert into table_bike(bike_type,bike_color,bike_size) values('" + item.category + "','" + item.color + "','" + item.size + "');";
+                        //This is  MySqlConnection here i have created the object and pass my connection string.  
+                        MySqlConnection MyConn2 = new MySqlConnection(db.MyConnection);
+                        //This is command class which will handle the query and connection object.  
+                        MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                        MySqlDataReader MyReader2;
+                        MyConn2.Open();
+                        MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
+
+                        Console.WriteLine("Save Data");
+                        while (MyReader2.Read())
+                        {
+                        }
+                        MyConn2.Close();
                     }
-                    MyConn2.Close();
+                    
                 }
             }
             catch (Exception ex)
