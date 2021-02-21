@@ -73,7 +73,21 @@ namespace Bovelo
         {
             this.Controls.Clear();
             this.InitializeComponent();
+            showClient();
             showBasket();
+        }
+
+        private void showClient()
+        {
+            if (Bovelo.order.client != null)
+            {
+                this.label_clientName.Text = Bovelo.order.client.lastname;
+            }
+            else
+            {
+                this.label_clientName.Text = "";
+            }
+
         }
         private void CheckEmptyCart()
         {
