@@ -14,10 +14,12 @@ namespace Bovelo
     public partial class ClientSearch : Form
     {
         string search_criteria = "client_lastname";
+        string client_info = "";
+        List<string> client_params = new List<string>();
         public ClientSearch()
         {
             InitializeComponent();
-            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client"));
+            dataGridView1.DataSource = GetData(String.Format("Select * From table_client"));
             string[] search_criterions;
             search_criterions = new string[] { "client_lastname", "client_firstname", "client_city", "client_street", "client_emailAddress" };
             comboBox1.Items.AddRange(search_criterions);
@@ -42,34 +44,43 @@ namespace Bovelo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Change form
+            //instancier client
+            Client client = new Client(client_params[0], client_params[1], client_params[2], client_params[3], client_params[4], Convert.ToInt32(client_params[5]), Convert.ToInt32(client_params[6]), Convert.ToInt32(client_params[7]), client_params[8]);
+            /*
+            //set the client atribute of order class when order class will be fully implemented
+            Order order.client=client;
+            */
+            client_params.Clear();
+            //this.Close();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //label2.Text = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            string client_info = "";
+            client_info = "";
             int column = 0;
             try
             {
                 while (column < dataGridView1.ColumnCount)
                 {
-                    client_info += dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString();
-                    client_info += " ";
+                    client_info+=(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
+                    if (column > 0)
+                    {
+                        client_params.Add(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
+                    }
+                    client_info += " ";                  
                     column++;
                 }
                 label2.Text = client_info;
             }
             catch{
                 label2.Text = "";
-                //search_criteria = dataGridView1.Columns[e.ColumnIndex].Name;
             }
             
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GetData(String.Format("Select client_lastname,client_firstname,client_city,client_street,client_emailAddress From table_client where {0} like '{1}%'",search_criteria ,textBox1.Text));
+            dataGridView1.DataSource = GetData(String.Format("Select * From table_client where {0} like '{1}%'",search_criteria ,textBox1.Text));
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
