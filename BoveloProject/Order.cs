@@ -16,12 +16,10 @@ namespace Bovelo
         public Client client;
         public double totalPrice;
 
-        public Order(List<Bike> bikes, Client client)
+        public Order()
         {
             this.date = DateTime.Now.ToString();
-            this.listBike = bikes;
             this.client = client;
-            this.totalPrice = SetPrice(bikes);
         }
 
         private int SetPrice(List<Bike> bikes)

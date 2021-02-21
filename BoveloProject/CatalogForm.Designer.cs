@@ -280,7 +280,6 @@ namespace Bovelo
             this.MinimumSize = new System.Drawing.Size(1132, 685);
             this.Name = "CatalogForm";
             this.Text = "Bovelo";
-            this.Load += new System.EventHandler(this.CatalogForm_Load);
             this.table_colors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).EndInit();
             this.ResumeLayout(false);

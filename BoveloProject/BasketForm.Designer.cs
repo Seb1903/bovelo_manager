@@ -35,17 +35,20 @@
             this.empty_cart_btn = new System.Windows.Forms.Button();
             this.delivery_name = new System.Windows.Forms.Label();
             this.delivery_time_label = new System.Windows.Forms.Label();
+            this.button_selectClient = new System.Windows.Forms.Button();
+            this.button_newClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // validate_btn
             // 
             this.validate_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.validate_btn.Location = new System.Drawing.Point(607, 370);
-            this.validate_btn.MaximumSize = new System.Drawing.Size(105, 23);
-            this.validate_btn.MinimumSize = new System.Drawing.Size(105, 23);
+            this.validate_btn.Location = new System.Drawing.Point(1214, 712);
+            this.validate_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.validate_btn.MaximumSize = new System.Drawing.Size(210, 44);
+            this.validate_btn.MinimumSize = new System.Drawing.Size(210, 44);
             this.validate_btn.Name = "validate_btn";
-            this.validate_btn.Size = new System.Drawing.Size(105, 23);
+            this.validate_btn.Size = new System.Drawing.Size(210, 44);
             this.validate_btn.TabIndex = 14;
             this.validate_btn.Text = "Confirm";
             this.validate_btn.UseVisualStyleBackColor = true;
@@ -53,20 +56,22 @@
             // bike_list_label
             // 
             this.bike_list_label.AutoSize = true;
-            this.bike_list_label.Location = new System.Drawing.Point(13, 13);
+            this.bike_list_label.Location = new System.Drawing.Point(26, 25);
+            this.bike_list_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.bike_list_label.Name = "bike_list_label";
-            this.bike_list_label.Size = new System.Drawing.Size(0, 13);
+            this.bike_list_label.Size = new System.Drawing.Size(0, 25);
             this.bike_list_label.TabIndex = 15;
             // 
             // back_btn
             // 
             this.back_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.back_btn.Location = new System.Drawing.Point(495, 370);
-            this.back_btn.MaximumSize = new System.Drawing.Size(105, 23);
-            this.back_btn.MinimumSize = new System.Drawing.Size(105, 23);
+            this.back_btn.Location = new System.Drawing.Point(990, 712);
+            this.back_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.back_btn.MaximumSize = new System.Drawing.Size(210, 44);
+            this.back_btn.MinimumSize = new System.Drawing.Size(210, 44);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(105, 23);
+            this.back_btn.Size = new System.Drawing.Size(210, 44);
             this.back_btn.TabIndex = 16;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = true;
@@ -80,11 +85,12 @@
             // 
             this.empty_cart_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.empty_cart_btn.Location = new System.Drawing.Point(9, 370);
-            this.empty_cart_btn.MaximumSize = new System.Drawing.Size(105, 23);
-            this.empty_cart_btn.MinimumSize = new System.Drawing.Size(105, 23);
+            this.empty_cart_btn.Location = new System.Drawing.Point(18, 712);
+            this.empty_cart_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.empty_cart_btn.MaximumSize = new System.Drawing.Size(210, 44);
+            this.empty_cart_btn.MinimumSize = new System.Drawing.Size(210, 44);
             this.empty_cart_btn.Name = "empty_cart_btn";
-            this.empty_cart_btn.Size = new System.Drawing.Size(105, 23);
+            this.empty_cart_btn.Size = new System.Drawing.Size(210, 44);
             this.empty_cart_btn.TabIndex = 17;
             this.empty_cart_btn.Text = "Empty Cart";
             this.empty_cart_btn.UseVisualStyleBackColor = true;
@@ -93,34 +99,58 @@
             // delivery_name
             // 
             this.delivery_name.AutoSize = true;
-            this.delivery_name.Location = new System.Drawing.Point(9, 332);
+            this.delivery_name.Location = new System.Drawing.Point(18, 638);
+            this.delivery_name.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.delivery_name.Name = "delivery_name";
-            this.delivery_name.Size = new System.Drawing.Size(120, 13);
+            this.delivery_name.Size = new System.Drawing.Size(246, 25);
             this.delivery_name.TabIndex = 18;
             this.delivery_name.Text = "Estimated delivery time :";
             // 
             // delivery_time_label
             // 
             this.delivery_time_label.AutoSize = true;
-            this.delivery_time_label.Location = new System.Drawing.Point(136, 332);
+            this.delivery_time_label.Location = new System.Drawing.Point(272, 638);
+            this.delivery_time_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.delivery_time_label.Name = "delivery_time_label";
-            this.delivery_time_label.Size = new System.Drawing.Size(0, 13);
+            this.delivery_time_label.Size = new System.Drawing.Size(0, 25);
             this.delivery_time_label.TabIndex = 19;
+            // 
+            // button_selectClient
+            // 
+            this.button_selectClient.Location = new System.Drawing.Point(1085, 363);
+            this.button_selectClient.Name = "button_selectClient";
+            this.button_selectClient.Size = new System.Drawing.Size(193, 61);
+            this.button_selectClient.TabIndex = 20;
+            this.button_selectClient.Text = "Select client";
+            this.button_selectClient.UseVisualStyleBackColor = true;
+            this.button_selectClient.Click += new System.EventHandler(this.button_selectClient_Click);
+            // 
+            // button_newClient
+            // 
+            this.button_newClient.Location = new System.Drawing.Point(1085, 464);
+            this.button_newClient.Name = "button_newClient";
+            this.button_newClient.Size = new System.Drawing.Size(193, 61);
+            this.button_newClient.TabIndex = 21;
+            this.button_newClient.Text = "New client";
+            this.button_newClient.UseVisualStyleBackColor = true;
+            this.button_newClient.Click += new System.EventHandler(this.button_newClient_Click);
             // 
             // BasketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 420);
+            this.ClientSize = new System.Drawing.Size(1468, 746);
+            this.Controls.Add(this.button_newClient);
+            this.Controls.Add(this.button_selectClient);
             this.Controls.Add(this.delivery_time_label);
             this.Controls.Add(this.delivery_name);
             this.Controls.Add(this.empty_cart_btn);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.bike_list_label);
             this.Controls.Add(this.validate_btn);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(760, 459);
-            this.MinimumSize = new System.Drawing.Size(760, 459);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1494, 817);
+            this.MinimumSize = new System.Drawing.Size(1494, 817);
             this.Name = "BasketForm";
             this.Text = "Basket";
             this.Load += new System.EventHandler(this.BasketForm_Load);
@@ -137,5 +167,7 @@
         private System.Windows.Forms.Button empty_cart_btn;
         private System.Windows.Forms.Label delivery_name;
         private System.Windows.Forms.Label delivery_time_label;
+        private System.Windows.Forms.Button button_selectClient;
+        private System.Windows.Forms.Button button_newClient;
     }
 }

@@ -110,5 +110,26 @@ namespace Bovelo
         {
             // Confirm order
         }
+
+        private void button_newClient_Click(object sender, EventArgs e)
+        {
+            var newclient = new AddClient();
+            newclient.Location = this.Location;
+            newclient.StartPosition = FormStartPosition.Manual;
+            newclient.FormClosing += delegate { this.Show(); };
+            newclient.Show();
+            this.Hide();
+
+        }
+
+        private void button_selectClient_Click(object sender, EventArgs e)
+        {
+            var selectclient = new ClientSearch();
+            selectclient.Location = this.Location;
+            selectclient.StartPosition = FormStartPosition.Manual;
+            selectclient.FormClosing += delegate { this.Show(); };
+            selectclient.Show();
+            this.Hide();
+        }
     }
 }
