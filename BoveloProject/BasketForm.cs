@@ -26,31 +26,45 @@ namespace Bovelo
             foreach (BasketItem item in CatalogForm.basket)
             {
                 Label bikeCategoryLbl = new Label();
+                Label bikeColorLbl = new Label();
+                Label bikeSizeLbl = new Label();
                 NumericUpDown quantityBtn = new NumericUpDown();
                 Button removeBtn = new Button();
 
                 bikeCategoryLbl.Text = item.category;
                 bikeCategoryLbl.Top = position * 20 + 10;
                 bikeCategoryLbl.Left = 10;
-                bikeCategoryLbl.Size = new Size(80, 20);
+                bikeCategoryLbl.Size = new Size(60, 20);
+
+                bikeColorLbl.Text = item.color;
+                bikeColorLbl.Top = position * 20 + 10;
+                bikeColorLbl.Left = 70;
+                bikeColorLbl.Size = new Size(60, 20);
+
+                bikeSizeLbl.Text = item.size;
+                bikeSizeLbl.Top = position * 20 + 10;
+                bikeSizeLbl.Left = 130;
+                bikeSizeLbl.Size = new Size(30, 20);
 
                 quantityBtn.Value = item.quantity;
                 quantityBtn.Top = position * 20 + 10;
-                quantityBtn.Left = 100;
+                quantityBtn.Left = 160;
                 quantityBtn.Minimum = 0;
                 quantityBtn.Maximum = 100;
-                quantityBtn.Size = new Size (50, 20);
+                quantityBtn.Size = new Size (70, 20);
                 quantityBtn.ValueChanged += (sender, EventArgs) => { quantity_scroll(sender, EventArgs, item); };
 
                 removeBtn.Text = "remove";
                 removeBtn.Top = position * 20 + 10;
-                removeBtn.Left = 170;
+                removeBtn.Left = 240;
                 removeBtn.Size = new Size(50, 20);
                 removeBtn.Click += (sender, EventArgs) => { removeBtn_Click(sender, EventArgs, item); };
 
                 position++;
 
                 this.Controls.Add(bikeCategoryLbl);
+                this.Controls.Add(bikeColorLbl);
+                this.Controls.Add(bikeSizeLbl);
                 this.Controls.Add(quantityBtn);
                 this.Controls.Add(removeBtn);
             }
@@ -75,8 +89,8 @@ namespace Bovelo
         }
         private void removeBtn_Click(object sender, EventArgs e, BasketItem item)
         {
-            CatalogForm.basket.Remove(item); 
-            Console.WriteLine("Item Removed");
+            CatalogForm.basket.Remove(item);
+            MessageBox.Show("Item Removed");
             UpdateForm();
             CheckEmptyCart();
         }
@@ -87,13 +101,13 @@ namespace Bovelo
             if (newQuantity == 0)
             {
                 CatalogForm.basket.Remove(item);
-                Console.WriteLine("Item Removed");
+                MessageBox.Show("Item Removed");
                 UpdateForm();
             }
             else
             {
                 item.quantity = newQuantity;
-                Console.WriteLine("New item quantity : " + item.quantity.ToString());
+                MessageBox.Show("New item quantity : " + item.quantity.ToString());
             }
             CheckEmptyCart();
         }

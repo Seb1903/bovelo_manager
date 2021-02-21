@@ -84,14 +84,14 @@ namespace Bovelo
                     {
                         item.quantity += newItem.quantity;
                         itemAlreadyInBasket = true;
-                        Console.WriteLine("Item already in basket, update quantity successfully!");
+                        MessageBox.Show("Item already in basket, update quantity successfully!");
                         break;
                     }
                 }
                 if (!itemAlreadyInBasket)
                 {
                     basket.Add(newItem);
-                    Console.WriteLine("Item added to basket successfully!");
+                    MessageBox.Show("Item added to basket successfully!");
                 }
             }
         }
