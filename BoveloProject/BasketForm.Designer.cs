@@ -161,15 +161,14 @@ namespace Bovelo
             this.label_clientName.Name = "label_clientName";
             this.label_clientName.Size = new System.Drawing.Size(51, 20);
             this.label_clientName.TabIndex = 23;
-            try
+            if (Bovelo.order.client != null)
             {
                 this.label_clientName.Text = Bovelo.order.client.lastname;
             }
-            catch (NullReferenceException e)
-            {
+            else { 
                 this.label_clientName.Text = "";
-
             }
+
             // 
             // BasketForm
             // 
