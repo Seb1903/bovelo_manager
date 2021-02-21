@@ -142,12 +142,13 @@ namespace Bovelo
 
         private void button_selectClient_Click(object sender, EventArgs e)
         {
-            var selectclient = new ClientSearch();
+            var selectclient = new ClientSearch(); //opens new form
             selectclient.Location = this.Location;
             selectclient.StartPosition = FormStartPosition.Manual;
             selectclient.FormClosing += delegate { this.Show(); };
             selectclient.Show();
             this.Hide();
+
         }
     }
 }
