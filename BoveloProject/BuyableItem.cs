@@ -25,11 +25,9 @@ namespace Bovelo
         {
             try
             {
-                Console.WriteLine("connecting to DB");
                 Database db = new Database();
                 string Query = "insert into table_bike(bike_type, bike_color, bike_size)" +
                     "values('" + this.category + "','" + this.color + "','" + this.size + "');";
-                Console.WriteLine("Query created");
                 MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
                 MySqlDataReader MyReader;
