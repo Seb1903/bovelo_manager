@@ -75,8 +75,7 @@ namespace Bovelo
         }
         private void removeBtn_Click(object sender, EventArgs e, BuyableItem item)
         {
-            CatalogForm.order.DeleleteProduct(item); 
-       
+            CatalogForm.order.Remove(item); 
             UpdateForm();
             CheckEmptyCart();
         }
@@ -86,7 +85,7 @@ namespace Bovelo
             int newQuantity = Decimal.ToInt32(quantityBtn.Value);
             if (newQuantity == 0)
             {
-                CatalogForm.order.DeleleteProduct(item);
+                CatalogForm.order.Remove(item);
                 UpdateForm();
             }
             else
@@ -103,11 +102,15 @@ namespace Bovelo
         }
         private void empty_cart_btn_Click(object sender, EventArgs e)
         {
-            CatalogForm.order.EmptyBasket();
+            CatalogForm.order.Empty();
+            UpdateForm();
+            CheckEmptyCart();
         }
-        private void validate_Click(object sender, EventArgs e)
+        private void validate_btn_Click(object sender, EventArgs e)
         {
-            // Confirm order
+            CatalogForm.order.Save();
+            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

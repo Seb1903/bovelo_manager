@@ -23,7 +23,7 @@ namespace Bovelo
             this.date = DateTime.Now.ToString();
             this.content = new List<BuyableItem>();
         }
-        public void AddProduct(BuyableItem newItem)
+        public void Add(BuyableItem newItem)
         {
             bool itemAlreadyInBasket = false;
             foreach (BuyableItem item in content)
@@ -34,7 +34,7 @@ namespace Bovelo
                     if (result == DialogResult.Yes)
                     {
                         item.quantity += newItem.quantity;
-                        Console.WriteLine("Update quantity successfully!");
+                        Console.WriteLine("Quantity Updated Successfully!");
                     }
                     itemAlreadyInBasket = true;
                     break;
@@ -43,15 +43,15 @@ namespace Bovelo
             if (!itemAlreadyInBasket)
             {
                 content.Add(newItem);
-                Console.WriteLine("Item added to basket successfully!");
+                Console.WriteLine("Item Added successfully!");
             }
         }
-        public void DeleleteProduct(BuyableItem buyableItem)
+        public void Remove(BuyableItem buyableItem)
         {
             content.Remove(buyableItem);
             Console.WriteLine("Item Removed");
         }
-        public void EmptyBasket()
+        public void Empty()
         {
             content.Clear();
         }
@@ -61,39 +61,15 @@ namespace Bovelo
         }
         public void Save()
         {
-            try
+            foreach (BuyableItem item in content)
             {
-                //just for the bike table not yet for the command table
-                
-                Database db = new Database();   //Let's us protect the password by having a class database with a public string containing the credentials
-                foreach (BuyableItem item in content)
+                for (int i = 0; i < item.quantity; i++)
                 {
-                    for (int i = 0; i < item.quantity; i++)
-                    {
-                        //This is my connection string i have assigned the database file address path  
-                        //This is my insert query in which i am taking input from the user through windows forms  
-                        string Query = "insert into table_bike(bike_type,bike_color,bike_size) values('" + item.category + "','" + item.color + "','" + item.size + "');";
-                        //This is  MySqlConnection here i have created the object and pass my connection string.  
-                        MySqlConnection MyConn2 = new MySqlConnection(db.MyConnection);
-                        //This is command class which will handle the query and connection object.  
-                        MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                        MySqlDataReader MyReader2;
-                        MyConn2.Open();
-                        MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.  
-
-                        Console.WriteLine("Save Data");
-                        while (MyReader2.Read())
-                        {
-                        }
-                        MyConn2.Close();
-                    }
-                    
-                }
+                    item.Save();
+                } 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            this.Empty();
+            MessageBox.Show("Order Confirmed!"); 
         }
     }
 }

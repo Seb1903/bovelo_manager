@@ -73,7 +73,7 @@ namespace Bovelo
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
                 BuyableItem newItem = new BuyableItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
-                order.AddProduct(newItem);
+                order.Add(newItem);
             }
             else
             {
@@ -90,18 +90,6 @@ namespace Bovelo
         private void CatalogForm_Load(object sender, EventArgs e)
         {
 
-        }
-    }
-    public class BasketItem
-    {
-        public string category { get; set; }
-        public string color { get; set; }
-        public string size { get; set; }
-        public int quantity { get; set; }
-
-        public bool Equality (string category_chosen, string color_chosen, string size_chosen)
-        {
-            return (this.category == category_chosen) && (this.color == color_chosen) && (this.size == size_chosen); // tout est pareil
         }
     }
 }
