@@ -151,7 +151,7 @@ namespace Bovelo
             var selectclient = new ClientSearch();
             selectclient.Location = this.Location;
             selectclient.StartPosition = FormStartPosition.Manual;
-            selectclient.FormClosing += delegate { this.Show(); };
+            selectclient.FormClosing += delegate { this.UpdateForm(); this.Show(); };
             selectclient.Show();
             this.Hide();
         }
@@ -161,7 +161,7 @@ namespace Bovelo
             var newclient = new AddClient();
             newclient.Location = this.Location;
             newclient.StartPosition = FormStartPosition.Manual;
-            newclient.FormClosing += delegate {this.Show(); };
+            newclient.FormClosing += delegate {  this.Show(); };
             newclient.Show();
             this.Hide();
         }
