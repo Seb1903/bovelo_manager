@@ -45,13 +45,14 @@ namespace Bovelo
         private void button1_Click(object sender, EventArgs e)
         {
             //instancier client
-            Client client = new Client(client_params[0], client_params[1], client_params[2], client_params[3], client_params[4], Convert.ToInt32(client_params[5]), Convert.ToInt32(client_params[6]), client_params[7], client_params[8]);
+            Client client = new Client(client_params[1], client_params[0], client_params[2], client_params[3], client_params[4], Convert.ToInt32(client_params[5]), Convert.ToInt32(client_params[6]), client_params[7], client_params[8]);
             /*
             //set the client atribute of order class when order class will be fully implemented
             Order order.client=client;
             */
             client_params.Clear();
-            //this.Close();
+            Bovelo.order.client = client;    // defines the static client of the Bovelo application
+            this.Close();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

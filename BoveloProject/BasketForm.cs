@@ -18,7 +18,8 @@ namespace Bovelo
         }
         private void BasketForm_Load(object sender, EventArgs e)
         {
-            showBasket();      
+            showBasket();
+            showClient();
         }
         private void showBasket()
         {
@@ -160,7 +161,7 @@ namespace Bovelo
             var newclient = new AddClient();
             newclient.Location = this.Location;
             newclient.StartPosition = FormStartPosition.Manual;
-            newclient.FormClosing += delegate { this.Show(); };
+            newclient.FormClosing += delegate {this.Show(); };
             newclient.Show();
             this.Hide();
         }
