@@ -1,4 +1,11 @@
-﻿namespace Bovelo
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace Bovelo
 {
     partial class BasketForm
     {
@@ -35,8 +42,10 @@
             this.empty_cart_btn = new System.Windows.Forms.Button();
             this.delivery_name = new System.Windows.Forms.Label();
             this.delivery_time_label = new System.Windows.Forms.Label();
-            this.button_selectClient = new System.Windows.Forms.Button();
-            this.button_newClient = new System.Windows.Forms.Button();
+            this.new_Client = new System.Windows.Forms.Button();
+            this.select_Client = new System.Windows.Forms.Button();
+            this.label_selectedClient = new System.Windows.Forms.Label();
+            this.label_clientName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // validate_btn
@@ -116,31 +125,61 @@
             this.delivery_time_label.Size = new System.Drawing.Size(0, 20);
             this.delivery_time_label.TabIndex = 19;
             // 
-            // button_selectClient
+            // new_Client
             // 
-            this.button_selectClient.Location = new System.Drawing.Point(1085, 363);
-            this.button_selectClient.Name = "button_selectClient";
-            this.button_selectClient.Size = new System.Drawing.Size(193, 61);
-            this.button_selectClient.TabIndex = 20;
-            this.button_selectClient.Text = "Select client";
-            this.button_selectClient.UseVisualStyleBackColor = true;
-            this.button_selectClient.Click += new System.EventHandler(this.button_selectClient_Click);
+            this.new_Client.Location = new System.Drawing.Point(742, 338);
+            this.new_Client.Name = "new_Client";
+            this.new_Client.Size = new System.Drawing.Size(158, 39);
+            this.new_Client.TabIndex = 20;
+            this.new_Client.Text = "New client";
+            this.new_Client.UseVisualStyleBackColor = true;
+            this.new_Client.Click += new System.EventHandler(this.new_Client_Click);
             // 
-            // button_newClient
+            // select_Client
             // 
-            this.button_newClient.Location = new System.Drawing.Point(1085, 464);
-            this.button_newClient.Name = "button_newClient";
-            this.button_newClient.Size = new System.Drawing.Size(193, 61);
-            this.button_newClient.TabIndex = 21;
-            this.button_newClient.Text = "New client";
-            this.button_newClient.UseVisualStyleBackColor = true;
-            this.button_newClient.Click += new System.EventHandler(this.button_newClient_Click);
+            this.select_Client.Location = new System.Drawing.Point(910, 338);
+            this.select_Client.Name = "select_Client";
+            this.select_Client.Size = new System.Drawing.Size(158, 39);
+            this.select_Client.TabIndex = 21;
+            this.select_Client.Text = "Select client";
+            this.select_Client.UseVisualStyleBackColor = true;
+            this.select_Client.Click += new System.EventHandler(this.select_Client_Click);
+            // 
+            // label_selectedClient
+            // 
+            this.label_selectedClient.AutoSize = true;
+            this.label_selectedClient.Location = new System.Drawing.Point(742, 397);
+            this.label_selectedClient.Name = "label_selectedClient";
+            this.label_selectedClient.Size = new System.Drawing.Size(125, 20);
+            this.label_selectedClient.TabIndex = 22;
+            this.label_selectedClient.Text = "Selected client : ";
+            // 
+            // label_clientName
+            // 
+            this.label_clientName.AutoSize = true;
+            this.label_clientName.Location = new System.Drawing.Point(906, 397);
+            this.label_clientName.Name = "label_clientName";
+            this.label_clientName.Size = new System.Drawing.Size(51, 20);
+            this.label_clientName.TabIndex = 23;
+            try
+            {
+                this.label_clientName.Text = Bovelo.order.client.lastname;
+            }
+            catch (NullReferenceException e)
+            {
+                this.label_clientName.Text = "";
+
+            }
             // 
             // BasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 620);
+            this.Controls.Add(this.label_clientName);
+            this.Controls.Add(this.label_selectedClient);
+            this.Controls.Add(this.select_Client);
+            this.Controls.Add(this.new_Client);
             this.Controls.Add(this.delivery_time_label);
             this.Controls.Add(this.delivery_name);
             this.Controls.Add(this.empty_cart_btn);
@@ -165,7 +204,9 @@
         private System.Windows.Forms.Button empty_cart_btn;
         private System.Windows.Forms.Label delivery_name;
         private System.Windows.Forms.Label delivery_time_label;
-        private System.Windows.Forms.Button button_selectClient;
-        private System.Windows.Forms.Button button_newClient;
+        private System.Windows.Forms.Button new_Client;
+        private System.Windows.Forms.Button select_Client;
+        private System.Windows.Forms.Label label_selectedClient;
+        private System.Windows.Forms.Label label_clientName;
     }
 }
