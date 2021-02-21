@@ -9,7 +9,7 @@ namespace Bovelo
 {
     public class Bovelo
     {
-        Order order = new Order();
+        public static Order order = new Order();
         public Bovelo()
         {
         }

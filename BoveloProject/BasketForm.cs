@@ -23,7 +23,7 @@ namespace Bovelo
         private void showBasket()
         {
             int position = 1;
-            foreach (BuyableItem item in CatalogForm.order.content)
+            foreach (BuyableItem item in Bovelo.order.content)
             {
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
@@ -77,7 +77,7 @@ namespace Bovelo
         }
         private void CheckEmptyCart()
         {
-            if (CatalogForm.order.content.Count == 0)
+            if (Bovelo.order.content.Count == 0)
             {
                 DialogResult result = MessageBox.Show("Your cart is empty! Would you like to go back to catalog?", "Cart Info", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -89,7 +89,7 @@ namespace Bovelo
         }
         private void removeBtn_Click(object sender, EventArgs e, BuyableItem item)
         {
-            CatalogForm.basket.Remove(item);
+            Bovelo.order.Remove(item);
             MessageBox.Show("Item Removed");
             UpdateForm();
             CheckEmptyCart();
@@ -100,7 +100,7 @@ namespace Bovelo
             int newQuantity = Decimal.ToInt32(quantityBtn.Value);
             if (newQuantity == 0)
             {
-                CatalogForm.basket.Remove(item);
+                Bovelo.order.Remove(item);
                 MessageBox.Show("Item Removed");
                 UpdateForm();
             }
@@ -118,13 +118,13 @@ namespace Bovelo
         }
         private void empty_cart_btn_Click(object sender, EventArgs e)
         {
-            CatalogForm.order.Empty();
+            Bovelo.order.Empty();
             UpdateForm();
             CheckEmptyCart();
         }
         private void validate_btn_Click(object sender, EventArgs e)
         {
-            CatalogForm.order.Save();
+            Bovelo.order.Save();
             this.Close();
             this.DialogResult = DialogResult.OK;
         }
@@ -142,13 +142,12 @@ namespace Bovelo
 
         private void button_selectClient_Click(object sender, EventArgs e)
         {
-            var selectclient = new ClientSearch(); //opens new form
+            var selectclient = new ClientSearch();
             selectclient.Location = this.Location;
             selectclient.StartPosition = FormStartPosition.Manual;
             selectclient.FormClosing += delegate { this.Show(); };
             selectclient.Show();
             this.Hide();
-
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Bovelo
         public int quantity_chosen;
         public string size_chosen;
         public string color_chosen;
-        public static Order order = new Order();
 
         public CatalogForm()
         {
@@ -73,7 +72,7 @@ namespace Bovelo
             if (category_chosen != null && color_chosen != null && size_chosen != null && quantity_chosen >= 1)
             {
                 BuyableItem newItem = new BuyableItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
-                order.Add(newItem);
+                Bovelo.order.Add(newItem);
             }
             else
             {
