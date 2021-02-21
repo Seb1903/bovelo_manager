@@ -53,6 +53,7 @@
     <Compile Include="Bike.cs" />
     <Compile Include="Bovelo.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="BuyableItem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientSearch.cs">
       <SubType>Form</SubType>

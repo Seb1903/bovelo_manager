@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Bovelo
 {
     public class Order
     {
-        public List<Bike> listBike = new List<Bike>();
+        public List<BuyableItem> content;
         public int orderNumber;
         public string date;
         public string deliveryDate;
@@ -19,17 +21,55 @@ namespace Bovelo
         public Order()
         {
             this.date = DateTime.Now.ToString();
+            this.content = new List<BuyableItem>();
+        }
+        public void Add(BuyableItem newItem)
+        {
+            bool itemAlreadyInBasket = false;
+            foreach (BuyableItem item in content)
+            {
+                if (item.category == newItem.category && item.color == newItem.color && item.size == newItem.size)
+                {
+                    DialogResult result = MessageBox.Show("A bike with these features already exists. Do you still want to add it to basket?", "Cart Info", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        item.quantity += newItem.quantity;
+                        Console.WriteLine("Quantity Updated Successfully!");
+                    }
+                    itemAlreadyInBasket = true;
+                    break;
+                }
+            }
+            if (!itemAlreadyInBasket)
+            {
+                content.Add(newItem);
+                Console.WriteLine("Item Added successfully!");
+            }
+        }
+        public void Remove(BuyableItem buyableItem)
+        {
+            content.Remove(buyableItem);
+            Console.WriteLine("Item Removed");
+        }
+        public void Empty()
+        {
+            content.Clear();
+        }
+        public void AddClient(Client client)
+        {
             this.client = client;
         }
-
-        private int SetPrice(List<Bike> bikes)
+        public void Save()
         {
-            int SumPrice = 0;
-            foreach (Bike bike in bikes)
+            foreach (BuyableItem item in content)
             {
-                SumPrice += bike.price;
+                for (int i = 0; i < item.quantity; i++)
+                {
+                    item.Save();
+                } 
             }
-            return SumPrice;
+            this.Empty();
+            MessageBox.Show("Order Confirmed!"); 
         }
     }
 }
