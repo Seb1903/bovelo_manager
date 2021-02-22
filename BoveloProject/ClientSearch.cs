@@ -45,7 +45,8 @@ namespace Bovelo
         private void button1_Click(object sender, EventArgs e)
         {
             //instancier client
-            Client client = new Client(client_params[1], client_params[0], client_params[2], client_params[3], client_params[4], Convert.ToInt32(client_params[5]), Convert.ToInt32(client_params[6]), client_params[7], client_params[8]);
+            Client client = new Client(client_params[2], client_params[1], client_params[3], client_params[4], client_params[5], Convert.ToInt32(client_params[6]), Convert.ToInt32(client_params[7]), client_params[8], client_params[9]);
+            client.clientID = Convert.ToInt32(client_params[0]); //Assign ID, needed to save an order
             /*
             //set the client atribute of order class when order class will be fully implemented
             Order order.client=client;
@@ -64,7 +65,7 @@ namespace Bovelo
                 while (column < dataGridView1.ColumnCount)
                 {
                     client_info+=(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
-                    if (column > 0)
+                    if (column >= 0) //deletable condition 
                     {
                         client_params.Add(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
                     }

@@ -20,7 +20,9 @@ namespace Bovelo
 
         public Order()
         {
-            this.date = DateTime.Now.ToString();
+            this.date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //Formatted for SQL 
+            this.deliveryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //TEMPORARY implementatio, will be changed in next iterations
+
             this.content = new List<BuyableItem>();
         }
         public void Add(BuyableItem newItem)
@@ -61,15 +63,38 @@ namespace Bovelo
         }
         public void Save()
         {
-            foreach (BuyableItem item in content)
+            try //First we save the order in the order table. 
+            {
+                Database db = new Database();
+                string Query = "insert into table_order(id_client, order_date, order_deliveryDate, order_totalPrice)" +
+                    "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
+                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+                MySqlDataReader MyReader;
+                MyConn.Open();
+                MyReader = MyCommand.ExecuteReader();
+                Console.WriteLine("Order Saved");
+                while (MyReader.Read())
+                {
+                }
+                MyConn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            foreach (BuyableItem item in content) //then we save each Item in the Bike table 
             {
                 for (int i = 0; i < item.quantity; i++)
                 {
-                    item.Save();
-                } 
+                    item.Save();  
+                    // once the item is saved, we save the mapping to the order thanks to a trigger in the bike table(AFTER INSERT)
+                }
             }
             this.Empty();
             MessageBox.Show("Order Confirmed!"); 
         }
+        
     }
 }
