@@ -56,6 +56,7 @@ namespace Bovelo
         public void Empty()
         {
             content.Clear();
+            //Also delete selected client ? 
         }
         public void AddClient(Client client)
         {
