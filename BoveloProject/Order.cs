@@ -62,9 +62,10 @@ namespace Bovelo
             //Also delete selected client ? 
             updatePrice();
         }
-        public void AddClient(Client client)
+        public void AddClient(Client client, int clientID)
         {
             this.client = client;
+            this.client.clientID = clientID;
         }
 
         public void updatePrice()
@@ -83,7 +84,7 @@ namespace Bovelo
             try //First we save the order in the order table. 
             {
                 Database db = new Database();
-                string Query = "insert into table_order(id_client, order_date, order_deliveryDate, order_totalPrice)" +
+                string Query = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
                     "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
                 MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
