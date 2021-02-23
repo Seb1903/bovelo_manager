@@ -18,10 +18,10 @@ namespace Bovelo
         public int number;
         public int zipcode;
         public string adress;
-        public int phoneNumber;
+        public string phoneNumber;
         public string emailAdress;
 
-        public Client(string firstname, string lastname, string country, string city, string street, int number, int zipcode, int phoneNumber, string emailAdress)
+        public Client(string firstname, string lastname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAdress)
         {
             this.firstname = firstname;
             this.lastname = lastname;
