@@ -13,16 +13,19 @@ namespace Bovelo
 {
     public partial class ClientSearch : Form
     {
-        string search_criteria = "client_lastname";
-        string client_info = "";
-        List<string> client_params = new List<string>();
+        string searchCriteria = "client_lastname";
+        string clientInfo = "";
+        List<string> clientParams = new List<string>();
         public ClientSearch()
         {
             InitializeComponent();
-            dataGridView1.DataSource = GetData(String.Format("Select * From table_client"));
-            string[] search_criterions;
-            search_criterions = new string[] { "client_lastname", "client_firstname", "client_city", "client_street", "client_emailAddress" };
-            comboBox1.Items.AddRange(search_criterions);
+            DataTable datas;
+            datas = GetData(String.Format("Select * From table_client"));
+            datas.Columns.RemoveAt(0);
+            dataGridView1.DataSource = datas;
+            string[] searchCriterions;
+            searchCriterions = new string[] { "client_lastname", "client_firstname", "client_city", "client_street", "client_emailAddress" };
+            comboBox1.Items.AddRange(searchCriterions);
         }
 
         private static DataTable GetData(string sqlCommand)
@@ -45,34 +48,38 @@ namespace Bovelo
         private void button1_Click(object sender, EventArgs e)
         {
             //instancier client
-            Client client = new Client(client_params[2], client_params[1], client_params[3], client_params[4], client_params[5], Convert.ToInt32(client_params[6]), Convert.ToInt32(client_params[7]), client_params[8], client_params[9]);
-            client.clientID = Convert.ToInt32(client_params[0]); //Assign ID, needed to save an order
+            if (clientParams.Count != 0)
+            {
+                Client client = new Client(clientParams[0], clientParams[1], clientParams[2], clientParams[3], clientParams[4], Convert.ToInt32(clientParams[5]), Convert.ToInt32(clientParams[6]), clientParams[7], clientParams[8]);
+                label2.Text = "Client selected";
+            }
+            else
+            {
+                label2.Text = "Please select a client";
+            }
+            
             /*
             //set the client atribute of order class when order class will be fully implemented
             Order order.client=client;
             */
-            client_params.Clear();
-            Bovelo.order.client = client;    // defines the static client of the Bovelo application
-            this.Close();
+            clientParams.Clear();
+            //this.Close();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            client_info = "";
+            clientInfo = "";
             int column = 0;
             try
             {
                 while (column < dataGridView1.ColumnCount)
                 {
-                    client_info+=(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
-                    if (column >= 0) //deletable condition 
-                    {
-                        client_params.Add(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
-                    }
-                    client_info += " ";                  
+                    clientInfo+=(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
+                    clientParams.Add(dataGridView1.Rows[e.RowIndex].Cells[column].Value.ToString());
+                    clientInfo += " ";                  
                     column++;
                 }
-                label2.Text = client_info;
+                label2.Text = clientInfo;
             }
             catch{
                 label2.Text = "";
@@ -82,12 +89,16 @@ namespace Bovelo
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GetData(String.Format("Select * From table_client where {0} like '{1}%'",search_criteria ,textBox1.Text));
+            DataTable datas;
+            datas = GetData(String.Format("Select * From table_client where {0} like '{1}%'", searchCriteria, textBox1.Text));
+            datas.Columns.RemoveAt(0);
+            dataGridView1.DataSource = datas;
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            search_criteria = comboBox1.SelectedItem.ToString();
+            searchCriteria = comboBox1.SelectedItem.ToString();
         }
     }
 }
