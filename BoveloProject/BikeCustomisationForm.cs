@@ -10,33 +10,17 @@ using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public partial class CatalogForm : Form
+    public partial class BikeCustomisationForm : Form
     {
         public string category_chosen;
         public int quantity_chosen;
         public string size_chosen;
         public string color_chosen;
 
-        public CatalogForm()
+        public BikeCustomisationForm(string category)
         {
             InitializeComponent();
-        }
-        private void category_choice(object sender, EventArgs e)
-        {
-            if (category.Text == "City")
-            {
-                description.Text = "Add description city bike";
-            }
-            else if (category.Text == "Explorer")
-            {
-                description.Text = "Add description explorer bike";
-            }
-            else
-            {
-                description.Text = "Add description adventure bike";
-            }
-
-            category_chosen = category.Text;
+            this.category_chosen = category;
         }
         private void quantity_scroll(object sender, EventArgs e)
         {
@@ -90,7 +74,23 @@ namespace Bovelo
         }
         private void CatalogForm_Load(object sender, EventArgs e)
         {
-
+            if (category_chosen == "City")
+            {
+                description.Text = "This bike is most suitable for city trip and flat roads.";
+                thumbnailBox.Image = Properties.Resources.city_no_background;
+            }
+            else if (category_chosen == "Explorer")
+            {
+                description.Text = "You will explore incredible landscape and difficult roads like mountains." +
+                    "This bike is also suitable for city roads. ";
+                thumbnailBox.Image = Properties.Resources.explorer_no_background;
+            }
+            else if (category_chosen == "Adventure")
+            {
+                description.Text = "Adventure bike is made for traveling through hard roads around the world. " +
+                    "It is designed for adventurers.";
+                thumbnailBox.Image = Properties.Resources.adventure_no_background;
+            }
         }
     }
 }
