@@ -13,6 +13,8 @@ namespace Bovelo
         public string color { get; set; }
         public string size { get; set; }
         public int quantity { get; set; }
+        public int price { get; set; }
+
 
         public BuyableItem(string category, string color, string size, int quantity)
         {
@@ -20,6 +22,7 @@ namespace Bovelo
             this.color = color;
             this.size = size;
             this.quantity = quantity;
+            this.price = setPrice();
         }
         public void Save()
         {
@@ -43,6 +46,27 @@ namespace Bovelo
             {
                 Console.WriteLine(e.Message);
             }
+        }
+        private int setPrice()
+        {
+            int price = 0; 
+            if (this.category == "Adventure")
+            {
+                price = 300;
+            }
+            else if (this.category == "Explorer")
+            {
+                price = 350;
+            }
+            else if (this.category == "City")
+            {
+                price = 250;
+            }
+            if (this.size == "28\"")
+            {
+                price += 20;
+            }
+            return price;
         }
 
     }

@@ -20,6 +20,7 @@ namespace Bovelo
         {
             showBasket();
             showClient();
+            showPrice();
         }
         private void showBasket()
         {
@@ -39,25 +40,25 @@ namespace Bovelo
 
                 bikeColorLbl.Text = item.color;
                 bikeColorLbl.Top = position * 20 + 10;
-                bikeColorLbl.Left = 70;
+                bikeColorLbl.Left = 80;
                 bikeColorLbl.Size = new Size(60, 20);
 
                 bikeSizeLbl.Text = item.size;
                 bikeSizeLbl.Top = position * 20 + 10;
-                bikeSizeLbl.Left = 130;
+                bikeSizeLbl.Left = 150;
                 bikeSizeLbl.Size = new Size(30, 20);
 
                 quantityBtn.Value = item.quantity;
-                quantityBtn.Top = position * 20 + 10;
-                quantityBtn.Left = 160;
+                quantityBtn.Top = position * 20 + 8 ;
+                quantityBtn.Left = 200 ;
                 quantityBtn.Minimum = 0;
                 quantityBtn.Maximum = 100;
                 quantityBtn.Size = new Size (70, 20);
                 quantityBtn.ValueChanged += (sender, EventArgs) => { quantity_scroll(sender, EventArgs, item); };
 
                 removeBtn.Text = "Remove";
-                removeBtn.Top = position * 20 + 10;
-                removeBtn.Left = 240;
+                removeBtn.Top = position * 20 + 8 ;
+                removeBtn.Left = 290 ;
                 removeBtn.Size = new Size(70, 20);
                 removeBtn.Click += (sender, EventArgs) => { removeBtn_Click(sender, EventArgs, item); };
 
@@ -72,17 +73,18 @@ namespace Bovelo
         }
         private void UpdateForm()
         {
-            this.Controls.Clear();
-            this.InitializeComponent();
+            //this.Controls.Clear();
+            //this.InitializeComponent();
             showClient();
             showBasket();
+            showPrice();
         }
 
         private void showClient()
         {
             if (Bovelo.order.client != null)
             {
-                this.label_clientName.Text = Bovelo.order.client.lastname;
+                this.label_clientName.Text = Bovelo.order.client.firstname + " " + Bovelo.order.client.lastname ;
             }
             else
             {
@@ -90,6 +92,12 @@ namespace Bovelo
             }
 
         }
+        private void showPrice()
+        {
+            this.price.Text = "" + Bovelo.order.totalPrice + " €";
+        }
+
+
         private void CheckEmptyCart()
         {
             if (Bovelo.order.content.Count == 0)
@@ -100,12 +108,17 @@ namespace Bovelo
                     this.Close();
                     this.DialogResult = DialogResult.OK;
                 }
+                else
+                {
+                    UpdateForm();
+                }
             }
         }
         private void removeBtn_Click(object sender, EventArgs e, BuyableItem item)
         {
             Bovelo.order.Remove(item);
-            MessageBox.Show("Item Removed");
+            //MessageBox.Show("Item Removed");
+            this.StatusLabel1.Text = "Item Removed";
             UpdateForm();
             CheckEmptyCart();
         }
@@ -116,13 +129,17 @@ namespace Bovelo
             if (newQuantity == 0)
             {
                 Bovelo.order.Remove(item);
-                MessageBox.Show("Item Removed");
+                //MessageBox.Show("Item Removed");
+                this.StatusLabel1.Text = "Item Removed";
                 UpdateForm();
             }
             else
             {
                 item.quantity = newQuantity;
-                MessageBox.Show("New item quantity : " + item.quantity.ToString());
+                //MessageBox.Show("New item quantity : " + item.quantity.ToString());
+                this.StatusLabel1.Text = "New item quantity : " + item.quantity.ToString();
+                Bovelo.order.updatePrice();
+                showPrice();
             }
             CheckEmptyCart();
         }

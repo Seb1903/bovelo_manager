@@ -16,11 +16,11 @@ namespace Bovelo
         public string date;
         public string deliveryDate;
         public Client client;
-        public double totalPrice;
+        public double totalPrice = 0;
 
         public Order()
         {
-            this.date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //Formatted for SQL 
+            this.date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //Formatted for SQL        check for hours 
             this.deliveryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //TEMPORARY implementatio, will be changed in next iterations
 
             this.content = new List<BuyableItem>();
@@ -47,20 +47,36 @@ namespace Bovelo
                 content.Add(newItem);
                 Console.WriteLine("Item Added successfully!");
             }
+            updatePrice();
         }
         public void Remove(BuyableItem buyableItem)
         {
             content.Remove(buyableItem);
             Console.WriteLine("Item Removed");
+            updatePrice();
         }
+
         public void Empty()
         {
             content.Clear();
             //Also delete selected client ? 
+            updatePrice();
         }
         public void AddClient(Client client)
         {
             this.client = client;
+        }
+
+        public void updatePrice()
+        {
+            this.totalPrice = 0; 
+            foreach (BuyableItem item in content) //then we save each Item in the Bike table 
+            {
+                for (int i = 0; i < item.quantity; i++)
+                {
+                    this.totalPrice += item.price;
+                }
+            }
         }
         public void Save()
         {
