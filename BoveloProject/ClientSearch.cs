@@ -52,10 +52,8 @@ namespace Bovelo
             {
                 Client client = new Client(clientParams[0], clientParams[1], clientParams[2], clientParams[3], clientParams[4], Convert.ToInt32(clientParams[5]), Convert.ToInt32(clientParams[6]), clientParams[7], clientParams[8]);
                 label2.Text = "Client selected";
-                Console.WriteLine(client.phoneNumber);
                 DataTable id_data = GetData(String.Format("Select id From client where phoneNumber like '{0}'", client.phoneNumber));
                 string instr= id_data.Rows[0]["id"].ToString();
-                Console.WriteLine(instr);
                 int clientID = Convert.ToInt32(instr);
                 Bovelo.order.AddClient(client,clientID);
             }

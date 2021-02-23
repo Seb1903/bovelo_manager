@@ -76,21 +76,26 @@ namespace Bovelo
         {
             if (category_chosen == "City")
             {
-                description.Text = "This bike is most suitable for city trip and flat roads.";
+                description.Text = "This bike is most suitable for city trips and flat roads. Perfect for your everyday life ! ";
                 thumbnailBox.Image = Properties.Resources.city_no_background;
             }
             else if (category_chosen == "Explorer")
             {
-                description.Text = "You will explore incredible landscape and difficult roads like mountains." +
-                    "This bike is also suitable for city roads. ";
+                description.Text = "You will be able to explore incredible landscape and nice roads." +
+                    "This bike is also perfect for city roads. ";
                 thumbnailBox.Image = Properties.Resources.explorer_no_background;
             }
             else if (category_chosen == "Adventure")
             {
-                description.Text = "Adventure bike is made for traveling through hard roads around the world. " +
-                    "It is designed for adventurers.";
+                description.Text = " The Adventure bike is made for traveling through difficult roads around the world. " +
+                    "It is designed for adventurers !";
                 thumbnailBox.Image = Properties.Resources.adventure_no_background;
             }
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

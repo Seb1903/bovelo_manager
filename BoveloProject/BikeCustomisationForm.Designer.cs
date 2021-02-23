@@ -44,6 +44,7 @@ namespace Bovelo
             this.size2 = new System.Windows.Forms.RadioButton();
             this.description = new System.Windows.Forms.Label();
             this.thumbnailBox = new System.Windows.Forms.PictureBox();
+            this.button_back = new System.Windows.Forms.Button();
             this.table_colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).BeginInit();
@@ -60,7 +61,7 @@ namespace Bovelo
             this.table_colors.Controls.Add(this.color1, 0, 0);
             this.table_colors.Controls.Add(this.color2, 1, 0);
             this.table_colors.Controls.Add(this.color3, 2, 0);
-            this.table_colors.Location = new System.Drawing.Point(632, 62);
+            this.table_colors.Location = new System.Drawing.Point(632, 73);
             this.table_colors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.table_colors.Name = "table_colors";
             this.table_colors.RowCount = 1;
@@ -88,6 +89,7 @@ namespace Bovelo
             // 
             this.color2.Appearance = System.Windows.Forms.Appearance.Button;
             this.color2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.color2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color2.ForeColor = System.Drawing.Color.White;
             this.color2.Location = new System.Drawing.Point(149, 5);
             this.color2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -119,60 +121,68 @@ namespace Bovelo
             // 
             this.category_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.category_label.AutoSize = true;
-            this.category_label.Location = new System.Drawing.Point(20, 20);
+            this.category_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.category_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category_label.Location = new System.Drawing.Point(58, 17);
             this.category_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.category_label.Name = "category_label";
-            this.category_label.Size = new System.Drawing.Size(73, 20);
+            this.category_label.Size = new System.Drawing.Size(416, 31);
             this.category_label.TabIndex = 4;
             this.category_label.Text = "Category";
+            this.category_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // color_label
             // 
             this.color_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.color_label.AutoSize = true;
-            this.color_label.Location = new System.Drawing.Point(636, 20);
+            this.color_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.color_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.color_label.Location = new System.Drawing.Point(638, 17);
             this.color_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.color_label.Name = "color_label";
-            this.color_label.Size = new System.Drawing.Size(46, 20);
+            this.color_label.Size = new System.Drawing.Size(424, 31);
             this.color_label.TabIndex = 5;
             this.color_label.Text = "Color";
+            this.color_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // size_label
             // 
             this.size_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.size_label.AutoSize = true;
-            this.size_label.Location = new System.Drawing.Point(636, 202);
+            this.size_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.size_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.size_label.Location = new System.Drawing.Point(638, 217);
             this.size_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.size_label.Name = "size_label";
-            this.size_label.Size = new System.Drawing.Size(40, 20);
+            this.size_label.Size = new System.Drawing.Size(424, 34);
             this.size_label.TabIndex = 6;
             this.size_label.Text = "Size";
+            this.size_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // quantity_label
             // 
             this.quantity_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantity_label.AutoSize = true;
-            this.quantity_label.Location = new System.Drawing.Point(628, 357);
+            this.quantity_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.quantity_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantity_label.Location = new System.Drawing.Point(638, 354);
             this.quantity_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.quantity_label.Name = "quantity_label";
-            this.quantity_label.Size = new System.Drawing.Size(76, 20);
+            this.quantity_label.Size = new System.Drawing.Size(424, 33);
             this.quantity_label.TabIndex = 9;
-            this.quantity_label.Text = "Quantity :";
+            this.quantity_label.Text = "Quantity ";
+            this.quantity_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // quantity
             // 
             this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantity.Location = new System.Drawing.Point(627, 392);
+            this.quantity.Location = new System.Drawing.Point(638, 405);
             this.quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.quantity.MaximumSize = new System.Drawing.Size(452, 0);
-            this.quantity.MinimumSize = new System.Drawing.Size(452, 0);
+            this.quantity.MinimumSize = new System.Drawing.Size(50, 0);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(452, 26);
+            this.quantity.Size = new System.Drawing.Size(424, 26);
             this.quantity.TabIndex = 10;
             this.quantity.ValueChanged += new System.EventHandler(this.quantity_scroll);
             // 
@@ -209,7 +219,7 @@ namespace Bovelo
             // size1
             // 
             this.size1.AutoSize = true;
-            this.size1.Location = new System.Drawing.Point(627, 255);
+            this.size1.Location = new System.Drawing.Point(674, 282);
             this.size1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.size1.Name = "size1";
             this.size1.Size = new System.Drawing.Size(58, 24);
@@ -222,7 +232,7 @@ namespace Bovelo
             // size2
             // 
             this.size2.AutoSize = true;
-            this.size2.Location = new System.Drawing.Point(852, 255);
+            this.size2.Location = new System.Drawing.Point(926, 282);
             this.size2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.size2.Name = "size2";
             this.size2.Size = new System.Drawing.Size(58, 24);
@@ -234,7 +244,7 @@ namespace Bovelo
             // 
             // description
             // 
-            this.description.Location = new System.Drawing.Point(20, 392);
+            this.description.Location = new System.Drawing.Point(33, 392);
             this.description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(518, 157);
@@ -249,11 +259,23 @@ namespace Bovelo
             this.thumbnailBox.TabIndex = 18;
             this.thumbnailBox.TabStop = false;
             // 
+            // button_back
+            // 
+            this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_back.Location = new System.Drawing.Point(618, 514);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(86, 35);
+            this.button_back.TabIndex = 19;
+            this.button_back.Text = "Back";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // BikeCustomisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 620);
+            this.Controls.Add(this.button_back);
             this.Controls.Add(this.thumbnailBox);
             this.Controls.Add(this.description);
             this.Controls.Add(this.size2);
@@ -295,6 +317,7 @@ namespace Bovelo
         private System.Windows.Forms.RadioButton color2;
         private System.Windows.Forms.RadioButton color3;
         private System.Windows.Forms.PictureBox thumbnailBox;
+        private System.Windows.Forms.Button button_back;
     }
 }
 
