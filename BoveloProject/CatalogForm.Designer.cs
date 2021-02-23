@@ -29,7 +29,6 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
-            this.category = new System.Windows.Forms.ComboBox();
             this.table_colors = new System.Windows.Forms.TableLayoutPanel();
             this.color1 = new System.Windows.Forms.RadioButton();
             this.color2 = new System.Windows.Forms.RadioButton();
@@ -47,25 +46,6 @@ namespace Bovelo
             this.table_colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).BeginInit();
             this.SuspendLayout();
-            // 
-            // category
-            // 
-            this.category.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.category.FormattingEnabled = true;
-            this.category.Items.AddRange(new object[] {
-            "City",
-            "Explorer",
-            "Adventure"});
-            this.category.Location = new System.Drawing.Point(20, 62);
-            this.category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.category.MaximumSize = new System.Drawing.Size(448, 0);
-            this.category.MinimumSize = new System.Drawing.Size(448, 0);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(448, 28);
-            this.category.TabIndex = 1;
-            this.category.SelectedIndexChanged += new System.EventHandler(this.category_choice);
             // 
             // table_colors
             // 
@@ -275,7 +255,6 @@ namespace Bovelo
             this.Controls.Add(this.color_label);
             this.Controls.Add(this.category_label);
             this.Controls.Add(this.table_colors);
-            this.Controls.Add(this.category);
             this.MaximumSize = new System.Drawing.Size(1129, 676);
             this.MinimumSize = new System.Drawing.Size(1129, 676);
             this.Name = "CatalogForm";
@@ -288,7 +267,6 @@ namespace Bovelo
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox category;
         private System.Windows.Forms.TableLayoutPanel table_colors;
         private System.Windows.Forms.Label category_label;
         private System.Windows.Forms.Label color_label;

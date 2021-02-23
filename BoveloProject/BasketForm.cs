@@ -59,7 +59,8 @@ namespace Bovelo
                 removeBtn.Top = position * 20 + 10;
                 removeBtn.Left = 240;
                 removeBtn.Size = new Size(70, 20);
-                removeBtn.Click += (sender, EventArgs) => { removeBtn_Click(sender, EventArgs, item); };
+                removeBtn.Click += (sender, EventArgs) 
+                    => { removeBtn_Click(sender, EventArgs, item); };
 
                 position++;
 

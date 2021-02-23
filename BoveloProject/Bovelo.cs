@@ -10,8 +10,7 @@ namespace Bovelo
     public class Bovelo
     {
         public static Order order = new Order();
-        public static List<string> product;
-        //
+        public static List<string> catalogProduct = new List<string>() {"City", "Explorer", "Adventure"};
         public Bovelo()
         {
         }
@@ -19,7 +18,7 @@ namespace Bovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CatalogForm());
+            Application.Run(new NewCatalogForm());
         }
     }
 }
