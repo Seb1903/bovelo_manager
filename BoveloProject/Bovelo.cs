@@ -10,6 +10,7 @@ namespace Bovelo
     public class Bovelo
     {
         public static Order order = new Order();
+        public static List<string> product;
         public Bovelo()
         {
         }
