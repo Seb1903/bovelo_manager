@@ -58,9 +58,10 @@ namespace Bovelo
             content.Clear();
             //Also delete selected client ? 
         }
-        public void AddClient(Client client)
+        public void AddClient(Client client, int clientID)
         {
             this.client = client;
+            this.client.clientID = clientID;
         }
         public void Save()
         {
