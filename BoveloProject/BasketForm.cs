@@ -24,6 +24,12 @@ namespace Bovelo
         }
         private void showBasket()
         {
+            Panel panel1 = new Panel();
+            // panel1.Location = new Point(0, i * inputSeparation);
+            //panel1.AutoSize = true;
+            //panel1.BackColor = Color.AntiqueWhite;
+            this.Controls.Add(panel1);
+
             int position = 1;
             foreach (BuyableItem item in Bovelo.order.content)
             {
@@ -64,11 +70,12 @@ namespace Bovelo
 
                 position++;
 
-                this.Controls.Add(bikeCategoryLbl);
-                this.Controls.Add(bikeColorLbl);
-                this.Controls.Add(bikeSizeLbl);
-                this.Controls.Add(quantityBtn);
-                this.Controls.Add(removeBtn);
+                this.Controls.Add(panel1);
+                this.panel1.Controls.Add(bikeCategoryLbl);
+                this.panel1.Controls.Add(bikeColorLbl);
+                this.panel1.Controls.Add(bikeSizeLbl);
+                this.panel1.Controls.Add(quantityBtn);
+                this.panel1.Controls.Add(removeBtn);
             }
         }
         private void UpdateForm()
