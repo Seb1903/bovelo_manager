@@ -1,7 +1,7 @@
 ﻿
 namespace Bovelo
 {
-    partial class CatalogForm
+    partial class BikeCustomisationForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -43,8 +43,10 @@ namespace Bovelo
             this.size1 = new System.Windows.Forms.RadioButton();
             this.size2 = new System.Windows.Forms.RadioButton();
             this.description = new System.Windows.Forms.Label();
+            this.thumbnailBox = new System.Windows.Forms.PictureBox();
             this.table_colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).BeginInit();
             this.SuspendLayout();
             // 
             // table_colors
@@ -154,7 +156,7 @@ namespace Bovelo
             this.quantity_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.quantity_label.AutoSize = true;
-            this.quantity_label.Location = new System.Drawing.Point(505, 394);
+            this.quantity_label.Location = new System.Drawing.Point(628, 357);
             this.quantity_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.quantity_label.Name = "quantity_label";
             this.quantity_label.Size = new System.Drawing.Size(76, 20);
@@ -232,18 +234,27 @@ namespace Bovelo
             // 
             // description
             // 
-            this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(20, 148);
+            this.description.Location = new System.Drawing.Point(20, 392);
             this.description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(0, 20);
+            this.description.Size = new System.Drawing.Size(518, 157);
             this.description.TabIndex = 17;
             // 
-            // CatalogForm
+            // thumbnailBox
+            // 
+            this.thumbnailBox.Location = new System.Drawing.Point(58, 67);
+            this.thumbnailBox.Name = "thumbnailBox";
+            this.thumbnailBox.Size = new System.Drawing.Size(416, 310);
+            this.thumbnailBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.thumbnailBox.TabIndex = 18;
+            this.thumbnailBox.TabStop = false;
+            // 
+            // BikeCustomisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 620);
+            this.Controls.Add(this.thumbnailBox);
             this.Controls.Add(this.description);
             this.Controls.Add(this.size2);
             this.Controls.Add(this.size1);
@@ -257,10 +268,12 @@ namespace Bovelo
             this.Controls.Add(this.table_colors);
             this.MaximumSize = new System.Drawing.Size(1129, 676);
             this.MinimumSize = new System.Drawing.Size(1129, 676);
-            this.Name = "CatalogForm";
+            this.Name = "BikeCustomisationForm";
             this.Text = "Bovelo";
+            this.Load += new System.EventHandler(this.CatalogForm_Load);
             this.table_colors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +294,7 @@ namespace Bovelo
         private System.Windows.Forms.RadioButton color1;
         private System.Windows.Forms.RadioButton color2;
         private System.Windows.Forms.RadioButton color3;
+        private System.Windows.Forms.PictureBox thumbnailBox;
     }
 }
 

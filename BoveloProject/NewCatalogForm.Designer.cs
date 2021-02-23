@@ -31,15 +31,15 @@ namespace Bovelo
         {
             this.cityBox = new System.Windows.Forms.PictureBox();
             this.explorerBox = new System.Windows.Forms.PictureBox();
-            this.adventureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.adventureBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cityBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.explorerBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adventureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adventureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // cityBox
@@ -68,6 +68,30 @@ namespace Bovelo
             this.explorerBox.TabStop = false;
             this.explorerBox.Click += new System.EventHandler(this.explorerBox_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.Controls.Add(this.adventureBox, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cityBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.explorerBox, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 18);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1698, 972);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
             // adventureBox
             // 
             this.adventureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -77,32 +101,9 @@ namespace Bovelo
             this.adventureBox.Name = "adventureBox";
             this.adventureBox.Size = new System.Drawing.Size(560, 648);
             this.adventureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.adventureBox.TabIndex = 2;
+            this.adventureBox.TabIndex = 6;
             this.adventureBox.TabStop = false;
             this.adventureBox.Click += new System.EventHandler(this.adventureBox_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.adventureBox, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.explorerBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cityBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 18);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1698, 972);
-            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // label3
             // 
@@ -114,7 +115,7 @@ namespace Bovelo
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(558, 291);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Adventure";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -127,7 +128,7 @@ namespace Bovelo
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(556, 291);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Explorer";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -140,7 +141,7 @@ namespace Bovelo
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(556, 291);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "City";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewCatalogForm
@@ -154,8 +155,8 @@ namespace Bovelo
             this.Load += new System.EventHandler(this.NewCatalogForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cityBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.explorerBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adventureBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adventureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,10 +165,10 @@ namespace Bovelo
 
         private System.Windows.Forms.PictureBox cityBox;
         private System.Windows.Forms.PictureBox explorerBox;
-        private System.Windows.Forms.PictureBox adventureBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox adventureBox;
     }
 }

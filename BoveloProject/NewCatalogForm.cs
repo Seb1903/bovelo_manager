@@ -23,32 +23,26 @@ namespace Bovelo
         }
         private void cityBox_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            string productCategory = Bovelo.catalogProduct[0];
-            CatalogForm form = new CatalogForm(productCategory);
-            form.ShowDialog();
-            label1.Text = productCategory;
-            Console.WriteLine("Bike Selected: " + productCategory);
+            CustomizeBike("City");
         }
 
         private void explorerBox_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            string productCategory = Bovelo.catalogProduct[1];
-            CatalogForm form = new CatalogForm(productCategory);
-            form.ShowDialog();
-            label2.Text = productCategory;
-            Console.WriteLine("Bike Selected: " + productCategory);
+            CustomizeBike("Explorer");
         }
 
         private void adventureBox_Click(object sender, EventArgs e)
         {
+            CustomizeBike("Adventure");
+        }
+        private void CustomizeBike(string category)
+        {
             this.Hide();
-            string productCategory = Bovelo.catalogProduct[2];
-            CatalogForm form = new CatalogForm(productCategory);
-            form.ShowDialog();
-            label3.Text = productCategory;
-            Console.WriteLine("Bike Selected: " + productCategory);
+            BikeCustomisationForm form = new BikeCustomisationForm(category);
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
         }
     }
 }
