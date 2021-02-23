@@ -73,7 +73,6 @@ namespace Bovelo
             // 
             this.color1.Appearance = System.Windows.Forms.Appearance.Button;
             this.color1.BackColor = System.Drawing.Color.Black;
-            this.color1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.color1.ForeColor = System.Drawing.Color.White;
             this.color1.Location = new System.Drawing.Point(4, 5);
             this.color1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -90,7 +89,6 @@ namespace Bovelo
             // 
             this.color2.Appearance = System.Windows.Forms.Appearance.Button;
             this.color2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.color2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.color2.ForeColor = System.Drawing.Color.White;
             this.color2.Location = new System.Drawing.Point(149, 5);
             this.color2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -107,7 +105,6 @@ namespace Bovelo
             // 
             this.color3.Appearance = System.Windows.Forms.Appearance.Button;
             this.color3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.color3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.color3.Location = new System.Drawing.Point(294, 5);
             this.color3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.color3.Name = "color3";
