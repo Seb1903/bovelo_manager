@@ -230,7 +230,7 @@ namespace Bovelo
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.bike_list_label);
             this.Controls.Add(this.validate_btn);
-            this.MaximumSize = new System.Drawing.Size(1129, 676);
+            this.MaximumSize = new System.Drawing.Size(1700, 1000);
             this.MinimumSize = new System.Drawing.Size(1129, 676);
             this.Name = "BasketForm";
             this.Text = "Basket";

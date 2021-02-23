@@ -73,8 +73,8 @@ namespace Bovelo
         }
         private void UpdateForm()
         {
-            //this.Controls.Clear();
-            //this.InitializeComponent();
+            this.Controls.Clear();
+            this.InitializeComponent();
             showClient();
             showBasket();
             showPrice();
