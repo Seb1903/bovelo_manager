@@ -51,6 +51,7 @@ namespace Bovelo
             this.Statuslabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,11 +213,20 @@ namespace Bovelo
             this.statusStrip1.TabIndex = 26;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(28, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(798, 336);
+            this.panel1.TabIndex = 27;
+            // 
             // BasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 620);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.price);
             this.Controls.Add(this.label_price);
@@ -259,5 +269,6 @@ namespace Bovelo
         private ToolStripStatusLabel Statuslabel;
         private ToolStripStatusLabel StatusLabel1;
         private StatusStrip statusStrip1;
+        private Panel panel1;
     }
 }
