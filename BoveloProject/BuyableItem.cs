@@ -26,7 +26,7 @@ namespace Bovelo
             try
             {
                 Database db = new Database();
-                string Query = "insert into table_bike(bike_type, bike_color, bike_size)" +
+                string Query = "insert into bike(type, color, size)" +
                     "values('" + this.category + "','" + this.color + "','" + this.size + "');";
                 MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);

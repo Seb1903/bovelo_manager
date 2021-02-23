@@ -42,7 +42,7 @@ namespace Bovelo
 
                 //This is my connection string i have assigned the database file address path  
                 //This is my insert query in which i am taking input from the user through windows forms  
-                string Query = "insert into table_client(client_lastname,client_firstname,client_country,client_city,client_street,client_number,client_zipcode,client_phoneNumber,client_emailAddress) values('" + this.lastname + "','" + this.firstname + "','" + this.country+ "','" + this.city+ "','" + this.street+ "','" + this.number + "','" + this.zipcode + "','" + this.phoneNumber + "','" + emailAdress + "');";
+                string Query = "insert into client(lastname,firstname,country,city,street,number,zipcode,phoneNumber,emailAddress) values('" + this.lastname + "','" + this.firstname + "','" + this.country+ "','" + this.city+ "','" + this.street+ "','" + this.number + "','" + this.zipcode + "','" + this.phoneNumber + "','" + emailAdress + "');";
                 //This is  MySqlConnection here i have created the object and pass my connection string.  
                 MySqlConnection MyConn2 = new MySqlConnection(db.MyConnection);
                 //This is command class which will handle the query and connection object.  

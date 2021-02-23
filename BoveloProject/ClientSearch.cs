@@ -13,18 +13,18 @@ namespace Bovelo
 {
     public partial class ClientSearch : Form
     {
-        string searchCriteria = "client_lastname";
+        string searchCriteria = "lastname";
         string clientInfo = "";
         List<string> clientParams = new List<string>();
         public ClientSearch()
         {
             InitializeComponent();
             DataTable datas;
-            datas = GetData(String.Format("Select * From table_client"));
+            datas = GetData(String.Format("Select * From client"));
             datas.Columns.RemoveAt(0);
             dataGridView1.DataSource = datas;
             string[] searchCriterions;
-            searchCriterions = new string[] { "client_lastname", "client_firstname", "client_city", "client_street", "client_emailAddress" };
+            searchCriterions = new string[] { "lastname", "firstname", "city", "street", "emailAddress" };
             comboBox1.Items.AddRange(searchCriterions);
         }
 
@@ -53,8 +53,8 @@ namespace Bovelo
                 Client client = new Client(clientParams[0], clientParams[1], clientParams[2], clientParams[3], clientParams[4], Convert.ToInt32(clientParams[5]), Convert.ToInt32(clientParams[6]), clientParams[7], clientParams[8]);
                 label2.Text = "Client selected";
                 Console.WriteLine(client.phoneNumber);
-                DataTable id_data = GetData(String.Format("Select id_client From table_client where client_phoneNumber like '{0}'", client.phoneNumber));
-                string instr= id_data.Rows[0]["id_client"].ToString();
+                DataTable id_data = GetData(String.Format("Select id From client where phoneNumber like '{0}'", client.phoneNumber));
+                string instr= id_data.Rows[0]["id"].ToString();
                 Console.WriteLine(instr);
                 int clientID = Convert.ToInt32(instr);
                 Bovelo.order.AddClient(client,clientID);
@@ -70,7 +70,7 @@ namespace Bovelo
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            client_info = "";
+            clientInfo = "";
             int column = 0;
             try
             {
@@ -92,7 +92,7 @@ namespace Bovelo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DataTable datas;
-            datas = GetData(String.Format("Select * From table_client where {0} like '{1}%'", searchCriteria, textBox1.Text));
+            datas = GetData(String.Format("Select * From client where {0} like '{1}%'", searchCriteria, textBox1.Text));
             datas.Columns.RemoveAt(0);
             dataGridView1.DataSource = datas;
             

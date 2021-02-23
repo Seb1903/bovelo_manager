@@ -30,7 +30,7 @@ namespace Bovelo
                 conn.Open();
                 Console.WriteLine("Connected");
 
-                string sql = "SELECT * FROM table_client;";
+                string sql = "SELECT * FROM client;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
