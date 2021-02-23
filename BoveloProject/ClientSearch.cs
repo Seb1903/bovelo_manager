@@ -70,8 +70,7 @@ namespace Bovelo
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            clientInfo = "";
-            clientParams.Clear();
+            client_info = "";
             int column = 0;
             try
             {
