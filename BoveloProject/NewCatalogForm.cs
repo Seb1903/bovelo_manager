@@ -44,5 +44,16 @@ namespace Bovelo
             form.FormClosing += delegate { this.Show(); };
             form.Show();
         }
+
+        private void basketBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BasketForm form = new BasketForm();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+
+        }
     }
 }

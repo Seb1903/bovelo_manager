@@ -22,7 +22,6 @@ namespace Bovelo
         {
             this.date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //Formatted for SQL        check for hours 
             this.deliveryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); //TEMPORARY implementatio, will be changed in next iterations
-
             this.content = new List<BuyableItem>();
         }
         public void Add(BuyableItem newItem)
@@ -81,37 +80,45 @@ namespace Bovelo
         }
         public void Save()
         {
-            try //First we save the order in the order table. 
+            if (content.Count >= 1 && client != null)
             {
-                Database db = new Database();
-                string Query = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
-                    "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
-                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
-                MySqlDataReader MyReader;
-                MyConn.Open();
-                MyReader = MyCommand.ExecuteReader();
-                Console.WriteLine("Order Saved");
-                while (MyReader.Read())
+                try //First we save the order in the order table. 
                 {
+                    Database db = new Database();
+                    string Query = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
+                        "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
+                    MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                    MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+                    MySqlDataReader MyReader;
+                    MyConn.Open();
+                    MyReader = MyCommand.ExecuteReader();
+                    Console.WriteLine("Order Saved");
+                    while (MyReader.Read())
+                    {
+                    }
+                    MyConn.Close();
                 }
-                MyConn.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
-            foreach (BuyableItem item in content) //then we save each Item in the Bike table 
-            {
-                for (int i = 0; i < item.quantity; i++)
+                foreach (BuyableItem item in content) //then we save each Item in the Bike table 
                 {
-                    item.Save();  
-                    // once the item is saved, we save the mapping to the order thanks to a trigger in the bike table(AFTER INSERT)
+                    for (int i = 0; i < item.quantity; i++)
+                    {
+                        item.Save();
+                        // once the item is saved, we save the mapping to the order thanks to a trigger in the bike table(AFTER INSERT)
+                    }
                 }
+                this.Empty();
+                this.client = null;
+                MessageBox.Show("Order Confirmed!");
             }
-            this.Empty();
-            MessageBox.Show("Order Confirmed!"); 
+            else
+            {
+                MessageBox.Show("Cart is empty or no client is selected");
+            }
         }
         
     }

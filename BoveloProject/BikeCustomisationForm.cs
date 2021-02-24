@@ -57,7 +57,6 @@ namespace Bovelo
             {
                 BuyableItem newItem = new BuyableItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
                 Bovelo.order.Add(newItem);
-                this.Close();
             }
             else
             {
@@ -69,7 +68,7 @@ namespace Bovelo
             BasketForm basketForm = new BasketForm();
             basketForm.Location = this.Location;
             basketForm.StartPosition = FormStartPosition.Manual;
-            basketForm.FormClosing += delegate { this.Show(); };
+            basketForm.FormClosing += delegate { this.Close(); };
             basketForm.Show();
             this.Hide();
         }

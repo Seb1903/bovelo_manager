@@ -165,7 +165,10 @@ namespace Bovelo
         private void validate_btn_Click(object sender, EventArgs e)
         {
             Bovelo.order.Save();
-            this.Close();
+            if (Bovelo.order.content.Count == 0)
+            {
+                this.Close();
+            }
             this.DialogResult = DialogResult.OK;
         }
 
