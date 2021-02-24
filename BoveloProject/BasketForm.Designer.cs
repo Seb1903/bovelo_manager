@@ -218,7 +218,7 @@ namespace Bovelo
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(28, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 336);
+            this.panel1.Size = new System.Drawing.Size(882, 336);
             this.panel1.TabIndex = 27;
             // 
             // BasketForm

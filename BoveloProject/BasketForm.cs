@@ -36,6 +36,7 @@ namespace Bovelo
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
+                Label bikePriceLbl = new Label();
                 NumericUpDown quantityBtn = new NumericUpDown();
                 Button removeBtn = new Button();
 
@@ -69,6 +70,13 @@ namespace Bovelo
                 removeBtn.Click += (sender, EventArgs) 
                     => { removeBtn_Click(sender, EventArgs, item); };
 
+                bikePriceLbl.Text = "" + item.price + " €";
+                bikePriceLbl.Top = position * 20 + 12;
+                bikePriceLbl.Left = 380;
+                bikePriceLbl.Size = new Size(50, 20);
+                bikePriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+
                 position++;
 
                 this.Controls.Add(panel1);
@@ -77,6 +85,7 @@ namespace Bovelo
                 this.panel1.Controls.Add(bikeSizeLbl);
                 this.panel1.Controls.Add(quantityBtn);
                 this.panel1.Controls.Add(removeBtn);
+                this.panel1.Controls.Add(bikePriceLbl);
             }
         }
         private void UpdateForm()
