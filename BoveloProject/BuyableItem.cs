@@ -9,11 +9,11 @@ namespace Bovelo
 {
     public class BuyableItem
     {
-        public string category { get; set; }
-        public string color { get; set; }
-        public string size { get; set; }
-        public int quantity { get; set; }
-        public int price { get; set; }
+        public string category;
+        public string color;
+        public string size;
+        public int quantity;
+        public int price;
 
 
         public BuyableItem(string category, string color, string size, int quantity)
