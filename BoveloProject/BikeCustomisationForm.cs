@@ -57,6 +57,7 @@ namespace Bovelo
             {
                 BuyableItem newItem = new BuyableItem(category_chosen, color_chosen, size_chosen, quantity_chosen);
                 Bovelo.order.Add(newItem);
+                this.Close();
             }
             else
             {
