@@ -12,7 +12,6 @@ namespace Bovelo
 {
     public partial class NewCatalogForm : Form
     {
-
         public NewCatalogForm()
         {
             InitializeComponent();
@@ -44,7 +43,6 @@ namespace Bovelo
             form.FormClosing += delegate { this.Show(); };
             form.Show();
         }
-
         private void basketBox_Click(object sender, EventArgs e)
         {
             this.Hide();

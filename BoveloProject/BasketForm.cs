@@ -76,10 +76,8 @@ namespace Bovelo
                 bikePriceLbl.Size = new Size(50, 20);
                 bikePriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-
                 position++;
 
-                this.Controls.Add(panel1);
                 this.panel1.Controls.Add(bikeCategoryLbl);
                 this.panel1.Controls.Add(bikeColorLbl);
                 this.panel1.Controls.Add(bikeSizeLbl);
@@ -96,7 +94,6 @@ namespace Bovelo
             showBasket();
             showPrice();
         }
-
         private void showClient()
         {
             if (Bovelo.order.client != null)
@@ -107,14 +104,11 @@ namespace Bovelo
             {
                 this.label_clientName.Text = "";
             }
-
         }
         private void showPrice()
         {
             this.price.Text = "" + Bovelo.order.totalPrice + " €";
         }
-
-
         private void CheckEmptyCart()
         {
             if (Bovelo.order.content.Count == 0)
@@ -180,9 +174,6 @@ namespace Bovelo
             }
             this.DialogResult = DialogResult.OK;
         }
-
-
-
         private void select_Client_Click(object sender, EventArgs e)
         {
             var selectclient = new ClientSearch();
@@ -192,7 +183,6 @@ namespace Bovelo
             selectclient.Show();
             this.Hide();
         }
-
         private void new_Client_Click(object sender, EventArgs e)
         {
             var newclient = new AddClient();

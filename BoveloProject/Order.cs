@@ -54,7 +54,6 @@ namespace Bovelo
             Console.WriteLine("Item Removed");
             updatePrice();
         }
-
         public void Empty()
         {
             content.Clear();
@@ -66,7 +65,6 @@ namespace Bovelo
             this.client = client;
             this.client.clientID = clientID;
         }
-
         public void updatePrice()
         {
             this.totalPrice = 0; 
@@ -120,6 +118,5 @@ namespace Bovelo
                 MessageBox.Show("Cart is empty or no client is selected");
             }
         }
-        
     }
 }
