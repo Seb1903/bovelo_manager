@@ -425,7 +425,7 @@ namespace Bovelo
             this.monday_label.Name = "monday_label";
             this.monday_label.Size = new System.Drawing.Size(41, 13);
             this.monday_label.TabIndex = 6;
-            this.monday_label.Text = "label16";
+            this.monday_label.Text = "";
             // 
             // tuesday_label
             // 
@@ -434,7 +434,7 @@ namespace Bovelo
             this.tuesday_label.Name = "tuesday_label";
             this.tuesday_label.Size = new System.Drawing.Size(41, 13);
             this.tuesday_label.TabIndex = 7;
-            this.tuesday_label.Text = "label17";
+            this.tuesday_label.Text = "";
             // 
             // wednesday_label
             // 
@@ -443,7 +443,7 @@ namespace Bovelo
             this.wednesday_label.Name = "wednesday_label";
             this.wednesday_label.Size = new System.Drawing.Size(41, 13);
             this.wednesday_label.TabIndex = 8;
-            this.wednesday_label.Text = "label18";
+            this.wednesday_label.Text = "";
             // 
             // thursday_label
             // 
@@ -452,7 +452,7 @@ namespace Bovelo
             this.thursday_label.Name = "thursday_label";
             this.thursday_label.Size = new System.Drawing.Size(41, 13);
             this.thursday_label.TabIndex = 7;
-            this.thursday_label.Text = "label19";
+            this.thursday_label.Text = "";
             // 
             // friday_label
             // 
@@ -461,7 +461,7 @@ namespace Bovelo
             this.friday_label.Name = "friday_label";
             this.friday_label.Size = new System.Drawing.Size(41, 13);
             this.friday_label.TabIndex = 7;
-            this.friday_label.Text = "label20";
+            this.friday_label.Text = "";
             // 
             // ManagerForm
             // 
