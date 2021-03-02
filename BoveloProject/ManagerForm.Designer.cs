@@ -65,6 +65,7 @@ namespace Bovelo
             this.day_planning_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.day_planning_panel.AutoScroll = true;
             this.day_planning_panel.Controls.Add(this.dateTimePicker1);
             this.day_planning_panel.Controls.Add(this.button1);
             this.day_planning_panel.Controls.Add(this.label3);

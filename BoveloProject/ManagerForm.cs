@@ -24,6 +24,8 @@ namespace Bovelo
             int position = 1;
             //  foreach ()
             //  {
+            for(int i = 0; i <= 20; i++)
+            {
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
@@ -54,13 +56,14 @@ namespace Bovelo
                 validateBtn.Left = 400;
                 validateBtn.Size = new Size(80, 23);
 
-                position++;
+                position = position + 2;
 
                 this.day_planning_panel.Controls.Add(bikeCategoryLbl);
                 this.day_planning_panel.Controls.Add(bikeColorLbl);
                 this.day_planning_panel.Controls.Add(bikeSizeLbl);
                 this.day_planning_panel.Controls.Add(newDatePicker);
                 this.day_planning_panel.Controls.Add(validateBtn);
+            }
             // }
         }
 
