@@ -24,6 +24,7 @@ namespace Bovelo
             int position = 1;
             //  foreach ()
             //  {
+            //
             for(int i = 0; i <= 20; i++)
             {
                 Label bikeCategoryLbl = new Label();
