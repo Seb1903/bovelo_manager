@@ -15,9 +15,11 @@ namespace Bovelo
         }
         public void Run()
         {
-            Application.EnableVisualStyles();
+            /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new NewCatalogForm());
+            */
+            Bike bike = new Bike(0);
         }
     }
 }

@@ -7,55 +7,28 @@ using System.Drawing;
 
 namespace Bovelo
 {
+    /*
+        Every single argument get requested in database and placed as a 
+        parameter in the constructor.
+    
+        The part gets fours parameters
+            > The name of the part
+            > The color
+            > The quantity
+            > The characteristics : contains bike specific specifications
+    */
     public class Part
     {
-    }
+        public string name;
+        public string color;
+        public int quantity;
+        public string characteristic;
 
-    public class Tire : Part 
-    {
-        public int size;
-        public string grooves; 
-    }
-     public class Frame : Part 
-    {
-        public string rigidity;
-        public int size;
-        public string color;   
-    }
-    public class Luggage_rack : Part 
-    {
-
-    }
-    public class Lighting : Part
-    {
-
-    }
-    public class Mudguard : Part 
-    {
-        public string type;
-    }
-
-    public class Seat : Part
-    { 
-    
-    }
-    
-    public class Pedal : Part 
-    { 
-    } 
-    public class Brakes : Part 
-    { 
-    } 
-    public class Handbar : Part 
-    {
-
-    } 
-
-    public class Basic_Kit : Part   //Might rather use a Composition relationship instead of aggregation 
-    {
-        public Seat seat;
-        public Pedal pedal;
-        public Brakes brakes;
-        public Handbar handbar;
+        public Part(string DB_name, string DB_color, int DB_quantity, string DB_characterictic) {
+            name = DB_name;
+            color = DB_color;
+            quantity = DB_quantity;
+            characteristic = DB_characterictic;
+        }
     }
 }
