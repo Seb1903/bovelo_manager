@@ -20,7 +20,7 @@ namespace Bovelo
     {
         public string rigidity;
         public int size;
-        public Color color;   
+        public string color;   
     }
     public class Luggage_rack : Part 
     {

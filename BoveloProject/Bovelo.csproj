@@ -58,7 +58,6 @@
     <Compile Include="BikeCustomisationForm.Designer.cs">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
     <Compile Include="BuyableItem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientSearch.cs">
@@ -67,6 +66,7 @@
     <Compile Include="ClientSearch.Designer.cs">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="NewCatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>

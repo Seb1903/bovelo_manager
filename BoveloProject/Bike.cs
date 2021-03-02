@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace Bovelo
-{ 
-    public abstract class Bike    //Noir, Bleu foncé et bleu clair     // Pas de prix des pièces  // couleurs pour garde-boue et cadre 
+{
+    /*
+        - Colors
+            > Black
+            > Dark blue
+            > Light blue
+        - Pas de prix des pièces
+        - Couleurs pour
+            > le garde-boue
+            > le cadre
+    */
+    public class Bike
     {
         public int serial_number;
         public List<Part> PartList = new List<Part>();  //create Part 
@@ -15,53 +25,55 @@ namespace Bovelo
 
         public Frame frame;
         public Tire tire;
-        public Basic_Kit Basic_Kit;
-        
-        public Bike(Frame frame, Tire tire, Basic_Kit basic_Kit)
-        {
-            this.frame = frame;
-            this.tire = tire;
-            this.Basic_Kit = basic_Kit; 
-        }
-    }
-    public class Roadbike : Bike
-    {
-        public Luggage_rack luggage_rack ;
-        public Lighting lighting ;
-        public Mudguard mudguard ;
-        public Roadbike(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(frame,tire,basic_Kit)
-        {
-            this.frame.color = color;
-            this.frame.size = size;
-        }
-    }
-    public class Explorer : Roadbike
-    {
-        public Explorer(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(size, color, frame, tire, basic_Kit,luggage_Rack,lighting,mudguard)
-        {
-            this.tire.size = 2;     // 1 = normal and 2 = large 
-            this.tire.grooves = "very groovy"; // to be changed 
-            this.mudguard.type = "Adapted";
-        }
-    }
+        public Basic_Kit basic_Kit;
+        public Luggage_rack luggage_rack;
+        public Lighting lighting;
+        public Mudguard mudguard;
 
-    public class City : Roadbike
-    {
-        public City(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(size, color, frame, tire, basic_Kit, luggage_Rack, lighting, mudguard)
+        //public Dictionary<string,object> data
+
+        private Bike()
         {
-            this.tire.size = 1; 
-            //necessary to define specific values for mudguard type and tire grooves ?
+            frame = new Frame();
+            tire = new Tire();
+            basic_Kit = new Basic_Kit();
         }
 
-    }
-
-    public class Adventure : Bike
-    {
-        public Adventure(int size, Color color,Frame frame, Tire tire, Basic_Kit basic_Kit) : base(frame, tire, basic_Kit)
+        public static Bike RoadBike(int frameSize, string frameColor)
         {
-            this.frame.color = color;
-            this.frame.size = size;
-            this.frame.rigidity = "Reinforced";
+            var b = new Bike();
+            b.frame.color = frameColor;
+            b.frame.size = frameSize;
+
+            return b;
+        }
+
+        public static Bike Explorer(int tireSize, string frameColor, int frameSize)
+        {
+            var rb = RoadBike(frameSize, frameColor);
+            rb.tire.size = tireSize;
+            rb.tire.grooves = "very groovy";
+            rb.mudguard.type = "adapted";
+
+            return rb;
+        }
+
+        public static Bike City(int tireSize, string frameColor, int frameSize)
+        {
+            var cb = RoadBike(frameSize, frameColor);
+            cb.tire.size = frameSize;
+
+            return cb;
+        }
+
+        public static Bike Adventure(int tireSize, string frameColor, int frameSize)
+        {
+            var ab = RoadBike(frameSize, frameColor);
+            ab.frame.color = frameColor;
+            ab.frame.size = frameSize;
+            ab.frame.rigidity = "reinforced";
+
+            return ab;
         }
     }
 }
