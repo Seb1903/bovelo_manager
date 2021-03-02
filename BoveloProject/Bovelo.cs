@@ -19,7 +19,7 @@ namespace Bovelo
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new NewCatalogForm());
             */
-            Bike bike = new Bike(0);
+            Bike bike = new Bike(1);
         }
     }
 }
