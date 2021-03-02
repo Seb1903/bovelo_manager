@@ -82,6 +82,8 @@ namespace Bovelo
             ShowDayPlanning(day_panel3);
             ShowDayPlanning(day_panel4);
             ShowDayPlanning(day_panel5);
+            DateTime actualTime = DateTime.Now;
+            UpdateFormDate(actualTime);
         }
 
         private void date_changed_calendar(object sender, DateRangeEventArgs e)
