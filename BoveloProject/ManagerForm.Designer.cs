@@ -526,10 +526,10 @@ namespace Bovelo
         private Label label13;
         private Label label14;
         private Label label15;
-        private Label monday_label;
-        private Label tuesday_label;
-        private Label wednesday_label;
-        private Label thursday_label;
-        private Label friday_label;
+        public Label monday_label;
+        public Label tuesday_label;
+        public Label wednesday_label;
+        public Label thursday_label;
+        public Label friday_label;
     }
 }

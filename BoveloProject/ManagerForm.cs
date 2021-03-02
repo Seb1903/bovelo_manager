@@ -90,6 +90,98 @@ namespace Bovelo
             Console.WriteLine(month_calendar.SelectionRange.Start.Year);
 
             DateTime date_chosen = month_calendar.SelectionRange.Start.Date;
+            UpdateFormDate(date_chosen);
+        }
+        private void UpdateFormDate(DateTime date)
+        {
+            DateTime dateMonday;
+            DateTime dateTuesday;
+            DateTime dateWednesday;
+            DateTime dateThursday;
+            DateTime dateFriday;
+            DateTime dateSaturday;
+            DateTime dateSunday;
+
+            switch (date.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    dateMonday = date.AddDays(0);
+                    dateTuesday = date.AddDays(1);
+                    dateWednesday = date.AddDays(2);
+                    dateThursday = date.AddDays(3);
+                    dateFriday = date.AddDays(4);
+                    dateSaturday = date.AddDays(5);
+                    dateSunday = date.AddDays(6);
+                    break;
+                case DayOfWeek.Tuesday:
+                    dateMonday = date.AddDays(-1);
+                    dateTuesday = date.AddDays(0);
+                    dateWednesday = date.AddDays(1);
+                    dateThursday = date.AddDays(2);
+                    dateFriday = date.AddDays(3);
+                    dateSaturday = date.AddDays(4);
+                    dateSunday = date.AddDays(5);
+                    break;
+                case DayOfWeek.Wednesday:
+                    dateMonday = date.AddDays(-2);
+                    dateTuesday = date.AddDays(-1);
+                    dateWednesday = date.AddDays(0);
+                    dateThursday = date.AddDays(1);
+                    dateFriday = date.AddDays(2);
+                    dateSaturday = date.AddDays(3);
+                    dateSunday = date.AddDays(4);
+                    break;
+                case DayOfWeek.Thursday:
+                    dateMonday = date.AddDays(-3);
+                    dateTuesday = date.AddDays(-2);
+                    dateWednesday = date.AddDays(-1);
+                    dateThursday = date.AddDays(0);
+                    dateFriday = date.AddDays(1);
+                    dateSaturday = date.AddDays(2);
+                    dateSunday = date.AddDays(3);
+                    break;
+                case DayOfWeek.Friday:
+                    dateMonday = date.AddDays(-4);
+                    dateTuesday = date.AddDays(-3);
+                    dateWednesday = date.AddDays(-2);
+                    dateThursday = date.AddDays(-1);
+                    dateFriday = date.AddDays(0);
+                    dateSaturday = date.AddDays(1);
+                    dateSunday = date.AddDays(2);
+                    break;
+                case DayOfWeek.Saturday:
+                    dateMonday = date.AddDays(-5);
+                    dateTuesday = date.AddDays(-4);
+                    dateWednesday = date.AddDays(-3);
+                    dateThursday = date.AddDays(-2);
+                    dateFriday = date.AddDays(-1);
+                    dateSaturday = date.AddDays(0);
+                    dateSunday = date.AddDays(1);
+                    break;
+                case DayOfWeek.Sunday:
+                    dateMonday = date.AddDays(-6);
+                    dateTuesday = date.AddDays(-5);
+                    dateWednesday = date.AddDays(-4);
+                    dateThursday = date.AddDays(-3);
+                    dateFriday = date.AddDays(-2);
+                    dateSaturday = date.AddDays(-1);
+                    dateSunday = date.AddDays(0);
+                    break;
+                default:
+                    dateMonday = date.AddDays(0);
+                    dateTuesday = date.AddDays(1);
+                    dateWednesday = date.AddDays(2);
+                    dateThursday = date.AddDays(3);
+                    dateFriday = date.AddDays(4);
+                    dateSaturday = date.AddDays(5);
+                    dateSunday = date.AddDays(6);
+                    break;
+            }
+            this.monday_label.Text = dateMonday.ToString("dddd, dd MMMM");
+            this.tuesday_label.Text = dateTuesday.ToString("dddd, dd MMMM");
+            this.wednesday_label.Text = dateWednesday.ToString("dddd, dd MMMM");
+            this.thursday_label.Text = dateThursday.ToString("dddd, dd MMMM");
+            this.friday_label.Text = dateFriday.ToString("dddd, dd MMMM");
         }
     }
 }
