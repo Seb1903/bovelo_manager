@@ -46,26 +46,29 @@ namespace Bovelo
                 content.Add(newItem);
                 Console.WriteLine("Item Added successfully!");
             }
-            updatePrice();
+            UpdateDeliveryTime();
+            UpdatePrice();
         }
         public void Remove(BuyableItem buyableItem)
         {
             content.Remove(buyableItem);
             Console.WriteLine("Item Removed");
-            updatePrice();
+            UpdateDeliveryTime();
+            UpdatePrice();
         }
         public void Empty()
         {
             content.Clear();
             //Also delete selected client ? 
-            updatePrice();
+            UpdateDeliveryTime();
+            UpdatePrice();
         }
         public void AddClient(Client client, int clientID)
         {
             this.client = client;
             this.client.clientID = clientID;
         }
-        public void updatePrice()
+        public void UpdatePrice()
         {
             this.totalPrice = 0; 
             foreach (BuyableItem item in content) //then we save each Item in the Bike table 
@@ -75,6 +78,27 @@ namespace Bovelo
                     this.totalPrice += item.price;
                 }
             }
+        }
+        public void UpdateDeliveryTime()
+        {
+            // get delay in days from data base planning
+            Database db = new Database();
+            string Query = ""; // update query
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+            MySqlDataReader MyReader;
+            MyConn.Open();
+            MyReader = MyCommand.ExecuteReader();
+            Console.WriteLine("Order Saved");
+            while (MyReader.Read())
+            {
+            }
+            MyConn.Close();
+
+            int delay = 3; //determine delay from db
+
+            DateTime newDeliveryDate = DateTime.Now.AddDays(delay);
+            this.deliveryDate = newDeliveryDate.ToString("yyyy-MM-dd HH:mm:ss.fff");
         }
         public void Save()
         {

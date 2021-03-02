@@ -11,6 +11,7 @@ namespace Bovelo
     public class Bike
     {
         public int serial_number;
+        public string type;
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
         public int price;
         public string size;
@@ -18,16 +19,17 @@ namespace Bovelo
         public Bike(int id)
         {
             this.serial_number = id;
-            string query1 = $"SELECT * FROM bovelo.bike WHERE id={serial_number}";
+            string query1 = $"SELECT * FROM bike WHERE id={serial_number}";
             MySqlDataReader reader1 = GetData(query1);
-            string type = reader1.GetString(1);
+            this.type = reader1.GetString(1);
             this.size = reader1.GetString(3);
 
-            /*string query2 = $"SELECT * FROM bovelo.model_parts WHERE model={type}";
-            MySqlDataReader reader2 = GetData(query2);*/
-       
-            Console.WriteLine("Size : " + size);
-            Console.WriteLine("Type : " + type);
+            string query2 = $"SELECT * FROM model_parts WHERE model={type}";
+            MySqlDataReader reader2 = GetData(query2);
+            for (int i = 1; i < reader2.FieldCount; i++)
+            {
+                //partList.Add(reader2.GetName(i), new Part(reader2.GetName(i), ));
+            }
         }
         private static MySqlDataReader GetData(string query)
         {
