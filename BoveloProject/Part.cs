@@ -24,74 +24,37 @@ namespace Bovelo
         public string color;
         public int quantity;
         public string characteristic;
-
-        private Part(string partName, string partColor, int partQuantity, string partCharacteristic) 
+    
+        public Part(string name, string color, string characteristic) 
         {
-            name = partName;
-            color = partColor;
-            quantity = partQuantity;
-            characteristic = partCharacteristic;
+            this.name = name;
+            this.color = color;
+            this.characteristic = characteristic;
+            string query = $"SELECT * FROM part_stock WHERE name={name} AND color={color} AND characteristic={characteristic}";
+            MySqlDataReader reader = GetData(query);
+            this.quantity = reader.GetInt32(2);
         }
 
-        public static void POST_REQUEST_MySQL(string DB_name, string DB_color, int DB_quantity, string DB_characteristic)
+        public void Use()
         {
-
+            quantity--;
+            string query = $"UPDATE part_stock SET quantity={quantity} WHERE name={name} AND color={color} AND characteristic={characteristic}";
         }
-
-        private static Part BuildPart(string DB_name, MySqlDataReader dataReader)
+        public void Order(int quantity)
         {
-            //MySqlDataReader reader = GET_REQUEST_MySQLReader($"SELECT * FROM part WHERE name='{DB_name}'");
-            
-            Part p = new Part(
-                dataReader.GetString(0),
-                dataReader.GetString(1),
-                dataReader.GetInt32(2),
-                dataReader.GetString(3)
-            );
-
-            return p;
+            this.quantity += quantity;
+            string query = $"UPDATE part_stock SET quantity={quantity} WHERE name={name} AND color={color} AND characteristic={characteristic}";
         }
-
-        public static Part GetPart(string DB_name)
+        private static MySqlDataReader GetData(string query)
         {
-            string connectionString = new Database().MyConnection;
-            var connection = new MySqlConnection(connectionString);
-
-            try
-            {
-                Console.WriteLine("Connecting to MySQL");
-                connection.Open();
-
-                var command = new MySqlCommand($"SELECT * FROM part WHERE name='{DB_name}'", connection);
-                var reader = command.ExecuteReader();
-
-                while (reader.Read())
-                    continue;
-
-                try
-                {
-                    Part p = BuildPart(DB_name, reader);
-                    connection.Close();
-                    return p;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    connection.Close();
-                    return null;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-
-            connection.Close();
-            Console.WriteLine("Connection closed");
-
-            return null;
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            MySqlCommand MyCommand = new MySqlCommand(query, MyConn);
+            MySqlDataReader MyReader;
+            MyConn.Open();
+            MyReader = MyCommand.ExecuteReader();
+            MyReader.Read();
+            return MyReader;
         }
-
-        
     }
 }

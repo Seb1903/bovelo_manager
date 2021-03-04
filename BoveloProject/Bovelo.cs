@@ -20,11 +20,7 @@ namespace Bovelo
             Application.Run(new NewCatalogForm());
             */
 
-            var b = Part.GetPart("brakes");
-            Console.WriteLine(b.characteristic);
-
-            var f = Part.GetPart("frame");
-            Console.WriteLine(f.color);
+            Bike bike = new Bike(1);
 
         }
     }
