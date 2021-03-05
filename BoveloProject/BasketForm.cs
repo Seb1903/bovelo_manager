@@ -93,6 +93,7 @@ namespace Bovelo
             showClient();
             showBasket();
             showPrice();
+            showDeliveryDate()
         }
         private void showClient()
         {
@@ -108,6 +109,10 @@ namespace Bovelo
         private void showPrice()
         {
             this.price.Text = "" + Bovelo.order.totalPrice + " €";
+        }
+        private void showDeliveryDate()
+        {
+            this.delivery_time_label.Text = "" + Bovelo.order.deliveryDate;
         }
         private void CheckEmptyCart()
         {
@@ -151,6 +156,7 @@ namespace Bovelo
                 this.StatusLabel1.Text = "New item quantity : " + item.quantity.ToString();
                 Bovelo.order.UpdatePrice();
                 showPrice();
+                showDeliveryDate();
             }
             CheckEmptyCart();
         }
