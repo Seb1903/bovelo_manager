@@ -4,64 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace Bovelo
-{ 
-    public abstract class Bike    //Noir, Bleu foncé et bleu clair     // Pas de prix des pièces  // couleurs pour garde-boue et cadre 
+{
+    public class Bike
     {
         public int serial_number;
-        public List<Part> PartList = new List<Part>();  //create Part 
+        public string type;
+        public string color;
+        public string size;
         public int price;
+        public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        public Bike(int id)
+        {
+            this.serial_number = id;
+            string query1 = $"SELECT * FROM bike WHERE id={serial_number}";
+            MySqlDataReader reader1 = GetData(query1);
 
-        public Frame frame;
-        public Tire tire;
-        public Basic_Kit Basic_Kit;
-        
-        public Bike(Frame frame, Tire tire, Basic_Kit basic_Kit)
-        {
-            this.frame = frame;
-            this.tire = tire;
-            this.Basic_Kit = basic_Kit; 
-        }
-    }
-    public class Roadbike : Bike
-    {
-        public Luggage_rack luggage_rack ;
-        public Lighting lighting ;
-        public Mudguard mudguard ;
-        public Roadbike(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(frame,tire,basic_Kit)
-        {
-            this.frame.color = color;
-            this.frame.size = size;
-        }
-    }
-    public class Explorer : Roadbike
-    {
-        public Explorer(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(size, color, frame, tire, basic_Kit,luggage_Rack,lighting,mudguard)
-        {
-            this.tire.size = 2;     // 1 = normal and 2 = large 
-            this.tire.grooves = "very groovy"; // to be changed 
-            this.mudguard.type = "Adapted";
-        }
-    }
+            this.type = reader1.GetString(1);
+            this.color = reader1.GetString(2);
+            this.size = reader1.GetString(3);
 
-    public class City : Roadbike
-    {
-        public City(int size, Color color, Frame frame, Tire tire, Basic_Kit basic_Kit, Luggage_rack luggage_Rack, Lighting lighting, Mudguard mudguard) : base(size, color, frame, tire, basic_Kit, luggage_Rack, lighting, mudguard)
-        {
-            this.tire.size = 1; 
-            //necessary to define specific values for mudguard type and tire grooves ?
+            string query2 = $"SELECT * FROM model_parts WHERE model='{type}'";
+            MySqlDataReader reader2 = GetData(query2);
+            for (int i = 1; i < reader2.FieldCount; i++)
+            {
+                if(reader2[reader2.GetName(i)] != DBNull.Value)
+                {
+                    Part part = new Part(reader2.GetName(i), color, reader2.GetString(i));
+                    partList.Add(reader2.GetName(i), part);  
+                }             
+            }
         }
-
-    }
-
-    public class Adventure : Bike
-    {
-        public Adventure(int size, Color color,Frame frame, Tire tire, Basic_Kit basic_Kit) : base(frame, tire, basic_Kit)
+        private static MySqlDataReader GetData(string query)
         {
-            this.frame.color = color;
-            this.frame.size = size;
-            this.frame.rigidity = "Reinforced";
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            return reader;
+        }
+        public override string ToString()
+        {
+            Console.WriteLine("\n-------------\nParts List:\n-------------");
+            foreach (KeyValuePair<string, Part> part in partList)
+            {
+                Console.WriteLine("\nType: {0} \n----Color = {1} \n----Characteristic = {2} \n----Quantity = {3}",
+                    part.Key, part.Value.color, part.Value.characteristic, part.Value.quantity);
+            }
+            return ("\n" + type + " " + size + " " + color);
         }
     }
 }
