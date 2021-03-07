@@ -93,7 +93,7 @@ namespace Bovelo
             showClient();
             showBasket();
             showPrice();
-            showDeliveryDate()
+            showDeliveryDate();
         }
         private void showClient()
         {
