@@ -50,6 +50,7 @@
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Planning.cs" />
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
