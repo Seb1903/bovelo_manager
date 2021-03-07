@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Bovelo
 {
@@ -20,6 +21,34 @@ namespace Bovelo
         private void FitterForm_Load(object sender, EventArgs e)
         {
             this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
+        }
+        public void ScheduleDaily()
+        {
+            InitializeComponent();
+            DataTable datas;
+            DateTime date = DateTime.Now;
+            datas = GetData(String.Format($"Select * From manager WHERE date={date}"));
+            datas.Columns.RemoveAt(0);
+            dataGridViewFitter.DataSource = datas;
+            string[] searchCriterions;
+            searchCriterions = new string[] { "type", "color", "size" };
+        }
+
+        private static DataTable GetData(string sqlCommand)
+        {
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
+
+
+            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            adapter.Fill(table);
+
+            return table;
         }
     }
 }
