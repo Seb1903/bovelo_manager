@@ -105,10 +105,26 @@ namespace Bovelo
         {
             if (content.Count >= 1 && client != null)
             {
-                string saveQuery = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
-                        "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
-                ExecuteQuery(saveQuery);
-                Console.WriteLine("Order Saved");
+                try //First we save the order in the order table. 
+                {
+                    Database db = new Database();
+                    string Query = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
+                        "values('" + this.client.clientID + "','" + this.date + "','" + this.deliveryDate + "','" + this.totalPrice + "');";
+                    MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                    MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+                    MySqlDataReader MyReader;
+                    MyConn.Open();
+                    MyReader = MyCommand.ExecuteReader();
+                    Console.WriteLine("Order Saved");
+                    while (MyReader.Read())
+                    {
+                    }
+                    MyConn.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
                 foreach (BuyableItem item in content) //then we save each Item in the Bike table 
                 {
