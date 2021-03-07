@@ -15,9 +15,9 @@ namespace Bovelo
         [STAThread]
         static void Main()
         {
-            //Bovelo bovelo = new Bovelo();
-            //bovelo.Run();
-            Application.Run(new ManagerForm());
+            Bovelo bovelo = new Bovelo();
+            bovelo.Run();
+            //Application.Run(new ManagerForm());
         }
     }
 }

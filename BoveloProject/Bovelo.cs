@@ -10,6 +10,7 @@ namespace Bovelo
     public class Bovelo
     {
         public static Order order = new Order();
+        public static string managerPassword = "1234";
         public Bovelo()
         {
         }
@@ -17,7 +18,7 @@ namespace Bovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewCatalogForm());
+            Application.Run(new ChooseUser());
         }
     }
 }
