@@ -17,6 +17,7 @@ namespace Bovelo
         {
             Bovelo bovelo = new Bovelo();
             bovelo.Run();
+            //Application.Run(new ManagerForm());
         }
     }
 }

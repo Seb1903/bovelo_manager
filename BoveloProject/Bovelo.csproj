@@ -50,6 +50,31 @@
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChooseUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseUser.Designer.cs">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FitterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FitterForm.Designer.cs">
+      <DependentUpon>FitterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planning.cs" />
+    <Compile Include="ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bike.cs" />
     <Compile Include="Bovelo.cs" />
     <Compile Include="BikeCustomisationForm.cs">
@@ -89,6 +114,12 @@
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FitterForm.resx">
+      <DependentUpon>FitterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BikeCustomisationForm.resx">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewCatalogForm.resx">
       <DependentUpon>NewCatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

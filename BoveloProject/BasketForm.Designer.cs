@@ -172,7 +172,7 @@ namespace Bovelo
             this.label_clientName.Location = new System.Drawing.Point(243, 550);
             this.label_clientName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_clientName.Name = "label_clientName";
-            this.label_clientName.Size = new System.Drawing.Size(0, 20);
+            this.label_clientName.Size = new System.Drawing.Size(0, 13);
             this.label_clientName.TabIndex = 23;
             // 
             // label_price
@@ -182,7 +182,7 @@ namespace Bovelo
             this.label_price.Location = new System.Drawing.Point(27, 500);
             this.label_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(113, 20);
+            this.label_price.Size = new System.Drawing.Size(84, 13);
             this.label_price.TabIndex = 24;
             this.label_price.Text = " Total price : ";
             // 
@@ -193,19 +193,19 @@ namespace Bovelo
             this.price.Location = new System.Drawing.Point(203, 500);
             this.price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(57, 20);
+            this.price.Size = new System.Drawing.Size(41, 13);
             this.price.TabIndex = 25;
             this.price.Text = "label1";
             // 
             // Statuslabel
             // 
             this.Statuslabel.Name = "Statuslabel";
-            this.Statuslabel.Size = new System.Drawing.Size(0, 25);
+            this.Statuslabel.Size = new System.Drawing.Size(0, 17);
             // 
             // StatusLabel1
             // 
             this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(112, 25);
+            this.StatusLabel1.Size = new System.Drawing.Size(73, 17);
             this.StatusLabel1.Text = "Basket ready";
             // 
             // statusStrip1
