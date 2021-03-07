@@ -84,7 +84,7 @@ namespace Bovelo
                 {
                     Database db = new Database();
                     string Query = "insert into bovelo.order(client, date, deliveryDate, totalPrice)" +
-                        "values('" + Bovelo.order.client.clientID + "','" + Bovelo.order.date + "','" + Bovelo.order.deliveryDate + "','" + Bovelo.order.totalPrice + "');";
+                        "values('" + this.client.clientID + "','" + this.date + "','" + this.deliveryDate + "','" + this.totalPrice + "');";
                     MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
                     MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
                     MySqlDataReader MyReader;

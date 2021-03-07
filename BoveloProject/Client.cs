@@ -34,6 +34,19 @@ namespace Bovelo
             this.phoneNumber = phoneNumber;
             this.emailAdress = emailAdress;
         }
+        public Client(int id, string lastname, string firstname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAdress)
+        {
+            this.clientID = id; //Create method to search from known elements ... 
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.country = country;
+            this.city = city;
+            this.street = street;
+            this.number = number;
+            this.zipcode = zipcode;
+            this.phoneNumber = phoneNumber;
+            this.emailAdress = emailAdress;
+        }
         public void Save()
         {
             try
