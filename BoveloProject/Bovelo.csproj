@@ -56,6 +56,12 @@
     <Compile Include="ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FitterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FitterForm.Designer.cs">
+      <DependentUpon>FitterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FitterForm.resx">
+      <DependentUpon>FitterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>

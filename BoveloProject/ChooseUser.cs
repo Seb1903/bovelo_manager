@@ -31,16 +31,12 @@ namespace Bovelo
 
         private void Fitterbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("MON SAC EST FAIT");
-            //add the new form
-            /*
             this.Hide();
-            BikeCustomisationForm form = new BikeCustomisationForm(category);
+            FitterForm form = new FitterForm();
             form.Location = this.Location;
             form.StartPosition = FormStartPosition.Manual;
             form.FormClosing += delegate { this.Show(); };
             form.Show();
-            */
         }
     }
 }
