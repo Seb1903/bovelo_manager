@@ -104,7 +104,20 @@ namespace Bovelo
             }
 
         }
-
+        public static List<Bike> BikeListGenerator(DateTime date)
+        {
+            string sqlDate = date.ToString("yyyy-MM-dd");
+            string bikeIDQuery = $"SELECT id FROM planning WHERE date='{sqlDate}'";
+            DataTable bikeIDReader = GetDataTable(bikeIDQuery);
+            List<Bike> bikeList = new List<Bike>();
+            for (int i = 0; i < bikeIDReader.Rows.Count; i++)
+            {
+                int id = Convert.ToInt32(bikeIDReader.Rows[i]);
+                Bike bike = new Bike(id);
+                bikeList.Add(bike);
+            }
+            return bikeList;
+        }
         private static DataTable GetDataTable(string sqlCommand)
         {
             Database db1 = new Database();
