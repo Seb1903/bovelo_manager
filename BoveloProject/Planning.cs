@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Bovelo
 {
@@ -60,7 +61,7 @@ namespace Bovelo
                 }
             }
         }
-        public void ModifyDate(int id, DateTime date)
+        public static void ModifyDate(int id, DateTime date)
         {
             //peut etre un probleme niveau de la date
             Database db = new Database();
@@ -86,7 +87,7 @@ namespace Bovelo
             reader.Read();
             connection.Close();
         }
-        private int BikeByDay(DateTime date)
+        public static int BikeByDay(DateTime date)
         {
             Database db = new Database();
             string sqlDate = date.ToString("yyyy-MM-dd");
@@ -103,4 +104,18 @@ namespace Bovelo
             }
 
         }
+
+        private static DataTable GetDataTable(string sqlCommand)
+        {
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
+            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            adapter.Fill(table);
+            return table;
+        }
+    }
 }

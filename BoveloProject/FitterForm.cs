@@ -13,6 +13,7 @@ namespace Bovelo
 {
     public partial class FitterForm : Form
     {
+        List<Bike> bikeList = new List<Bike>();
         public FitterForm()
         {
             InitializeComponent();
@@ -22,24 +23,13 @@ namespace Bovelo
         {
             this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
             ShowDayPlanning(fitterPanel);
-            ScheduleDaily();
-        }
-        public void ScheduleDaily()
-        {
-            Database db1 = new Database();
-            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
-            conn.Open();
-            DateTime date = DateTime.Now;
-            string sqlFormattedDate = date.ToString("yyyy-MM-dd");
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter($"SELECT type, color, size From manager WHERE date={sqlFormattedDate}",conn);
-            DataTable dataTable = new DataTable();
-            mySqlDataAdapter.Fill(dataTable);
         }
         private void ShowDayPlanning(Panel day_panel)
         {
             int position = 1;
-            
-            for (int i = 0; i <= 20; i++)
+            DateTime date = DateTime.Now;
+            int count = Planning.BikeByDay(date);
+            for (int i = 0; i <= (count-1); i++)
             {
                 Label bikeIDLbl = new Label();
                 Label bikeCategoryLbl = new Label();
@@ -68,23 +58,13 @@ namespace Bovelo
                 bikeSizeLbl.Left = 220;
                 bikeSizeLbl.Size = new Size(30, 20);
 
-                newDatePicker.Top = position * 20 + 7;
-                newDatePicker.Left = 270;
-                newDatePicker.Size = new Size(200, 20);
-
-                validateBtn.Text = "Validate";
-                validateBtn.Top = position * 20 + 4;
-                validateBtn.Left = 490;
-                validateBtn.Size = new Size(80, 23);
-
                 position = position + 2;
 
                 day_panel.Controls.Add(bikeIDLbl);
                 day_panel.Controls.Add(bikeCategoryLbl);
                 day_panel.Controls.Add(bikeColorLbl);
                 day_panel.Controls.Add(bikeSizeLbl);
-                day_panel.Controls.Add(newDatePicker);
-                day_panel.Controls.Add(validateBtn);
+
             }
         }
     }
