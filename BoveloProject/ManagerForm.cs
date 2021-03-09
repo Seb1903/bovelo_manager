@@ -7,24 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Bovelo
 {
     public partial class ManagerForm : Form
     {
+        private List<Bike> bikelist = new List<Bike>();
+
         public ManagerForm()
         {
             InitializeComponent();
         }
 
-        private void ShowDayPlanning(Panel day_panel)
+        private void ShowDayPlanning(Panel day_panel, DateTime date)
         {
             int position = 1;
             //  foreach ()
             //  {
             //
-            for(int i = 0; i <= 20; i++)
+            List <Bike> bikeList = Planning.BikeListGenerator(date);
+            int bikeCount = Planning.BikeByDay(date);
+            //Console.WriteLine("serial num " + Convert.ToString(bikeList.Count));
+            for (int i = 0; i < bikeCount; i++)
             {
+                //Console.WriteLine("serial num "+Convert.ToString(bikeList[i].serial_number));
                 Label bikeIDLbl = new Label();
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
@@ -32,7 +40,7 @@ namespace Bovelo
                 DateTimePicker newDatePicker = new DateTimePicker();
                 Button validateBtn = new Button();
 
-                bikeIDLbl.Text = "ID";
+                bikeIDLbl.Text = Convert.ToString(bikeList[i].serial_number);
                 bikeIDLbl.Top = position * 20 + 10;
                 bikeIDLbl.Left = 10;
                 bikeIDLbl.Size = new Size(30, 20);
@@ -55,11 +63,7 @@ namespace Bovelo
                 newDatePicker.Top = position * 20 + 7;
                 newDatePicker.Left = 270;
                 newDatePicker.Size = new Size(200, 20);
-
-                validateBtn.Text = "Validate";
-                validateBtn.Top = position * 20 + 4;
-                validateBtn.Left = 490;
-                validateBtn.Size = new Size(80, 23);
+                newDatePicker.Value = date;
 
                 position = position + 2;
 
@@ -68,7 +72,6 @@ namespace Bovelo
                 day_panel.Controls.Add(bikeColorLbl);
                 day_panel.Controls.Add(bikeSizeLbl);
                 day_panel.Controls.Add(newDatePicker);
-                day_panel.Controls.Add(validateBtn);
             }
             // }
         }
@@ -77,11 +80,11 @@ namespace Bovelo
         {
             this.Controls.Clear();
             InitializeComponent();
-            ShowDayPlanning(day_panel1);
-            ShowDayPlanning(day_panel2);
-            ShowDayPlanning(day_panel3);
-            ShowDayPlanning(day_panel4);
-            ShowDayPlanning(day_panel5);
+            ShowDayPlanning(day_panel1,DateTime.Now);
+            ShowDayPlanning(day_panel2,DateTime.Now.AddDays(1));
+            ShowDayPlanning(day_panel3,DateTime.Now.AddDays(2));
+            ShowDayPlanning(day_panel4,DateTime.Now.AddDays(3));
+            ShowDayPlanning(day_panel5,DateTime.Now.AddDays(4));
             DateTime actualTime = DateTime.Now;
             UpdateFormDate(actualTime);
         }

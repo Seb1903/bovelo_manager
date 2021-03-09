@@ -26,8 +26,7 @@ namespace Bovelo
         {
             if (password_txt.Text == Bovelo.managerPassword)
             {
-                Text = "validation";
-                MessageBox.Show(Text);
+                
 
                 this.Hide();
                 ManagerForm form = new ManagerForm();

@@ -38,31 +38,26 @@ namespace Bovelo
             this.month_calendar = new System.Windows.Forms.MonthCalendar();
             this.day_panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.day_panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.day_panel3 = new System.Windows.Forms.Panel();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.day_panel4 = new System.Windows.Forms.Panel();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.day_panel5 = new System.Windows.Forms.Panel();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -100,40 +95,31 @@ namespace Bovelo
             this.day_panel1.AutoScroll = true;
             this.day_panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.day_panel1.Controls.Add(this.dateTimePicker1);
-            this.day_panel1.Controls.Add(this.button1);
             this.day_panel1.Controls.Add(this.label3);
             this.day_panel1.Controls.Add(this.label2);
             this.day_panel1.Controls.Add(this.label1);
-            this.day_panel1.Location = new System.Drawing.Point(184, 29);
+            this.day_panel1.Location = new System.Drawing.Point(302, 29);
             this.day_panel1.Name = "day_panel1";
-            this.day_panel1.Size = new System.Drawing.Size(713, 144);
+            this.day_panel1.Size = new System.Drawing.Size(907, 144);
             this.day_panel1.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker1.Location = new System.Drawing.Point(314, 9);
+            this.dateTimePicker1.Location = new System.Drawing.Point(230, 7);
+            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 3, 10, 0, 0, 0, 0);
             this.dateTimePicker1.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(215, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "validate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(165, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.Size = new System.Drawing.Size(29, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "28\"";
             this.label3.Visible = false;
@@ -143,7 +129,7 @@ namespace Bovelo
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(84, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dark blue";
             this.label2.Visible = false;
@@ -153,7 +139,7 @@ namespace Bovelo
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adventure";
             this.label1.Visible = false;
@@ -165,40 +151,29 @@ namespace Bovelo
             this.day_panel2.AutoScroll = true;
             this.day_panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.day_panel2.Controls.Add(this.dateTimePicker2);
-            this.day_panel2.Controls.Add(this.button2);
             this.day_panel2.Controls.Add(this.label4);
             this.day_panel2.Controls.Add(this.label5);
             this.day_panel2.Controls.Add(this.label6);
-            this.day_panel2.Location = new System.Drawing.Point(184, 192);
+            this.day_panel2.Location = new System.Drawing.Point(302, 192);
             this.day_panel2.Name = "day_panel2";
-            this.day_panel2.Size = new System.Drawing.Size(713, 144);
+            this.day_panel2.Size = new System.Drawing.Size(907, 144);
             this.day_panel2.TabIndex = 2;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker2.Location = new System.Drawing.Point(314, 9);
+            this.dateTimePicker2.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 4;
             this.dateTimePicker2.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(215, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "validate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(165, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 13);
+            this.label4.Size = new System.Drawing.Size(29, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "28\"";
             this.label4.Visible = false;
@@ -208,7 +183,7 @@ namespace Bovelo
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(84, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Dark blue";
             this.label5.Visible = false;
@@ -218,7 +193,7 @@ namespace Bovelo
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Adventure";
             this.label6.Visible = false;
@@ -230,40 +205,29 @@ namespace Bovelo
             this.day_panel3.AutoScroll = true;
             this.day_panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.day_panel3.Controls.Add(this.dateTimePicker3);
-            this.day_panel3.Controls.Add(this.button3);
             this.day_panel3.Controls.Add(this.label7);
             this.day_panel3.Controls.Add(this.label8);
             this.day_panel3.Controls.Add(this.label9);
-            this.day_panel3.Location = new System.Drawing.Point(184, 355);
+            this.day_panel3.Location = new System.Drawing.Point(302, 355);
             this.day_panel3.Name = "day_panel3";
-            this.day_panel3.Size = new System.Drawing.Size(713, 144);
+            this.day_panel3.Size = new System.Drawing.Size(907, 144);
             this.day_panel3.TabIndex = 3;
             // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker3.Location = new System.Drawing.Point(314, 9);
+            this.dateTimePicker3.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker3.TabIndex = 4;
             this.dateTimePicker3.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(215, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "validate";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(165, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.Size = new System.Drawing.Size(29, 17);
             this.label7.TabIndex = 2;
             this.label7.Text = "28\"";
             this.label7.Visible = false;
@@ -273,7 +237,7 @@ namespace Bovelo
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(84, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 1;
             this.label8.Text = "Dark blue";
             this.label8.Visible = false;
@@ -283,7 +247,7 @@ namespace Bovelo
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.Size = new System.Drawing.Size(73, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Adventure";
             this.label9.Visible = false;
@@ -295,40 +259,29 @@ namespace Bovelo
             this.day_panel4.AutoScroll = true;
             this.day_panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.day_panel4.Controls.Add(this.dateTimePicker4);
-            this.day_panel4.Controls.Add(this.button4);
             this.day_panel4.Controls.Add(this.label10);
             this.day_panel4.Controls.Add(this.label11);
             this.day_panel4.Controls.Add(this.label12);
-            this.day_panel4.Location = new System.Drawing.Point(184, 518);
+            this.day_panel4.Location = new System.Drawing.Point(302, 518);
             this.day_panel4.Name = "day_panel4";
-            this.day_panel4.Size = new System.Drawing.Size(713, 144);
+            this.day_panel4.Size = new System.Drawing.Size(907, 144);
             this.day_panel4.TabIndex = 4;
             // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker4.Location = new System.Drawing.Point(314, 9);
+            this.dateTimePicker4.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker4.TabIndex = 4;
             this.dateTimePicker4.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(215, 7);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "validate";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(165, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.Size = new System.Drawing.Size(29, 17);
             this.label10.TabIndex = 2;
             this.label10.Text = "28\"";
             this.label10.Visible = false;
@@ -338,7 +291,7 @@ namespace Bovelo
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(84, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 1;
             this.label11.Text = "Dark blue";
             this.label11.Visible = false;
@@ -348,7 +301,7 @@ namespace Bovelo
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.Size = new System.Drawing.Size(73, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "Adventure";
             this.label12.Visible = false;
@@ -360,40 +313,29 @@ namespace Bovelo
             this.day_panel5.AutoScroll = true;
             this.day_panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.day_panel5.Controls.Add(this.dateTimePicker5);
-            this.day_panel5.Controls.Add(this.button5);
             this.day_panel5.Controls.Add(this.label13);
             this.day_panel5.Controls.Add(this.label14);
             this.day_panel5.Controls.Add(this.label15);
-            this.day_panel5.Location = new System.Drawing.Point(184, 681);
+            this.day_panel5.Location = new System.Drawing.Point(302, 681);
             this.day_panel5.Name = "day_panel5";
-            this.day_panel5.Size = new System.Drawing.Size(713, 144);
+            this.day_panel5.Size = new System.Drawing.Size(907, 144);
             this.day_panel5.TabIndex = 5;
             // 
             // dateTimePicker5
             // 
             this.dateTimePicker5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker5.Location = new System.Drawing.Point(314, 9);
+            this.dateTimePicker5.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker5.TabIndex = 4;
             this.dateTimePicker5.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(215, 7);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "validate";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(165, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.Size = new System.Drawing.Size(29, 17);
             this.label13.TabIndex = 2;
             this.label13.Text = "28\"";
             this.label13.Visible = false;
@@ -403,7 +345,7 @@ namespace Bovelo
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(84, 12);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.Size = new System.Drawing.Size(69, 17);
             this.label14.TabIndex = 1;
             this.label14.Text = "Dark blue";
             this.label14.Visible = false;
@@ -413,7 +355,7 @@ namespace Bovelo
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.Size = new System.Drawing.Size(73, 17);
             this.label15.TabIndex = 0;
             this.label15.Text = "Adventure";
             this.label15.Visible = false;
@@ -421,51 +363,46 @@ namespace Bovelo
             // monday_label
             // 
             this.monday_label.AutoSize = true;
-            this.monday_label.Location = new System.Drawing.Point(184, 13);
+            this.monday_label.Location = new System.Drawing.Point(306, 13);
             this.monday_label.Name = "monday_label";
-            this.monday_label.Size = new System.Drawing.Size(41, 13);
+            this.monday_label.Size = new System.Drawing.Size(0, 17);
             this.monday_label.TabIndex = 6;
-            this.monday_label.Text = "";
             // 
             // tuesday_label
             // 
             this.tuesday_label.AutoSize = true;
-            this.tuesday_label.Location = new System.Drawing.Point(181, 176);
+            this.tuesday_label.Location = new System.Drawing.Point(306, 176);
             this.tuesday_label.Name = "tuesday_label";
-            this.tuesday_label.Size = new System.Drawing.Size(41, 13);
+            this.tuesday_label.Size = new System.Drawing.Size(0, 17);
             this.tuesday_label.TabIndex = 7;
-            this.tuesday_label.Text = "";
             // 
             // wednesday_label
             // 
             this.wednesday_label.AutoSize = true;
-            this.wednesday_label.Location = new System.Drawing.Point(181, 339);
+            this.wednesday_label.Location = new System.Drawing.Point(306, 339);
             this.wednesday_label.Name = "wednesday_label";
-            this.wednesday_label.Size = new System.Drawing.Size(41, 13);
+            this.wednesday_label.Size = new System.Drawing.Size(0, 17);
             this.wednesday_label.TabIndex = 8;
-            this.wednesday_label.Text = "";
             // 
             // thursday_label
             // 
             this.thursday_label.AutoSize = true;
-            this.thursday_label.Location = new System.Drawing.Point(181, 502);
+            this.thursday_label.Location = new System.Drawing.Point(306, 502);
             this.thursday_label.Name = "thursday_label";
-            this.thursday_label.Size = new System.Drawing.Size(41, 13);
+            this.thursday_label.Size = new System.Drawing.Size(0, 17);
             this.thursday_label.TabIndex = 7;
-            this.thursday_label.Text = "";
             // 
             // friday_label
             // 
             this.friday_label.AutoSize = true;
-            this.friday_label.Location = new System.Drawing.Point(181, 665);
+            this.friday_label.Location = new System.Drawing.Point(306, 665);
             this.friday_label.Name = "friday_label";
-            this.friday_label.Size = new System.Drawing.Size(41, 13);
+            this.friday_label.Size = new System.Drawing.Size(0, 17);
             this.friday_label.TabIndex = 7;
-            this.friday_label.Text = "";
             // 
             // ManagerForm
             // 
-            this.ClientSize = new System.Drawing.Size(909, 834);
+            this.ClientSize = new System.Drawing.Size(1221, 834);
             this.Controls.Add(this.friday_label);
             this.Controls.Add(this.thursday_label);
             this.Controls.Add(this.wednesday_label);
@@ -498,31 +435,26 @@ namespace Bovelo
         private MonthCalendar month_calendar;
         private Panel day_panel1;
         private DateTimePicker dateTimePicker1;
-        private Button button1;
         private Label label3;
         private Label label2;
         private Label label1;
         private Panel day_panel2;
         private DateTimePicker dateTimePicker2;
-        private Button button2;
         private Label label4;
         private Label label5;
         private Label label6;
         private Panel day_panel3;
         private DateTimePicker dateTimePicker3;
-        private Button button3;
         private Label label7;
         private Label label8;
         private Label label9;
         private Panel day_panel4;
         private DateTimePicker dateTimePicker4;
-        private Button button4;
         private Label label10;
         private Label label11;
         private Label label12;
         private Panel day_panel5;
         private DateTimePicker dateTimePicker5;
-        private Button button5;
         private Label label13;
         private Label label14;
         private Label label15;
