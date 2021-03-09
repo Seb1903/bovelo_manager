@@ -61,7 +61,7 @@ namespace Bovelo
                 }
             }
         }
-        public static void ModifyDate(int id, DateTime date)
+        public static void ModifyDate(int id, String date)
         {
             //peut etre un probleme niveau de la date
             Database db = new Database();

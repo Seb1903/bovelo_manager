@@ -36,11 +36,6 @@ namespace Bovelo
         private void InitializeComponent()
         {
             this.month_calendar = new System.Windows.Forms.MonthCalendar();
-            this.day_panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.day_panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,11 +61,16 @@ namespace Bovelo
             this.wednesday_label = new System.Windows.Forms.Label();
             this.thursday_label = new System.Windows.Forms.Label();
             this.friday_label = new System.Windows.Forms.Label();
-            this.day_panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.day_panel1 = new System.Windows.Forms.Panel();
             this.day_panel2.SuspendLayout();
             this.day_panel3.SuspendLayout();
             this.day_panel4.SuspendLayout();
             this.day_panel5.SuspendLayout();
+            this.day_panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // month_calendar
@@ -87,62 +87,6 @@ namespace Bovelo
             this.month_calendar.TabStop = false;
             this.month_calendar.TitleBackColor = System.Drawing.SystemColors.InactiveCaption;
             this.month_calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.date_changed_calendar);
-            // 
-            // day_panel1
-            // 
-            this.day_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.day_panel1.AutoScroll = true;
-            this.day_panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.day_panel1.Controls.Add(this.dateTimePicker1);
-            this.day_panel1.Controls.Add(this.label3);
-            this.day_panel1.Controls.Add(this.label2);
-            this.day_panel1.Controls.Add(this.label1);
-            this.day_panel1.Location = new System.Drawing.Point(302, 29);
-            this.day_panel1.Name = "day_panel1";
-            this.day_panel1.Size = new System.Drawing.Size(907, 144);
-            this.day_panel1.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dateTimePicker1.Location = new System.Drawing.Point(230, 7);
-            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 3, 10, 0, 0, 0, 0);
-            this.dateTimePicker1.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "28\"";
-            this.label3.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Dark blue";
-            this.label2.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Adventure";
-            this.label1.Visible = false;
             // 
             // day_panel2
             // 
@@ -400,6 +344,62 @@ namespace Bovelo
             this.friday_label.Size = new System.Drawing.Size(0, 17);
             this.friday_label.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Adventure";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(84, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Dark blue";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(165, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "28\"";
+            this.label3.Visible = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateTimePicker1.Location = new System.Drawing.Point(230, 7);
+            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 3, 10, 0, 0, 0, 0);
+            this.dateTimePicker1.Visible = false;
+            // 
+            // day_panel1
+            // 
+            this.day_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.day_panel1.AutoScroll = true;
+            this.day_panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.day_panel1.Controls.Add(this.dateTimePicker1);
+            this.day_panel1.Controls.Add(this.label3);
+            this.day_panel1.Controls.Add(this.label2);
+            this.day_panel1.Controls.Add(this.label1);
+            this.day_panel1.Location = new System.Drawing.Point(302, 29);
+            this.day_panel1.Name = "day_panel1";
+            this.day_panel1.Size = new System.Drawing.Size(907, 144);
+            this.day_panel1.TabIndex = 1;
+            // 
             // ManagerForm
             // 
             this.ClientSize = new System.Drawing.Size(1221, 834);
@@ -416,8 +416,6 @@ namespace Bovelo
             this.Controls.Add(this.month_calendar);
             this.Name = "ManagerForm";
             this.Load += new System.EventHandler(this.ManagerForm_Load);
-            this.day_panel1.ResumeLayout(false);
-            this.day_panel1.PerformLayout();
             this.day_panel2.ResumeLayout(false);
             this.day_panel2.PerformLayout();
             this.day_panel3.ResumeLayout(false);
@@ -426,6 +424,8 @@ namespace Bovelo
             this.day_panel4.PerformLayout();
             this.day_panel5.ResumeLayout(false);
             this.day_panel5.PerformLayout();
+            this.day_panel1.ResumeLayout(false);
+            this.day_panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,11 +433,6 @@ namespace Bovelo
         #endregion
 
         private MonthCalendar month_calendar;
-        private Panel day_panel1;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
         private Panel day_panel2;
         private DateTimePicker dateTimePicker2;
         private Label label4;
@@ -463,5 +458,10 @@ namespace Bovelo
         public Label wednesday_label;
         public Label thursday_label;
         public Label friday_label;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private DateTimePicker dateTimePicker1;
+        private Panel day_panel1;
     }
 }
