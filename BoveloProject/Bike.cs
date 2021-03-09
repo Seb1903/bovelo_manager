@@ -10,7 +10,7 @@ namespace Bovelo
 {
     public class Bike
     {
-        public int serial_number;
+        public int id;
         public string type;
         public string color;
         public string size;
@@ -18,23 +18,24 @@ namespace Bovelo
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
         public Bike(int id)
         {
-            this.serial_number = id;
-            string query1 = $"SELECT * FROM bike WHERE id={serial_number}";
-            MySqlDataReader reader1 = GetData(query1);
-
-            this.type = reader1.GetString(1);
-            this.color = reader1.GetString(2);
-            this.size = reader1.GetString(3);
-
-            string query2 = $"SELECT * FROM model_parts WHERE model='{type}'";
-            MySqlDataReader reader2 = GetData(query2);
-            for (int i = 1; i < reader2.FieldCount; i++)
+            this.id = id;
+            string bikeQuery = $"SELECT * FROM bike WHERE id={serial_number}";
+            MySqlDataReader bikeReader = GetData(bikeQuery);
+            this.type = bikeReader.GetString(1);
+            this.color = bikeReader.GetString(2);
+            this.size = bikeReader.GetString(3);
+        }
+        public void Build()
+        {
+            string partQuery = $"SELECT * FROM model_parts WHERE model='{type}'";
+            MySqlDataReader partReader = GetData(partQuery);
+            for (int i = 1; i < partReader.FieldCount; i++)
             {
-                if(reader2[reader2.GetName(i)] != DBNull.Value)
+                if (partReader[partReader.GetName(i)] != DBNull.Value)
                 {
-                    Part part = new Part(reader2.GetName(i), color, reader2.GetString(i));
-                    partList.Add(reader2.GetName(i), part);  
-                }             
+                    Part part = new Part(partReader.GetName(i), this.color, partReader.GetString(i));
+                    this.partList.Add(partReader.GetName(i), part);
+                }
             }
         }
         private static MySqlDataReader GetData(string query)
