@@ -75,7 +75,7 @@ namespace Bovelo
             connection.Close();
         }
 
-        public void ModifyState(int id, string state)
+        public static void ModifyState(int id, string state)
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);

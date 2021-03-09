@@ -32,6 +32,8 @@ namespace Bovelo
             this.label1 = new System.Windows.Forms.Label();
             this.dateOfToday_label = new System.Windows.Forms.Label();
             this.fitterPanel = new System.Windows.Forms.Panel();
+
+            this.fitterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -54,10 +56,12 @@ namespace Bovelo
             // 
             // fitterPanel
             // 
+
             this.fitterPanel.Location = new System.Drawing.Point(77, 63);
             this.fitterPanel.Name = "fitterPanel";
             this.fitterPanel.Size = new System.Drawing.Size(654, 364);
             this.fitterPanel.TabIndex = 3;
+
             // 
             // FitterForm
             // 
@@ -70,6 +74,7 @@ namespace Bovelo
             this.Name = "FitterForm";
             this.Text = "FitterForm";
             this.Load += new System.EventHandler(this.FitterForm_Load);
+            this.fitterPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,5 +84,6 @@ namespace Bovelo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label dateOfToday_label;
         private System.Windows.Forms.Panel fitterPanel;
+
     }
 }

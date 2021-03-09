@@ -13,7 +13,6 @@ namespace Bovelo
 {
     public partial class FitterForm : Form
     {
-        List<Bike> bikeList = new List<Bike>();
         public FitterForm()
         {
             InitializeComponent();
@@ -29,34 +28,45 @@ namespace Bovelo
             int position = 1;
             DateTime date = DateTime.Now;
             int count = Planning.BikeByDay(date);
-            for (int i = 0; i <= (count-1); i++)
+            List<Bike> bikeList = Planning.BikeListGenerator(date);
+            for (int i = 0; i < count; i++)
             {
+                Planning.ModifyState(bikeList[i].serial_number,"active");
                 Label bikeIDLbl = new Label();
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
-                DateTimePicker newDatePicker = new DateTimePicker();
-                Button validateBtn = new Button();
-
-                bikeIDLbl.Text = "ID";
+                CheckBox checkBox = new CheckBox();
+                
+                int stockage = bikeList[i].serial_number;
+                bikeIDLbl.Text = Convert.ToString(bikeList[i].serial_number);
                 bikeIDLbl.Top = position * 20 + 10;
                 bikeIDLbl.Left = 10;
                 bikeIDLbl.Size = new Size(30, 20);
 
-                bikeCategoryLbl.Text = "category";
+                bikeCategoryLbl.Text = bikeList[i].type;
                 bikeCategoryLbl.Top = position * 20 + 10;
                 bikeCategoryLbl.Left = 60;
                 bikeCategoryLbl.Size = new Size(60, 20);
 
-                bikeColorLbl.Text = "color";
+                bikeColorLbl.Text = bikeList[i].color;
                 bikeColorLbl.Top = position * 20 + 10;
                 bikeColorLbl.Left = 150;
                 bikeColorLbl.Size = new Size(60, 20);
 
-                bikeSizeLbl.Text = "size";
+                bikeSizeLbl.Text = bikeList[i].size;
                 bikeSizeLbl.Top = position * 20 + 10;
                 bikeSizeLbl.Left = 220;
                 bikeSizeLbl.Size = new Size(30, 20);
+
+                checkBox.AutoSize = true;
+                checkBox.Text = "Done";
+                checkBox.UseVisualStyleBackColor = true;
+                checkBox.Top = position * 20 + 10;
+                checkBox.Name = Convert.ToString(bikeList[i].serial_number);
+                checkBox.Left = 250;
+                checkBox.Visible = true;
+                checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
 
                 position = position + 2;
 
@@ -64,8 +74,18 @@ namespace Bovelo
                 day_panel.Controls.Add(bikeCategoryLbl);
                 day_panel.Controls.Add(bikeColorLbl);
                 day_panel.Controls.Add(bikeSizeLbl);
+                day_panel.Controls.Add(checkBox);
 
             }
+
+        }
+        
+        private void checkBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            CheckBox check = sender as CheckBox;
+            int id = Convert.ToInt32(check.Name);
+            Planning.ModifyState(id, "done");
+            fitterPanel.Controls.Remove(check);       
         }
     }
 }
