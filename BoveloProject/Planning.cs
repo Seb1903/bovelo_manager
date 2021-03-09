@@ -48,24 +48,24 @@ namespace Bovelo
         private int VerifyDate()
         {
             Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = "SELECT COUNT(*) as numberOfUndated FROM manager WHERE date IS NOT NULL";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            int numberOfUndated;
-            numberOfUndated = (int)reader["numberOfUndated"];
-            connection.Close();
-            return numberOfUndated;
+            using (var conn = new MySqlConnection(db.MyConnection))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM manager WHERE date IS NULL", conn))
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine(count);
+                    conn.Close();
+                    return count;
+                }
+            }
         }
         public void ModifyDate(int id, DateTime date)
         {
             //peut etre un probleme niveau de la date
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE planning SET date={date} WHERE bike={id}";
+            string query = $"UPDATE planning SET date='{date}' WHERE bike='{id}'";
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader;
             connection.Open();
