@@ -78,7 +78,7 @@ namespace Bovelo
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE bike SET cstr_status={state} WHERE id={id}";
+            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{id}'";
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader;
             connection.Open();
@@ -86,6 +86,21 @@ namespace Bovelo
             reader.Read();
             connection.Close();
         }
+        private int BikeByDay(DateTime date)
+        {
+            Database db = new Database();
+            string sqlDate = date.ToString("yyyy-MM-dd");
+            using (var conn = new MySqlConnection(db.MyConnection))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand($"SELECT COUNT(*) FROM manager WHERE date='{sqlDate}'", conn))
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine(count);
+                    conn.Close();
+                    return count;
+                }
+            }
 
-    }
+        }
 }

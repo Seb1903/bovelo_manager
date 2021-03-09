@@ -29,21 +29,10 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewFitter = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dateOfToday_label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitter)).BeginInit();
+            this.fitterPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // dataGridViewFitter
-            // 
-            this.dataGridViewFitter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFitter.Location = new System.Drawing.Point(77, 74);
-            this.dataGridViewFitter.Name = "dataGridViewFitter";
-            this.dataGridViewFitter.RowHeadersWidth = 51;
-            this.dataGridViewFitter.RowTemplate.Height = 24;
-            this.dataGridViewFitter.Size = new System.Drawing.Size(631, 364);
-            this.dataGridViewFitter.TabIndex = 0;
             // 
             // label1
             // 
@@ -63,27 +52,32 @@ namespace Bovelo
             this.dateOfToday_label.TabIndex = 2;
             this.dateOfToday_label.Text = "label2";
             // 
+            // fitterPanel
+            // 
+            this.fitterPanel.Location = new System.Drawing.Point(77, 63);
+            this.fitterPanel.Name = "fitterPanel";
+            this.fitterPanel.Size = new System.Drawing.Size(654, 364);
+            this.fitterPanel.TabIndex = 3;
+            // 
             // FitterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fitterPanel);
             this.Controls.Add(this.dateOfToday_label);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewFitter);
             this.Name = "FitterForm";
             this.Text = "FitterForm";
             this.Load += new System.EventHandler(this.FitterForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewFitter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label dateOfToday_label;
+        private System.Windows.Forms.Panel fitterPanel;
     }
 }
