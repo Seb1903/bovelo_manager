@@ -87,5 +87,10 @@ namespace Bovelo
             Planning.ModifyState(id, "done");
             fitterPanel.Controls.Remove(check);       
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -156,5 +156,15 @@ namespace Bovelo
             Planning.ModifyDate(id, date);
 
         }
+
+        private void AutoPlanner_Btn_Click(object sender, EventArgs e)
+        {
+            Planning.AutoPlanning(8);
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

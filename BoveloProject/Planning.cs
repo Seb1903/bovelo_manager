@@ -14,39 +14,37 @@ namespace Bovelo
         {
 
         }
-        public void AddToPlanning(int capacity)
+        public static void AddToPlanning(int capacity,DateTime usedDate)
+        {
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            using (var command = new MySqlCommand("autoPlanner", MyConn)
+            {
+                CommandType = CommandType.StoredProcedure
+
+             })
+             {
+                command.Parameters.AddWithValue("@capacity", capacity);
+                command.Parameters.Add("@prodDate", MySqlDbType.DateTime);
+                command.Parameters["@prodDate"].Value = usedDate;
+                MyConn.Open();
+                command.ExecuteNonQuery();
+                MyConn.Close();
+            }
+
+        }
+
+        public static void AutoPlanning(int capacity)
         {
             DateTime usedDate = DateTime.Now;
             while (VerifyDate() != 0)
             {
-                try
-                {
-                    Database db = new Database();
-                    MySqlConnection connection = new MySqlConnection(db.MyConnection);
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("autoPlanner", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@capacity", MySqlDbType.Int32);
-                    cmd.Parameters.Add("@currentDate", MySqlDbType.DateTime);
-                    cmd.Parameters["@capacity"].Direction = System.Data.ParameterDirection.Input;
-                    cmd.Parameters["@currentDate"].Direction = System.Data.ParameterDirection.Input;
-                    cmd.Parameters["@capacity"].Value = Convert.ToInt32(capacity);
-                    cmd.Parameters["@currentDate"].Value = Convert.ToDateTime(usedDate);
-                    MySqlDataReader dataRead = cmd.ExecuteReader();
-                    if (dataRead.Read())
-                    {
-                    }
-                    connection.Close();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                Console.WriteLine(usedDate);
+                AddToPlanning(capacity, usedDate);
                 usedDate.AddDays(1);
             }
         }
-
-        private int VerifyDate()
+        private static int VerifyDate()
         {
             Database db = new Database();
             using (var conn = new MySqlConnection(db.MyConnection))

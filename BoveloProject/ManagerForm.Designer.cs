@@ -66,6 +66,8 @@ namespace Bovelo
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.day_panel1 = new System.Windows.Forms.Panel();
+            this.AutoPlanner_Btn = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.day_panel2.SuspendLayout();
             this.day_panel3.SuspendLayout();
             this.day_panel4.SuspendLayout();
@@ -400,9 +402,31 @@ namespace Bovelo
             this.day_panel1.Size = new System.Drawing.Size(907, 144);
             this.day_panel1.TabIndex = 1;
             // 
+            // AutoPlanner_Btn
+            // 
+            this.AutoPlanner_Btn.Location = new System.Drawing.Point(18, 626);
+            this.AutoPlanner_Btn.Name = "AutoPlanner_Btn";
+            this.AutoPlanner_Btn.Size = new System.Drawing.Size(183, 36);
+            this.AutoPlanner_Btn.TabIndex = 9;
+            this.AutoPlanner_Btn.Text = "AutoPlanner";
+            this.AutoPlanner_Btn.UseVisualStyleBackColor = true;
+            this.AutoPlanner_Btn.Click += new System.EventHandler(this.AutoPlanner_Btn_Click);
+            // 
+            // Back
+            // 
+            this.Back.Location = new System.Drawing.Point(18, 772);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(174, 30);
+            this.Back.TabIndex = 10;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // ManagerForm
             // 
             this.ClientSize = new System.Drawing.Size(1221, 834);
+            this.Controls.Add(this.Back);
+            this.Controls.Add(this.AutoPlanner_Btn);
             this.Controls.Add(this.friday_label);
             this.Controls.Add(this.thursday_label);
             this.Controls.Add(this.wednesday_label);
@@ -463,5 +487,7 @@ namespace Bovelo
         private Label label3;
         private DateTimePicker dateTimePicker1;
         private Panel day_panel1;
+        private Button AutoPlanner_Btn;
+        private Button Back;
     }
 }
