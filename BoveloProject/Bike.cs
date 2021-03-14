@@ -19,7 +19,7 @@ namespace Bovelo
         public Bike(int id)
         {
             this.id = id;
-            string bikeQuery = $"SELECT * FROM bike WHERE id={serial_number}";
+            string bikeQuery = $"SELECT * FROM bike WHERE id={id}";
             MySqlDataReader bikeReader = GetData(bikeQuery);
             this.type = bikeReader.GetString(1);
             this.color = bikeReader.GetString(2);
