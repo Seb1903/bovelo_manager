@@ -26,9 +26,6 @@ namespace Bovelo
         {
             if (password_txt.Text == Bovelo.managerPassword)
             {
-                Text = "validation";
-                MessageBox.Show(Text);
-
                 this.Hide();
                 ManagerForm form = new ManagerForm();
                 form.Location = this.Location;
@@ -41,6 +38,28 @@ namespace Bovelo
             {
                 Text = "Password or username invalid";
                 MessageBox.Show(Text);
+            }
+        }
+
+        private void password_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (password_txt.Text == Bovelo.managerPassword)
+                {
+                    this.Hide();
+                    ManagerForm form = new ManagerForm();
+                    form.Location = this.Location;
+                    form.StartPosition = FormStartPosition.Manual;
+                    form.FormClosing += delegate { this.Show(); };
+                    form.Show();
+
+                }
+                else
+                {
+                    Text = "Password or username invalid";
+                    MessageBox.Show(Text);
+                }
             }
         }
     }

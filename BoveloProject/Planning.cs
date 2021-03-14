@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Bovelo
 {
@@ -13,59 +14,76 @@ namespace Bovelo
         {
 
         }
-        public void AddToPlanning(int capacity)
+        public static void AddToPlanning(int capacity,DateTime usedDate)
+        {
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            using (var command = new MySqlCommand("autoPlanner", MyConn)
+            {
+                CommandType = CommandType.StoredProcedure
+
+             })
+             {
+                command.Parameters.AddWithValue("@capacity", capacity);
+                command.Parameters.Add("@prodDate", MySqlDbType.DateTime);
+                command.Parameters["@prodDate"].Value = usedDate;
+                MyConn.Open();
+                command.ExecuteNonQuery();
+                MyConn.Close();
+            }
+
+        }
+
+        public static void AutoPlanning(int capacity)
         {
             DateTime usedDate = DateTime.Now;
+            if (usedDate.DayOfWeek == DayOfWeek.Saturday)
+            {
+                usedDate = usedDate.AddDays(2);
+            }
+            else if (usedDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                usedDate = usedDate.AddDays(1);
+            }
+            else
+            {
+            }
             while (VerifyDate() != 0)
             {
-                try
+                Console.WriteLine(usedDate);
+                AddToPlanning(capacity, usedDate);
+                if (usedDate.DayOfWeek == DayOfWeek.Friday)
                 {
-                    Database db = new Database();
-                    MySqlConnection connection = new MySqlConnection(db.MyConnection);
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("autoPlanner", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@capacity", MySqlDbType.Int32);
-                    cmd.Parameters.Add("@currentDate", MySqlDbType.DateTime);
-                    cmd.Parameters["@capacity"].Direction = System.Data.ParameterDirection.Input;
-                    cmd.Parameters["@currentDate"].Direction = System.Data.ParameterDirection.Input;
-                    cmd.Parameters["@capacity"].Value = Convert.ToInt32(capacity);
-                    cmd.Parameters["@currentDate"].Value = Convert.ToDateTime(usedDate);
-                    MySqlDataReader dataRead = cmd.ExecuteReader();
-                    if (dataRead.Read())
-                    {
-                    }
-                    connection.Close();
+                    usedDate = usedDate.AddDays(3);
                 }
-                catch (Exception e)
+                else
                 {
-                    Console.WriteLine(e.Message);
+                    usedDate = usedDate.AddDays(1);
                 }
-                usedDate.AddDays(1);
+            }
+            Console.WriteLine(usedDate);
+            Console.WriteLine("end");
+        }
+        public static int VerifyDate()
+        {
+            Database db = new Database();
+            using (var conn = new MySqlConnection(db.MyConnection))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM manager WHERE date IS NULL", conn))
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine(count);
+                    conn.Close();
+                    return count;
+                }
             }
         }
-
-        private int VerifyDate()
+        public static void ModifyDate(int id, String date)
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = "SELECT COUNT(*) as numberOfUndated FROM manager WHERE date IS NOT NULL";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            int numberOfUndated;
-            numberOfUndated = (int)reader["numberOfUndated"];
-            connection.Close();
-            return numberOfUndated;
-        }
-        public void ModifyDate(int id, DateTime date)
-        {
-            //peut etre un probleme niveau de la date
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE planning SET date={date} WHERE bike={id}";
+            string query = $"UPDATE planning SET date='{date}' WHERE bike='{id}'";
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader;
             connection.Open();
@@ -74,11 +92,11 @@ namespace Bovelo
             connection.Close();
         }
 
-        public void ModifyState(int id, string state)
+        public static void ModifyState(int id, string state)
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE bike SET cstr_status={state} WHERE id={id}";
+            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{id}'";
             MySqlCommand command = new MySqlCommand(query, connection);
             MySqlDataReader reader;
             connection.Open();
@@ -86,6 +104,55 @@ namespace Bovelo
             reader.Read();
             connection.Close();
         }
+        public static int BikeByDay(DateTime date)
+        {
+            Database db = new Database();
+            string sqlDate = date.ToString("yyyy-MM-dd");
+            using (var conn = new MySqlConnection(db.MyConnection))
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand($"SELECT COUNT(*) FROM manager WHERE date='{sqlDate}'", conn))
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine(count);
+                    conn.Close();
+                    return count;
+                }
+            }
 
+        }
+        public static List<Bike> BikeListGenerator(DateTime date)
+        {
+            string sqlDate = date.ToString("yyyy-MM-dd");
+            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND P.date = '{sqlDate}' AND B.cstr_status != 'Done'";
+            DataTable bikeIDReader = GetDataTable(bikeIDQuery);
+            List<Bike> bikeList = new List<Bike>();
+            for (int i = 0; i < bikeIDReader.Rows.Count; i++)
+            {
+                int id = Convert.ToInt32(bikeIDReader.Rows[i]["bike"]);
+                Bike bike = new Bike(id);
+                bikeList.Add(bike);
+            }
+            return bikeList;
+        }
+        private static DataTable GetDataTable(string sqlCommand)
+        {
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
+            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            adapter.Fill(table);
+            return table;
+        }
+        public static void test()
+        {
+            DateTime date = DateTime.Now;
+            Console.WriteLine(date);
+            date.AddDays(1);
+            Console.WriteLine(date);
+        }
     }
 }

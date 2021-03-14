@@ -21,18 +21,93 @@ namespace Bovelo
         private void FitterForm_Load(object sender, EventArgs e)
         {
             this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
-            ScheduleDaily();
+            ShowDayPlanning(fitterPanel);
         }
-        public void ScheduleDaily()
+        private void ShowDayPlanning(Panel day_panel)
         {
-            Database db1 = new Database();
-            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
-            conn.Open();
+            int position = 1;
             DateTime date = DateTime.Now;
-            string sqlFormattedDate = date.ToString("yyyy-MM-dd");
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter($"SELECT type, color, size From manager WHERE date={sqlFormattedDate}",conn);
-            DataTable dataTable = new DataTable();
-            mySqlDataAdapter.Fill(dataTable);
+            int count = Planning.BikeByDay(date);
+            List<Bike> bikeList = Planning.BikeListGenerator(date);
+            for (int i = 0; i < count; i++)
+            {
+                //Planning.ModifyState(bikeList[i].id,"active");
+                Label bikeIDLbl = new Label();
+                Label bikeCategoryLbl = new Label();
+                Label bikeColorLbl = new Label();
+                Label bikeSizeLbl = new Label();
+                CheckBox checkBox = new CheckBox();
+                CheckBox checkBox2 = new CheckBox();
+
+                int stockage = bikeList[i].id;
+                bikeIDLbl.Text = Convert.ToString(bikeList[i].id);
+                bikeIDLbl.Top = position * 20 + 10;
+                bikeIDLbl.Left = 10;
+                bikeIDLbl.Size = new Size(30, 20);
+
+                bikeCategoryLbl.Text = bikeList[i].type;
+                bikeCategoryLbl.Top = position * 20 + 10;
+                bikeCategoryLbl.Left = 60;
+                bikeCategoryLbl.Size = new Size(60, 20);
+
+                bikeColorLbl.Text = bikeList[i].color;
+                bikeColorLbl.Top = position * 20 + 10;
+                bikeColorLbl.Left = 150;
+                bikeColorLbl.Size = new Size(60, 20);
+
+                bikeSizeLbl.Text = bikeList[i].size;
+                bikeSizeLbl.Top = position * 20 + 10;
+                bikeSizeLbl.Left = 220;
+                bikeSizeLbl.Size = new Size(30, 20);
+
+                checkBox.AutoSize = true;
+                checkBox.Text = "Start construction";
+                checkBox.UseVisualStyleBackColor = true;
+                checkBox.Top = position * 20 + 10;
+                checkBox.Name = Convert.ToString(bikeList[i].id);
+                checkBox.Left = 300;
+                checkBox.Visible = true;
+                checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
+
+                checkBox2.AutoSize = true;
+                checkBox2.Text = "Done";
+                checkBox2.UseVisualStyleBackColor = true;
+                checkBox2.Top = position * 20 + 10;
+                checkBox2.Name = Convert.ToString(bikeList[i].id);
+                checkBox2.Left = 300;
+                checkBox2.Visible = true;
+                checkBox2.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateDone);
+
+                position = position + 2;
+
+                day_panel.Controls.Add(bikeIDLbl);
+                day_panel.Controls.Add(bikeCategoryLbl);
+                day_panel.Controls.Add(bikeColorLbl);
+                day_panel.Controls.Add(bikeSizeLbl);
+                day_panel.Controls.Add(checkBox);
+                day_panel.Controls.Add(checkBox2);
+            }
+
+        }
+        
+        private void checkBox_CheckStateDone(object sender, EventArgs e)
+        {
+            CheckBox check = sender as CheckBox;
+            int id = Convert.ToInt32(check.Name);
+            Planning.ModifyState(id, "Done");
+            fitterPanel.Controls.Remove(check);       
+        }
+        private void checkBox_CheckStateActive(object sender, EventArgs e)
+        {
+            CheckBox check = sender as CheckBox;
+            int id = Convert.ToInt32(check.Name);
+            Planning.ModifyState(id, "Active");
+            fitterPanel.Controls.Remove(check);
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
