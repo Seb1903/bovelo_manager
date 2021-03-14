@@ -39,11 +39,11 @@ namespace Bovelo
             DateTime usedDate = DateTime.Now;
             if (usedDate.DayOfWeek == DayOfWeek.Saturday)
             {
-                usedDate.AddDays(2);
+                usedDate = usedDate.AddDays(2);
             }
             else if (usedDate.DayOfWeek == DayOfWeek.Sunday)
             {
-                usedDate.AddDays(1);
+                usedDate = usedDate.AddDays(1);
             }
             else
             {
@@ -54,11 +54,11 @@ namespace Bovelo
                 AddToPlanning(capacity, usedDate);
                 if (usedDate.DayOfWeek == DayOfWeek.Friday)
                 {
-                    usedDate.AddDays(3);
+                    usedDate = usedDate.AddDays(3);
                 }
                 else
                 {
-                    usedDate.AddDays(1);
+                    usedDate = usedDate.AddDays(1);
                 }
             }
             Console.WriteLine(usedDate);
@@ -146,6 +146,13 @@ namespace Bovelo
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             adapter.Fill(table);
             return table;
+        }
+        public static void test()
+        {
+            DateTime date = DateTime.Now;
+            Console.WriteLine(date);
+            date.AddDays(1);
+            Console.WriteLine(date);
         }
     }
 }
