@@ -24,14 +24,14 @@ namespace Bovelo
 
         private void Confirmbtn_Click(object sender, EventArgs e)
         {
-            if (password_txt.Text == Bovelo.managerPassword)
+            if (password_txt.Text == InternalApp.managerPassword)
             {
                 this.Hide();
                 ManagerForm form = new ManagerForm();
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
-                form.FormClosing += delegate { this.Show(); };
-                form.Show();
+                form.FormClosing += delegate { this.Close(); };
+                //form.Show();
 
             }
             else
@@ -45,7 +45,7 @@ namespace Bovelo
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (password_txt.Text == Bovelo.managerPassword)
+                if (password_txt.Text == InternalApp.managerPassword)
                 {
                     this.Hide();
                     ManagerForm form = new ManagerForm();

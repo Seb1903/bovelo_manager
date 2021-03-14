@@ -48,7 +48,7 @@ namespace Bovelo
             else
             {
             }
-            while (VerifyDate() != 0)
+            while (VerifyDate() != 0)   //use if instead of while ??
             {
                 Console.WriteLine(usedDate);
                 AddToPlanning(capacity, usedDate);
@@ -73,9 +73,10 @@ namespace Bovelo
                 using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM manager WHERE date IS NULL", conn))
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count;
                     Console.WriteLine(count);
                     conn.Close();
-                    return count;
+                    
                 }
             }
         }
@@ -113,10 +114,10 @@ namespace Bovelo
                 conn.Open();
                 using (var cmd = new MySqlCommand($"SELECT COUNT(*) FROM manager WHERE date='{sqlDate}'", conn))
                 {
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());    
+                    return count;
                     Console.WriteLine(count);
                     conn.Close();
-                    return count;
                 }
             }
 
@@ -147,12 +148,6 @@ namespace Bovelo
             adapter.Fill(table);
             return table;
         }
-        public static void test()
-        {
-            DateTime date = DateTime.Now;
-            Console.WriteLine(date);
-            date.AddDays(1);
-            Console.WriteLine(date);
-        }
+        
     }
 }

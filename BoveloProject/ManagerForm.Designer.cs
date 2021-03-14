@@ -70,6 +70,7 @@ namespace Bovelo
             this.Back = new System.Windows.Forms.Button();
             this.autoplanner_label = new System.Windows.Forms.Label();
             this.refresh_button = new System.Windows.Forms.Button();
+            this.button_production = new System.Windows.Forms.Button();
             this.day_panel2.SuspendLayout();
             this.day_panel3.SuspendLayout();
             this.day_panel4.SuspendLayout();
@@ -112,7 +113,7 @@ namespace Bovelo
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTimePicker2.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker2.TabIndex = 4;
             this.dateTimePicker2.Visible = false;
             // 
@@ -121,7 +122,7 @@ namespace Bovelo
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(165, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.Size = new System.Drawing.Size(33, 20);
             this.label4.TabIndex = 2;
             this.label4.Text = "28\"";
             this.label4.Visible = false;
@@ -131,7 +132,7 @@ namespace Bovelo
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(84, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Dark blue";
             this.label5.Visible = false;
@@ -141,7 +142,7 @@ namespace Bovelo
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Adventure";
             this.label6.Visible = false;
@@ -166,7 +167,7 @@ namespace Bovelo
             this.dateTimePicker3.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTimePicker3.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker3.TabIndex = 4;
             this.dateTimePicker3.Visible = false;
             // 
@@ -175,7 +176,7 @@ namespace Bovelo
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(165, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 17);
+            this.label7.Size = new System.Drawing.Size(33, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "28\"";
             this.label7.Visible = false;
@@ -185,7 +186,7 @@ namespace Bovelo
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(84, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Dark blue";
             this.label8.Visible = false;
@@ -195,7 +196,7 @@ namespace Bovelo
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 17);
+            this.label9.Size = new System.Drawing.Size(82, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Adventure";
             this.label9.Visible = false;
@@ -220,7 +221,7 @@ namespace Bovelo
             this.dateTimePicker4.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTimePicker4.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker4.TabIndex = 4;
             this.dateTimePicker4.Visible = false;
             // 
@@ -229,7 +230,7 @@ namespace Bovelo
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(165, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 17);
+            this.label10.Size = new System.Drawing.Size(33, 20);
             this.label10.TabIndex = 2;
             this.label10.Text = "28\"";
             this.label10.Visible = false;
@@ -239,7 +240,7 @@ namespace Bovelo
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(84, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 17);
+            this.label11.Size = new System.Drawing.Size(77, 20);
             this.label11.TabIndex = 1;
             this.label11.Text = "Dark blue";
             this.label11.Visible = false;
@@ -249,7 +250,7 @@ namespace Bovelo
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 17);
+            this.label12.Size = new System.Drawing.Size(82, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "Adventure";
             this.label12.Visible = false;
@@ -274,7 +275,7 @@ namespace Bovelo
             this.dateTimePicker5.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateTimePicker5.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker5.TabIndex = 4;
             this.dateTimePicker5.Visible = false;
             // 
@@ -283,7 +284,7 @@ namespace Bovelo
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(165, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 17);
+            this.label13.Size = new System.Drawing.Size(33, 20);
             this.label13.TabIndex = 2;
             this.label13.Text = "28\"";
             this.label13.Visible = false;
@@ -293,7 +294,7 @@ namespace Bovelo
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(84, 12);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 17);
+            this.label14.Size = new System.Drawing.Size(77, 20);
             this.label14.TabIndex = 1;
             this.label14.Text = "Dark blue";
             this.label14.Visible = false;
@@ -303,7 +304,7 @@ namespace Bovelo
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 17);
+            this.label15.Size = new System.Drawing.Size(82, 20);
             this.label15.TabIndex = 0;
             this.label15.Text = "Adventure";
             this.label15.Visible = false;
@@ -313,7 +314,7 @@ namespace Bovelo
             this.monday_label.AutoSize = true;
             this.monday_label.Location = new System.Drawing.Point(306, 13);
             this.monday_label.Name = "monday_label";
-            this.monday_label.Size = new System.Drawing.Size(0, 17);
+            this.monday_label.Size = new System.Drawing.Size(0, 20);
             this.monday_label.TabIndex = 6;
             // 
             // tuesday_label
@@ -321,7 +322,7 @@ namespace Bovelo
             this.tuesday_label.AutoSize = true;
             this.tuesday_label.Location = new System.Drawing.Point(306, 176);
             this.tuesday_label.Name = "tuesday_label";
-            this.tuesday_label.Size = new System.Drawing.Size(0, 17);
+            this.tuesday_label.Size = new System.Drawing.Size(0, 20);
             this.tuesday_label.TabIndex = 7;
             // 
             // wednesday_label
@@ -329,7 +330,7 @@ namespace Bovelo
             this.wednesday_label.AutoSize = true;
             this.wednesday_label.Location = new System.Drawing.Point(306, 339);
             this.wednesday_label.Name = "wednesday_label";
-            this.wednesday_label.Size = new System.Drawing.Size(0, 17);
+            this.wednesday_label.Size = new System.Drawing.Size(0, 20);
             this.wednesday_label.TabIndex = 8;
             // 
             // thursday_label
@@ -337,7 +338,7 @@ namespace Bovelo
             this.thursday_label.AutoSize = true;
             this.thursday_label.Location = new System.Drawing.Point(306, 502);
             this.thursday_label.Name = "thursday_label";
-            this.thursday_label.Size = new System.Drawing.Size(0, 17);
+            this.thursday_label.Size = new System.Drawing.Size(0, 20);
             this.thursday_label.TabIndex = 7;
             // 
             // friday_label
@@ -345,7 +346,7 @@ namespace Bovelo
             this.friday_label.AutoSize = true;
             this.friday_label.Location = new System.Drawing.Point(306, 665);
             this.friday_label.Name = "friday_label";
-            this.friday_label.Size = new System.Drawing.Size(0, 17);
+            this.friday_label.Size = new System.Drawing.Size(0, 20);
             this.friday_label.TabIndex = 7;
             // 
             // label1
@@ -353,7 +354,7 @@ namespace Bovelo
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adventure";
             this.label1.Visible = false;
@@ -363,7 +364,7 @@ namespace Bovelo
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(84, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dark blue";
             this.label2.Visible = false;
@@ -373,7 +374,7 @@ namespace Bovelo
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(165, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 17);
+            this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "28\"";
             this.label3.Visible = false;
@@ -384,7 +385,7 @@ namespace Bovelo
             this.dateTimePicker1.Location = new System.Drawing.Point(230, 7);
             this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.Value = new System.DateTime(2021, 3, 10, 0, 0, 0, 0);
             this.dateTimePicker1.Visible = false;
@@ -406,7 +407,7 @@ namespace Bovelo
             // 
             // AutoPlanner_Btn
             // 
-            this.AutoPlanner_Btn.Location = new System.Drawing.Point(18, 626);
+            this.AutoPlanner_Btn.Location = new System.Drawing.Point(19, 617);
             this.AutoPlanner_Btn.Name = "AutoPlanner_Btn";
             this.AutoPlanner_Btn.Size = new System.Drawing.Size(183, 36);
             this.AutoPlanner_Btn.TabIndex = 9;
@@ -418,7 +419,7 @@ namespace Bovelo
             // 
             this.Back.Location = new System.Drawing.Point(18, 772);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(174, 30);
+            this.Back.Size = new System.Drawing.Size(183, 30);
             this.Back.TabIndex = 10;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -429,24 +430,35 @@ namespace Bovelo
             this.autoplanner_label.AutoSize = true;
             this.autoplanner_label.Location = new System.Drawing.Point(15, 681);
             this.autoplanner_label.Name = "autoplanner_label";
-            this.autoplanner_label.Size = new System.Drawing.Size(54, 17);
+            this.autoplanner_label.Size = new System.Drawing.Size(60, 20);
             this.autoplanner_label.TabIndex = 11;
             this.autoplanner_label.Text = "label16";
             this.autoplanner_label.Visible = false;
             // 
             // refresh_button
             // 
-            this.refresh_button.Location = new System.Drawing.Point(18, 726);
+            this.refresh_button.Location = new System.Drawing.Point(18, 733);
             this.refresh_button.Name = "refresh_button";
-            this.refresh_button.Size = new System.Drawing.Size(174, 29);
+            this.refresh_button.Size = new System.Drawing.Size(183, 29);
             this.refresh_button.TabIndex = 12;
             this.refresh_button.Text = "Refresh";
             this.refresh_button.UseVisualStyleBackColor = true;
             this.refresh_button.Click += new System.EventHandler(this.refresh_button_Click);
             // 
+            // button_production
+            // 
+            this.button_production.Location = new System.Drawing.Point(19, 668);
+            this.button_production.Name = "button_production";
+            this.button_production.Size = new System.Drawing.Size(182, 53);
+            this.button_production.TabIndex = 13;
+            this.button_production.Text = "Add bikes to production for stock";
+            this.button_production.UseVisualStyleBackColor = true;
+            this.button_production.Click += new System.EventHandler(this.button_production_Click);
+            // 
             // ManagerForm
             // 
             this.ClientSize = new System.Drawing.Size(1221, 834);
+            this.Controls.Add(this.button_production);
             this.Controls.Add(this.refresh_button);
             this.Controls.Add(this.autoplanner_label);
             this.Controls.Add(this.Back);
@@ -515,5 +527,6 @@ namespace Bovelo
         private Button Back;
         private Label autoplanner_label;
         private Button refresh_button;
+        private Button button_production;
     }
 }

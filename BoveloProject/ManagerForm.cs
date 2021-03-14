@@ -25,9 +25,7 @@ namespace Bovelo
         private void ShowDayPlanning(Panel day_panel, DateTime date)
         {
             int position = 1;
-            //  foreach ()
-            //  {
-            //
+        
             List <Bike> bikeList = Planning.BikeListGenerator(date);
             int bikeCount = Planning.BikeByDay(date);
             for (int i = 0; i < bikeCount; i++)
@@ -75,7 +73,6 @@ namespace Bovelo
                 day_panel.Controls.Add(bikeSizeLbl);
                 day_panel.Controls.Add(newDatePicker);
             }
-            // }
         }
 
         private void ManagerForm_Load(object sender, EventArgs e)
@@ -176,8 +173,19 @@ namespace Bovelo
             form.Location = this.Location;
             form.StartPosition = FormStartPosition.Manual;
             form.FormClosing += delegate { this.Show(); };
-            form.Show();
             this.Close();
+            this.Show();
+            
+        }
+
+        private void button_production_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Stocks form = new Stocks();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
         }
     }
     public class idDatePicker : DateTimePicker
