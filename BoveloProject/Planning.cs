@@ -124,7 +124,7 @@ namespace Bovelo
         public static List<Bike> BikeListGenerator(DateTime date)
         {
             string sqlDate = date.ToString("yyyy-MM-dd");
-            string bikeIDQuery = $"SELECT bike FROM planning WHERE `date`='{sqlDate}' WHERE `cstr_state`!='Done'";
+            string bikeIDQuery = $"SELECT bike FROM planning WHERE `date`='{sqlDate}'";
             DataTable bikeIDReader = GetDataTable(bikeIDQuery);
             List<Bike> bikeList = new List<Bike>();
             for (int i = 0; i < bikeIDReader.Rows.Count; i++)
