@@ -10,7 +10,7 @@ namespace Bovelo
 {
     public class Bike
     {
-        public int serial_number;
+        public int id;
         public string type;
         public string color;
         public string size;
@@ -18,8 +18,8 @@ namespace Bovelo
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
         public Bike(int id)
         {
-            this.serial_number = id;
-            string query1 = $"SELECT * FROM bike WHERE id={serial_number}";
+            this.id = id;
+            string query1 = $"SELECT * FROM bike WHERE id={id}";
             MySqlDataReader reader1 = GetData(query1);
 
             this.type = reader1.GetString(1);

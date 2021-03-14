@@ -36,9 +36,9 @@ namespace Bovelo
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
-                idDatePicker newDatePicker = new idDatePicker(bikeList[i].serial_number);
+                idDatePicker newDatePicker = new idDatePicker(bikeList[i].id);
 
-                bikeIDLbl.Text = Convert.ToString(bikeList[i].serial_number);
+                bikeIDLbl.Text = Convert.ToString(bikeList[i].id);
                 bikeIDLbl.Top = position * 20 + 10;
                 bikeIDLbl.Left = 10;
                 bikeIDLbl.Size = new Size(30, 20);
