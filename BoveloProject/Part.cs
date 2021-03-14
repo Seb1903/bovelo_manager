@@ -12,7 +12,7 @@ namespace Bovelo
     /*
         Every single argument get requested in database and placed as a 
         parameter in the constructor.
-    
+
         The part gets fours parameters
             > The name of the part
             > The color
@@ -24,12 +24,14 @@ namespace Bovelo
         public string name;
         public string color;
         public int quantity;
-        public string characteristic;
-        public Part(string name, string color, string characteristic) 
+        public int stock;
+        //public string characteristic;
+        public Part(string name, string color, int quantity) 
         {
             this.name = name;
-            this.characteristic = characteristic;
-            string colorQuery = $"SELECT * FROM part_stock WHERE name='{name}' AND characteristic='{characteristic}'";
+            this.quantity = quantity;
+            //this.characteristic = "";
+            string colorQuery = $"SELECT * FROM part_stock WHERE name='{name}'";
             DataTable colorTable = GetDataTable(colorQuery);
             DataRow[] availableColor = colorTable.Select("color='" + color + "'");
             if (availableColor.Length != 0)
@@ -40,20 +42,20 @@ namespace Bovelo
             {
                 this.color = "Default";
             }
-            string quantityQuery = $"SELECT * FROM part_stock WHERE name='{this.name}' AND color='{this.color}' AND characteristic='{this.characteristic}'";
+            string quantityQuery = $"SELECT * FROM part_stock WHERE name='{this.name}' AND color='{this.color}'";
             DataTable quantityReader = GetDataTable(quantityQuery);
-            this.quantity = Convert.ToInt32(quantityReader.Rows[0]["quantity"].ToString());
+            this.stock = Convert.ToInt32(quantityReader.Rows[0]["quantity"].ToString());
         }
         public void Use()
         {
-            quantity--;
-            string query = $"UPDATE part_stock SET quantity={quantity} WHERE name='{name}' AND color='{color}' AND characteristic='{characteristic}'";
+            stock-=quantity;
+            string query = $"UPDATE part_stock SET quantity={stock} WHERE name='{name}' AND color='{color}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
-            this.quantity += quantity;
-            string query = $"UPDATE part_stock SET quantity={this.quantity} WHERE name='{name}' AND color='{color}' AND characteristic='{characteristic}'";
+            this.stock += quantity;
+            string query = $"UPDATE part_stock SET quantity={this.stock} WHERE name='{name}' AND color='{color}'";
             ExecuteQuery(query);
         }
         private static DataTable GetDataTable(string sqlCommand)

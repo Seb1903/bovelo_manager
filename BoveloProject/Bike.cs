@@ -24,18 +24,22 @@ namespace Bovelo
             this.type = bikeReader.GetString(1);
             this.color = bikeReader.GetString(2);
             this.size = bikeReader.GetString(3);
-        }
-        public void Build()
-        {
-            string partQuery = $"SELECT * FROM model_parts WHERE model='{type}'";
+            string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
             MySqlDataReader partReader = GetData(partQuery);
             for (int i = 1; i < partReader.FieldCount; i++)
             {
                 if (partReader[partReader.GetName(i)] != DBNull.Value)
                 {
-                    Part part = new Part(partReader.GetName(i), this.color, partReader.GetString(i));
-                    this.partList.Add(partReader.GetName(i), part);
+                    Part part = new Part(partReader.GetName(i), this.color, partReader.GetInt32(i));
+                    this.partList.Add(part.name, part);
                 }
+            }
+        }
+        public void Build()
+        {
+            foreach (KeyValuePair<string, Part> part in partList)
+            {
+                part.Value.Use();
             }
         }
         private static MySqlDataReader GetData(string query)
@@ -54,8 +58,8 @@ namespace Bovelo
             Console.WriteLine("\n-------------\nParts List:\n-------------");
             foreach (KeyValuePair<string, Part> part in partList)
             {
-                Console.WriteLine("\nType: {0} \n----Color = {1} \n----Characteristic = {2} \n----Quantity = {3}",
-                    part.Key, part.Value.color, part.Value.characteristic, part.Value.quantity);
+                Console.WriteLine("\nType: {0} \n--Color = {1}\n--Stock = {2}\n--Quantity used = {3}",
+                    part.Key, part.Value.color, part.Value.stock, part.Value.quantity);
             }
             return ("\n" + type + " " + size + " " + color);
         }
