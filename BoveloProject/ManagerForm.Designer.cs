@@ -68,6 +68,8 @@ namespace Bovelo
             this.day_panel1 = new System.Windows.Forms.Panel();
             this.AutoPlanner_Btn = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
+            this.autoplanner_label = new System.Windows.Forms.Label();
+            this.refresh_button = new System.Windows.Forms.Button();
             this.day_panel2.SuspendLayout();
             this.day_panel3.SuspendLayout();
             this.day_panel4.SuspendLayout();
@@ -422,9 +424,31 @@ namespace Bovelo
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // autoplanner_label
+            // 
+            this.autoplanner_label.AutoSize = true;
+            this.autoplanner_label.Location = new System.Drawing.Point(15, 681);
+            this.autoplanner_label.Name = "autoplanner_label";
+            this.autoplanner_label.Size = new System.Drawing.Size(54, 17);
+            this.autoplanner_label.TabIndex = 11;
+            this.autoplanner_label.Text = "label16";
+            this.autoplanner_label.Visible = false;
+            // 
+            // refresh_button
+            // 
+            this.refresh_button.Location = new System.Drawing.Point(18, 726);
+            this.refresh_button.Name = "refresh_button";
+            this.refresh_button.Size = new System.Drawing.Size(174, 29);
+            this.refresh_button.TabIndex = 12;
+            this.refresh_button.Text = "Refresh";
+            this.refresh_button.UseVisualStyleBackColor = true;
+            this.refresh_button.Click += new System.EventHandler(this.refresh_button_Click);
+            // 
             // ManagerForm
             // 
             this.ClientSize = new System.Drawing.Size(1221, 834);
+            this.Controls.Add(this.refresh_button);
+            this.Controls.Add(this.autoplanner_label);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.AutoPlanner_Btn);
             this.Controls.Add(this.friday_label);
@@ -489,5 +513,7 @@ namespace Bovelo
         private Panel day_panel1;
         private Button AutoPlanner_Btn;
         private Button Back;
+        private Label autoplanner_label;
+        private Button refresh_button;
     }
 }

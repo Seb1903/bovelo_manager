@@ -160,10 +160,23 @@ namespace Bovelo
         private void AutoPlanner_Btn_Click(object sender, EventArgs e)
         {
             Planning.AutoPlanning(8);
+            autoplanner_label.Text = "Planning done";
+            autoplanner_label.Visible = true;
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void refresh_button_Click(object sender, EventArgs e)
+        {
+            
+            ManagerForm form = new ManagerForm();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
             this.Close();
         }
     }

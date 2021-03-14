@@ -61,11 +61,11 @@ namespace Bovelo
                 bikeSizeLbl.Size = new Size(30, 20);
 
                 checkBox.AutoSize = true;
-                checkBox.Text = "active";
+                checkBox.Text = "Start construction";
                 checkBox.UseVisualStyleBackColor = true;
                 checkBox.Top = position * 20 + 10;
                 checkBox.Name = Convert.ToString(bikeList[i].id);
-                checkBox.Left = 250;
+                checkBox.Left = 300;
                 checkBox.Visible = true;
                 checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
 
@@ -74,7 +74,7 @@ namespace Bovelo
                 checkBox2.UseVisualStyleBackColor = true;
                 checkBox2.Top = position * 20 + 10;
                 checkBox2.Name = Convert.ToString(bikeList[i].id);
-                checkBox2.Left = 250;
+                checkBox2.Left = 300;
                 checkBox2.Visible = true;
                 checkBox2.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateDone);
 
@@ -94,14 +94,14 @@ namespace Bovelo
         {
             CheckBox check = sender as CheckBox;
             int id = Convert.ToInt32(check.Name);
-            Planning.ModifyState(id, "done");
+            Planning.ModifyState(id, "Done");
             fitterPanel.Controls.Remove(check);       
         }
         private void checkBox_CheckStateActive(object sender, EventArgs e)
         {
             CheckBox check = sender as CheckBox;
             int id = Convert.ToInt32(check.Name);
-            Planning.ModifyState(id, "active");
+            Planning.ModifyState(id, "Active");
             fitterPanel.Controls.Remove(check);
         }
 
