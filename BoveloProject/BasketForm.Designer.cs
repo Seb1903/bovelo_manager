@@ -52,7 +52,7 @@ namespace Bovelo
             this.StatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.deliveryTime = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,7 +172,7 @@ namespace Bovelo
             this.label_clientName.Location = new System.Drawing.Point(243, 550);
             this.label_clientName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_clientName.Name = "label_clientName";
-            this.label_clientName.Size = new System.Drawing.Size(0, 13);
+            this.label_clientName.Size = new System.Drawing.Size(0, 26);
             this.label_clientName.TabIndex = 23;
             // 
             // label_price
@@ -182,7 +182,7 @@ namespace Bovelo
             this.label_price.Location = new System.Drawing.Point(27, 500);
             this.label_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(84, 13);
+            this.label_price.Size = new System.Drawing.Size(151, 26);
             this.label_price.TabIndex = 24;
             this.label_price.Text = " Total price : ";
             // 
@@ -193,19 +193,19 @@ namespace Bovelo
             this.price.Location = new System.Drawing.Point(203, 500);
             this.price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(41, 13);
+            this.price.Size = new System.Drawing.Size(76, 26);
             this.price.TabIndex = 25;
             this.price.Text = "label1";
             // 
             // Statuslabel
             // 
             this.Statuslabel.Name = "Statuslabel";
-            this.Statuslabel.Size = new System.Drawing.Size(0, 17);
+            this.Statuslabel.Size = new System.Drawing.Size(0, 32);
             // 
             // StatusLabel1
             // 
             this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(73, 17);
+            this.StatusLabel1.Size = new System.Drawing.Size(150, 32);
             this.StatusLabel1.Text = "Basket ready";
             // 
             // statusStrip1
@@ -214,10 +214,10 @@ namespace Bovelo
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Statuslabel,
             this.StatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 733);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1476, 32);
+            this.statusStrip1.Size = new System.Drawing.Size(1476, 42);
             this.statusStrip1.TabIndex = 26;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -230,19 +230,20 @@ namespace Bovelo
             this.panel1.Size = new System.Drawing.Size(1176, 420);
             this.panel1.TabIndex = 27;
             // 
-            // label1
+            // deliveryTime
             // 
-            this.label1.Location = new System.Drawing.Point(285, 600);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(384, 25);
-            this.label1.TabIndex = 28;
+            this.deliveryTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliveryTime.Location = new System.Drawing.Point(285, 600);
+            this.deliveryTime.Name = "deliveryTime";
+            this.deliveryTime.Size = new System.Drawing.Size(384, 25);
+            this.deliveryTime.TabIndex = 28;
             // 
             // BasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1476, 775);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.deliveryTime);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.price);
@@ -288,6 +289,6 @@ namespace Bovelo
         private ToolStripStatusLabel StatusLabel1;
         private StatusStrip statusStrip1;
         private Panel panel1;
-        private Label label1;
+        private Label deliveryTime;
     }
 }

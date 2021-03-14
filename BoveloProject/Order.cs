@@ -13,6 +13,7 @@ namespace Bovelo
     public class Order
     {
         public List<BuyableItem> content;
+        public int totalItems;
         public int orderNumber;
         public string date;
         public string deliveryDate;
@@ -22,7 +23,7 @@ namespace Bovelo
         public Order()
         {
             this.date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); // Formatted for SQL check for hours 
-            this.deliveryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); // TEMPORARY implementation, will be changed in next iterations
+            this.deliveryDate = DateTime.Now.ToString("yyyy-MM-dd"); // TEMPORARY implementation, will be changed in next iterations
             this.content = new List<BuyableItem>();
         }
         public void Add(BuyableItem newItem)
@@ -47,6 +48,8 @@ namespace Bovelo
                 content.Add(newItem);
                 Console.WriteLine("Item Added successfully!");
             }
+
+            UpdateTotalItems();
             UpdateDeliveryTime();
             UpdatePrice();
         }
@@ -54,6 +57,7 @@ namespace Bovelo
         {
             content.Remove(buyableItem);
             Console.WriteLine("Item Removed");
+            UpdateTotalItems();
             UpdateDeliveryTime();
             UpdatePrice();
         }
@@ -80,6 +84,14 @@ namespace Bovelo
                 }
             }
         }
+        public void UpdateTotalItems()
+        {
+            this.totalItems = 0;
+            foreach (BuyableItem buyableItem in this.content)
+            {
+                this.totalItems += buyableItem.quantity;
+            }
+        }
         public void UpdateDeliveryTime() // NOT READY YET
         {
             if (content.Count == 0)
@@ -88,17 +100,17 @@ namespace Bovelo
             }
             else
             {
+                UpdateTotalItems();
                 string planningQuery = "SELECT * FROM planning"; // Acess planning to compute an estimate delivery time
                 DataTable planningTable = GetDataTable(planningQuery);
                 DataRow firstDateRow = planningTable.Rows[planningTable.Rows.Count - 1];
                 DateTime firstDateAvailable = Convert.ToDateTime(firstDateRow["date"]);
-
                 float speed = 9; // TEMPORARY speed fixed at 9 bikes per week
-                float delay = (content.Count / speed) * 7; // Convert delay in days according to speed and order quantity
+                float delay = (totalItems / speed) + 3; // Convert delay in days + add 3 days for the delivery
                 DateTime newDeliveryDate = firstDateAvailable.AddDays(Math.Ceiling(delay));
                 if (newDeliveryDate.DayOfWeek == DayOfWeek.Saturday) { newDeliveryDate = newDeliveryDate.AddDays(2); }
                 if (newDeliveryDate.DayOfWeek == DayOfWeek.Sunday) { newDeliveryDate = newDeliveryDate.AddDays(1); }
-                this.deliveryDate = newDeliveryDate.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                this.deliveryDate = newDeliveryDate.ToString("yyyy-MM-dd");
             }
         }
         public void Save()
