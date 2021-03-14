@@ -31,13 +31,14 @@ namespace Bovelo
             List<Bike> bikeList = Planning.BikeListGenerator(date);
             for (int i = 0; i < count; i++)
             {
-                Planning.ModifyState(bikeList[i].serial_number,"active");
+                //Planning.ModifyState(bikeList[i].serial_number,"active");
                 Label bikeIDLbl = new Label();
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
                 CheckBox checkBox = new CheckBox();
-                
+                CheckBox checkBox2 = new CheckBox();
+
                 int stockage = bikeList[i].serial_number;
                 bikeIDLbl.Text = Convert.ToString(bikeList[i].serial_number);
                 bikeIDLbl.Top = position * 20 + 10;
@@ -60,13 +61,22 @@ namespace Bovelo
                 bikeSizeLbl.Size = new Size(30, 20);
 
                 checkBox.AutoSize = true;
-                checkBox.Text = "Done";
+                checkBox.Text = "active";
                 checkBox.UseVisualStyleBackColor = true;
                 checkBox.Top = position * 20 + 10;
                 checkBox.Name = Convert.ToString(bikeList[i].serial_number);
                 checkBox.Left = 250;
                 checkBox.Visible = true;
-                checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
+                checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
+
+                checkBox2.AutoSize = true;
+                checkBox2.Text = "Done";
+                checkBox2.UseVisualStyleBackColor = true;
+                checkBox2.Top = position * 20 + 10;
+                checkBox2.Name = Convert.ToString(bikeList[i].serial_number);
+                checkBox2.Left = 250;
+                checkBox2.Visible = true;
+                checkBox2.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateDone);
 
                 position = position + 2;
 
@@ -75,17 +85,24 @@ namespace Bovelo
                 day_panel.Controls.Add(bikeColorLbl);
                 day_panel.Controls.Add(bikeSizeLbl);
                 day_panel.Controls.Add(checkBox);
-
+                day_panel.Controls.Add(checkBox2);
             }
 
         }
         
-        private void checkBox_CheckStateChanged(object sender, EventArgs e)
+        private void checkBox_CheckStateDone(object sender, EventArgs e)
         {
             CheckBox check = sender as CheckBox;
             int id = Convert.ToInt32(check.Name);
             Planning.ModifyState(id, "done");
             fitterPanel.Controls.Remove(check);       
+        }
+        private void checkBox_CheckStateActive(object sender, EventArgs e)
+        {
+            CheckBox check = sender as CheckBox;
+            int id = Convert.ToInt32(check.Name);
+            Planning.ModifyState(id, "active");
+            fitterPanel.Controls.Remove(check);
         }
 
         private void Back_Click(object sender, EventArgs e)

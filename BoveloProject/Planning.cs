@@ -37,14 +37,34 @@ namespace Bovelo
         public static void AutoPlanning(int capacity)
         {
             DateTime usedDate = DateTime.Now;
+            if (usedDate.DayOfWeek == DayOfWeek.Saturday)
+            {
+                usedDate.AddDays(2);
+            }
+            else if (usedDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                usedDate.AddDays(1);
+            }
+            else
+            {
+            }
             while (VerifyDate() != 0)
             {
                 Console.WriteLine(usedDate);
                 AddToPlanning(capacity, usedDate);
-                usedDate.AddDays(1);
+                if (usedDate.DayOfWeek == DayOfWeek.Friday)
+                {
+                    usedDate.AddDays(3);
+                }
+                else
+                {
+                    usedDate.AddDays(1);
+                }
             }
+            Console.WriteLine(usedDate);
+            Console.WriteLine("end");
         }
-        private static int VerifyDate()
+        public static int VerifyDate()
         {
             Database db = new Database();
             using (var conn = new MySqlConnection(db.MyConnection))
@@ -61,7 +81,6 @@ namespace Bovelo
         }
         public static void ModifyDate(int id, String date)
         {
-            //peut etre un probleme niveau de la date
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
             string query = $"UPDATE planning SET date='{date}' WHERE bike='{id}'";
