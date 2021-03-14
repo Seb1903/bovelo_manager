@@ -55,6 +55,7 @@ namespace Bovelo
             // 
             // fitterPanel
             // 
+            this.fitterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fitterPanel.Location = new System.Drawing.Point(77, 63);
             this.fitterPanel.Name = "fitterPanel";
             this.fitterPanel.Size = new System.Drawing.Size(640, 309);
