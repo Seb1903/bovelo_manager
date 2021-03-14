@@ -36,7 +36,7 @@ namespace Bovelo
                 Label bikeCategoryLbl = new Label();
                 Label bikeColorLbl = new Label();
                 Label bikeSizeLbl = new Label();
-                DateTimePicker newDatePicker = new DateTimePicker();
+                idDatePicker newDatePicker = new idDatePicker(bikeList[i].serial_number);
 
                 bikeIDLbl.Text = Convert.ToString(bikeList[i].serial_number);
                 bikeIDLbl.Top = position * 20 + 10;
@@ -151,8 +151,8 @@ namespace Bovelo
         }
         private void newDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            string date = (sender as DateTimePicker).Value.ToString("yyyy-MM-dd");
-            int id = 9;
+            string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
+            int id = (sender as idDatePicker).id;
             Planning.ModifyDate(id, date);
 
         }
@@ -165,6 +165,14 @@ namespace Bovelo
         private void Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+    }
+    public class idDatePicker : DateTimePicker
+    {
+        public int id;
+        public idDatePicker(int id)
+        {
+            this.id = id;
         }
     }
 }
