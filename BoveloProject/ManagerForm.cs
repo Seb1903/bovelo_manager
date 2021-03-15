@@ -19,6 +19,7 @@ namespace Bovelo
 
         public ManagerForm()
         {
+            this.bikelist = Planning.BikeListGenerator();
             InitializeComponent();
         }
 
@@ -27,9 +28,9 @@ namespace Bovelo
             int position = 1;
         
             //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
-            foreach(Bike bike in this.bikelist) { 
-               
-                if(bike.cstr_date == date)
+            foreach(Bike bike in this.bikelist) {
+
+                if(bike.cstr_date.Date == date.Date)
                 {
                     //int bikeCount += 1 ;
                     Label bikeIDLbl = new Label();
@@ -101,7 +102,6 @@ namespace Bovelo
         }
         private void UpdateFormDate(DateTime date)
         {
-            this.bikelist = Planning.BikeListGenerator();
             DateTime startdate = date;
             int offset = dateOffset(startdate);
             startdate = startdate.AddDays(offset);
@@ -158,6 +158,15 @@ namespace Bovelo
         {
             string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
             int id = (sender as idDatePicker).id;
+            foreach(Bike bike in this.bikelist)
+            {
+                if (bike.id == id) {
+                    bike.cstr_date = (sender as idDatePicker).Value;
+                    Console.WriteLine(bike.cstr_date);
+
+                }
+
+            }
             Planning.ModifyDate(id, date);
 
         }
