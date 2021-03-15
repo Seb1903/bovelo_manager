@@ -130,6 +130,7 @@ namespace Bovelo
             List<Bike> bikeList = new List<Bike>();
             for (int i = 0; i < bikeIDReader.Rows.Count; i++)
             {
+                Console.WriteLine("test");
                 int id = Convert.ToInt32(bikeIDReader.Rows[i]["bike"]);
                 Bike bike = new Bike(id);
                 bikeList.Add(bike);

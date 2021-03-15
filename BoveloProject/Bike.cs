@@ -28,6 +28,10 @@ namespace Bovelo
             string dateQuery = $"SELECT * FROM planning WHERE bike={id}";
             MySqlDataReader dateReader = GetData(dateQuery);
             this.cstr_date = dateReader.GetDateTime(0);
+            
+        }
+        public void Build()
+        {
             string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
             MySqlDataReader partReader = GetData(partQuery);
             for (int i = 1; i < partReader.FieldCount; i++)
@@ -38,9 +42,6 @@ namespace Bovelo
                     this.partList.Add(part.name, part);
                 }
             }
-        }
-        public void Build()
-        {
             foreach (KeyValuePair<string, Part> part in partList)
             {
                 part.Value.Use();
