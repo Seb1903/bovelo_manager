@@ -21,17 +21,12 @@ namespace Bovelo
         public Bike(int id)
         {
             this.id = id;
-           
-            foreach (DataRow row in InternalApp.bikeTable.Rows)
-            {
-                DataRow bikeRow = InternalApp.bikeTable.AsEnumerable().Single(r => r.Field<int>("id") == this.id);
-                this.type = row.Field<string>("type");
-                this.color = row.Field<string>("color");
-                this.size = row.Field<string>("size");
-                DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
-                DateTime date = dateRow.Field<DateTime>("date");
-            }
-
+            DataRow bikeRow = InternalApp.bikeTable.AsEnumerable().Single(r => r.Field<int>("id") == this.id);
+            this.type = bikeRow.Field<string>("type");
+            this.color = bikeRow.Field<string>("color");
+            this.size = bikeRow.Field<string>("size");
+            DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
+            DateTime date = dateRow.Field<DateTime>("date");
         }
         public void Build()
         {

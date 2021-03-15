@@ -15,11 +15,8 @@ namespace Bovelo
 {
     public partial class ManagerForm : Form
     {
-        private List<Bike> bikelist = new List<Bike>();
-
         public ManagerForm()
         {
-            this.bikelist = Planning.BikeListGenerator();
             InitializeComponent();
         }
 
@@ -28,7 +25,7 @@ namespace Bovelo
             int position = 1;
         
             //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
-            foreach(Bike bike in this.bikelist) {
+            foreach(Bike bike in InternalApp.bikeList) {
 
                 if(bike.cstr_date.Date == date.Date)
                 {
@@ -158,7 +155,7 @@ namespace Bovelo
         {
             string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
             int id = (sender as idDatePicker).id;
-            foreach(Bike bike in this.bikelist)
+            foreach(Bike bike in InternalApp.bikeList)
             {
                 if (bike.id == id) {
                     bike.cstr_date = (sender as idDatePicker).Value;
