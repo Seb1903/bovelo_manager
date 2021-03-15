@@ -17,10 +17,11 @@ namespace Bovelo
         {
             InternalApp internalApp = new InternalApp();
             internalApp.Run();
-            
-            //Bike bike = new Bike(1);
-            //Console.WriteLine(bike.cstr_date);
-            //Application.Run(new ManagerForm());
+
+            //Bovelo bovelo = new Bovelo(); 
+            //bovelo.Run();
+
+
         }
     }
 }

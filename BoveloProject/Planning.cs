@@ -28,7 +28,14 @@ namespace Bovelo
                 command.Parameters.Add("@prodDate", MySqlDbType.DateTime);
                 command.Parameters["@prodDate"].Value = usedDate;
                 MyConn.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+
+                }
                 MyConn.Close();
             }
 
@@ -62,7 +69,7 @@ namespace Bovelo
                 }
             }
             Console.WriteLine(usedDate);
-            Console.WriteLine("end");
+            Console.WriteLine("Auto planning done ! Please wait a moment");
         }
         public static int VerifyDate()
         {
@@ -73,9 +80,10 @@ namespace Bovelo
                 using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM manager WHERE date IS NULL", conn))
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    conn.Close();
                     return count;
                     Console.WriteLine(count);
-                    conn.Close();
+                    
                     
                 }
             }

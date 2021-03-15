@@ -10,19 +10,16 @@ namespace Bovelo
     public class InternalApp
     {
         public static string managerPassword = "1234";
-        public static DataTable bikeTable = GetDataTable("SELECT * FROM bike WHERE cstr_status!='Done'");
-        public static DataTable planningTable = GetDataTable("SELECT * FROM planning");
+        public static DataTable bikeTable ;
+        public static DataTable planningTable ;
         public static List<Bike> bikeList = new List<Bike>();
         public InternalApp()
         {
+            SetBikeList();
         }
         public void Run()
         {
-            foreach(DataRow row in bikeTable.Rows)
-            {
-                Bike bike = new Bike(row.Field<int>("id"));
-                bikeList.Add(bike);
-            }
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ChooseUser());
@@ -38,6 +35,25 @@ namespace Bovelo
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             adapter.Fill(table);
             return table;
+        }
+
+        public static void UpdateBikeTable()
+        {
+            bikeTable = GetDataTable("SELECT * FROM bike WHERE cstr_status!='Done'");
+        }
+        public static void UpdatePlanningTable()
+        {
+            planningTable = GetDataTable("SELECT * FROM planning");
+        }
+        public static void SetBikeList()
+        {
+            UpdateBikeTable();
+            UpdatePlanningTable();
+            foreach (DataRow row in bikeTable.Rows)
+            {
+                Bike bike = new Bike(row.Field<int>("id"));
+                bikeList.Add(bike);
+            }
         }
     }
 }

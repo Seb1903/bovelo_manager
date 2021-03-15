@@ -25,8 +25,16 @@ namespace Bovelo
             this.type = bikeRow.Field<string>("type");
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
-            DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
-            DateTime date = dateRow.Field<DateTime>("date");
+            try
+            {
+                DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
+                DateTime date = dateRow.Field<DateTime>("date");
+                this.cstr_date = date;
+
+            }
+            catch { 
+            }
+            
         }
         public void Build()
         {

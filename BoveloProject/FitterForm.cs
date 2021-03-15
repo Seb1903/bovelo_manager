@@ -28,64 +28,68 @@ namespace Bovelo
             int position = 1;
             DateTime date = DateTime.Now;
             int count = Planning.BikeByDay(date);
-            List<Bike> bikeList = Planning.BikeListGenerator();
-            for (int i = 0; i < count; i++)
+            //List<Bike> bikeList = Planning.BikeListGenerator();
+            foreach (Bike bike in InternalApp.bikeList)
             {
-                //Planning.ModifyState(bikeList[i].id,"active");
-                Label bikeIDLbl = new Label();
-                Label bikeCategoryLbl = new Label();
-                Label bikeColorLbl = new Label();
-                Label bikeSizeLbl = new Label();
-                CheckBox checkBox = new CheckBox();
-                CheckBox checkBox2 = new CheckBox();
 
-                int stockage = bikeList[i].id;
-                bikeIDLbl.Text = Convert.ToString(bikeList[i].id);
-                bikeIDLbl.Top = position * 20 + 10;
-                bikeIDLbl.Left = 10;
-                bikeIDLbl.Size = new Size(30, 20);
+                if (bike.cstr_date.Date == date.Date)
+                {
+                    //Planning.ModifyState(bikeList[i].id,"active");
+                    Label bikeIDLbl = new Label();
+                    Label bikeCategoryLbl = new Label();
+                    Label bikeColorLbl = new Label();
+                    Label bikeSizeLbl = new Label();
+                    CheckBox checkBox = new CheckBox();
+                    CheckBox checkBox2 = new CheckBox();
 
-                bikeCategoryLbl.Text = bikeList[i].type;
-                bikeCategoryLbl.Top = position * 20 + 10;
-                bikeCategoryLbl.Left = 60;
-                bikeCategoryLbl.Size = new Size(60, 20);
+                    int stockage = bike.id;
+                    bikeIDLbl.Text = Convert.ToString(bike.id);
+                    bikeIDLbl.Top = position * 20 + 10;
+                    bikeIDLbl.Left = 10;
+                    bikeIDLbl.Size = new Size(30, 20);
 
-                bikeColorLbl.Text = bikeList[i].color;
-                bikeColorLbl.Top = position * 20 + 10;
-                bikeColorLbl.Left = 150;
-                bikeColorLbl.Size = new Size(60, 20);
+                    bikeCategoryLbl.Text = bike.type;
+                    bikeCategoryLbl.Top = position * 20 + 10;
+                    bikeCategoryLbl.Left = 60;
+                    bikeCategoryLbl.Size = new Size(60, 20);
 
-                bikeSizeLbl.Text = bikeList[i].size;
-                bikeSizeLbl.Top = position * 20 + 10;
-                bikeSizeLbl.Left = 220;
-                bikeSizeLbl.Size = new Size(30, 20);
+                    bikeColorLbl.Text = bike.color;
+                    bikeColorLbl.Top = position * 20 + 10;
+                    bikeColorLbl.Left = 150;
+                    bikeColorLbl.Size = new Size(60, 20);
 
-                checkBox.AutoSize = true;
-                checkBox.Text = "Start construction";
-                checkBox.UseVisualStyleBackColor = true;
-                checkBox.Top = position * 20 + 10;
-                checkBox.Name = Convert.ToString(bikeList[i].id);
-                checkBox.Left = 300;
-                checkBox.Visible = true;
-                checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
+                    bikeSizeLbl.Text = bike.size;
+                    bikeSizeLbl.Top = position * 20 + 10;
+                    bikeSizeLbl.Left = 220;
+                    bikeSizeLbl.Size = new Size(30, 20);
 
-                checkBox2.AutoSize = true;
-                checkBox2.Text = "Done";
-                checkBox2.UseVisualStyleBackColor = true;
-                checkBox2.Top = position * 20 + 10;
-                checkBox2.Name = Convert.ToString(bikeList[i].id);
-                checkBox2.Left = 300;
-                checkBox2.Visible = true;
-                checkBox2.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateDone);
+                    checkBox.AutoSize = true;
+                    checkBox.Text = "Start construction";
+                    checkBox.UseVisualStyleBackColor = true;
+                    checkBox.Top = position * 20 + 10;
+                    checkBox.Name = Convert.ToString(bike.id);
+                    checkBox.Left = 300;
+                    checkBox.Visible = true;
+                    checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
 
-                position = position + 2;
+                    checkBox2.AutoSize = true;
+                    checkBox2.Text = "Done";
+                    checkBox2.UseVisualStyleBackColor = true;
+                    checkBox2.Top = position * 20 + 10;
+                    checkBox2.Name = Convert.ToString(bike.id);
+                    checkBox2.Left = 300;
+                    checkBox2.Visible = true;
+                    checkBox2.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateDone);
 
-                day_panel.Controls.Add(bikeIDLbl);
-                day_panel.Controls.Add(bikeCategoryLbl);
-                day_panel.Controls.Add(bikeColorLbl);
-                day_panel.Controls.Add(bikeSizeLbl);
-                day_panel.Controls.Add(checkBox);
-                day_panel.Controls.Add(checkBox2);
+                    position = position + 2;
+
+                    day_panel.Controls.Add(bikeIDLbl);
+                    day_panel.Controls.Add(bikeCategoryLbl);
+                    day_panel.Controls.Add(bikeColorLbl);
+                    day_panel.Controls.Add(bikeSizeLbl);
+                    day_panel.Controls.Add(checkBox);
+                    day_panel.Controls.Add(checkBox2);
+                }
             }
 
         }
