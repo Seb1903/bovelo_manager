@@ -163,11 +163,11 @@ namespace Bovelo
                 if (bike.id == id) {
                     bike.cstr_date = (sender as idDatePicker).Value;
                     Console.WriteLine(bike.cstr_date);
-
+                    bike.ModifyDate(date);
                 }
 
             }
-            Planning.ModifyDate(id, date);
+            
 
         }
 
