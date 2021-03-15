@@ -26,10 +26,6 @@ namespace Bovelo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ChooseUser());
-            foreach(Bike bike in bikeList)
-            {
-                Console.WriteLine(bike);
-            }
         }
         private static DataTable GetDataTable(string sqlCommand)
         {
