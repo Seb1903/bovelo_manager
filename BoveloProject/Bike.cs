@@ -71,6 +71,19 @@ namespace Bovelo
             }
             return ("\n" + type + " " + size + " " + color);
         }
+
+        public void ModifyDate(string date)
+        {
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            string query = $"UPDATE planning SET date='{date}' WHERE bike='{this.id}'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            connection.Close();
+        }
     }
 }
 

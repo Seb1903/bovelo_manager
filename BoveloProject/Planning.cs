@@ -80,7 +80,7 @@ namespace Bovelo
                 }
             }
         }
-        public static void ModifyDate(int id, String date)
+         /* public static void ModifyDate(int id, String date)
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
@@ -91,7 +91,7 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
-        }
+        } */   //Method is in Bike class now 
 
         public static void ModifyState(int id, string state)
         {
