@@ -16,6 +16,7 @@ namespace Bovelo
         public string size;
         public int price;
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        public DateTime cstr_date; 
         public Bike(int id)
         {
             this.id = id;
@@ -24,6 +25,9 @@ namespace Bovelo
             this.type = bikeReader.GetString(1);
             this.color = bikeReader.GetString(2);
             this.size = bikeReader.GetString(3);
+            string dateQuery = $"SELECT * FROM planning WHERE bike={id}";
+            MySqlDataReader dateReader = GetData(dateQuery);
+            this.cstr_date = dateReader.GetDateTime(0);
             string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
             MySqlDataReader partReader = GetData(partQuery);
             for (int i = 1; i < partReader.FieldCount; i++)

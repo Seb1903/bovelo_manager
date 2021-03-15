@@ -122,10 +122,10 @@ namespace Bovelo
             }
 
         }
-        public static List<Bike> BikeListGenerator(DateTime date)
+        public static List<Bike> BikeListGenerator() // deleted parameter so we only call once this function 
         {
-            string sqlDate = date.ToString("yyyy-MM-dd");
-            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND P.date = '{sqlDate}' AND B.cstr_status != 'Done'";
+            //string sqlDate = date.ToString("yyyy-MM-dd");
+            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND B.cstr_status != 'Done'";
             DataTable bikeIDReader = GetDataTable(bikeIDQuery);
             List<Bike> bikeList = new List<Bike>();
             for (int i = 0; i < bikeIDReader.Rows.Count; i++)

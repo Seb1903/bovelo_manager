@@ -28,7 +28,7 @@ namespace Bovelo
             int position = 1;
             DateTime date = DateTime.Now;
             int count = Planning.BikeByDay(date);
-            List<Bike> bikeList = Planning.BikeListGenerator(date);
+            List<Bike> bikeList = Planning.BikeListGenerator();
             for (int i = 0; i < count; i++)
             {
                 //Planning.ModifyState(bikeList[i].id,"active");
