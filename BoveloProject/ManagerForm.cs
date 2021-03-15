@@ -15,8 +15,6 @@ namespace Bovelo
 {
     public partial class ManagerForm : Form
     {
-        private List<Bike> bikelist = new List<Bike>();
-
         public ManagerForm()
         {
             InitializeComponent();
@@ -26,52 +24,58 @@ namespace Bovelo
         {
             int position = 1;
         
-            List <Bike> bikeList = Planning.BikeListGenerator(date);
-            int bikeCount = Planning.BikeByDay(date);
-            for (int i = 0; i < bikeCount; i++)
-            {
-                Label bikeIDLbl = new Label();
-                Label bikeCategoryLbl = new Label();
-                Label bikeColorLbl = new Label();
-                Label bikeSizeLbl = new Label();
-                idDatePicker newDatePicker = new idDatePicker(bikeList[i].id);
+            //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
+            foreach(Bike bike in InternalApp.bikeList) {
+                if(bike.cstr_date.Date == date.Date)
+                {
+                    //int bikeCount += 1 ;
+                    Label bikeIDLbl = new Label();
+                    Label bikeCategoryLbl = new Label();
+                    Label bikeColorLbl = new Label();
+                    Label bikeSizeLbl = new Label();
+                    idDatePicker newDatePicker = new idDatePicker(bike.id);
 
-                bikeIDLbl.Text = Convert.ToString(bikeList[i].id);
-                bikeIDLbl.Top = position * 20 + 10;
-                bikeIDLbl.Left = 10;
-                bikeIDLbl.Size = new Size(30, 20);
+                    bikeIDLbl.Text = Convert.ToString(bike.id);
+                    bikeIDLbl.Top = position * 20 + 10;
+                    bikeIDLbl.Left = 10;
+                    bikeIDLbl.Size = new Size(30, 20);
 
-                bikeCategoryLbl.Text = Convert.ToString(bikeList[i].type);
-                bikeCategoryLbl.Top = position * 20 + 10;
-                bikeCategoryLbl.Left = 60;
-                bikeCategoryLbl.Size = new Size(60, 20);
+                    bikeCategoryLbl.Text = Convert.ToString(bike.type);
+                    bikeCategoryLbl.Top = position * 20 + 10;
+                    bikeCategoryLbl.Left = 60;
+                    bikeCategoryLbl.Size = new Size(60, 20);
 
-                bikeColorLbl.Text = Convert.ToString(bikeList[i].color);
-                bikeColorLbl.Top = position * 20 + 10;
-                bikeColorLbl.Left = 150;
-                bikeColorLbl.Size = new Size(60, 20);
+                    bikeColorLbl.Text = Convert.ToString(bike.color);
+                    bikeColorLbl.Top = position * 20 + 10;
+                    bikeColorLbl.Left = 150;
+                    bikeColorLbl.Size = new Size(60, 20);
 
-                bikeSizeLbl.Text = Convert.ToString(bikeList[i].size);
-                bikeSizeLbl.Top = position * 20 + 10;
-                bikeSizeLbl.Left = 220;
-                bikeSizeLbl.Size = new Size(30, 20);
+                    bikeSizeLbl.Text = Convert.ToString(bike.size);
+                    bikeSizeLbl.Top = position * 20 + 10;
+                    bikeSizeLbl.Left = 220;
+                    bikeSizeLbl.Size = new Size(30, 20);
 
-                newDatePicker.Top = position * 20 + 7;
-                newDatePicker.Left = 270;
-                newDatePicker.Size = new Size(200, 20);
-                newDatePicker.Value = date;
-                newDatePicker.ValueChanged += newDatePicker_ValueChanged;
-
-                
+                    newDatePicker.Top = position * 20 + 7;
+                    newDatePicker.Left = 270;
+                    newDatePicker.Size = new Size(200, 20);
+                    newDatePicker.Value = date;
+                    newDatePicker.ValueChanged += newDatePicker_ValueChanged;
 
 
-                position = position + 2;
 
-                day_panel.Controls.Add(bikeIDLbl);
-                day_panel.Controls.Add(bikeCategoryLbl);
-                day_panel.Controls.Add(bikeColorLbl);
-                day_panel.Controls.Add(bikeSizeLbl);
-                day_panel.Controls.Add(newDatePicker);
+
+                    position = position + 2;
+
+                    day_panel.Controls.Add(bikeIDLbl);
+                    day_panel.Controls.Add(bikeCategoryLbl);
+                    day_panel.Controls.Add(bikeColorLbl);
+                    day_panel.Controls.Add(bikeSizeLbl);
+                    day_panel.Controls.Add(newDatePicker);
+
+
+                }
+            
+            
             }
         }
 
@@ -150,13 +154,24 @@ namespace Bovelo
         {
             string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
             int id = (sender as idDatePicker).id;
-            Planning.ModifyDate(id, date);
+            foreach(Bike bike in InternalApp.bikeList)
+            {
+                if (bike.id == id) {
+                    bike.cstr_date = (sender as idDatePicker).Value;
+                    bike.ModifyDate(date);
+                }
+
+            }
+            
 
         }
 
         private void AutoPlanner_Btn_Click(object sender, EventArgs e)
         {
             Planning.AutoPlanning(8);
+            InternalApp.SetBikeList();
+            DateTime actualTime = DateTime.Now;
+            UpdateFormDate(actualTime);
             autoplanner_label.Text = "Planning done";
             autoplanner_label.Visible = true;
         }
@@ -168,14 +183,17 @@ namespace Bovelo
 
         private void refresh_button_Click(object sender, EventArgs e)
         {
-            
+            DateTime actualTime = DateTime.Now;
+            UpdateFormDate(actualTime);
+            /*
             ManagerForm form = new ManagerForm();
             form.Location = this.Location;
             form.StartPosition = FormStartPosition.Manual;
-            form.FormClosing += delegate { this.Show(); };
+            //form.FormClosing += delegate { this.Show(); };
             this.Close();
-            this.Show();
-            
+            form.Show();
+            */
+
         }
 
         private void button_production_Click(object sender, EventArgs e)

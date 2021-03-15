@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Bovelo
 {
@@ -15,15 +16,31 @@ namespace Bovelo
         public string color;
         public string size;
         public int price;
+        public string state;
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        public DateTime cstr_date; 
         public Bike(int id)
         {
             this.id = id;
-            string bikeQuery = $"SELECT * FROM bike WHERE id={id}";
-            MySqlDataReader bikeReader = GetData(bikeQuery);
-            this.type = bikeReader.GetString(1);
-            this.color = bikeReader.GetString(2);
-            this.size = bikeReader.GetString(3);
+            DataRow bikeRow = InternalApp.bikeTable.AsEnumerable().Single(r => r.Field<int>("id") == this.id);
+            this.type = bikeRow.Field<string>("type");
+            this.color = bikeRow.Field<string>("color");
+            this.size = bikeRow.Field<string>("size");
+            this.state = bikeRow.Field<string>("cstr_status");
+
+            try
+            {
+                DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
+                DateTime date = dateRow.Field<DateTime>("date");
+                this.cstr_date = date;
+
+            }
+            catch { 
+            }
+            
+        }
+        public void Build()
+        {
             string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
             MySqlDataReader partReader = GetData(partQuery);
             for (int i = 1; i < partReader.FieldCount; i++)
@@ -34,13 +51,11 @@ namespace Bovelo
                     this.partList.Add(part.name, part);
                 }
             }
-        }
-        public void Build()
-        {
             foreach (KeyValuePair<string, Part> part in partList)
             {
                 part.Value.Use();
             }
+            this.ModifyState("Done");
         }
         private static MySqlDataReader GetData(string query)
         {
@@ -62,6 +77,34 @@ namespace Bovelo
                     part.Key, part.Value.color, part.Value.stock, part.Value.quantity);
             }
             return ("\n" + type + " " + size + " " + color);
+        }
+
+        public void ModifyDate(string date)
+        {
+            //improve method with method taking DateTime instead of string in parameter
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            string query = $"UPDATE planning SET date='{date}' WHERE bike='{this.id}'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            connection.Close();
+        }
+        public void ModifyState(string state)
+        {
+            this.state = state;
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{this.id}'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            connection.Close();
+
         }
     }
 }

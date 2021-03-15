@@ -62,6 +62,7 @@ namespace Bovelo
                 command.Parameters.AddWithValue("@N", n);
                 MyConn.Open();
                 command.ExecuteNonQuery();
+                MyConn.Close();
             }
         }
 

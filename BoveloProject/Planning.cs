@@ -28,7 +28,14 @@ namespace Bovelo
                 command.Parameters.Add("@prodDate", MySqlDbType.DateTime);
                 command.Parameters["@prodDate"].Value = usedDate;
                 MyConn.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+
+                }
                 MyConn.Close();
             }
 
@@ -50,7 +57,6 @@ namespace Bovelo
             }
             while (VerifyDate() != 0)   //use if instead of while ??
             {
-                Console.WriteLine(usedDate);
                 AddToPlanning(capacity, usedDate);
                 if (usedDate.DayOfWeek == DayOfWeek.Friday)
                 {
@@ -61,8 +67,7 @@ namespace Bovelo
                     usedDate = usedDate.AddDays(1);
                 }
             }
-            Console.WriteLine(usedDate);
-            Console.WriteLine("end");
+            Console.WriteLine("Auto planning done ! Please wait a moment");
         }
         public static int VerifyDate()
         {
@@ -73,14 +78,14 @@ namespace Bovelo
                 using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM manager WHERE date IS NULL", conn))
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    return count;
-                    Console.WriteLine(count);
                     conn.Close();
+                    return count;
+                    
                     
                 }
             }
         }
-        public static void ModifyDate(int id, String date)
+         /* public static void ModifyDate(int id, String date)
         {
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
@@ -91,7 +96,7 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
-        }
+        }    //Method is in Bike class now 
 
         public static void ModifyState(int id, string state)
         {
@@ -104,7 +109,7 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
-        }
+        } */
         public static int BikeByDay(DateTime date)
         {
             Database db = new Database();
@@ -122,20 +127,21 @@ namespace Bovelo
             }
 
         }
-        public static List<Bike> BikeListGenerator(DateTime date)
+        /*public static List<Bike> BikeListGenerator() // deleted parameter so we only call once this function 
         {
-            string sqlDate = date.ToString("yyyy-MM-dd");
-            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND P.date = '{sqlDate}' AND B.cstr_status != 'Done'";
+            //string sqlDate = date.ToString("yyyy-MM-dd");
+            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND B.cstr_status != 'Done'";
             DataTable bikeIDReader = GetDataTable(bikeIDQuery);
             List<Bike> bikeList = new List<Bike>();
             for (int i = 0; i < bikeIDReader.Rows.Count; i++)
             {
+                Console.WriteLine("test");
                 int id = Convert.ToInt32(bikeIDReader.Rows[i]["bike"]);
                 Bike bike = new Bike(id);
                 bikeList.Add(bike);
             }
             return bikeList;
-        }
+        }*/
         private static DataTable GetDataTable(string sqlCommand)
         {
             Database db1 = new Database();

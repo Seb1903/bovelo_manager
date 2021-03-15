@@ -17,7 +17,11 @@ namespace Bovelo
         {
             InternalApp internalApp = new InternalApp();
             internalApp.Run();
-            //Application.Run(new ManagerForm());
+
+            //Bovelo bovelo = new Bovelo(); 
+            //bovelo.Run();
+
+
         }
     }
 }
