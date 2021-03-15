@@ -57,7 +57,6 @@ namespace Bovelo
             }
             while (VerifyDate() != 0)   //use if instead of while ??
             {
-                Console.WriteLine(usedDate);
                 AddToPlanning(capacity, usedDate);
                 if (usedDate.DayOfWeek == DayOfWeek.Friday)
                 {
@@ -68,7 +67,6 @@ namespace Bovelo
                     usedDate = usedDate.AddDays(1);
                 }
             }
-            Console.WriteLine(usedDate);
             Console.WriteLine("Auto planning done ! Please wait a moment");
         }
         public static int VerifyDate()
@@ -82,7 +80,6 @@ namespace Bovelo
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
                     conn.Close();
                     return count;
-                    Console.WriteLine(count);
                     
                     
                 }
@@ -99,7 +96,7 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
-        } */   //Method is in Bike class now 
+        }    //Method is in Bike class now 
 
         public static void ModifyState(int id, string state)
         {
@@ -112,7 +109,7 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
-        }
+        } */
         public static int BikeByDay(DateTime date)
         {
             Database db = new Database();

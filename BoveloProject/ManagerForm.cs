@@ -26,7 +26,6 @@ namespace Bovelo
         
             //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
             foreach(Bike bike in InternalApp.bikeList) {
-                Console.WriteLine(bike.cstr_date);
                 if(bike.cstr_date.Date == date.Date)
                 {
                     //int bikeCount += 1 ;
@@ -159,7 +158,6 @@ namespace Bovelo
             {
                 if (bike.id == id) {
                     bike.cstr_date = (sender as idDatePicker).Value;
-                    Console.WriteLine(bike.cstr_date);
                     bike.ModifyDate(date);
                 }
 

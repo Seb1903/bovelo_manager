@@ -98,14 +98,27 @@ namespace Bovelo
         {
             CheckBox check = sender as CheckBox;
             int id = Convert.ToInt32(check.Name);
-            Planning.ModifyState(id, "Done");
+             foreach(Bike bike in InternalApp.bikeList)
+            {
+                if(bike.id == id)
+                {
+                    bike.Build();
+                }
+            }
+
             fitterPanel.Controls.Remove(check);       
         }
         private void checkBox_CheckStateActive(object sender, EventArgs e)
         {
             CheckBox check = sender as CheckBox;
             int id = Convert.ToInt32(check.Name);
-            Planning.ModifyState(id, "Active");
+            foreach (Bike bike in InternalApp.bikeList)
+            {
+                if (bike.id == id)
+                {
+                    bike.ModifyState("Active");
+                }
+            }
             fitterPanel.Controls.Remove(check);
         }
 

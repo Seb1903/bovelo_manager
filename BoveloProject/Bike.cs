@@ -16,6 +16,7 @@ namespace Bovelo
         public string color;
         public string size;
         public int price;
+        public string state;
         public Dictionary<string, Part> partList = new Dictionary<string, Part>();
         public DateTime cstr_date; 
         public Bike(int id)
@@ -25,6 +26,8 @@ namespace Bovelo
             this.type = bikeRow.Field<string>("type");
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
+            this.state = bikeRow.Field<string>("cstr_status");
+
             try
             {
                 DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
@@ -52,6 +55,7 @@ namespace Bovelo
             {
                 part.Value.Use();
             }
+            this.ModifyState("Done");
         }
         private static MySqlDataReader GetData(string query)
         {
@@ -77,6 +81,7 @@ namespace Bovelo
 
         public void ModifyDate(string date)
         {
+            //improve method with method taking DateTime instead of string in parameter
             Database db = new Database();
             MySqlConnection connection = new MySqlConnection(db.MyConnection);
             string query = $"UPDATE planning SET date='{date}' WHERE bike='{this.id}'";
@@ -86,6 +91,20 @@ namespace Bovelo
             reader = command.ExecuteReader();
             reader.Read();
             connection.Close();
+        }
+        public void ModifyState(string state)
+        {
+            this.state = state;
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{this.id}'";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            connection.Close();
+
         }
     }
 }
