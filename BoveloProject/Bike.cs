@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Bovelo
 {
@@ -20,15 +21,17 @@ namespace Bovelo
         public Bike(int id)
         {
             this.id = id;
-            string bikeQuery = $"SELECT * FROM bike WHERE id={id}";
-            MySqlDataReader bikeReader = GetData(bikeQuery);
-            this.type = bikeReader.GetString(1);
-            this.color = bikeReader.GetString(2);
-            this.size = bikeReader.GetString(3);
-            string dateQuery = $"SELECT * FROM planning WHERE bike={id}";
-            MySqlDataReader dateReader = GetData(dateQuery);
-            this.cstr_date = dateReader.GetDateTime(0);
-            
+           
+            foreach (DataRow row in InternalApp.bikeTable.Rows)
+            {
+                DataRow bikeRow = InternalApp.bikeTable.AsEnumerable().Single(r => r.Field<int>("id") == this.id);
+                this.type = row.Field<string>("type");
+                this.color = row.Field<string>("color");
+                this.size = row.Field<string>("size");
+                DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
+                DateTime date = dateRow.Field<DateTime>("date");
+            }
+
         }
         public void Build()
         {

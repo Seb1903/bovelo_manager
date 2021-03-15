@@ -8,18 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 using System.Globalization;
 
 namespace Bovelo
 {
     public partial class ManagerForm : Form
     {
-        private List<Bike> bikelist = new List<Bike>();
-
         public ManagerForm()
         {
-            this.bikelist = Planning.BikeListGenerator();
             InitializeComponent();
         }
 
@@ -27,8 +23,7 @@ namespace Bovelo
         {
             int position = 1;
         
-            //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
-            foreach(Bike bike in this.bikelist) {
+            foreach(Bike bike in InternalApp.bikeList) {
 
                 if(bike.cstr_date.Date == date.Date)
                 {
@@ -65,9 +60,6 @@ namespace Bovelo
                     newDatePicker.Value = date;
                     newDatePicker.ValueChanged += newDatePicker_ValueChanged;
 
-
-
-
                     position = position + 2;
 
                     day_panel.Controls.Add(bikeIDLbl);
@@ -75,11 +67,7 @@ namespace Bovelo
                     day_panel.Controls.Add(bikeColorLbl);
                     day_panel.Controls.Add(bikeSizeLbl);
                     day_panel.Controls.Add(newDatePicker);
-
-
-                }
-            
-            
+                }            
             }
         }
 
@@ -158,17 +146,14 @@ namespace Bovelo
         {
             string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
             int id = (sender as idDatePicker).id;
-            foreach(Bike bike in this.bikelist)
+            foreach(Bike bike in InternalApp.bikeList)
             {
                 if (bike.id == id) {
                     bike.cstr_date = (sender as idDatePicker).Value;
                     Console.WriteLine(bike.cstr_date);
-
                 }
-
             }
             Planning.ModifyDate(id, date);
-
         }
 
         private void AutoPlanner_Btn_Click(object sender, EventArgs e)
