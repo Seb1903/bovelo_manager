@@ -71,7 +71,7 @@ namespace Bovelo
                     checkBox.Left = 300;
                     checkBox.Visible = true;
                     checkBox.CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateActive);
-
+                    //
                     checkBox2.AutoSize = true;
                     checkBox2.Text = "Done";
                     checkBox2.UseVisualStyleBackColor = true;
