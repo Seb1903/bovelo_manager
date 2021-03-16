@@ -13,6 +13,7 @@ namespace Bovelo
         public static DataTable bikeTable ;
         public static DataTable planningTable ;
         public static List<Bike> bikeList = new List<Bike>();
+        public static string[] bikeStateList = new string[] { "Active", "Not active", "Done" };  
         public InternalApp()
         {
             SetBikeList();
