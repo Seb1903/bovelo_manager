@@ -109,7 +109,7 @@ namespace Bovelo
             this.stock_dataGridView.RowHeadersWidth = 51;
             this.stock_dataGridView.RowTemplate.Height = 24;
             this.stock_dataGridView.RowTemplate.ReadOnly = true;
-            this.stock_dataGridView.Size = new System.Drawing.Size(393, 167);
+            this.stock_dataGridView.Size = new System.Drawing.Size(503, 167);
             this.stock_dataGridView.TabIndex = 7;
             this.stock_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stock_dataGridView_CellMouseClick);
             // 

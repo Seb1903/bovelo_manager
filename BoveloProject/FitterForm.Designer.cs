@@ -75,9 +75,9 @@ namespace Bovelo
             // 
             // report_button
             // 
-            this.report_button.Location = new System.Drawing.Point(547, 405);
+            this.report_button.Location = new System.Drawing.Point(546, 394);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(170, 23);
+            this.report_button.Size = new System.Drawing.Size(171, 34);
             this.report_button.TabIndex = 5;
             this.report_button.Text = "Report broken part";
             this.report_button.UseVisualStyleBackColor = true;

@@ -15,12 +15,17 @@ namespace Bovelo
     {
         private string name;
         private string color;
+        private int partDeleted = 0;
         public BrokenPart()
         {
             InitializeComponent();
+            RefreshDataGriedView();
+        }
+        private void RefreshDataGriedView()
+        {
             DataTable datas;
             datas = GetData(String.Format("Select * From part_stock"));
-            datas.Columns.RemoveAt(3);
+            //datas.Columns.RemoveAt(3);
             stock_dataGridView.DataSource = datas;
         }
         private static DataTable GetData(string sqlCommand)
@@ -44,7 +49,7 @@ namespace Bovelo
             DataTable datas;
             datas = GetData(String.Format("Select * From part_stock where name like '{0}%'", search_textbox.Text));
             stock_dataGridView.DataSource = datas;
-            datas.Columns.RemoveAt(3);
+            //datas.Columns.RemoveAt(3);
         }
 
         private void stock_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -71,17 +76,47 @@ namespace Bovelo
 
         private void validation_button_Click(object sender, EventArgs e)
         {
-            try
+            if (partDeleted == 0)
             {
-                Part part = new Part(name, color, 1);
-                part.Use();
-                information_label.Text = "Part removed from stock";
-                information_label.Visible = true;
+                try
+                {
+                    Part part = new Part(name, color, 1);
+                    part.Use();
+                    information_label.Text = "Part removed from stock";
+                    information_label.Visible = true;
+                    partDeleted += 1;
+                    RefreshDataGriedView();
+                }
+                catch
+                {
+                    information_label.Text = "Error, try again";
+                    information_label.Visible = true;
+                }
             }
-            catch
+            else 
             {
-                information_label.Text = "Error, try again";
-                information_label.Visible = true;
+                DialogResult dialogResult = MessageBox.Show("A part has already been deleted. Do you want to delete 1 more ?","Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Part part = new Part(name, color, 1);
+                        part.Use();
+                        information_label.Text = "Part removed from stock";
+                        information_label.Visible = true;
+                        partDeleted += 1;
+                        RefreshDataGriedView();
+                    }
+                    catch
+                    {
+                        information_label.Text = "Error, try again";
+                        information_label.Visible = true;
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    this.Close();
+                }
             }
         }
 
