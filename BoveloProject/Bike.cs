@@ -17,7 +17,6 @@ namespace Bovelo
         public string size;
         public int price;
         public string state;
-        //public Dictionary<string, Part> partList = new Dictionary<string, Part>();
         public List<Part> partList = new List<Part>();
         public DateTime cstr_date; 
         public Bike(int id)
@@ -28,7 +27,6 @@ namespace Bovelo
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
             this.state = bikeRow.Field<string>("cstr_status");
-
             try
             {
                 DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
@@ -36,20 +34,18 @@ namespace Bovelo
                 this.cstr_date = date;
             }
             catch { 
-            }
-            
+            }     
         }
         public void Build()
         {
             DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
-           
             foreach(DataRow partRow in partTable.Rows)
             {
                 Part part = new Part(Convert.ToInt32(partRow["id_part"]), this.color, partRow.Field<int>("quantity"));
                 partList.Add(part);
                 part.Use(); 
             }
-            //this.ModifyState("Done"); //Comment for testing
+            this.ModifyState("Done"); //Comment for testing
         }
         private static MySqlDataReader GetData(string query)
         {
