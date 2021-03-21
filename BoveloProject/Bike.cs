@@ -17,7 +17,8 @@ namespace Bovelo
         public string size;
         public int price;
         public string state;
-        public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        //public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        public List<Part> partList = new List<Part>();
         public DateTime cstr_date; 
         public Bike(int id)
         {
@@ -45,7 +46,7 @@ namespace Bovelo
             foreach(DataRow partRow in partTable.Rows)
             {
                 Part part = new Part(Convert.ToInt32(partRow["id_part"]), this.color, partRow.Field<int>("quantity"));
-                partList.Add(part.name, part);
+                partList.Add(part);
                 part.Use(); 
             }
             //this.ModifyState("Done"); //Comment for testing
@@ -64,10 +65,10 @@ namespace Bovelo
         public override string ToString()
         {
             Console.WriteLine("\n-------------\nParts List:\n-------------");
-            foreach (KeyValuePair<string, Part> part in partList)
+            foreach (Part part in partList)
             {
                 Console.WriteLine("\nType: {0} \n--Color = {1}\n--Stock = {2}\n--Quantity used = {3}",
-                    part.Key, part.Value.color, part.Value.stock, part.Value.quantity);
+                    part.name, part.color, part.stock, part.quantity);
             }
             return ("\n" + type + " " + size + " " + color);
         }
