@@ -23,35 +23,30 @@ namespace Bovelo
     {
         public int id;
         public string name;
-        public string color;
         public int quantity;
         public int stock;
 
-        public Part(int id, string color, int quantity)
+        public Part(int id, int quantity)
         {
             this.id = id;
             this.quantity = quantity;
 
-            DataTable nameTable = GetDataTable($"SELECT * FROM parts_catalog WHERE reference={id}"); //Facultatif
+            DataTable nameTable = GetDataTable($"SELECT * FROM new_parts_catalog WHERE reference={id}"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
 
-            DataTable partDataTable = GetDataTable($"SELECT * FROM parts_stock WHERE reference={id}");
-            DataRow[] availableColor = partDataTable.Select("color='" + color + "'");
-            if (availableColor.Length != 0){this.color = color;}
-            else{this.color = "Default";}
-            DataRow stockRow = partDataTable.AsEnumerable().Single(r => r.Field<string>("color") == this.color);
-            this.stock = stockRow.Field<int>("quantity");
+            DataTable partDataTable = GetDataTable($"SELECT * FROM new_parts_stock WHERE part_reference={id}");
+            this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE parts_stock SET quantity={stock} WHERE reference='{id}' AND color='{color}'";
+            string query = $"UPDATE new_parts_stock SET quantity={stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{id}' AND color='{color}'";
+            string query = $"UPDATE new_parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
         private static DataTable GetDataTable(string sqlCommand)

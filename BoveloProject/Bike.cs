@@ -41,7 +41,7 @@ namespace Bovelo
             DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
             foreach(DataRow partRow in partTable.Rows)
             {
-                Part part = new Part(Convert.ToInt32(partRow["id_part"]), this.color, partRow.Field<int>("quantity"));
+                Part part = new Part(Convert.ToInt32(partRow["id_part"]), partRow.Field<int>("quantity"));
                 partList.Add(part);
                 part.Use(); 
             }
@@ -63,8 +63,8 @@ namespace Bovelo
             Console.WriteLine("\n-------------\nParts List:\n-------------");
             foreach (Part part in partList)
             {
-                Console.WriteLine("\nType: {0} \n--Color = {1}\n--Stock = {2}\n--Quantity used = {3}",
-                    part.name, part.color, part.stock, part.quantity);
+                Console.WriteLine("\nType: {0}\n--Stock = {1}\n--Quantity used = {2}",
+                    part.name, part.stock, part.quantity);
             }
             return ("\n" + type + " " + size + " " + color);
         }
