@@ -33,7 +33,6 @@ namespace Bovelo
                 DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
                 DateTime date = dateRow.Field<DateTime>("date");
                 this.cstr_date = date;
-
             }
             catch { 
             }
@@ -41,19 +40,14 @@ namespace Bovelo
         }
         public void Build()
         {
-            string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
-            MySqlDataReader partReader = GetData(partQuery);
-            for (int i = 1; i < partReader.FieldCount; i++)
+            DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
+           
+            foreach(DataRow partRow in partTable.Rows)
             {
-                if (partReader[partReader.GetName(i)] != DBNull.Value)
-                {
-                    Part part = new Part(partReader.GetName(i), this.color, partReader.GetInt32(i));
-                    this.partList.Add(part.name, part);
-                }
-            }
-            foreach (KeyValuePair<string, Part> part in partList)
-            {
-                part.Value.Use();
+
+
+                Part part = new Part(partRow.Field<int>("id_part"), this.color, partRow.Field<int>("quantity"));
+                part.Use();
             }
             this.ModifyState("Done");
         }
@@ -105,6 +99,18 @@ namespace Bovelo
             reader.Read();
             connection.Close();
 
+        }
+        private static DataTable GetDataTable(string sqlCommand)
+        {
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
+            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            adapter.Fill(table);
+            return table;
         }
     }
 }

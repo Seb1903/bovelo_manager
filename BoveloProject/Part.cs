@@ -21,30 +21,26 @@ namespace Bovelo
     */
     public class Part
     {
+        public int id;
         public string name;
         public string color;
         public int quantity;
         public int stock;
-        //public string characteristic;
-        public Part(string name, string color, int quantity) 
+
+        public Part(int id, string color, int quantity)
         {
-            this.name = name;
+            this.id = id;
             this.quantity = quantity;
-            //this.characteristic = "";
-            string colorQuery = $"SELECT * FROM part_stock WHERE name='{name}'";
-            DataTable colorTable = GetDataTable(colorQuery);
-            DataRow[] availableColor = colorTable.Select("color='" + color + "'");
-            if (availableColor.Length != 0)
-            {
-                this.color = color;
-            }
-            else
-            {
-                this.color = "Default";
-            }
-            string quantityQuery = $"SELECT * FROM part_stock WHERE name='{this.name}' AND color='{this.color}'";
-            DataTable quantityReader = GetDataTable(quantityQuery);
-            this.stock = Convert.ToInt32(quantityReader.Rows[0]["quantity"].ToString());
+
+            DataTable nameTable = GetDataTable($"SELECT * FROM part_catalog WHERE reference={id}"); //Facultatif
+            this.name = nameTable.Rows[1].Field<string>("name");
+
+            DataTable partDataTable = GetDataTable($"SELECT * FROM part_stock WHERE reference={id}");
+            DataRow[] availableColor = partDataTable.Select("color='" + color + "'");
+            if (availableColor.Length != 0){this.color = color;}
+            else{this.color = "Default";}
+            DataRow stockRow = partDataTable.AsEnumerable().Single(r => r.Field<string>("color") == this.color);
+            this.stock = stockRow.Field<int>("quantity");
         }
         public void Use()
         {
