@@ -49,6 +49,13 @@ namespace Bovelo
             string query = $"UPDATE new_parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
+        public void AutoOrder()
+        {
+            if(stock <= quantity * 50) //if stock under 50 bikes parts
+            {
+                Order(40 * quantity); //Order 40 bikes parts
+            }
+        }
         private static DataTable GetDataTable(string sqlCommand)
         {
             Database db1 = new Database();
