@@ -45,13 +45,13 @@ namespace Bovelo
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE parts_stock SET quantity={stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE parts_stock SET quantity={stock} WHERE reference='{id}' AND color='{color}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{id}' AND color='{color}'";
             ExecuteQuery(query);
         }
         private static DataTable GetDataTable(string sqlCommand)

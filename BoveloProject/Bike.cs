@@ -46,7 +46,7 @@ namespace Bovelo
             {
                 Part part = new Part(Convert.ToInt32(partRow["id_part"]), this.color, partRow.Field<int>("quantity"));
                 partList.Add(part.name, part);
-                //part.Use(); 
+                part.Use(); 
             }
             //this.ModifyState("Done"); //Comment for testing
         }

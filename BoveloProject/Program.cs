@@ -29,10 +29,8 @@ namespace Bovelo
             Bike city = new Bike(4);
             Bike adventure = new Bike(7);
 
-            explorer.Build();
-            Console.WriteLine(explorer);
-
-
+            adventure.Build();
+            Console.WriteLine(adventure); // all bikes are working
         }
     }
 }
