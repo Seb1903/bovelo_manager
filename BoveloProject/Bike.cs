@@ -44,11 +44,14 @@ namespace Bovelo
            
             foreach(DataRow partRow in partTable.Rows)
             {
-
-                Part part = new Part(partRow.Field<int>("id_part"), this.color, partRow.Field<int>("quantity"));
-                //part.Use(); Comment for testing
+                int a = Convert.ToInt32(partRow["id_part"]);
+                int b = partRow.Field<int>("quantity");
+                Console.WriteLine("id: " + a);
+                Console.WriteLine("quantity: " + b);
+                //Part part = new Part(partRow.Field<int>("id_part"), this.color, partRow.Field<int>("quantity"));
+                //part.Use(); 
             }
-            this.ModifyState("Done");
+            //this.ModifyState("Done"); //Comment for testing
         }
         private static MySqlDataReader GetData(string query)
         {
