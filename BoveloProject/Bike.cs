@@ -44,11 +44,8 @@ namespace Bovelo
            
             foreach(DataRow partRow in partTable.Rows)
             {
-                int a = Convert.ToInt32(partRow["id_part"]);
-                int b = partRow.Field<int>("quantity");
-                Console.WriteLine("id: " + a);
-                Console.WriteLine("quantity: " + b);
-                //Part part = new Part(partRow.Field<int>("id_part"), this.color, partRow.Field<int>("quantity"));
+                Part part = new Part(Convert.ToInt32(partRow["id_part"]), this.color, partRow.Field<int>("quantity"));
+                partList.Add(part.name, part);
                 //part.Use(); 
             }
             //this.ModifyState("Done"); //Comment for testing

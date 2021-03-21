@@ -32,10 +32,10 @@ namespace Bovelo
             this.id = id;
             this.quantity = quantity;
 
-            DataTable nameTable = GetDataTable($"SELECT * FROM part_catalog WHERE reference={id}"); //Facultatif
-            this.name = nameTable.Rows[1].Field<string>("name");
+            DataTable nameTable = GetDataTable($"SELECT * FROM parts_catalog WHERE reference={id}"); //Facultatif
+            this.name = nameTable.Rows[0].Field<string>("name");
 
-            DataTable partDataTable = GetDataTable($"SELECT * FROM part_stock WHERE reference={id}");
+            DataTable partDataTable = GetDataTable($"SELECT * FROM parts_stock WHERE reference={id}");
             DataRow[] availableColor = partDataTable.Select("color='" + color + "'");
             if (availableColor.Length != 0){this.color = color;}
             else{this.color = "Default";}
@@ -45,13 +45,13 @@ namespace Bovelo
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE part_stock SET quantity={stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE parts_stock SET quantity={stock} WHERE name='{name}' AND color='{color}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE part_stock SET quantity={this.stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE name='{name}' AND color='{color}'";
             ExecuteQuery(query);
         }
         private static DataTable GetDataTable(string sqlCommand)
