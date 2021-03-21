@@ -25,11 +25,11 @@ namespace Bovelo
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();
 
-            Bike explorer = new Bike(3);
+            Bike explorer = new Bike(1);
             Bike city = new Bike(4);
             Bike adventure = new Bike(7);
 
-            explorer.Build();
+            //explorer.Build();
             Console.WriteLine(explorer);
 
 

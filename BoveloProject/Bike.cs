@@ -45,9 +45,8 @@ namespace Bovelo
             foreach(DataRow partRow in partTable.Rows)
             {
 
-
                 Part part = new Part(partRow.Field<int>("id_part"), this.color, partRow.Field<int>("quantity"));
-                part.Use();
+                //part.Use(); Comment for testing
             }
             this.ModifyState("Done");
         }
