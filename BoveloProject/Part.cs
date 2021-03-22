@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.ComponentModel;
 
 namespace Bovelo
 {
@@ -21,9 +22,13 @@ namespace Bovelo
     */
     public class Part
     {
-        public string reference { get; set; } 
+        [DisplayName("Reference")]
+        public string reference { get; set; }
+        [DisplayName("Name")]
         public string name { get; set; }
+        [DisplayName("Quantity")]
         public int quantity { get; set; }
+        [DisplayName("Stock")]
         public int stock { get; set; }
 
         public Part(string reference, int quantity)

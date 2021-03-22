@@ -36,10 +36,6 @@ namespace Bovelo
                     stock_order.Save();
                     add_to_Stock(Convert.ToInt32(numericUpDown1.Value)); //uses stocked procedure 
                     stock_order.client = get_stock_Client(); //Save method deletes current client
-
-
-
-
                 }
                 else
                 {
