@@ -68,7 +68,7 @@ namespace Bovelo
             // 
             // validation_button
             // 
-            this.validation_button.Location = new System.Drawing.Point(392, 288);
+            this.validation_button.Location = new System.Drawing.Point(456, 291);
             this.validation_button.Name = "validation_button";
             this.validation_button.Size = new System.Drawing.Size(75, 23);
             this.validation_button.TabIndex = 4;

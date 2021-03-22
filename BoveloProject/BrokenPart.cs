@@ -14,7 +14,8 @@ namespace Bovelo
     public partial class BrokenPart : Form
     {
         private string name;
-        private string color;
+        private string reference;
+        private int id;
         private int partDeleted = 0;
         public BrokenPart()
         {
@@ -24,7 +25,7 @@ namespace Bovelo
         private void RefreshDataGriedView()
         {
             DataTable datas;
-            datas = GetData(String.Format("Select * From part_stock"));
+            datas = GetData(String.Format("Select * From parts_stock_view"));
             //datas.Columns.RemoveAt(3);
             stock_dataGridView.DataSource = datas;
         }
@@ -47,23 +48,25 @@ namespace Bovelo
         private void search_textbox_TextChanged(object sender, EventArgs e)
         {
             DataTable datas;
-            datas = GetData(String.Format("Select * From part_stock where name like '{0}%'", search_textbox.Text));
+            datas = GetData(String.Format("Select * From parts_stock_view where CAST(reference AS CHAR) like '{0}%'", search_textbox.Text));
             stock_dataGridView.DataSource = datas;
             //datas.Columns.RemoveAt(3);
         }
 
         private void stock_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string partInformation = ""; 
+            string partInformation = "";
             try
             {
+                reference = (stock_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                partInformation += reference;
+                id = Convert.ToInt32(reference);
+
+                partInformation += " ";
+
                 name = (stock_dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
                 partInformation += name;
 
-                partInformation += " ";
-                
-                color = (stock_dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
-                partInformation += color;
 
                 selectedPart_label.Text = partInformation;
                 selectedPart_label.Visible = true;
@@ -80,7 +83,7 @@ namespace Bovelo
             {
                 try
                 {
-                    Part part = new Part(name, color, 1);
+                    Part part = new Part(id, 1);
                     part.Use();
                     information_label.Text = "Part removed from stock";
                     information_label.Visible = true;
@@ -93,15 +96,15 @@ namespace Bovelo
                     information_label.Visible = true;
                 }
             }
-            else 
+            else
             {
-                DialogResult dialogResult = MessageBox.Show("A part has already been deleted. Do you want to delete 1 more ?","Confirmation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("A part has already been deleted. Do you want to delete 1 more ?", "Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     try
                     {
-                        Part part = new Part(name, color, 1);
-                        part.Use();
+                        //Part part = new Part(id, 1);
+                        //part.Use();
                         information_label.Text = "Part removed from stock";
                         information_label.Visible = true;
                         partDeleted += 1;
@@ -126,3 +129,4 @@ namespace Bovelo
         }
     }
 }
+
