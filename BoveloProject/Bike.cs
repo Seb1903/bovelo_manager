@@ -36,6 +36,7 @@ namespace Bovelo
             catch { 
             }     
         }
+        public Bike() { }
         public void Build()
         {
             DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
