@@ -152,6 +152,14 @@ namespace Bovelo
             InitializeComponent();
             FitterFormCharge();
             //ShowDayPlanning(fitterPanel);
+        private void report_button_Click(object sender, EventArgs e)
+        {
+            BrokenPart form = new BrokenPart();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+            this.Hide();
         }
     }
 }

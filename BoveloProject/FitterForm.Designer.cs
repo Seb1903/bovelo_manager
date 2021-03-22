@@ -34,6 +34,7 @@ namespace Bovelo
             this.fitterPanel = new System.Windows.Forms.Panel();
             this.Back = new System.Windows.Forms.Button();
             this.validate_button = new System.Windows.Forms.Button();
+            this.report_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +83,15 @@ namespace Bovelo
             this.validate_button.Text = "Validate";
             this.validate_button.UseVisualStyleBackColor = true;
             this.validate_button.Click += new System.EventHandler(this.validate_button_Click);
+            // report_button
+            // 
+            this.report_button.Location = new System.Drawing.Point(546, 394);
+            this.report_button.Name = "report_button";
+            this.report_button.Size = new System.Drawing.Size(171, 34);
+            this.report_button.TabIndex = 5;
+            this.report_button.Text = "Report broken part";
+            this.report_button.UseVisualStyleBackColor = true;
+            this.report_button.Click += new System.EventHandler(this.report_button_Click);
             // 
             // FitterForm
             // 
@@ -89,6 +99,7 @@ namespace Bovelo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.validate_button);
+            this.Controls.Add(this.report_button);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.fitterPanel);
             this.Controls.Add(this.dateOfToday_label);
@@ -107,5 +118,6 @@ namespace Bovelo
         private System.Windows.Forms.Panel fitterPanel;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Button validate_button;
+        private System.Windows.Forms.Button report_button;
     }
 }

@@ -50,6 +50,12 @@
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BrokenPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrokenPart.Designer.cs">
+      <DependentUpon>BrokenPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PartsStock2.resx">
       <DependentUpon>PartsStock2.cs</DependentUpon>
+    <EmbeddedResource Include="BrokenPart.resx">
+      <DependentUpon>BrokenPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FitterForm.resx">
       <DependentUpon>FitterForm.cs</DependentUpon>
