@@ -117,18 +117,18 @@ namespace Bovelo
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(74, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Catégorie :";
+            this.label1.Text = "Category :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(259, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 20);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Tapez votre recherche ici :";
+            this.label3.Text = "Search here : ";
             // 
             // dataGridView2
             // 
@@ -184,9 +184,9 @@ namespace Bovelo
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(892, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 20);
+            this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Nom du modèle : ";
+            this.label4.Text = "Name of the model :";
             // 
             // label5
             // 
@@ -194,9 +194,9 @@ namespace Bovelo
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(259, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 37);
+            this.label5.Size = new System.Drawing.Size(97, 37);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Parties";
+            this.label5.Text = "Parts";
             // 
             // label6
             // 
@@ -204,9 +204,9 @@ namespace Bovelo
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(1100, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 37);
+            this.label6.Size = new System.Drawing.Size(125, 37);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Modèle";
+            this.label6.Text = "Models";
             // 
             // label7
             // 
@@ -254,9 +254,9 @@ namespace Bovelo
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(1284, 121);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 20);
+            this.label9.Size = new System.Drawing.Size(56, 20);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Prix : ";
+            this.label9.Text = "Price : ";
             // 
             // NewModel
             // 
