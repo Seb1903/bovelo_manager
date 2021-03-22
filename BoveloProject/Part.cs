@@ -21,42 +21,40 @@ namespace Bovelo
     */
     public class Part
     {
+        public int id;
         public string name;
-        public string color;
         public int quantity;
         public int stock;
-        //public string characteristic;
-        public Part(string name, string color, int quantity) 
+
+        public Part(int id, int quantity)
         {
-            this.name = name;
+            this.id = id;
             this.quantity = quantity;
-            //this.characteristic = "";
-            string colorQuery = $"SELECT * FROM part_stock WHERE name='{name}'";
-            DataTable colorTable = GetDataTable(colorQuery);
-            DataRow[] availableColor = colorTable.Select("color='" + color + "'");
-            if (availableColor.Length != 0)
-            {
-                this.color = color;
-            }
-            else
-            {
-                this.color = "Default";
-            }
-            string quantityQuery = $"SELECT * FROM part_stock WHERE name='{this.name}' AND color='{this.color}'";
-            DataTable quantityReader = GetDataTable(quantityQuery);
-            this.stock = Convert.ToInt32(quantityReader.Rows[0]["quantity"].ToString());
+
+            DataTable nameTable = GetDataTable($"SELECT * FROM new_parts_catalog WHERE reference={id}"); //Facultatif
+            this.name = nameTable.Rows[0].Field<string>("name");
+
+            DataTable partDataTable = GetDataTable($"SELECT * FROM new_parts_stock WHERE part_reference={id}");
+            this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE part_stock SET quantity={stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE new_parts_stock SET quantity={stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE part_stock SET quantity={this.stock} WHERE name='{name}' AND color='{color}'";
+            string query = $"UPDATE new_parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
+        }
+        public void AutoOrder()
+        {
+            if(stock <= quantity * 50) //if stock under 50 bikes parts
+            {
+                Order(40 * quantity); //Order 40 bikes parts
+            }
         }
         private static DataTable GetDataTable(string sqlCommand)
         {

@@ -17,7 +17,7 @@ namespace Bovelo
         public string size;
         public int price;
         public string state;
-        public Dictionary<string, Part> partList = new Dictionary<string, Part>();
+        public List<Part> partList = new List<Part>();
         public DateTime cstr_date; 
         public Bike(int id)
         {
@@ -27,35 +27,25 @@ namespace Bovelo
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
             this.state = bikeRow.Field<string>("cstr_status");
-
             try
             {
                 DataRow dateRow = InternalApp.planningTable.AsEnumerable().Single(r => r.Field<int>("bike") == id);
                 DateTime date = dateRow.Field<DateTime>("date");
                 this.cstr_date = date;
-
             }
             catch { 
-            }
-            
+            }     
         }
         public void Build()
         {
-            string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
-            MySqlDataReader partReader = GetData(partQuery);
-            for (int i = 1; i < partReader.FieldCount; i++)
+            DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
+            foreach(DataRow partRow in partTable.Rows)
             {
-                if (partReader[partReader.GetName(i)] != DBNull.Value)
-                {
-                    Part part = new Part(partReader.GetName(i), this.color, partReader.GetInt32(i));
-                    this.partList.Add(part.name, part);
-                }
+                Part part = new Part(Convert.ToInt32(partRow["id_part"]), partRow.Field<int>("quantity"));
+                partList.Add(part);
+                part.Use(); 
             }
-            foreach (KeyValuePair<string, Part> part in partList)
-            {
-                part.Value.Use();
-            }
-            this.ModifyState("Done");
+            this.ModifyState("Done"); //Comment for testing
         }
         private static MySqlDataReader GetData(string query)
         {
@@ -71,10 +61,10 @@ namespace Bovelo
         public override string ToString()
         {
             Console.WriteLine("\n-------------\nParts List:\n-------------");
-            foreach (KeyValuePair<string, Part> part in partList)
+            foreach (Part part in partList)
             {
-                Console.WriteLine("\nType: {0} \n--Color = {1}\n--Stock = {2}\n--Quantity used = {3}",
-                    part.Key, part.Value.color, part.Value.stock, part.Value.quantity);
+                Console.WriteLine("\nType: {0}\n--Stock = {1}\n--Quantity used = {2}",
+                    part.name, part.stock, part.quantity);
             }
             return ("\n" + type + " " + size + " " + color);
         }
@@ -105,6 +95,18 @@ namespace Bovelo
             reader.Read();
             connection.Close();
 
+        }
+        private static DataTable GetDataTable(string sqlCommand)
+        {
+            Database db1 = new Database();
+            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
+            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable table = new DataTable();
+            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+            adapter.Fill(table);
+            return table;
         }
     }
 }

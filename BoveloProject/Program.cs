@@ -18,10 +18,19 @@ namespace Bovelo
             InternalApp internalApp = new InternalApp();
             internalApp.Run();
 
+            /*Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new PartsStock());*/
+
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();
 
+            Bike explorer = new Bike(1);
+            Bike city = new Bike(4);
+            Bike adventure = new Bike(7);
 
+            adventure.Build();
+            Console.WriteLine(adventure); // all bikes are working
         }
     }
 }
