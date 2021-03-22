@@ -39,6 +39,7 @@ namespace Bovelo
             }
             
         }
+        public Bike() { }
         public void Build()
         {
             string partQuery = $"SELECT * FROM model_structure WHERE model='{type}'";
