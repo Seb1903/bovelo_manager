@@ -45,7 +45,8 @@ namespace Bovelo
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(165, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(186, 114);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -53,15 +54,16 @@ namespace Bovelo
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(457, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(514, 314);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(625, 404);
+            this.button1.Location = new System.Drawing.Point(703, 505);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 34);
+            this.button1.Size = new System.Drawing.Size(172, 42);
             this.button1.TabIndex = 2;
             this.button1.Text = "Select";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,51 +72,53 @@ namespace Bovelo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 373);
+            this.label2.Location = new System.Drawing.Point(111, 466);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(392, 37);
+            this.textBox1.Location = new System.Drawing.Point(441, 46);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 22);
+            this.textBox1.Size = new System.Drawing.Size(331, 26);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 37);
+            this.comboBox1.Location = new System.Drawing.Point(115, 46);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 24);
+            this.comboBox1.Size = new System.Drawing.Size(168, 28);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 13);
+            this.label1.Location = new System.Drawing.Point(115, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Catégorie :";
+            this.label1.Text = "Category :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 13);
+            this.label3.Location = new System.Drawing.Point(438, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 17);
+            this.label3.Size = new System.Drawing.Size(187, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Tapez votre recherche ici :";
+            this.label3.Text = "Type your research here :";
             // 
             // ClientSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -122,6 +126,7 @@ namespace Bovelo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClientSearch";
             this.Text = "ClientSearch";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
