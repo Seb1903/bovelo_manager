@@ -76,18 +76,19 @@ namespace Bovelo
             // 
             // validate_button
             // 
-            this.validate_button.Location = new System.Drawing.Point(604, 405);
+            this.validate_button.Location = new System.Drawing.Point(421, 405);
             this.validate_button.Name = "validate_button";
             this.validate_button.Size = new System.Drawing.Size(113, 23);
             this.validate_button.TabIndex = 5;
             this.validate_button.Text = "Validate";
             this.validate_button.UseVisualStyleBackColor = true;
             this.validate_button.Click += new System.EventHandler(this.validate_button_Click);
+            // 
             // report_button
             // 
-            this.report_button.Location = new System.Drawing.Point(546, 394);
+            this.report_button.Location = new System.Drawing.Point(565, 393);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(171, 34);
+            this.report_button.Size = new System.Drawing.Size(152, 35);
             this.report_button.TabIndex = 5;
             this.report_button.Text = "Report broken part";
             this.report_button.UseVisualStyleBackColor = true;
