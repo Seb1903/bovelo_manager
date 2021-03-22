@@ -121,9 +121,7 @@ namespace Bovelo
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());    
                     return count;
-                    Console.WriteLine(count);
-                    conn.Close();
-                }
+                 }
             }
 
         }

@@ -15,22 +15,22 @@ namespace Bovelo
         [STAThread]
         static void Main()
         {
-            InternalApp internalApp = new InternalApp();
-            internalApp.Run();
+            //InternalApp internalApp = new InternalApp();
+            //internalApp.Run();
 
-            /*Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PartsStock());*/
+            Application.Run(new NewModel());
 
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();
 
-            Bike explorer = new Bike(1);
-            Bike city = new Bike(4);
-            Bike adventure = new Bike(7);
+            //Bike explorer = new Bike(1);
+            //Bike city = new Bike(4);
+            //Bike adventure = new Bike(7);
 
-            adventure.Build();
-            Console.WriteLine(adventure); // all bikes are working
+            //adventure.Build();
+            //Console.WriteLine(adventure); // all bikes are working
         }
     }
 }

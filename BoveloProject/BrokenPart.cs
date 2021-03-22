@@ -15,7 +15,7 @@ namespace Bovelo
     {
         private string name;
         private string reference;
-        private int id;
+        private string id;
         private int partDeleted = 0;
         public BrokenPart()
         {
@@ -60,7 +60,7 @@ namespace Bovelo
             {
                 reference = (stock_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
                 partInformation += reference;
-                id = Convert.ToInt32(reference);
+                id = reference;
 
                 partInformation += " ";
 

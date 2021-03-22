@@ -36,17 +36,28 @@ namespace Bovelo
             catch { 
             }     
         }
-        public Bike() { }
+        public Bike() { } // needed to create models in NewModel form
         public void Build()
         {
             DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
             foreach(DataRow partRow in partTable.Rows)
             {
-                Part part = new Part(Convert.ToInt32(partRow["id_part"]), partRow.Field<int>("quantity"));
-                partList.Add(part);
+                Part part = new Part(partRow.Field<string>("reference"), partRow.Field<int>("quantity"));
+                this.addPart(part);
                 part.Use(); 
             }
             this.ModifyState("Done"); //Comment for testing
+        }
+
+        public void addPart(Part part) //Useful for NewModels, partList can thus become a private attribute
+        {
+            partList.Add(part);
+        }
+
+        public void deletePart(string reference)
+        {
+            var itemToRemove = partList.Single(r => r.reference == reference);
+            partList.Remove(itemToRemove);
         }
         private static MySqlDataReader GetData(string query)
         {
@@ -108,6 +119,32 @@ namespace Bovelo
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             adapter.Fill(table);
             return table;
+        }
+
+        public void saveModel()      //needs to be cleaned, create methods in database GetData and SendData 
+        {
+            Database db = new Database();
+            MySqlConnection connection1 = new MySqlConnection(db.MyConnection);
+            string query1 = $"INSERT into model_catalog(name, price) values('{type}','{price}');";
+            MySqlCommand command1 = new MySqlCommand(query1, connection1);
+            MySqlDataReader reader1;
+            connection1.Open();
+            reader1 = command1.ExecuteReader();
+            reader1.Read();
+            connection1.Close();
+
+            foreach (Part part in partList)
+            {
+                MySqlConnection connection = new MySqlConnection(db.MyConnection);
+                string query = $"INSERT into model_structure(model_name, reference, quantity) values('{type}','{part.reference}', '{part.quantity}');";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader;
+                connection.Open();
+                reader = command.ExecuteReader();
+                reader.Read();
+                connection.Close();
+            }
+           
         }
     }
 }

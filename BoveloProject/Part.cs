@@ -21,32 +21,32 @@ namespace Bovelo
     */
     public class Part
     {
-        public int id;
-        public string name;
-        public int quantity;
-        public int stock;
+        public string reference { get; set; } 
+        public string name { get; set; }
+        public int quantity { get; set; }
+        public int stock { get; set; }
 
-        public Part(int id, int quantity)
+        public Part(string reference, int quantity)
         {
-            this.id = id;
+            this.reference = reference;
             this.quantity = quantity;
 
-            DataTable nameTable = GetDataTable($"SELECT * FROM new_parts_catalog WHERE reference={id}"); //Facultatif
+            DataTable nameTable = GetDataTable($"SELECT * FROM parts_catalog WHERE reference='{reference}'"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
 
-            DataTable partDataTable = GetDataTable($"SELECT * FROM new_parts_stock WHERE part_reference={id}");
+            DataTable partDataTable = GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE new_parts_stock SET quantity={stock} WHERE part_reference='{id}'";
+            string query = $"UPDATE parts_stock SET quantity={stock} WHERE reference='{reference}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE new_parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
+            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'";
             ExecuteQuery(query);
         }
         public void AutoOrder()

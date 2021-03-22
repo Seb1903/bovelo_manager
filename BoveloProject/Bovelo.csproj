@@ -204,7 +204,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Black_Right_Arrow.png" />
+    <None Include="Resources\Black_Right_Arrow1.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\basket.png" />
   </ItemGroup>
