@@ -150,6 +150,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PartsStock2.resx">
       <DependentUpon>PartsStock2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BrokenPart.resx">
       <DependentUpon>BrokenPart.cs</DependentUpon>
     </EmbeddedResource>
