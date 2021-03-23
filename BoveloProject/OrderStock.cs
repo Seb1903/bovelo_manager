@@ -27,7 +27,7 @@ namespace Bovelo
         }
         public static void GetPartCatalog()
         {
-            string quantityQuery = $"SELECT * FROM new_parts_catalog";
+            string quantityQuery = $"SELECT * FROM parts_catalog";
             DataTable quantityReader = GetDataTable(quantityQuery);
             int size_datatable = quantityReader.Rows.Count;
             for (int i = 0; i < size_datatable; i++)
