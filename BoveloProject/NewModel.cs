@@ -57,7 +57,7 @@ namespace Bovelo
             if (partParams.Count != 0)
             {
                 Part part = new Part(partParams[0], Convert.ToInt32(numericUpDown_quantity.Value));
-                bike.addPart(part);
+                bike.AddPart(part);
             }
             else
             {
@@ -128,7 +128,7 @@ namespace Bovelo
         {
             if (model_partParams.Count != 0)
             {
-                bike.deletePart(model_partParams[0]);
+                bike.DeletePart(model_partParams[0]);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace Bovelo
             if (!(textBox_modelName.Text == null || numericUpDown1.Value == 0 )){
                 bike.price = Convert.ToInt32(numericUpDown1.Value);
                 bike.type = textBox_modelName.Text;
-                bike.saveModel();
+                bike.SaveModel();
                 this.bike = new Bike();
                 LoadModelTable();
             }
