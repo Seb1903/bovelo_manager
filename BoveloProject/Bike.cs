@@ -33,42 +33,30 @@ namespace Bovelo
                 DateTime date = dateRow.Field<DateTime>("date");
                 this.cstr_date = date;
             }
-            catch { 
+            catch { // check the try/catch
             }     
         }
         public Bike() { } // needed to create models in NewModel form
         public void Build()
         {
-            DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
+            DataTable partTable = InternalApp.GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
             foreach(DataRow partRow in partTable.Rows)
             {
                 Part part = new Part(partRow.Field<string>("reference"), partRow.Field<int>("quantity"));
-                this.addPart(part);
+                this.AddPart(part);
                 part.Use(); 
             }
             this.ModifyState("Done"); //Comment for testing
         }
-
-        public void addPart(Part part) //Useful for NewModels, partList can thus become a private attribute
+        public void AddPart(Part part) //Useful for NewModels, partList can thus become a private attribute
         {
             partList.Add(part);
         }
 
-        public void deletePart(string reference)
+        public void DeletePart(string reference)
         {
             var itemToRemove = partList.Single(r => r.reference == reference);
             partList.Remove(itemToRemove);
-        }
-        private static MySqlDataReader GetData(string query)
-        {
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            return reader;
         }
         public override string ToString()
         {
@@ -80,69 +68,21 @@ namespace Bovelo
             }
             return ("\n" + type + " " + size + " " + color);
         }
-
         public void ModifyDate(string date)
         {
-            //improve method with method taking DateTime instead of string in parameter
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE planning SET date='{date}' WHERE bike='{this.id}'";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            connection.Close();
+            InternalApp.ExecuteQuery($"UPDATE planning SET date='{date}' WHERE bike='{this.id}'");
         }
         public void ModifyState(string state)
         {
             this.state = state;
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{this.id}'";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            connection.Close();
-
+            InternalApp.ExecuteQuery($"UPDATE bike SET cstr_status='{state}' WHERE id='{this.id}'");
         }
-        private static DataTable GetDataTable(string sqlCommand)
+        public void SaveModel()      //needs to be cleaned, create methods in database GetData and SendData 
         {
-            Database db1 = new Database();
-            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
-            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.SelectCommand = command;
-            DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            adapter.Fill(table);
-            return table;
-        }
-
-        public void saveModel()      //needs to be cleaned, create methods in database GetData and SendData 
-        {
-            Database db = new Database();
-            MySqlConnection connection1 = new MySqlConnection(db.MyConnection);
-            string query1 = $"INSERT into model_catalog(name, price) values('{type}','{price}');";
-            MySqlCommand command1 = new MySqlCommand(query1, connection1);
-            MySqlDataReader reader1;
-            connection1.Open();
-            reader1 = command1.ExecuteReader();
-            reader1.Read();
-            connection1.Close();
-
+            InternalApp.ExecuteQuery($"INSERT into model_catalog(name, price) values('{type}', '{price}');");
             foreach (Part part in partList)
             {
-                MySqlConnection connection = new MySqlConnection(db.MyConnection);
-                string query = $"INSERT into model_structure(model_name, reference, quantity) values('{type}','{part.reference}', '{part.quantity}');";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                MySqlDataReader reader;
-                connection.Open();
-                reader = command.ExecuteReader();
-                reader.Read();
-                connection.Close();
+                InternalApp.ExecuteQuery($"INSERT into model_structure(model_name, reference, quantity) values('{type}','{part.reference}', '{part.quantity}');");
             }
            
         }

@@ -24,7 +24,7 @@ namespace Bovelo
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ChooseUser());*/
         }
-        private static DataTable GetDataTable(string sqlCommand)
+        public static DataTable GetDataTable(string sqlCommand)
         {
             Database db1 = new Database();
             MySqlConnection conn = new MySqlConnection(db1.MyConnection);
@@ -35,6 +35,28 @@ namespace Bovelo
             table.Locale = System.Globalization.CultureInfo.InvariantCulture;
             adapter.Fill(table);
             return table;
+        }
+        public static void ExecuteQuery(string query)
+        {
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read()) { }
+            connection.Close();
+        }
+        public static MySqlDataReader GetData(string query)
+        {
+            Database db = new Database();
+            MySqlConnection connection = new MySqlConnection(db.MyConnection);
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader;
+            connection.Open();
+            reader = command.ExecuteReader();
+            reader.Read();
+            return reader;
         }
 
         public static void UpdateBikeTable()
