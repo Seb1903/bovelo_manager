@@ -15,12 +15,12 @@ namespace Bovelo
         [STAThread]
         static void Main()
         {
-            //InternalApp internalApp = new InternalApp();
-            //internalApp.Run();
+            InternalApp internalApp = new InternalApp();
+            internalApp.Run();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewModel());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Password());
 
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();
