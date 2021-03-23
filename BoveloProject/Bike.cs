@@ -52,7 +52,6 @@ namespace Bovelo
         {
             partList.Add(part);
         }
-
         public void DeletePart(string reference)
         {
             var itemToRemove = partList.Single(r => r.reference == reference);
