@@ -30,9 +30,9 @@ namespace Bovelo
         private void InitializeComponent()
         {
             this.part_stock_panel = new System.Windows.Forms.Panel();
+            this.partIDLbl = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.order_button = new System.Windows.Forms.Button();
-            this.partIDLbl = new System.Windows.Forms.Label();
             this.quantity_title = new System.Windows.Forms.Label();
             this.necessary_stock_title = new System.Windows.Forms.Label();
             this.current_stock_title = new System.Windows.Forms.Label();
@@ -52,8 +52,21 @@ namespace Bovelo
             this.part_stock_panel.Controls.Add(this.numericUpDown1);
             this.part_stock_panel.Location = new System.Drawing.Point(12, 37);
             this.part_stock_panel.Name = "part_stock_panel";
-            this.part_stock_panel.Size = new System.Drawing.Size(795, 653);
+            this.part_stock_panel.Size = new System.Drawing.Size(791, 653);
             this.part_stock_panel.TabIndex = 0;
+            // 
+            // partIDLbl
+            // 
+            this.partIDLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.partIDLbl.Location = new System.Drawing.Point(7, 41);
+            this.partIDLbl.Name = "partIDLbl";
+            this.partIDLbl.Size = new System.Drawing.Size(96, 23);
+            this.partIDLbl.TabIndex = 6;
+            this.partIDLbl.Text = "label1";
+            this.partIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.partIDLbl.Visible = false;
             // 
             // numericUpDown1
             // 
@@ -75,19 +88,6 @@ namespace Bovelo
             this.order_button.Text = "Order to supplier";
             this.order_button.UseVisualStyleBackColor = true;
             this.order_button.Click += new System.EventHandler(this.order_button_Click);
-            // 
-            // partIDLbl
-            // 
-            this.partIDLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.partIDLbl.Location = new System.Drawing.Point(7, 41);
-            this.partIDLbl.Name = "partIDLbl";
-            this.partIDLbl.Size = new System.Drawing.Size(100, 23);
-            this.partIDLbl.TabIndex = 6;
-            this.partIDLbl.Text = "label1";
-            this.partIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.partIDLbl.Visible = false;
             // 
             // quantity_title
             // 

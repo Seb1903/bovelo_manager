@@ -27,7 +27,7 @@ namespace Bovelo
         }
         public static void GetPartCatalog()
         {
-            string quantityQuery = $"SELECT * FROM part_catalog";
+            string quantityQuery = $"SELECT * FROM new_parts_catalog";
             DataTable quantityReader = GetDataTable(quantityQuery);
             int size_datatable = quantityReader.Rows.Count;
             for (int i = 0; i < size_datatable; i++)
@@ -40,7 +40,7 @@ namespace Bovelo
         }
         public static int GetPartStock(int ID)
         {
-            string quantityQuery = $"SELECT * FROM part_stock WHERE reference='{ID}'";
+            string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{ID}'";
             DataTable quantityReader = GetDataTable(quantityQuery);
             int size_datatable = quantityReader.Rows.Count;
             if (size_datatable <= 0)
