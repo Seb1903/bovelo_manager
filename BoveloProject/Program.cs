@@ -20,7 +20,7 @@ namespace Bovelo
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewModel());
+            Application.Run(new AddPart());
 
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();

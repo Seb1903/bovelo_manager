@@ -50,6 +50,12 @@
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPart.Designer.cs">
+      <DependentUpon>AddPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="BrokenPart.cs">
       <SubType>Form</SubType>
     </Compile>
