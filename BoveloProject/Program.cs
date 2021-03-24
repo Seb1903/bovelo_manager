@@ -18,9 +18,13 @@ namespace Bovelo
             //InternalApp internalApp = new InternalApp();
             //internalApp.Run();
 
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new NewModel());
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewModel());
+            Application.Run(new StockManagerForm());
 
             //Bovelo bovelo = new Bovelo(); 
             //bovelo.Run();

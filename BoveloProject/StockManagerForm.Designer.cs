@@ -35,7 +35,7 @@ namespace Bovelo
             this.necessary_title_lbl = new System.Windows.Forms.Label();
             this.quantity_title_lbl = new System.Windows.Forms.Label();
             this.supplier_title_lbl = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.part_stock_panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -99,12 +99,12 @@ namespace Bovelo
             this.supplier_title_lbl.TabIndex = 5;
             this.supplier_title_lbl.Text = "Supplier";
             // 
-            // panel1
+            // part_stock_panel
             // 
-            this.panel1.Location = new System.Drawing.Point(13, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 688);
-            this.panel1.TabIndex = 6;
+            this.part_stock_panel.Location = new System.Drawing.Point(13, 35);
+            this.part_stock_panel.Name = "part_stock_panel";
+            this.part_stock_panel.Size = new System.Drawing.Size(869, 688);
+            this.part_stock_panel.TabIndex = 6;
             // 
             // button1
             // 
@@ -122,7 +122,7 @@ namespace Bovelo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 792);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.part_stock_panel);
             this.Controls.Add(this.supplier_title_lbl);
             this.Controls.Add(this.quantity_title_lbl);
             this.Controls.Add(this.necessary_title_lbl);
@@ -145,7 +145,7 @@ namespace Bovelo
         private System.Windows.Forms.Label necessary_title_lbl;
         private System.Windows.Forms.Label quantity_title_lbl;
         private System.Windows.Forms.Label supplier_title_lbl;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel part_stock_panel;
         private System.Windows.Forms.Button button1;
     }
 }
