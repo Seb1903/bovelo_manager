@@ -20,9 +20,9 @@ namespace Bovelo
         }
         public void Run()
         {
-            /*Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChooseUser());*/
+            Application.Run(new ChooseUser());
         }
         public static DataTable GetDataTable(string sqlCommand)
         {
