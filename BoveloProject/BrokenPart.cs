@@ -57,9 +57,10 @@ namespace Bovelo
             string partInformation = ""; 
             try
             {
-                name = (stock_dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+                name = (stock_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
                 partInformation += name;
 
+                /*
                 partInformation += " ";
                 
                 color = (stock_dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
@@ -67,6 +68,7 @@ namespace Bovelo
 
                 selectedPart_label.Text = partInformation;
                 selectedPart_label.Visible = true;
+                */
             }
             catch
             {

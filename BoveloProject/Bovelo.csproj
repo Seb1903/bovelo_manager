@@ -81,7 +81,6 @@
       <DependentUpon>PartsStock.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderStock.cs" />
-    <Compile Include="OrderStock.cs" />
     <Compile Include="InternalApp.cs" />
     <Compile Include="FitterForm.cs">
       <SubType>Form</SubType>

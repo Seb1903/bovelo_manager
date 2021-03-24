@@ -139,19 +139,20 @@ namespace Bovelo
 
         private void validate_button_Click(object sender, EventArgs e)
         {
-            foreach(ComboBox box in stateBike)
+            foreach (ComboBox box in stateBike)
             {
                 string state = box.SelectedItem.ToString();
                 int id = Convert.ToInt32(box.Name);
-                UpdateState(state,id);
+                UpdateState(state, id);
             }
             InternalApp.bikeList.Clear();
             InternalApp.SetBikeList();
             stateBike.Clear();
-            this.Controls.Clear();           
+            this.Controls.Clear();
             InitializeComponent();
             FitterFormCharge();
             //ShowDayPlanning(fitterPanel);
+        }
         private void report_button_Click(object sender, EventArgs e)
         {
             BrokenPart form = new BrokenPart();

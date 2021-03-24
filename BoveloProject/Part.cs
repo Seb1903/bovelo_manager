@@ -31,22 +31,22 @@ namespace Bovelo
             this.id = id;
             this.quantity = quantity;
 
-            DataTable nameTable = GetDataTable($"SELECT * FROM new_parts_catalog WHERE reference={id}"); //Facultatif
+            DataTable nameTable = GetDataTable($"SELECT * FROM parts_catalog WHERE reference={id}"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
 
-            DataTable partDataTable = GetDataTable($"SELECT * FROM new_parts_stock WHERE part_reference={id}");
+            DataTable partDataTable = GetDataTable($"SELECT * FROM parts_stock WHERE part_reference={id}");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
         public void Use()
         {
             stock-=quantity;
-            string query = $"UPDATE new_parts_stock SET quantity={stock} WHERE part_reference='{id}'";
+            string query = $"UPDATE parts_stock SET quantity={stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
         public void Order(int quantity)
         {
             this.stock += quantity;
-            string query = $"UPDATE new_parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
+            string query = $"UPDATE parts_stock SET quantity={this.stock} WHERE part_reference='{id}'";
             ExecuteQuery(query);
         }
         public void AutoOrder()
