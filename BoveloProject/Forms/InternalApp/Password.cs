@@ -24,14 +24,16 @@ namespace Bovelo
 
         private void Confirmbtn_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Confirm button pushed");
             if (password_txt.Text == InternalApp.managerPassword)
             {
+                Console.WriteLine("Password Confirmed");
                 this.Hide();
                 ManagerForm form = new ManagerForm();
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
                 form.FormClosing += delegate { this.Close(); };
-                //form.Show();
+                form.Show();
 
             }
             else
