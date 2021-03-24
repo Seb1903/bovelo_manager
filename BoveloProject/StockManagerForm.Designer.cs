@@ -43,7 +43,7 @@ namespace Bovelo
             // 
             this.ID_title_lbl.AutoSize = true;
             this.ID_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_title_lbl.Location = new System.Drawing.Point(12, 13);
+            this.ID_title_lbl.Location = new System.Drawing.Point(30, 13);
             this.ID_title_lbl.Name = "ID_title_lbl";
             this.ID_title_lbl.Size = new System.Drawing.Size(24, 18);
             this.ID_title_lbl.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace Bovelo
             // 
             this.name_title_lbl.AutoSize = true;
             this.name_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_title_lbl.Location = new System.Drawing.Point(71, 13);
+            this.name_title_lbl.Location = new System.Drawing.Point(89, 13);
             this.name_title_lbl.Name = "name_title_lbl";
             this.name_title_lbl.Size = new System.Drawing.Size(85, 18);
             this.name_title_lbl.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace Bovelo
             // 
             this.stock_title_lbl.AutoSize = true;
             this.stock_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stock_title_lbl.Location = new System.Drawing.Point(197, 13);
+            this.stock_title_lbl.Location = new System.Drawing.Point(198, 13);
             this.stock_title_lbl.Name = "stock_title_lbl";
             this.stock_title_lbl.Size = new System.Drawing.Size(111, 18);
             this.stock_title_lbl.TabIndex = 2;
@@ -101,6 +101,7 @@ namespace Bovelo
             // 
             // part_stock_panel
             // 
+            this.part_stock_panel.AutoScroll = true;
             this.part_stock_panel.Location = new System.Drawing.Point(13, 35);
             this.part_stock_panel.Name = "part_stock_panel";
             this.part_stock_panel.Size = new System.Drawing.Size(869, 688);
