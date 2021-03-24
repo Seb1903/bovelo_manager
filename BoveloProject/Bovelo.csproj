@@ -81,6 +81,7 @@
       <DependentUpon>PartsStock.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderStock.cs" />
+    <Compile Include="OrderStock.cs" />
     <Compile Include="InternalApp.cs" />
     <Compile Include="FitterForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagerForm.resx">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
