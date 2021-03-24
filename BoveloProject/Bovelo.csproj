@@ -62,6 +62,12 @@
     <Compile Include="ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagerForm.Designer.cs">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewModel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagerForm.resx">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>
