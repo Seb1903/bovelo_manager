@@ -12,6 +12,7 @@ namespace Bovelo
     public class Bike
     {
         public int id;
+        public int model;
         public string type;
         public string color;
         public string size;
@@ -26,6 +27,9 @@ namespace Bovelo
             this.type = bikeRow.Field<string>("type");
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
+            this.model = bikeRow.Field<int>("model");
+
+
             this.state = bikeRow.Field<string>("cstr_status");
             try
             {
@@ -39,7 +43,7 @@ namespace Bovelo
         public Bike() { } // needed to create models in NewModel form
         public void Build()
         {
-            DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{type}'");
+            DataTable partTable = GetDataTable($"SELECT * FROM model_structure WHERE model_name='{model}' SELECT `name` FROM bovelo.model_catalog where id = 5 into @model_name; select * from bovelo.model_structure where `model_name` = @model_name; ");
             foreach(DataRow partRow in partTable.Rows)
             {
                 Part part = new Part(partRow.Field<string>("reference"), partRow.Field<int>("quantity"));
