@@ -121,6 +121,16 @@ namespace Bovelo
             string id = (sender as idNumericUpDown).id;
             OrderStock.ChangeQuantity(id, new_quantity);
         }
+
+        private void Add_Part_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PartsCatalog form = new PartsCatalog();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
     }
 
     public class idNumericUpDown : NumericUpDown
