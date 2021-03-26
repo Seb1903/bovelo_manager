@@ -95,30 +95,86 @@ namespace Bovelo
 
         public static void OrderToSupplier(string partID, int quantity)
         {
-            Database db = new Database();
-            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-            using (var command = new MySqlCommand("part_order", MyConn)
+            if (quantity > 0)
             {
-                CommandType = CommandType.StoredProcedure
-            })
-            {
-                command.Parameters.AddWithValue("@id_part", partID);
-                command.Parameters.AddWithValue("@quantity", quantity);
-                MyConn.Open();
-                try
+                Database db = new Database();
+                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                using (var command = new MySqlCommand("part_order", MyConn)
                 {
-                    command.ExecuteNonQuery();
-                }
-                catch
+                    CommandType = CommandType.StoredProcedure
+                })
                 {
+                    command.Parameters.AddWithValue("@id_part", partID);
+                    command.Parameters.AddWithValue("@quantity", quantity);
+                    MyConn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
 
+                    }
+                    MyConn.Close();
                 }
-                MyConn.Close();
+            }
+        }
+
+        public static void SetNewNecessaryStock(string partID, int quantity)
+        {
+            string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{partID}'";
+            DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
+            int necessaryStock = Convert.ToInt32(quantityReader.Rows[0]["necessary"].ToString());
+            if (quantity <= necessaryStock)
+            {
+                Database db = new Database();
+                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = necessary - @quantity WHERE reference = @id_part", MyConn)
+                {
+                    CommandType = CommandType.Text
+                })
+                {
+                    command.Parameters.AddWithValue("@id_part", partID);
+                    command.Parameters.AddWithValue("@quantity", quantity);
+                    MyConn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+
+                    }
+                    MyConn.Close();
+                }
+            }
+            else
+            {
+                Database db = new Database();
+                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = 0 WHERE reference = @id_part", MyConn)
+                {
+                    CommandType = CommandType.Text
+                })
+                {
+                    command.Parameters.AddWithValue("@id_part", partID);
+                    MyConn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+
+                    }
+                    MyConn.Close();
+                }
             }
         }
 
         public static void GetNewPart(string partID)
         {
+            ChangeQuantity(partID, 0);
             string stockQuery = $"SELECT * FROM parts_stock WHERE reference = {partID}";
             DataTable stockReader = InternalApp.GetDataTable(stockQuery);
             try

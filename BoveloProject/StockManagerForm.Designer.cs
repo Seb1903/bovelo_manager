@@ -38,6 +38,7 @@ namespace Bovelo
             this.part_stock_panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.addPart_btn = new System.Windows.Forms.Button();
+            this.orderDone_Lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ID_title_lbl
@@ -128,11 +129,21 @@ namespace Bovelo
             this.addPart_btn.UseVisualStyleBackColor = true;
             this.addPart_btn.Click += new System.EventHandler(this.Add_Part_Button_Click);
             // 
+            // orderDone_Lbl
+            // 
+            this.orderDone_Lbl.AutoSize = true;
+            this.orderDone_Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderDone_Lbl.Location = new System.Drawing.Point(13, 745);
+            this.orderDone_Lbl.Name = "orderDone_Lbl";
+            this.orderDone_Lbl.Size = new System.Drawing.Size(0, 18);
+            this.orderDone_Lbl.TabIndex = 9;
+            // 
             // StockManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 792);
+            this.Controls.Add(this.orderDone_Lbl);
             this.Controls.Add(this.addPart_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.part_stock_panel);
@@ -161,5 +172,6 @@ namespace Bovelo
         private System.Windows.Forms.Panel part_stock_panel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addPart_btn;
+        private System.Windows.Forms.Label orderDone_Lbl;
     }
 }

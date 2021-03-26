@@ -25,6 +25,8 @@ namespace Bovelo
 
             foreach (KeyValuePair<string, int> parts in OrderStock.partsNecessaryStock)
             {
+                OrderStock.ChangeQuantity(parts.Key, parts.Value);
+
                 Label partIDLbl = new Label();
                 Label necessaryStockLbl = new Label();
                 idNumericUpDown orderStockUpDown = new idNumericUpDown(parts.Key);
@@ -41,7 +43,7 @@ namespace Bovelo
                 necessaryStockLbl.Size = new Size(30, 16);
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                orderStockUpDown.Value = parts.Value;
+                orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key];
                 orderStockUpDown.Top = position * 20;
                 orderStockUpDown.Left = 572;
                 orderStockUpDown.Size = new Size(61, 20);
@@ -112,7 +114,9 @@ namespace Bovelo
             {
                 Console.WriteLine("Clé : {0}, valeur : {1}", parts.Key, parts.Value);
                 OrderStock.OrderToSupplier(parts.Key, parts.Value);
+                OrderStock.SetNewNecessaryStock(parts.Key, parts.Value);
             }
+            orderDone_Lbl.Text = "Order sent to the suppliers";
         }
 
         private void OrderStockUpDown_ValueChanged(object sender, EventArgs e)
