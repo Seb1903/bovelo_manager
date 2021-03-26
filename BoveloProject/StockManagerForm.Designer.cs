@@ -83,7 +83,7 @@ namespace Bovelo
             // 
             this.quantity_title_lbl.AutoSize = true;
             this.quantity_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_title_lbl.Location = new System.Drawing.Point(541, 13);
+            this.quantity_title_lbl.Location = new System.Drawing.Point(542, 13);
             this.quantity_title_lbl.Name = "quantity_title_lbl";
             this.quantity_title_lbl.Size = new System.Drawing.Size(135, 18);
             this.quantity_title_lbl.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace Bovelo
             // 
             this.supplier_title_lbl.AutoSize = true;
             this.supplier_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplier_title_lbl.Location = new System.Drawing.Point(713, 13);
+            this.supplier_title_lbl.Location = new System.Drawing.Point(717, 13);
             this.supplier_title_lbl.Name = "supplier_title_lbl";
             this.supplier_title_lbl.Size = new System.Drawing.Size(69, 18);
             this.supplier_title_lbl.TabIndex = 5;

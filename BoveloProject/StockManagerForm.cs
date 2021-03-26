@@ -23,31 +23,25 @@ namespace Bovelo
 
             int position = 1;
 
-            foreach (string ID in OrderStock.partsIDs)
+            foreach (KeyValuePair<string, int> parts in OrderStock.partsNecessaryStock)
             {
                 Label partIDLbl = new Label();
-                Label currentStockLbl = new Label();
                 Label necessaryStockLbl = new Label();
-                idNumericUpDown orderStockUpDown = new idNumericUpDown(ID);
+                idNumericUpDown orderStockUpDown = new idNumericUpDown(parts.Key);
 
-                partIDLbl.Text = ID;
+                partIDLbl.Text = parts.Key;
                 partIDLbl.Top = position * 20;
                 partIDLbl.Left = 10;
                 partIDLbl.Size = new Size(40, 16);
                 partIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                currentStockLbl.Text = OrderStock.GetPartStock(ID).ToString();
-                currentStockLbl.Top = position * 20;
-                currentStockLbl.Left = 225;
-                currentStockLbl.Size = new Size(30, 16);
-                currentStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-                necessaryStockLbl.Text = "idk";
+                necessaryStockLbl.Text = parts.Value.ToString();
                 necessaryStockLbl.Top = position * 20;
                 necessaryStockLbl.Left = 410;
                 necessaryStockLbl.Size = new Size(30, 16);
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
+                orderStockUpDown.Value = parts.Value;
                 orderStockUpDown.Top = position * 20;
                 orderStockUpDown.Left = 572;
                 orderStockUpDown.Size = new Size(61, 20);
@@ -56,26 +50,8 @@ namespace Bovelo
                 position = position + 2;
 
                 part_stock_panel.Controls.Add(partIDLbl);
-                part_stock_panel.Controls.Add(currentStockLbl);
                 part_stock_panel.Controls.Add(necessaryStockLbl);
                 part_stock_panel.Controls.Add(orderStockUpDown);
-            }
-
-            position = 1;
-
-            foreach (string name in OrderStock.partsNames)
-            {
-                Label partNameLbl = new Label();
-
-                partNameLbl.Text = name;
-                partNameLbl.Top = position * 20;
-                partNameLbl.Left = 63;
-                partNameLbl.Size = new Size(120, 20);
-                partNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-                position = position + 2;
-
-                part_stock_panel.Controls.Add(partNameLbl);
             }
 
             position = 1;
@@ -93,6 +69,40 @@ namespace Bovelo
                 position = position + 2;
 
                 part_stock_panel.Controls.Add(supplierNameLbl);
+            }
+
+            position = 1;
+
+            foreach (string partName in OrderStock.partsNames)
+            {
+                Label partNameLbl = new Label();
+
+                partNameLbl.Text = partName;
+                partNameLbl.Top = position * 20;
+                partNameLbl.Left = 63;
+                partNameLbl.Size = new Size(120, 20);
+                partNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+                position = position + 2;
+
+                part_stock_panel.Controls.Add(partNameLbl);
+            }
+
+            position = 1;
+
+            foreach (int partStock in OrderStock.partsStock)
+            {
+                Label currentStockLbl = new Label();
+
+                currentStockLbl.Text = partStock.ToString();
+                currentStockLbl.Top = position * 20;
+                currentStockLbl.Left = 225;
+                currentStockLbl.Size = new Size(30, 16);
+                currentStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+                position = position + 2;
+
+                part_stock_panel.Controls.Add(currentStockLbl);
             }
         }
 
