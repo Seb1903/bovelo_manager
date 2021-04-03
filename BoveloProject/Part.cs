@@ -41,6 +41,13 @@ namespace Bovelo
             DataTable partDataTable = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
+
+        public Part(string reference, string name)
+        {
+            this.reference = reference;
+            this.name = name;
+        }
+
         public void Use()
         {
             stock-=quantity;
@@ -58,30 +65,10 @@ namespace Bovelo
                 Order(40 * quantity); //Order 40 bikes parts
             }
         }
-        public static void AddNewPart(string name)
+        public void SaveNewPart()
         {
-            int intReference = CountPart() + 1;
-            string formatedReference = Convert.ToString(intReference);
-            while (formatedReference.Length < 5)
-            {
-                formatedReference = "0" + formatedReference;
-            }
-            string query = $"INSERT INTO `parts_catalog` (`reference`, `name`) VALUES ('{formatedReference}', '{name}')";
+            string query = $"INSERT INTO `parts_catalog` (`reference`, `name`) VALUES ('{this.reference}', '{this.name}')";
             InternalApp.ExecuteQuery(query);
-        }
-        public static int CountPart()
-        {
-            Database db = new Database();
-            using (var conn = new MySqlConnection(db.MyConnection))
-            {
-                conn.Open();
-                using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM parts_catalog", conn))
-                {
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    conn.Close();
-                    return count;
-                }
-            }
         }
     }
 }

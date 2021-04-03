@@ -19,17 +19,27 @@ namespace Bovelo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (reference_texte.Text.Length == 5)
             {
-                Part.AddNewPart(textBox1.Text);
-                validation_label.Text = "Part add to systeme";
-                validation_label.Visible = true; 
+                try
+                {
+                    Part part = new Part(reference_texte.Text, name_texte.Text);
+                    part.SaveNewPart();
+                    validation_label.Text = "Part add to systeme";
+                    validation_label.Visible = true;
+                }
+                catch
+                {
+                    validation_label.Text = "Error : maybe try an other reference. ";
+                    validation_label.Visible = true;
+                }
             }
-            catch
+            else
             {
-                validation_label.Text = "Error";
+                validation_label.Text = "Your reference does not correspond to standard";
                 validation_label.Visible = true;
             }
+
         }
 
         private void button_back_Click(object sender, EventArgs e)
