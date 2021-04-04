@@ -22,7 +22,7 @@ namespace Bovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerMenus());
+            Application.Run(new ChooseUser());
         }
         public static DataTable GetDataTable(string sqlCommand)
         {
