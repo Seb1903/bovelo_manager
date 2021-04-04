@@ -25,18 +25,18 @@ namespace Bovelo
                 {
                     Part part = new Part(reference_texte.Text, name_texte.Text);
                     part.SaveNewPart();
-                    validation_label.Text = "Part add to systeme";
+                    validation_label.Text = "Part added to system.";
                     validation_label.Visible = true;
                 }
                 catch
                 {
-                    validation_label.Text = "Error : maybe try an other reference. ";
+                    validation_label.Text = "Error : maybe try another reference. ";
                     validation_label.Visible = true;
                 }
             }
             else
             {
-                validation_label.Text = "Your reference does not correspond to standard";
+                validation_label.Text = "Your reference does not correspond to the standard.";
                 validation_label.Visible = true;
             }
 
