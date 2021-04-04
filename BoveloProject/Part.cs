@@ -51,11 +51,13 @@ namespace Bovelo
             this.stock += quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'");
         }
-        public void AutoOrder()
+        public void CheckStock()
         {
-            if(stock <= quantity * 50) //if stock under 50 bikes parts
+            InternalApp.UpdateBikeTable();
+            int minimumQuantity = InternalApp.bikeList.Count * quantity;
+            if(stock <= minimumQuantity) 
             {
-                Order(40 * quantity); //Order 40 bikes parts
+                // color red = low stock
             }
         }
     }

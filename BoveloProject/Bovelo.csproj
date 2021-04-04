@@ -47,138 +47,138 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddClient.cs">
+    <Compile Include="Forms\Bovelo\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrokenPart.cs">
+    <Compile Include="Forms\InternalApp\BrokenPart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrokenPart.Designer.cs">
+    <Compile Include="Forms\InternalApp\BrokenPart.Designer.cs">
       <DependentUpon>BrokenPart.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChooseUser.cs">
+    <Compile Include="Forms\InternalApp\ChooseUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChooseUser.Designer.cs">
+    <Compile Include="Forms\InternalApp\ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewModel.cs">
+    <Compile Include="Forms\InternalApp\NewModel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewModel.Designer.cs">
+    <Compile Include="Forms\InternalApp\NewModel.Designer.cs">
       <DependentUpon>NewModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartsStock2.cs">
+    <Compile Include="Forms\InternalApp\PartsStock2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsStock2.Designer.cs">
+    <Compile Include="Forms\InternalApp\PartsStock2.Designer.cs">
       <DependentUpon>PartsStock2.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartsStock.cs">
+    <Compile Include="Forms\InternalApp\PartsStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsStock.Designer.cs">
+    <Compile Include="Forms\InternalApp\PartsStock.Designer.cs">
       <DependentUpon>PartsStock.cs</DependentUpon>
     </Compile>
     <Compile Include="InternalApp.cs" />
-    <Compile Include="FitterForm.cs">
+    <Compile Include="Forms\InternalApp\FitterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FitterForm.Designer.cs">
+    <Compile Include="Forms\InternalApp\FitterForm.Designer.cs">
       <DependentUpon>FitterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password.cs">
+    <Compile Include="Forms\InternalApp\Password.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Password.Designer.cs">
+    <Compile Include="Forms\InternalApp\Password.Designer.cs">
       <DependentUpon>Password.cs</DependentUpon>
     </Compile>
     <Compile Include="Planning.cs" />
-    <Compile Include="ManagerForm.cs">
+    <Compile Include="Forms\InternalApp\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
+    <Compile Include="Forms\InternalApp\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bike.cs" />
     <Compile Include="Bovelo.cs" />
-    <Compile Include="BikeCustomisationForm.cs">
+    <Compile Include="Forms\Bovelo\BikeCustomisationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BikeCustomisationForm.Designer.cs">
+    <Compile Include="Forms\Bovelo\BikeCustomisationForm.Designer.cs">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BuyableItem.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="ClientSearch.cs">
+    <Compile Include="Forms\Bovelo\ClientSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientSearch.Designer.cs">
+    <Compile Include="Forms\Bovelo\ClientSearch.Designer.cs">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="Stocks.cs">
+    <Compile Include="Forms\InternalApp\Stocks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stocks.Designer.cs">
+    <Compile Include="Forms\InternalApp\Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewCatalogForm.cs">
+    <Compile Include="Forms\Bovelo\NewCatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewCatalogForm.Designer.cs">
+    <Compile Include="Forms\Bovelo\NewCatalogForm.Designer.cs">
       <DependentUpon>NewCatalogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Part.cs" />
-    <Compile Include="AddClient.Designer.cs">
+    <Compile Include="Forms\Bovelo\AddClient.Designer.cs">
       <DependentUpon>AddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasketForm.cs">
+    <Compile Include="Forms\Bovelo\BasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasketForm.Designer.cs">
+    <Compile Include="Forms\Bovelo\BasketForm.Designer.cs">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddClient.resx">
+    <EmbeddedResource Include="Forms\Bovelo\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewModel.resx">
+    <EmbeddedResource Include="Forms\InternalApp\NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartsStock2.resx">
+    <EmbeddedResource Include="Forms\InternalApp\PartsStock2.resx">
       <DependentUpon>PartsStock2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BrokenPart.resx">
+    <EmbeddedResource Include="Forms\InternalApp\BrokenPart.resx">
       <DependentUpon>BrokenPart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FitterForm.resx">
+    <EmbeddedResource Include="Forms\InternalApp\FitterForm.resx">
       <DependentUpon>FitterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
+    <EmbeddedResource Include="Forms\InternalApp\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BikeCustomisationForm.resx">
+    <EmbeddedResource Include="Forms\Bovelo\BikeCustomisationForm.resx">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BasketForm.resx">
+    <EmbeddedResource Include="Forms\Bovelo\BasketForm.resx">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientSearch.resx">
+    <EmbeddedResource Include="Forms\Bovelo\ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartsStock.resx">
+    <EmbeddedResource Include="Forms\InternalApp\PartsStock.resx">
       <DependentUpon>PartsStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stocks.resx">
+    <EmbeddedResource Include="Forms\InternalApp\Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewCatalogForm.resx">
+    <EmbeddedResource Include="Forms\Bovelo\NewCatalogForm.resx">
       <DependentUpon>NewCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Password.resx">
+    <EmbeddedResource Include="Forms\InternalApp\Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,5 +211,6 @@
   <ItemGroup>
     <None Include="Resources\basket.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
