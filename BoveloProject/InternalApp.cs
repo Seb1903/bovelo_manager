@@ -12,17 +12,21 @@ namespace Bovelo
         public static string managerPassword = "1234";
         public static DataTable bikeTable ;
         public static DataTable planningTable ;
+        public static DataTable bikeModelTable;
         public static List<Bike> bikeList = new List<Bike>();
+        public static Dictionary<string, int> necessaryPartList = new Dictionary<string, int>();
         public static string[] bikeStateList = new string[] { "Active", "Not active", "Done" };  
         public InternalApp()
         {
             SetBikeList();
+            SetBikeModel();
+            SetRequiredPartsList();
         }
         public void Run()
         {
-            Application.EnableVisualStyles();
+            /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PartsStock());
+            Application.Run(new PartsStock());*/       
         }
         public static DataTable GetDataTable(string sqlCommand)
         {
@@ -76,6 +80,41 @@ namespace Bovelo
                 Bike bike = new Bike(row.Field<int>("id"));
                 bikeList.Add(bike);
             }
+        }
+        public static void SetBikeModel()
+        {
+            bikeModelTable = GetDataTable("SELECT * FROM model_structure");
+        }
+        public static void SetRequiredPartsList()
+        {
+            UpdateBikeTable();
+            foreach (DataRow part in bikeModelTable.Rows)
+            {
+                int quantity = 0;
+                string partReference = part.Field<string>("reference");
+                foreach (Bike bike in bikeList)
+                {
+                    string modelName = bike.type + " " + bike.size + " " + bike.color;
+                    if (part.Field<string>("model_name") == modelName)
+                    {
+                        quantity += part.Field<int>("quantity");
+                    }
+                }
+                if (necessaryPartList.ContainsKey(partReference))
+                {
+                    necessaryPartList[partReference] += quantity;
+                }
+                else
+                {
+                    necessaryPartList.Add(part.Field<string>("reference"), quantity);
+                }
+                
+            }
+            foreach (KeyValuePair<string, int> part in necessaryPartList)
+            {
+                Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
+            }
+            Console.WriteLine("Total of {0} different parts", necessaryPartList.Count);
         }
     }
 }
