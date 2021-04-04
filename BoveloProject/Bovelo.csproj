@@ -50,6 +50,12 @@
     <Compile Include="AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AllBikes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllBikes.Designer.cs">
+      <DependentUpon>AllBikes.cs</DependentUpon>
+    </Compile>
     <Compile Include="BrokenPart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     </Compile>
     <Compile Include="ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMenus.Designer.cs">
+      <DependentUpon>ManagerMenus.cs</DependentUpon>
     </Compile>
     <Compile Include="NewModel.cs">
       <SubType>Form</SubType>
@@ -142,8 +154,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="supplier_orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="supplier_orders.Designer.cs">
+      <DependentUpon>supplier_orders.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllBikes.resx">
+      <DependentUpon>AllBikes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMenus.resx">
+      <DependentUpon>ManagerMenus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>
@@ -185,6 +209,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplier_orders.resx">
+      <DependentUpon>supplier_orders.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

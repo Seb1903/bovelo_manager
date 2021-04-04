@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Bovelo
 {
-    public partial class supplier_orders : Form
+    public partial class supplier_orders : UserControl
     {
         public supplier_orders()
         {

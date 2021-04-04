@@ -40,17 +40,16 @@ namespace Bovelo
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(657, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(689, 683);
             this.dataGridView1.TabIndex = 0;
             // 
             // supplier_orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "supplier_orders";
-            this.Text = "supplier_orders";
+            this.Size = new System.Drawing.Size(920, 825);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

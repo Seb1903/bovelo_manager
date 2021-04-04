@@ -29,8 +29,8 @@ namespace Bovelo
                 this.Hide();
                 ManagerForm form = new ManagerForm();
                 form.Location = this.Location;
-                form.StartPosition = FormStartPosition.Manual;
-                form.FormClosing += delegate { this.Close(); };
+                //form.StartPosition = FormStartPosition.Manual;
+                //form.FormClosing += delegate { this.Close(); };
                 //form.Show();
 
             }
@@ -48,7 +48,7 @@ namespace Bovelo
                 if (password_txt.Text == InternalApp.managerPassword)
                 {
                     this.Hide();
-                    ManagerForm form = new ManagerForm();
+                    ManagerMenus form = new ManagerMenus();
                     form.Location = this.Location;
                     form.StartPosition = FormStartPosition.Manual;
                     form.FormClosing += delegate { this.Show(); };

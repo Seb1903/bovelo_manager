@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public partial class AllBikes : Form
+    public partial class AllBikes : UserControl
     {
         public AllBikes()
         {
