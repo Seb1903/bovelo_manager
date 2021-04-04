@@ -35,11 +35,12 @@ namespace Bovelo
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.supplier_orders_control = new supplier_orders();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.planningbutton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.planningcontrol = new ManagerForm();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,7 +72,7 @@ namespace Bovelo
             this.allbikescontrol.AutoSize = true;
             this.allbikescontrol.Location = new System.Drawing.Point(0, 3);
             this.allbikescontrol.Name = "allbikescontrol";
-            this.allbikescontrol.Size = new System.Drawing.Size(899, 474);
+            this.allbikescontrol.Size = new System.Drawing.Size(899, 711);
             this.allbikescontrol.TabIndex = 0;
             // 
             // tabPage2
@@ -94,12 +95,23 @@ namespace Bovelo
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.planningbutton);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1229, 861);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Planning";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // planningbutton
+            // 
+            this.planningbutton.AutoSize = true;
+            this.planningbutton.Location = new System.Drawing.Point(0, 0);
+            this.planningbutton.Name = "planningbutton";
+            this.planningbutton.Size = new System.Drawing.Size(160, 27);
+            this.planningbutton.TabIndex = 0;
+            this.planningbutton.Text = "Open planning window";
+            this.planningbutton.Click += new System.EventHandler(this.planningbutton_Click);
             // 
             // tabPage4
             // 
@@ -109,14 +121,6 @@ namespace Bovelo
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // planningcontrol
-            // 
-            this.planningcontrol.AutoSize = true;
-            this.planningcontrol.ClientSize = new System.Drawing.Size(1221, 828);
-            this.planningcontrol.Location = new System.Drawing.Point(3, -128);
-            this.planningcontrol.Name = "planningcontrol";
-            this.planningcontrol.Visible = false;
             // 
             // ManagerMenus
             // 
@@ -130,6 +134,8 @@ namespace Bovelo
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,6 +149,6 @@ namespace Bovelo
         private System.Windows.Forms.TabPage tabPage4;
         private AllBikes allbikescontrol;
         private supplier_orders supplier_orders_control;
-        private ManagerForm planningcontrol;
+        private System.Windows.Forms.Button planningbutton;
     }
 }

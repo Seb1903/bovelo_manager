@@ -16,5 +16,17 @@ namespace Bovelo
         {
             InitializeComponent();
         }
+
+        private void planningbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManagerForm form = new ManagerForm()
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
     }
 }
