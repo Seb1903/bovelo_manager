@@ -56,6 +56,11 @@
     </Compile>
     <Compile Include="AllBikes.Designer.cs">
       <DependentUpon>AllBikes.cs</DependentUpon>
+    <Compile Include="AddPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPart.Designer.cs">
+      <DependentUpon>AddPart.cs</DependentUpon>
     </Compile>
     <Compile Include="BrokenPart.cs">
       <SubType>Form</SubType>
@@ -192,6 +197,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerMenus.resx">
       <DependentUpon>ManagerMenus.cs</DependentUpon>
+    <EmbeddedResource Include="AddPart.resx">
+      <DependentUpon>AddPart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>

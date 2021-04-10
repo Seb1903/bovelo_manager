@@ -42,6 +42,13 @@ namespace Bovelo
             DataTable partDataTable = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
+
+        public Part(string reference, string name)
+        {
+            this.reference = reference;
+            this.name = name;
+        }
+
         public void Use()
         {
             stock-=quantity;
@@ -60,6 +67,11 @@ namespace Bovelo
             {
                 // color red = low stock
             }
+        }
+        public void SaveNewPart()
+        {
+            string query = $"INSERT INTO `parts_catalog` (`reference`, `name`) VALUES ('{this.reference}', '{this.name}')";
+            InternalApp.ExecuteQuery(query);
         }
     }
 }
