@@ -12,6 +12,7 @@ namespace Bovelo
     public class Bike
     {
         public int id;
+        public int model;
         public string type;
         public string color;
         public string size;
@@ -26,6 +27,9 @@ namespace Bovelo
             this.type = bikeRow.Field<string>("type");
             this.color = bikeRow.Field<string>("color");
             this.size = bikeRow.Field<string>("size");
+            this.model = bikeRow.Field<int>("model");
+
+
             this.state = bikeRow.Field<string>("cstr_status");
             try
             {

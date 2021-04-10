@@ -18,7 +18,7 @@ namespace Bovelo
         public NewModel()
         {
             InitializeComponent();
-            DataTable datas = GetData(String.Format("Select * from parts_stock_view"));
+            DataTable datas = GetData(String.Format("Select * from parts_catalog"));
             dataGridView1.DataSource = datas;
             LoadModelTable();
             string[] searchCriterions = new string[] { "reference", "name" };

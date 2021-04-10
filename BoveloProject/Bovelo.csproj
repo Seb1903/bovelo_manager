@@ -148,8 +148,8 @@
     <EmbeddedResource Include="Forms\InternalApp\NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InternalApp\PartsStock2.resx">
-      <DependentUpon>PartsStock2.cs</DependentUpon>
+    <EmbeddedResource Include="PartsStock.resx">
+      <DependentUpon>PartsStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternalApp\BrokenPart.resx">
       <DependentUpon>BrokenPart.cs</DependentUpon>
@@ -169,10 +169,7 @@
     <EmbeddedResource Include="Forms\Bovelo\ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InternalApp\PartsStock.resx">
-      <DependentUpon>PartsStock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InternalApp\Stocks.resx">
+    <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Bovelo\NewCatalogForm.resx">
