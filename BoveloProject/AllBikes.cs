@@ -6,18 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Bovelo
 {
-    public partial class supplier_orders : UserControl
+    public partial class AllBikes : UserControl
     {
-        public supplier_orders()
+        public AllBikes()
         {
             InitializeComponent();
             DataTable datas;
-            datas = GetData(String.Format("Select * From supplier_order"));
+            datas = GetData(String.Format("Select * From bike"));
+            datas.Columns.RemoveAt(0);
             dataGridView1.DataSource = datas;
         }
 

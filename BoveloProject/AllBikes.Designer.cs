@@ -1,7 +1,7 @@
 ﻿
 namespace Bovelo
 {
-    partial class supplier_orders
+    partial class AllBikes
     {
         /// <summary>
         /// Required designer variable.
@@ -36,20 +36,20 @@ namespace Bovelo
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 37);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(689, 683);
+            this.dataGridView1.Size = new System.Drawing.Size(757, 680);
             this.dataGridView1.TabIndex = 0;
             // 
-            // supplier_orders
+            // AllBikes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
-            this.Name = "supplier_orders";
-            this.Size = new System.Drawing.Size(920, 825);
+            this.Name = "AllBikes";
+            this.Size = new System.Drawing.Size(800, 730);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
