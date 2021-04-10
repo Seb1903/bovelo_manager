@@ -35,6 +35,7 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.month_calendar = new System.Windows.Forms.MonthCalendar();
             this.day_panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -105,7 +106,7 @@ namespace Bovelo
             this.day_panel2.Controls.Add(this.label6);
             this.day_panel2.Location = new System.Drawing.Point(302, 192);
             this.day_panel2.Name = "day_panel2";
-            this.day_panel2.Size = new System.Drawing.Size(907, 144);
+            this.day_panel2.Size = new System.Drawing.Size(946, 144);
             this.day_panel2.TabIndex = 2;
             // 
             // dateTimePicker2
@@ -159,7 +160,7 @@ namespace Bovelo
             this.day_panel3.Controls.Add(this.label9);
             this.day_panel3.Location = new System.Drawing.Point(302, 355);
             this.day_panel3.Name = "day_panel3";
-            this.day_panel3.Size = new System.Drawing.Size(907, 144);
+            this.day_panel3.Size = new System.Drawing.Size(946, 144);
             this.day_panel3.TabIndex = 3;
             // 
             // dateTimePicker3
@@ -213,7 +214,7 @@ namespace Bovelo
             this.day_panel4.Controls.Add(this.label12);
             this.day_panel4.Location = new System.Drawing.Point(302, 518);
             this.day_panel4.Name = "day_panel4";
-            this.day_panel4.Size = new System.Drawing.Size(907, 144);
+            this.day_panel4.Size = new System.Drawing.Size(946, 144);
             this.day_panel4.TabIndex = 4;
             // 
             // dateTimePicker4
@@ -267,7 +268,7 @@ namespace Bovelo
             this.day_panel5.Controls.Add(this.label15);
             this.day_panel5.Location = new System.Drawing.Point(302, 681);
             this.day_panel5.Name = "day_panel5";
-            this.day_panel5.Size = new System.Drawing.Size(907, 144);
+            this.day_panel5.Size = new System.Drawing.Size(946, 144);
             this.day_panel5.TabIndex = 5;
             // 
             // dateTimePicker5
@@ -402,7 +403,7 @@ namespace Bovelo
             this.day_panel1.Controls.Add(this.label1);
             this.day_panel1.Location = new System.Drawing.Point(302, 29);
             this.day_panel1.Name = "day_panel1";
-            this.day_panel1.Size = new System.Drawing.Size(907, 144);
+            this.day_panel1.Size = new System.Drawing.Size(946, 144);
             this.day_panel1.TabIndex = 1;
             // 
             // AutoPlanner_Btn
@@ -457,7 +458,7 @@ namespace Bovelo
             // 
             // ManagerForm
             // 
-            this.ClientSize = new System.Drawing.Size(1221, 834);
+            this.ClientSize = new System.Drawing.Size(1260, 834);
             this.Controls.Add(this.button_production);
             this.Controls.Add(this.refresh_button);
             this.Controls.Add(this.autoplanner_label);
@@ -474,7 +475,10 @@ namespace Bovelo
             this.Controls.Add(this.day_panel2);
             this.Controls.Add(this.day_panel1);
             this.Controls.Add(this.month_calendar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Manager";
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.day_panel2.ResumeLayout(false);
             this.day_panel2.PerformLayout();

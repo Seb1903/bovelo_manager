@@ -15,7 +15,6 @@ namespace Bovelo
         public int quantity;
         public int price;
 
-
         public BuyableItem(string category, string color, string size, int quantity)
         {
             this.category = category;

@@ -32,7 +32,6 @@ namespace Bovelo
                     int partStock = Convert.ToInt32(quantityReader.Rows[i]["quantity"].ToString());
                     partsStock.Add(partStock);
                 }
-
                 foreach (KeyValuePair<string, int> parts in partsNecessaryStock)
                 {
                     string nameQuery = $"SELECT * FROM parts_catalog WHERE reference='{parts.Key}'";
@@ -45,7 +44,6 @@ namespace Bovelo
                         partsSuppliersID.Add(supplierID);
                     }
                 }
-
                 foreach (int supplierID in partsSuppliersID)
                 {
                     string qtyQuery = $"SELECT * FROM supplier WHERE id_supplier='{supplierID}'";
@@ -63,7 +61,6 @@ namespace Bovelo
             }
             catch
             {
-
             }
         }
         public static int GetPartStock(string ID)
@@ -79,7 +76,6 @@ namespace Bovelo
                 return 0;
             }
         }
-
         public static void ChangeQuantity(string id, int quantity)
         {
             try
@@ -92,7 +88,6 @@ namespace Bovelo
                 partsQuantityOrder[id] = quantity;
             }
         }
-
         public static void OrderToSupplier(string partID, int quantity)
         {
             if (quantity > 0)
@@ -113,13 +108,11 @@ namespace Bovelo
                     }
                     catch
                     {
-
                     }
                     MyConn.Close();
                 }
             }
         }
-
         public static void SetNewNecessaryStock(string partID, int quantity)
         {
             string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{partID}'";
@@ -143,7 +136,6 @@ namespace Bovelo
                     }
                     catch
                     {
-
                     }
                     MyConn.Close();
                 }
@@ -165,13 +157,11 @@ namespace Bovelo
                     }
                     catch
                     {
-
                     }
                     MyConn.Close();
                 }
             }
         }
-
         public static void GetNewPart(string partID)
         {
             ChangeQuantity(partID, 0);
@@ -184,7 +174,6 @@ namespace Bovelo
             }
             catch
             {
-
             }
             string nameQuery = $"SELECT * FROM parts_catalog WHERE reference = {partID}";
             DataTable nameReader = InternalApp.GetDataTable(nameQuery);
@@ -195,7 +184,6 @@ namespace Bovelo
             }
             catch
             {
-
             }
             string supplierQuery = $"SELECT * FROM supplier WHERE id_supplier = {partsSuppliersID.Last()}";
             DataTable supplierReader = InternalApp.GetDataTable(supplierQuery);
@@ -205,7 +193,6 @@ namespace Bovelo
             }
             catch
             {
-
             }
         }
     }

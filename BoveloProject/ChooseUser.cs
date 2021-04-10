@@ -32,11 +32,14 @@ namespace Bovelo
         private void Fitterbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FitterForm form = new FitterForm();
-            form.Location = this.Location;
-            form.StartPosition = FormStartPosition.Manual;
+            FitterForm form  = new FitterForm()
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
             form.FormClosing += delegate { this.Show(); };
             form.Show();
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BikeCustomisationForm));
             this.table_colors = new System.Windows.Forms.TableLayoutPanel();
             this.color1 = new System.Windows.Forms.RadioButton();
             this.color2 = new System.Windows.Forms.RadioButton();
@@ -61,11 +62,12 @@ namespace Bovelo
             this.table_colors.Controls.Add(this.color1, 0, 0);
             this.table_colors.Controls.Add(this.color2, 1, 0);
             this.table_colors.Controls.Add(this.color3, 2, 0);
-            this.table_colors.Location = new System.Drawing.Point(421, 47);
+            this.table_colors.Location = new System.Drawing.Point(632, 72);
+            this.table_colors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.table_colors.Name = "table_colors";
             this.table_colors.RowCount = 1;
             this.table_colors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table_colors.Size = new System.Drawing.Size(290, 59);
+            this.table_colors.Size = new System.Drawing.Size(469, 91);
             this.table_colors.TabIndex = 3;
             // 
             // color1
@@ -73,9 +75,10 @@ namespace Bovelo
             this.color1.Appearance = System.Windows.Forms.Appearance.Button;
             this.color1.BackColor = System.Drawing.Color.Black;
             this.color1.ForeColor = System.Drawing.Color.White;
-            this.color1.Location = new System.Drawing.Point(3, 3);
+            this.color1.Location = new System.Drawing.Point(4, 5);
+            this.color1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.color1.Name = "color1";
-            this.color1.Size = new System.Drawing.Size(90, 53);
+            this.color1.Size = new System.Drawing.Size(135, 81);
             this.color1.TabIndex = 0;
             this.color1.TabStop = true;
             this.color1.Text = "Black";
@@ -88,9 +91,10 @@ namespace Bovelo
             this.color2.Appearance = System.Windows.Forms.Appearance.Button;
             this.color2.BackColor = System.Drawing.Color.MidnightBlue;
             this.color2.ForeColor = System.Drawing.Color.White;
-            this.color2.Location = new System.Drawing.Point(99, 3);
+            this.color2.Location = new System.Drawing.Point(160, 5);
+            this.color2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.color2.Name = "color2";
-            this.color2.Size = new System.Drawing.Size(90, 53);
+            this.color2.Size = new System.Drawing.Size(135, 81);
             this.color2.TabIndex = 1;
             this.color2.TabStop = true;
             this.color2.Text = "Dark blue";
@@ -102,9 +106,10 @@ namespace Bovelo
             // 
             this.color3.Appearance = System.Windows.Forms.Appearance.Button;
             this.color3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.color3.Location = new System.Drawing.Point(195, 3);
+            this.color3.Location = new System.Drawing.Point(316, 5);
+            this.color3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.color3.Name = "color3";
-            this.color3.Size = new System.Drawing.Size(91, 53);
+            this.color3.Size = new System.Drawing.Size(136, 81);
             this.color3.TabIndex = 2;
             this.color3.TabStop = true;
             this.color3.Text = "Light Blue";
@@ -118,9 +123,10 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.category_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.category_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.category_label.Location = new System.Drawing.Point(39, 11);
+            this.category_label.Location = new System.Drawing.Point(58, 17);
+            this.category_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.category_label.Name = "category_label";
-            this.category_label.Size = new System.Drawing.Size(277, 20);
+            this.category_label.Size = new System.Drawing.Size(450, 31);
             this.category_label.TabIndex = 4;
             this.category_label.Text = "Category";
             this.category_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,9 +137,10 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.color_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.color_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.color_label.Location = new System.Drawing.Point(425, 11);
+            this.color_label.Location = new System.Drawing.Point(638, 17);
+            this.color_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.color_label.Name = "color_label";
-            this.color_label.Size = new System.Drawing.Size(283, 20);
+            this.color_label.Size = new System.Drawing.Size(458, 31);
             this.color_label.TabIndex = 5;
             this.color_label.Text = "Color";
             this.color_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -144,9 +151,10 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.size_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.size_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.size_label.Location = new System.Drawing.Point(425, 141);
+            this.size_label.Location = new System.Drawing.Point(638, 217);
+            this.size_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.size_label.Name = "size_label";
-            this.size_label.Size = new System.Drawing.Size(283, 22);
+            this.size_label.Size = new System.Drawing.Size(458, 34);
             this.size_label.TabIndex = 6;
             this.size_label.Text = "Size";
             this.size_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -157,9 +165,10 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.quantity_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.quantity_label.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_label.Location = new System.Drawing.Point(425, 230);
+            this.quantity_label.Location = new System.Drawing.Point(638, 354);
+            this.quantity_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.quantity_label.Name = "quantity_label";
-            this.quantity_label.Size = new System.Drawing.Size(283, 21);
+            this.quantity_label.Size = new System.Drawing.Size(458, 32);
             this.quantity_label.TabIndex = 9;
             this.quantity_label.Text = "Quantity ";
             this.quantity_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -168,11 +177,12 @@ namespace Bovelo
             // 
             this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantity.Location = new System.Drawing.Point(425, 263);
-            this.quantity.MaximumSize = new System.Drawing.Size(301, 0);
-            this.quantity.MinimumSize = new System.Drawing.Size(33, 0);
+            this.quantity.Location = new System.Drawing.Point(638, 405);
+            this.quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.quantity.MaximumSize = new System.Drawing.Size(452, 0);
+            this.quantity.MinimumSize = new System.Drawing.Size(50, 0);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(283, 20);
+            this.quantity.Size = new System.Drawing.Size(452, 26);
             this.quantity.TabIndex = 10;
             this.quantity.ValueChanged += new System.EventHandler(this.quantity_scroll);
             // 
@@ -180,11 +190,12 @@ namespace Bovelo
             // 
             this.addBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBasket.Location = new System.Drawing.Point(606, 334);
-            this.addBasket.MaximumSize = new System.Drawing.Size(105, 23);
-            this.addBasket.MinimumSize = new System.Drawing.Size(105, 23);
+            this.addBasket.Location = new System.Drawing.Point(909, 514);
+            this.addBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addBasket.MaximumSize = new System.Drawing.Size(158, 35);
+            this.addBasket.MinimumSize = new System.Drawing.Size(158, 35);
             this.addBasket.Name = "addBasket";
-            this.addBasket.Size = new System.Drawing.Size(105, 23);
+            this.addBasket.Size = new System.Drawing.Size(158, 35);
             this.addBasket.TabIndex = 11;
             this.addBasket.Text = "Add to basket";
             this.addBasket.UseVisualStyleBackColor = true;
@@ -194,11 +205,12 @@ namespace Bovelo
             // 
             this.showBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showBasket.Location = new System.Drawing.Point(495, 334);
-            this.showBasket.MaximumSize = new System.Drawing.Size(105, 23);
-            this.showBasket.MinimumSize = new System.Drawing.Size(105, 23);
+            this.showBasket.Location = new System.Drawing.Point(742, 514);
+            this.showBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.showBasket.MaximumSize = new System.Drawing.Size(158, 35);
+            this.showBasket.MinimumSize = new System.Drawing.Size(158, 35);
             this.showBasket.Name = "showBasket";
-            this.showBasket.Size = new System.Drawing.Size(105, 23);
+            this.showBasket.Size = new System.Drawing.Size(158, 35);
             this.showBasket.TabIndex = 12;
             this.showBasket.Text = "Show basket";
             this.showBasket.UseVisualStyleBackColor = true;
@@ -207,9 +219,10 @@ namespace Bovelo
             // size1
             // 
             this.size1.AutoSize = true;
-            this.size1.Location = new System.Drawing.Point(449, 183);
+            this.size1.Location = new System.Drawing.Point(674, 282);
+            this.size1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.size1.Name = "size1";
-            this.size1.Size = new System.Drawing.Size(42, 17);
+            this.size1.Size = new System.Drawing.Size(58, 24);
             this.size1.TabIndex = 15;
             this.size1.TabStop = true;
             this.size1.Text = "26\"";
@@ -219,9 +232,10 @@ namespace Bovelo
             // size2
             // 
             this.size2.AutoSize = true;
-            this.size2.Location = new System.Drawing.Point(617, 183);
+            this.size2.Location = new System.Drawing.Point(926, 282);
+            this.size2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.size2.Name = "size2";
-            this.size2.Size = new System.Drawing.Size(42, 17);
+            this.size2.Size = new System.Drawing.Size(58, 24);
             this.size2.TabIndex = 16;
             this.size2.TabStop = true;
             this.size2.Text = "28\"";
@@ -230,17 +244,17 @@ namespace Bovelo
             // 
             // description
             // 
-            this.description.Location = new System.Drawing.Point(22, 255);
+            this.description.Location = new System.Drawing.Point(33, 392);
+            this.description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(345, 102);
+            this.description.Size = new System.Drawing.Size(518, 157);
             this.description.TabIndex = 17;
             // 
             // thumbnailBox
             // 
-            this.thumbnailBox.Location = new System.Drawing.Point(39, 44);
-            this.thumbnailBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thumbnailBox.Location = new System.Drawing.Point(58, 68);
             this.thumbnailBox.Name = "thumbnailBox";
-            this.thumbnailBox.Size = new System.Drawing.Size(277, 201);
+            this.thumbnailBox.Size = new System.Drawing.Size(416, 309);
             this.thumbnailBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.thumbnailBox.TabIndex = 18;
             this.thumbnailBox.TabStop = false;
@@ -248,10 +262,9 @@ namespace Bovelo
             // button_back
             // 
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_back.Location = new System.Drawing.Point(421, 334);
-            this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_back.Location = new System.Drawing.Point(632, 514);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(57, 23);
+            this.button_back.Size = new System.Drawing.Size(86, 35);
             this.button_back.TabIndex = 19;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
@@ -259,9 +272,9 @@ namespace Bovelo
             // 
             // BikeCustomisationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 414);
+            this.ClientSize = new System.Drawing.Size(1138, 574);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.thumbnailBox);
             this.Controls.Add(this.description);
@@ -275,10 +288,11 @@ namespace Bovelo
             this.Controls.Add(this.color_label);
             this.Controls.Add(this.category_label);
             this.Controls.Add(this.table_colors);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(758, 453);
-            this.MinimumSize = new System.Drawing.Size(758, 453);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1160, 630);
+            this.MinimumSize = new System.Drawing.Size(1160, 630);
             this.Name = "BikeCustomisationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bovelo";
             this.Load += new System.EventHandler(this.CatalogForm_Load);
             this.table_colors.ResumeLayout(false);

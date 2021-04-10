@@ -13,9 +13,8 @@ namespace Bovelo
     /*
         Every single argument get requested in database and placed as a 
         parameter in the constructor.
-
         The part gets fours parameters
-            > The name of the part
+            > The part name
             > The color
             > The quantity
             > The characteristics : contains bike specific specifications
@@ -30,46 +29,35 @@ namespace Bovelo
         public int quantity { get; set; }
         [DisplayName("Stock")]
         public int stock { get; set; }
+
         public Part(string reference, int quantity)
         {
             this.reference = reference;
             this.quantity = quantity;
-
             DataTable nameTable = InternalApp.GetDataTable($"SELECT * FROM parts_catalog WHERE reference='{reference}'"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
-            
-
             DataTable partDataTable = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
-
+        // Check TODO.txt Issue #4
         public Part(string reference, string name)
         {
             this.reference = reference;
             this.name = name;
         }
-
         public void Use()
         {
-            stock-=quantity;
+            stock -= quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={stock} WHERE reference='{reference}'");
-        }
+        }      
         public void Order(int quantity)
         {
             this.stock += quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'");
-        }
-        public void CheckStock()
+        }             
+        public void SaveNewPart(string name)
         {
-            InternalApp.UpdateBikeTable();
-            int minimumQuantity = InternalApp.bikeList.Count * quantity;
-            if(stock <= minimumQuantity) 
-            {
-                // color red = low stock
-            }
-        }
-        public void SaveNewPart()
-        {
+            this.name = name;
             string query = $"INSERT INTO `parts_catalog` (`reference`, `name`) VALUES ('{this.reference}', '{this.name}')";
             InternalApp.ExecuteQuery(query);
         }

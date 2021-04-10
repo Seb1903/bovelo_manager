@@ -12,18 +12,14 @@ namespace Bovelo
     {
         public Planning()
         {
-
         }
         public static void AddToPlanning(int capacity,DateTime usedDate)
         {
             Database db = new Database();
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
             using (var command = new MySqlCommand("autoPlanner", MyConn)
+            {CommandType = CommandType.StoredProcedure})
             {
-                CommandType = CommandType.StoredProcedure
-
-             })
-             {
                 command.Parameters.AddWithValue("@capacity", capacity);
                 command.Parameters.Add("@prodDate", MySqlDbType.DateTime);
                 command.Parameters["@prodDate"].Value = usedDate;
@@ -38,9 +34,7 @@ namespace Bovelo
                 }
                 MyConn.Close();
             }
-
         }
-
         public static void AutoPlanning(int capacity)
         {
             DateTime usedDate = DateTime.Now;
@@ -68,7 +62,7 @@ namespace Bovelo
                 }
             }
             Console.WriteLine("Auto planning done ! Please wait a moment");
-        }
+        }      
         public static int VerifyDate()
         {
             Database db = new Database();
@@ -79,37 +73,10 @@ namespace Bovelo
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
                     conn.Close();
-                    return count;
-                    
-                    
+                    return count;       
                 }
             }
-        }
-         /* public static void ModifyDate(int id, String date)
-        {
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE planning SET date='{date}' WHERE bike='{id}'";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            connection.Close();
-        }    //Method is in Bike class now 
-
-        public static void ModifyState(int id, string state)
-        {
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            string query = $"UPDATE bike SET cstr_status='{state}' WHERE id='{id}'";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            reader.Read();
-            connection.Close();
-        } */
+        }           
         public static int BikeByDay(DateTime date)
         {
             Database db = new Database();
@@ -121,37 +88,46 @@ namespace Bovelo
                 {
                     int count = Convert.ToInt32(cmd.ExecuteScalar());    
                     return count;
-                 }
+                }
             }
-
-        }
-        /*public static List<Bike> BikeListGenerator() // deleted parameter so we only call once this function 
+        }      
+        public static DataTable GetDataTable(string sqlCommand)
         {
-            //string sqlDate = date.ToString("yyyy-MM-dd");
-            string bikeIDQuery = $"SELECT P.bike FROM planning P, bike B WHERE P.bike = B.id AND B.cstr_status != 'Done'";
-            DataTable bikeIDReader = GetDataTable(bikeIDQuery);
-            List<Bike> bikeList = new List<Bike>();
-            for (int i = 0; i < bikeIDReader.Rows.Count; i++)
+            var connection = new MySqlConnection(new Database().MyConnection);
+            DataTable planning = new DataTable("table");
+            planning.Columns.Add("date");
+            planning.Columns.Add("bike");
+            planning.Columns.Add("maker_id");
+            try
             {
-                Console.WriteLine("test");
-                int id = Convert.ToInt32(bikeIDReader.Rows[i]["bike"]);
-                Bike bike = new Bike(id);
-                bikeList.Add(bike);
+                connection.Open();
+                var command = new MySqlCommand(sqlCommand, connection);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    planning.Rows.Add(reader[0], reader[1], reader[2]);
+                }
             }
-            return bikeList;
-        }*/
-        private static DataTable GetDataTable(string sqlCommand)
+            catch (Exception)
+            {
+                throw;
+            }
+            return planning;
+        }        
+        public static bool UpdateMaker(int idBike, int idMaker)
         {
-            Database db1 = new Database();
-            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
-            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.SelectCommand = command;
-            DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            adapter.Fill(table);
-            return table;
+            var connection = new MySqlConnection(new Database().MyConnection);
+            try
+            {
+                connection.Open();
+                var command = new MySqlCommand($"UPDATE planning SET maker_id={idMaker} WHERE bike={idBike}", connection);
+                command.ExecuteReader();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-        
     }
 }

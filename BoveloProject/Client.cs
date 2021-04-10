@@ -52,7 +52,6 @@ namespace Bovelo
             try
             {
                 Database db = new Database();   //Let's us protect the password by having a class database with a public string containing the credentials
-
                 //This is my connection string i have assigned the database file address path  
                 //This is my insert query in which i am taking input from the user through windows forms  
                 string Query = "insert into client(lastname,firstname,country,city,street,number,zipcode,phoneNumber,emailAddress) values('" + this.lastname + "','" + this.firstname + "','" + this.country+ "','" + this.city+ "','" + this.street+ "','" + this.number + "','" + this.zipcode + "','" + this.phoneNumber + "','" + emailAdress + "');";
@@ -73,9 +72,6 @@ namespace Bovelo
             {
                 Console.WriteLine(ex.Message);
             }
-
         }
-    }
-
-    
+    } 
 }

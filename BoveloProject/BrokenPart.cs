@@ -17,11 +17,13 @@ namespace Bovelo
         private string reference;
         private string id;
         private int partDeleted = 0;
+        
         public BrokenPart()
         {
             InitializeComponent();
             RefreshDataGriedView();
         }
+        
         private void RefreshDataGriedView()
         {
             DataTable datas;
@@ -29,6 +31,7 @@ namespace Bovelo
             //datas.Columns.RemoveAt(3);
             stock_dataGridView.DataSource = datas;
         }
+        
         private static DataTable GetData(string sqlCommand)
         {
             Database db1 = new Database();
@@ -45,6 +48,7 @@ namespace Bovelo
 
             return table;
         }
+        
         private void search_textbox_TextChanged(object sender, EventArgs e)
         {
             DataTable datas;
@@ -103,8 +107,8 @@ namespace Bovelo
                 {
                     try
                     {
-                        //Part part = new Part(id, 1);
-                        //part.Use();
+                        Part part = new Part(id, 1);
+                        part.Use();
                         information_label.Text = "Part removed from stock";
                         information_label.Visible = true;
                         partDeleted += 1;
@@ -125,6 +129,9 @@ namespace Bovelo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            var fitterForm = new FitterForm();
+            fitterForm.ShowDialog();
             this.Close();
         }
     }

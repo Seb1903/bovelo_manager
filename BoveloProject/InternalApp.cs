@@ -9,6 +9,7 @@ namespace Bovelo
 {
     public class InternalApp
     {
+        // Check TODO.txt Issue #3
         public static string managerPassword = "1234";
         public static DataTable bikeTable ;
         public static DataTable planningTable ;
@@ -16,6 +17,7 @@ namespace Bovelo
         public static List<Bike> bikeList = new List<Bike>();
         public static Dictionary<string, int> necessaryPartList = new Dictionary<string, int>();
         public static string[] bikeStateList = new string[] { "Active", "Not active", "Done" };  
+        
         public InternalApp()
         {
             SetBikeList();
@@ -62,7 +64,6 @@ namespace Bovelo
             reader.Read();
             return reader;
         }
-
         public static void UpdateBikeTable()
         {
             bikeTable = GetDataTable("SELECT * FROM bike WHERE cstr_status!='Done'");
@@ -107,8 +108,7 @@ namespace Bovelo
                 else
                 {
                     necessaryPartList.Add(part.Field<string>("reference"), quantity);
-                }
-                
+                }             
             }
             foreach (KeyValuePair<string, int> part in necessaryPartList)
             {

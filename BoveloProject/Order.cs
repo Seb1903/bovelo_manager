@@ -48,7 +48,6 @@ namespace Bovelo
                 content.Add(newItem);
                 Console.WriteLine("Item Added successfully!");
             }
-
             UpdateTotalItems();
             UpdateDeliveryTime();
             UpdatePrice();
@@ -64,7 +63,6 @@ namespace Bovelo
         public void Empty()
         {
             content.Clear();
-            //Also delete selected client ? 
             UpdateDeliveryTime();
             UpdatePrice();
         }
@@ -92,7 +90,8 @@ namespace Bovelo
                 this.totalItems += buyableItem.quantity;
             }
         }
-        public void UpdateDeliveryTime() // NOT READY YET
+        // Check TODO.txt Issue #2 NOT READY YET
+        public void UpdateDeliveryTime() 
         {
             if (content.Count == 0)
             {
@@ -102,7 +101,7 @@ namespace Bovelo
             {
                 UpdateTotalItems();
                 string planningQuery = "SELECT * FROM planning"; // Acess planning to compute an estimate delivery time
-                DataTable planningTable = GetDataTable(planningQuery);
+                DataTable planningTable = InternalApp.GetDataTable(planningQuery);
                 DataRow firstDateRow = planningTable.Rows[planningTable.Rows.Count - 1];
                 DateTime firstDateAvailable = Convert.ToDateTime(firstDateRow["date"]);
                 float speed = 9; // TEMPORARY speed fixed at 9 bikes per week
@@ -137,7 +136,6 @@ namespace Bovelo
                 {
                     Console.WriteLine(e.Message);
                 }
-
                 foreach (BuyableItem item in content) //then we save each Item in the Bike table 
                 {
                     for (int i = 0; i < item.quantity; i++)
@@ -154,29 +152,6 @@ namespace Bovelo
             {
                 MessageBox.Show("Cart is empty or no client is selected");
             }
-        }
-        private static void ExecuteQuery(string query)
-        {
-            Database db = new Database();
-            MySqlConnection connection = new MySqlConnection(db.MyConnection);
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader;
-            connection.Open();
-            reader = command.ExecuteReader();
-            while (reader.Read()) { }
-            connection.Close();
-        }
-        private static DataTable GetDataTable(string sqlCommand)
-        {
-            Database db1 = new Database();
-            MySqlConnection conn = new MySqlConnection(db1.MyConnection);
-            MySqlCommand command = new MySqlCommand(sqlCommand, conn);
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.SelectCommand = command;
-            DataTable table = new DataTable();
-            table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-            adapter.Fill(table);
-            return table;
         }
     }
 }

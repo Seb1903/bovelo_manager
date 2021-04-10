@@ -29,6 +29,7 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewModel));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_add = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -262,7 +263,7 @@ namespace Bovelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1564, 891);
+            this.ClientSize = new System.Drawing.Size(1568, 894);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label8);
@@ -282,8 +283,12 @@ namespace Bovelo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1590, 950);
+            this.MinimumSize = new System.Drawing.Size(1590, 950);
             this.Name = "NewModel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parts Stock";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

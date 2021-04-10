@@ -29,6 +29,7 @@ namespace Bovelo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientSearch));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@ namespace Bovelo
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(186, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(111, 147);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -60,7 +61,7 @@ namespace Bovelo
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(703, 505);
+            this.button1.Location = new System.Drawing.Point(111, 478);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 42);
@@ -79,7 +80,7 @@ namespace Bovelo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(441, 46);
+            this.textBox1.Location = new System.Drawing.Point(115, 57);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(331, 26);
@@ -89,7 +90,7 @@ namespace Bovelo
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 46);
+            this.comboBox1.Location = new System.Drawing.Point(115, 111);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(168, 28);
@@ -99,7 +100,7 @@ namespace Bovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 16);
+            this.label1.Location = new System.Drawing.Point(111, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 6;
@@ -108,7 +109,7 @@ namespace Bovelo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(438, 16);
+            this.label3.Location = new System.Drawing.Point(111, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 20);
             this.label3.TabIndex = 7;
@@ -118,7 +119,7 @@ namespace Bovelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(748, 544);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -126,9 +127,13 @@ namespace Bovelo
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(770, 600);
+            this.MinimumSize = new System.Drawing.Size(770, 600);
             this.Name = "ClientSearch";
-            this.Text = "ClientSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Explorer";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

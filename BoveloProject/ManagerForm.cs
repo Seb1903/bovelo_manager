@@ -22,10 +22,11 @@ namespace Bovelo
         private void ShowDayPlanning(Panel day_panel, DateTime date)
         {
             int position = 1;
-        
+
             //List <Bike> bikeList = Planning.BikeListGenerator();  // no more date parameter 
-            foreach(Bike bike in InternalApp.bikeList) {
-                if(bike.cstr_date.Date == date.Date)
+            foreach (Bike bike in InternalApp.bikeList)
+            {
+                if (bike.cstr_date.Date == date.Date)
                 {
                     //int bikeCount += 1 ;
                     Label bikeIDLbl = new Label();
@@ -73,8 +74,8 @@ namespace Bovelo
 
 
                 }
-            
-            
+
+
             }
         }
 
@@ -82,7 +83,7 @@ namespace Bovelo
         {
             this.Controls.Clear();
             InitializeComponent();
-            
+
             DateTime actualTime = DateTime.Now;
             UpdateFormDate(actualTime);
         }
@@ -153,14 +154,16 @@ namespace Bovelo
         {
             string date = (sender as idDatePicker).Value.ToString("yyyy-MM-dd");
             int id = (sender as idDatePicker).id;
-            foreach(Bike bike in InternalApp.bikeList)
+            foreach (Bike bike in InternalApp.bikeList)
             {
-                if (bike.id == id) {
+                if (bike.id == id)
+                {
                     bike.cstr_date = (sender as idDatePicker).Value;
                     bike.ModifyDate(date);
                 }
 
             }
+
         }
 
         private void AutoPlanner_Btn_Click(object sender, EventArgs e)
