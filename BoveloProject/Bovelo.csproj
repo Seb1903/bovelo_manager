@@ -63,12 +63,27 @@
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InternalApp\NewModel.cs">
+    <Compile Include="PartsCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsCatalog.Designer.cs">
+      <DependentUpon>PartsCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagerForm.Designer.cs">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewModel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InternalApp\NewModel.Designer.cs">
       <DependentUpon>NewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InternalApp\PartsStock2.cs">
+    <Compile Include="OrderStock.cs" />
+    <Compile Include="PartsStock2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InternalApp\PartsStock2.Designer.cs">
@@ -146,6 +161,13 @@
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternalApp\NewModel.resx">
+    <EmbeddedResource Include="PartsCatalog.resx">
+      <DependentUpon>PartsCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagerForm.resx">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewModel.resx">
       <DependentUpon>NewModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartsStock.resx">

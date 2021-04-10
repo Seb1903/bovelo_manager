@@ -161,8 +161,6 @@ namespace Bovelo
                 }
 
             }
-            
-
         }
 
         private void AutoPlanner_Btn_Click(object sender, EventArgs e)

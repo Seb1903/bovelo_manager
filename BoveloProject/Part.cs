@@ -38,6 +38,7 @@ namespace Bovelo
             DataTable nameTable = InternalApp.GetDataTable($"SELECT * FROM parts_catalog WHERE reference='{reference}'"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
             
+
             DataTable partDataTable = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
             this.stock = partDataTable.Rows[0].Field<int>("quantity");
         }
