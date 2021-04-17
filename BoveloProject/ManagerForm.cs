@@ -104,11 +104,11 @@ namespace Bovelo
             Console.WriteLine(Convert.ToString(startdate));
             this.Controls.Clear();
             this.InitializeComponent();
-            monday_label.Text = startdate.ToString("D", CultureInfo.CreateSpecificCulture("fr-FR"));
-            tuesday_label.Text = startdate.AddDays(1).ToString("D", CultureInfo.CreateSpecificCulture("fr-FR"));
-            wednesday_label.Text = startdate.AddDays(2).ToString("D", CultureInfo.CreateSpecificCulture("fr-FR"));
-            thursday_label.Text = startdate.AddDays(3).ToString("D", CultureInfo.CreateSpecificCulture("fr-FR"));
-            friday_label.Text = startdate.AddDays(4).ToString("D", CultureInfo.CreateSpecificCulture("fr-FR"));
+            monday_label.Text = startdate.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            tuesday_label.Text = startdate.AddDays(1).ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            wednesday_label.Text = startdate.AddDays(2).ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            thursday_label.Text = startdate.AddDays(3).ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            friday_label.Text = startdate.AddDays(4).ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             Controls.Add(monday_label);
             Controls.Add(tuesday_label);
             Controls.Add(wednesday_label);
