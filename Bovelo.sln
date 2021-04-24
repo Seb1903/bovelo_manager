@@ -3,18 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bovelo", "BoveloProject/Bovelo.csproj", "{E914382B-93F6-4B4C-A4EB-B536B232F171}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoveloLibrary", "BoveloProject\BoveloLibrary.csproj", "{E914382B-93F6-4B4C-A4EB-B536B232F171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoveloInternal", "BoveloInternal\BoveloInternal.csproj", "{D47AFB28-A587-4258-BEC1-0B7A41D55981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoveloClient", "BoveloClient\BoveloClient.csproj", "{B357A473-A978-419F-B31C-508AF406B495}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E914382B-93F6-4B4C-A4EB-B536B232F171}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{E914382B-93F6-4B4C-A4EB-B536B232F171}.All|Any CPU.Build.0 = Release|Any CPU
 		{E914382B-93F6-4B4C-A4EB-B536B232F171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E914382B-93F6-4B4C-A4EB-B536B232F171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E914382B-93F6-4B4C-A4EB-B536B232F171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E914382B-93F6-4B4C-A4EB-B536B232F171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.All|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.All|Any CPU.Build.0 = Debug|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47AFB28-A587-4258-BEC1-0B7A41D55981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.All|Any CPU.ActiveCfg = Debug|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.All|Any CPU.Build.0 = Debug|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B357A473-A978-419F-B31C-508AF406B495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
