@@ -43,6 +43,7 @@ namespace Bovelo
                 necessaryStockLbl.Size = new Size(30, 16);
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
+                orderStockUpDown.Maximum = new decimal(new int[] {1000, 0, 0, 0});
                 orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key];
                 orderStockUpDown.Top = position * 20;
                 orderStockUpDown.Left = 572;
