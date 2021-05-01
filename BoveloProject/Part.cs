@@ -27,17 +27,21 @@ namespace Bovelo
         public string name { get; set; }
         [DisplayName("Quantity")]
         public int quantity { get; set; }
+
         [DisplayName("Stock")]
         public int stock { get; set; }
 
         public Part(string reference, int quantity)
         {
+            string strQuantity;
             this.reference = reference;
             this.quantity = quantity;
             DataTable nameTable = InternalApp.GetDataTable($"SELECT * FROM parts_catalog WHERE reference='{reference}'"); //Facultatif
             this.name = nameTable.Rows[0].Field<string>("name");
             DataTable partDataTable = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{reference}'");
-            this.stock = partDataTable.Rows[0].Field<int>("quantity");
+            DataRow partDataRow = partDataTable.Rows[0];
+            strQuantity = partDataRow["quantity"].ToString();
+            this.stock = Int32.Parse(strQuantity);
         }
         // Check TODO.txt Issue #4
         public Part(string reference, string name)
