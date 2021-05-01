@@ -121,9 +121,9 @@ namespace Bovelo
             this.delivery_name.Location = new System.Drawing.Point(24, 480);
             this.delivery_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.delivery_name.Name = "delivery_name";
-            this.delivery_name.Size = new System.Drawing.Size(179, 20);
+            this.delivery_name.Size = new System.Drawing.Size(144, 20);
             this.delivery_name.TabIndex = 18;
-            this.delivery_name.Text = "Estimated delivery time :";
+            this.delivery_name.Text = "Estimated Delivery:";
             // 
             // delivery_time_label
             // 
@@ -140,7 +140,7 @@ namespace Bovelo
             this.new_Client.Name = "new_Client";
             this.new_Client.Size = new System.Drawing.Size(158, 39);
             this.new_Client.TabIndex = 20;
-            this.new_Client.Text = "New client";
+            this.new_Client.Text = "New Client";
             this.new_Client.UseVisualStyleBackColor = true;
             this.new_Client.Click += new System.EventHandler(this.new_Client_Click);
             // 
@@ -150,7 +150,7 @@ namespace Bovelo
             this.select_Client.Name = "select_Client";
             this.select_Client.Size = new System.Drawing.Size(158, 39);
             this.select_Client.TabIndex = 21;
-            this.select_Client.Text = "Select client";
+            this.select_Client.Text = "Select Client";
             this.select_Client.UseVisualStyleBackColor = true;
             this.select_Client.Click += new System.EventHandler(this.select_Client_Click);
             // 
@@ -159,9 +159,9 @@ namespace Bovelo
             this.label_selectedClient.AutoSize = true;
             this.label_selectedClient.Location = new System.Drawing.Point(24, 440);
             this.label_selectedClient.Name = "label_selectedClient";
-            this.label_selectedClient.Size = new System.Drawing.Size(125, 20);
+            this.label_selectedClient.Size = new System.Drawing.Size(53, 20);
             this.label_selectedClient.TabIndex = 22;
-            this.label_selectedClient.Text = "Selected client : ";
+            this.label_selectedClient.Text = "Client:";
             // 
             // label_clientName
             // 
@@ -178,9 +178,9 @@ namespace Bovelo
             this.label_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price.Location = new System.Drawing.Point(20, 400);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(113, 20);
+            this.label_price.Size = new System.Drawing.Size(64, 20);
             this.label_price.TabIndex = 24;
-            this.label_price.Text = " Total price : ";
+            this.label_price.Text = " Total: ";
             // 
             // price
             // 

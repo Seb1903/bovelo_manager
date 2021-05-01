@@ -62,7 +62,7 @@
             // 
             this.Back.AutoSize = true;
             this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(213, 151);
+            this.Back.Location = new System.Drawing.Point(29, 136);
             this.Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(97, 39);
@@ -75,12 +75,12 @@
             // 
             this.Confirmbtn.AutoSize = true;
             this.Confirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirmbtn.Location = new System.Drawing.Point(330, 151);
+            this.Confirmbtn.Location = new System.Drawing.Point(290, 136);
             this.Confirmbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Confirmbtn.Name = "Confirmbtn";
             this.Confirmbtn.Size = new System.Drawing.Size(107, 39);
             this.Confirmbtn.TabIndex = 5;
-            this.Confirmbtn.Text = "Confirm";
+            this.Confirmbtn.Text = "Log In";
             this.Confirmbtn.UseVisualStyleBackColor = true;
             this.Confirmbtn.Click += new System.EventHandler(this.Confirmbtn_Click);
             // 
@@ -99,7 +99,7 @@
             this.MinimumSize = new System.Drawing.Size(475, 260);
             this.Name = "Password";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Password";
+            this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

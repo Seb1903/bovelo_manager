@@ -61,10 +61,10 @@ namespace Bovelo
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(111, 478);
+            this.button1.Location = new System.Drawing.Point(470, 479);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 42);
+            this.button1.Size = new System.Drawing.Size(155, 42);
             this.button1.TabIndex = 2;
             this.button1.Text = "Select";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@ namespace Bovelo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 57);
+            this.textBox1.Location = new System.Drawing.Point(111, 45);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(331, 26);
@@ -111,9 +111,9 @@ namespace Bovelo
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(111, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 20);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Type your research here :";
+            this.label3.Text = "Search Client:";
             // 
             // ClientSearch
             // 

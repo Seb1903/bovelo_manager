@@ -190,14 +190,14 @@ namespace Bovelo
             // 
             this.addBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBasket.Location = new System.Drawing.Point(909, 514);
+            this.addBasket.Location = new System.Drawing.Point(943, 514);
             this.addBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addBasket.MaximumSize = new System.Drawing.Size(158, 35);
             this.addBasket.MinimumSize = new System.Drawing.Size(158, 35);
             this.addBasket.Name = "addBasket";
             this.addBasket.Size = new System.Drawing.Size(158, 35);
             this.addBasket.TabIndex = 11;
-            this.addBasket.Text = "Add to basket";
+            this.addBasket.Text = "Add";
             this.addBasket.UseVisualStyleBackColor = true;
             this.addBasket.Click += new System.EventHandler(this.addBasket_button);
             // 
@@ -205,14 +205,14 @@ namespace Bovelo
             // 
             this.showBasket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showBasket.Location = new System.Drawing.Point(742, 514);
+            this.showBasket.Location = new System.Drawing.Point(632, 514);
             this.showBasket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.showBasket.MaximumSize = new System.Drawing.Size(158, 35);
             this.showBasket.MinimumSize = new System.Drawing.Size(158, 35);
             this.showBasket.Name = "showBasket";
             this.showBasket.Size = new System.Drawing.Size(158, 35);
             this.showBasket.TabIndex = 12;
-            this.showBasket.Text = "Show basket";
+            this.showBasket.Text = "Basket";
             this.showBasket.UseVisualStyleBackColor = true;
             this.showBasket.Click += new System.EventHandler(this.showBasket_button);
             // 
@@ -262,7 +262,7 @@ namespace Bovelo
             // button_back
             // 
             this.button_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_back.Location = new System.Drawing.Point(632, 514);
+            this.button_back.Location = new System.Drawing.Point(58, 514);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(86, 35);
             this.button_back.TabIndex = 19;

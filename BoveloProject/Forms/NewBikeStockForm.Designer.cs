@@ -65,7 +65,7 @@ namespace Bovelo
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(142, 47);
             this.button_save.TabIndex = 4;
-            this.button_save.Text = "Save";
+            this.button_save.Text = "Add";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
@@ -77,7 +77,7 @@ namespace Bovelo
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Category ";
+            this.label1.Text = "Category:";
             // 
             // label2
             // 
@@ -85,9 +85,9 @@ namespace Bovelo
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Color";
+            this.label2.Text = "Color:";
             // 
             // label3
             // 
@@ -95,9 +95,9 @@ namespace Bovelo
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 20);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Size";
+            this.label3.Text = "Size:";
             // 
             // label_quantity
             // 
@@ -105,9 +105,9 @@ namespace Bovelo
             this.label_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_quantity.Location = new System.Drawing.Point(228, 24);
             this.label_quantity.Name = "label_quantity";
-            this.label_quantity.Size = new System.Drawing.Size(76, 20);
+            this.label_quantity.Size = new System.Drawing.Size(81, 20);
             this.label_quantity.TabIndex = 8;
-            this.label_quantity.Text = "Quantity";
+            this.label_quantity.Text = "Quantity:";
             // 
             // comboBox_bike
             // 
@@ -163,7 +163,7 @@ namespace Bovelo
             this.MinimumSize = new System.Drawing.Size(540, 360);
             this.Name = "Stocks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add to production";
+            this.Text = "New Stock";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

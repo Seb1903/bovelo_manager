@@ -36,7 +36,6 @@ namespace Bovelo
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button_save = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
@@ -101,6 +100,7 @@ namespace Bovelo
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(331, 26);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Search Part";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
@@ -118,18 +118,9 @@ namespace Bovelo
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(74, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Category :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Search here : ";
+            this.label1.Text = "Category:";
             // 
             // dataGridView2
             // 
@@ -152,23 +143,23 @@ namespace Bovelo
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(1237, 699);
+            this.button_save.Location = new System.Drawing.Point(1236, 699);
             this.button_save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(172, 42);
             this.button_save.TabIndex = 9;
-            this.button_save.Text = "Sauvegarder";
+            this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(896, 699);
+            this.button_delete.Location = new System.Drawing.Point(895, 699);
             this.button_delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(172, 42);
             this.button_delete.TabIndex = 10;
-            this.button_delete.Text = "Retirer";
+            this.button_delete.Text = "Remove";
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
@@ -185,9 +176,9 @@ namespace Bovelo
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(892, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 20);
+            this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Name of the model :";
+            this.label4.Text = "Model:";
             // 
             // label5
             // 
@@ -255,9 +246,9 @@ namespace Bovelo
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(1284, 121);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.Size = new System.Drawing.Size(52, 20);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Price : ";
+            this.label9.Text = "Price: ";
             // 
             // NewModel
             // 
@@ -276,7 +267,6 @@ namespace Bovelo
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -289,7 +279,7 @@ namespace Bovelo
             this.MinimumSize = new System.Drawing.Size(1590, 950);
             this.Name = "NewModel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Parts Stock";
+            this.Text = "New Model";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_quantity)).EndInit();
@@ -307,7 +297,6 @@ namespace Bovelo
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_delete;

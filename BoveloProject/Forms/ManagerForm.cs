@@ -172,7 +172,7 @@ namespace Bovelo
             InternalApp.SetBikeList();
             DateTime actualTime = DateTime.Now;
             UpdateFormDate(actualTime);
-            autoplanner_label.Text = "Planning done";
+            autoplanner_label.Text = "Successfull";
             autoplanner_label.Visible = true;
         }
 

@@ -140,11 +140,11 @@ namespace Bovelo
             // 
             this.label4.AllowDrop = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(730, 25);
+            this.label4.Location = new System.Drawing.Point(769, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(351, 48);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Bovelo Catalog";
+            this.label4.Text = "Bike Catalog";
             // 
             // basketBox
             // 
