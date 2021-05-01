@@ -28,7 +28,7 @@ namespace Bovelo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChooseUser());
+            Application.Run(new StockManagerForm());
         }
         public static DataTable GetDataTable(string sqlCommand)
         {
@@ -110,9 +110,28 @@ namespace Bovelo
                     necessaryPartList.Add(part.Field<string>("reference"), quantity);
                 }             
             }
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
             foreach (KeyValuePair<string, int> part in necessaryPartList)
             {
                 Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
+                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @quantity WHERE reference = @id_part", MyConn)
+                {
+                    CommandType = CommandType.Text
+                })
+                {
+                    command.Parameters.AddWithValue("@id_part", part.Key);
+                    command.Parameters.AddWithValue("@quantity", part.Value);
+                    MyConn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                    }
+                    MyConn.Close();
+                }
             }
             Console.WriteLine("Total of {0} different parts", necessaryPartList.Count);
         }
