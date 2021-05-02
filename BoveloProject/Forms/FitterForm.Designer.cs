@@ -41,18 +41,20 @@ namespace Bovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 40);
+            this.label1.Location = new System.Drawing.Point(169, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(115, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Today :";
+            this.label1.Text = "Today:";
             // 
             // dateOfToday_label
             // 
             this.dateOfToday_label.AutoSize = true;
-            this.dateOfToday_label.Location = new System.Drawing.Point(170, 40);
+            this.dateOfToday_label.Location = new System.Drawing.Point(359, 74);
+            this.dateOfToday_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.dateOfToday_label.Name = "dateOfToday_label";
-            this.dateOfToday_label.Size = new System.Drawing.Size(51, 20);
+            this.dateOfToday_label.Size = new System.Drawing.Size(102, 37);
             this.dateOfToday_label.TabIndex = 2;
             this.dateOfToday_label.Text = "label2";
             // 
@@ -63,19 +65,19 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fitterPanel.AutoScroll = true;
             this.fitterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fitterPanel.Location = new System.Drawing.Point(80, 80);
-            this.fitterPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fitterPanel.Location = new System.Drawing.Point(169, 148);
+            this.fitterPanel.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.fitterPanel.Name = "fitterPanel";
-            this.fitterPanel.Size = new System.Drawing.Size(880, 390);
+            this.fitterPanel.Size = new System.Drawing.Size(1856, 720);
             this.fitterPanel.TabIndex = 3;
             // 
             // Back
             // 
             this.Back.AutoSize = true;
-            this.Back.Location = new System.Drawing.Point(80, 520);
-            this.Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Back.Location = new System.Drawing.Point(169, 905);
+            this.Back.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(75, 30);
+            this.Back.Size = new System.Drawing.Size(198, 67);
             this.Back.TabIndex = 4;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -84,12 +86,12 @@ namespace Bovelo
             // validate_button
             // 
             this.validate_button.AutoSize = true;
-            this.validate_button.Location = new System.Drawing.Point(876, 520);
-            this.validate_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.validate_button.Location = new System.Drawing.Point(1341, 905);
+            this.validate_button.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.validate_button.Name = "validate_button";
-            this.validate_button.Size = new System.Drawing.Size(84, 30);
+            this.validate_button.Size = new System.Drawing.Size(260, 67);
             this.validate_button.TabIndex = 5;
-            this.validate_button.Text = "Refresh !";
+            this.validate_button.Text = "Refresh";
             this.validate_button.UseVisualStyleBackColor = true;
             this.validate_button.Click += new System.EventHandler(this.validate_button_Click);
             // 
@@ -99,20 +101,20 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.report_button.AutoSize = true;
-            this.report_button.Location = new System.Drawing.Point(807, 482);
-            this.report_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.report_button.Location = new System.Drawing.Point(1649, 905);
+            this.report_button.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(153, 30);
+            this.report_button.Size = new System.Drawing.Size(378, 67);
             this.report_button.TabIndex = 5;
-            this.report_button.Text = "Report broken part";
+            this.report_button.Text = "Report Part";
             this.report_button.UseVisualStyleBackColor = true;
             this.report_button.Click += new System.EventHandler(this.report_button_Click);
             // 
             // FitterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 564);
+            this.ClientSize = new System.Drawing.Size(2212, 1043);
             this.Controls.Add(this.validate_button);
             this.Controls.Add(this.report_button);
             this.Controls.Add(this.Back);
@@ -120,9 +122,9 @@ namespace Bovelo
             this.Controls.Add(this.dateOfToday_label);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximumSize = new System.Drawing.Size(1070, 620);
-            this.MinimumSize = new System.Drawing.Size(1070, 620);
+            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.MaximumSize = new System.Drawing.Size(2234, 1099);
+            this.MinimumSize = new System.Drawing.Size(2234, 1099);
             this.Name = "FitterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fitter";

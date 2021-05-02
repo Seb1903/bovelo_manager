@@ -34,10 +34,8 @@ namespace Bovelo
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -86,6 +84,7 @@ namespace Bovelo
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(331, 26);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Search";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
@@ -106,15 +105,6 @@ namespace Bovelo
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Search by : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(328, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Type your research here : ";
             // 
             // label2
             // 
@@ -143,15 +133,6 @@ namespace Bovelo
             this.dataGridView2.TabIndex = 9;
             this.dataGridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2CellMouseClick);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1137, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Type your research here : ";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -178,6 +159,7 @@ namespace Bovelo
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(278, 26);
             this.textBox2.TabIndex = 10;
+            this.textBox2.Text = "Search";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
@@ -227,13 +209,11 @@ namespace Bovelo
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -256,10 +236,8 @@ namespace Bovelo
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox2;

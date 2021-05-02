@@ -69,17 +69,17 @@ namespace Bovelo
             this.label_first_name.AutoSize = true;
             this.label_first_name.Location = new System.Drawing.Point(108, 115);
             this.label_first_name.Name = "label_first_name";
-            this.label_first_name.Size = new System.Drawing.Size(84, 20);
+            this.label_first_name.Size = new System.Drawing.Size(86, 20);
             this.label_first_name.TabIndex = 0;
-            this.label_first_name.Text = "First name";
+            this.label_first_name.Text = "First Name";
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(486, 385);
+            this.button_save.Location = new System.Drawing.Point(664, 428);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(144, 72);
+            this.button_save.Size = new System.Drawing.Size(82, 29);
             this.button_save.TabIndex = 2;
-            this.button_save.Text = "Save client";
+            this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -139,9 +139,9 @@ namespace Bovelo
             this.label_last_name.AutoSize = true;
             this.label_last_name.Location = new System.Drawing.Point(108, 162);
             this.label_last_name.Name = "label_last_name";
-            this.label_last_name.Size = new System.Drawing.Size(84, 20);
+            this.label_last_name.Size = new System.Drawing.Size(86, 20);
             this.label_last_name.TabIndex = 14;
-            this.label_last_name.Text = "Last name";
+            this.label_last_name.Text = "Last Name";
             // 
             // label_country
             // 
@@ -184,9 +184,9 @@ namespace Bovelo
             this.label_phonenumber.AutoSize = true;
             this.label_phonenumber.Location = new System.Drawing.Point(108, 389);
             this.label_phonenumber.Name = "label_phonenumber";
-            this.label_phonenumber.Size = new System.Drawing.Size(113, 20);
+            this.label_phonenumber.Size = new System.Drawing.Size(55, 20);
             this.label_phonenumber.TabIndex = 19;
-            this.label_phonenumber.Text = "Phone number";
+            this.label_phonenumber.Text = "Phone";
             // 
             // label_client_title
             // 
@@ -194,9 +194,9 @@ namespace Bovelo
             this.label_client_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label_client_title.Location = new System.Drawing.Point(104, 37);
             this.label_client_title.Name = "label_client_title";
-            this.label_client_title.Size = new System.Drawing.Size(216, 46);
+            this.label_client_title.Size = new System.Drawing.Size(226, 46);
             this.label_client_title.TabIndex = 22;
-            this.label_client_title.Text = "New client ";
+            this.label_client_title.Text = "Client Form";
             // 
             // numericUpDown1
             // 
@@ -270,7 +270,7 @@ namespace Bovelo
             this.MinimumSize = new System.Drawing.Size(900, 590);
             this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Client";
+            this.Text = "New Client";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_zipcode)).EndInit();
             this.ResumeLayout(false);

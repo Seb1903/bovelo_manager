@@ -412,7 +412,7 @@ namespace Bovelo
             this.AutoPlanner_Btn.Name = "AutoPlanner_Btn";
             this.AutoPlanner_Btn.Size = new System.Drawing.Size(183, 36);
             this.AutoPlanner_Btn.TabIndex = 9;
-            this.AutoPlanner_Btn.Text = "AutoPlanner";
+            this.AutoPlanner_Btn.Text = "Auto Manage";
             this.AutoPlanner_Btn.UseVisualStyleBackColor = true;
             this.AutoPlanner_Btn.Click += new System.EventHandler(this.AutoPlanner_Btn_Click);
             // 
@@ -452,7 +452,7 @@ namespace Bovelo
             this.button_production.Name = "button_production";
             this.button_production.Size = new System.Drawing.Size(182, 53);
             this.button_production.TabIndex = 13;
-            this.button_production.Text = "Add bikes to production for stock";
+            this.button_production.Text = "Update Stock";
             this.button_production.UseVisualStyleBackColor = true;
             this.button_production.Click += new System.EventHandler(this.button_production_Click);
             // 
@@ -478,7 +478,7 @@ namespace Bovelo
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manager";
+            this.Text = "Planning";
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.day_panel2.ResumeLayout(false);
             this.day_panel2.PerformLayout();

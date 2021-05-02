@@ -65,14 +65,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddClient.cs">
+    <Compile Include="Forms\AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPart.cs">
+    <Compile Include="Forms\AddPartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPart.Designer.cs">
-      <DependentUpon>AddPart.cs</DependentUpon>
+    <Compile Include="Forms\AddPartForm.Designer.cs">
+      <DependentUpon>AddPartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AllBikes.cs">
       <SubType>UserControl</SubType>
@@ -81,119 +81,119 @@
       <DependentUpon>AllBikes.cs</DependentUpon>
     </Compile>
     <Compile Include="Bovelo.cs" />
-    <Compile Include="BrokenPart.cs">
+    <Compile Include="Forms\BrokenPartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrokenPart.Designer.cs">
-      <DependentUpon>BrokenPart.cs</DependentUpon>
+    <Compile Include="Forms\BrokenPartForm.Designer.cs">
+      <DependentUpon>BrokenPartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChooseUser.cs">
+    <Compile Include="Forms\UserMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChooseUser.Designer.cs">
-      <DependentUpon>ChooseUser.cs</DependentUpon>
+    <Compile Include="Forms\UserMenuForm.Designer.cs">
+      <DependentUpon>UserMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartsCatalog.cs">
+    <Compile Include="Forms\PartsCatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsCatalog.Designer.cs">
-      <DependentUpon>PartsCatalog.cs</DependentUpon>
+    <Compile Include="Forms\PartsCatalogForm.Designer.cs">
+      <DependentUpon>PartsCatalogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockManagerForm.cs">
+    <Compile Include="Forms\StockManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockManagerForm.Designer.cs">
+    <Compile Include="Forms\StockManagerForm.Designer.cs">
       <DependentUpon>StockManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerMenus.cs">
+    <Compile Include="Forms\ManagerMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerMenus.Designer.cs">
-      <DependentUpon>ManagerMenus.cs</DependentUpon>
+    <Compile Include="Forms\ManagerMenuForm.Designer.cs">
+      <DependentUpon>ManagerMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewModel.cs">
+    <Compile Include="Forms\NewBikeModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewModel.Designer.cs">
-      <DependentUpon>NewModel.cs</DependentUpon>
+    <Compile Include="Forms\NewBikeModelForm.Designer.cs">
+      <DependentUpon>NewBikeModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderStock.cs" />
-    <Compile Include="PartsStock.cs">
+    <Compile Include="Forms\PartsStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsStock.Designer.cs">
-      <DependentUpon>PartsStock.cs</DependentUpon>
+    <Compile Include="Forms\PartsStockForm.Designer.cs">
+      <DependentUpon>PartsStockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InternalApp.cs" />
-    <Compile Include="FitterForm.cs">
+    <Compile Include="Forms\FitterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FitterForm.Designer.cs">
+    <Compile Include="Forms\FitterForm.Designer.cs">
       <DependentUpon>FitterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password.cs">
+    <Compile Include="Forms\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Password.Designer.cs">
-      <DependentUpon>Password.cs</DependentUpon>
+    <Compile Include="Forms\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Planning.cs" />
-    <Compile Include="ManagerForm.cs">
+    <Compile Include="Forms\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
+    <Compile Include="Forms\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bike.cs" />
-    <Compile Include="BikeCustomisationForm.cs">
+    <Compile Include="Forms\BikeCustomisationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BikeCustomisationForm.Designer.cs">
+    <Compile Include="Forms\BikeCustomisationForm.Designer.cs">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BuyableItem.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include="ClientSearch.cs">
+    <Compile Include="Forms\ClientSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientSearch.Designer.cs">
-      <DependentUpon>ClientSearch.cs</DependentUpon>
+    <Compile Include="Forms\ClientSearchForm.Designer.cs">
+      <DependentUpon>ClientSearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="Stocks.cs">
+    <Compile Include="Forms\NewBikeStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stocks.Designer.cs">
-      <DependentUpon>Stocks.cs</DependentUpon>
+    <Compile Include="Forms\NewBikeStockForm.Designer.cs">
+      <DependentUpon>NewBikeStockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewCatalogForm.cs">
+    <Compile Include="Forms\BikeCatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewCatalogForm.Designer.cs">
-      <DependentUpon>NewCatalogForm.cs</DependentUpon>
+    <Compile Include="Forms\BikeCatalogForm.Designer.cs">
+      <DependentUpon>BikeCatalogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="Part.cs" />
-    <Compile Include="AddClient.Designer.cs">
-      <DependentUpon>AddClient.cs</DependentUpon>
+    <Compile Include="Forms\AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasketForm.cs">
+    <Compile Include="Forms\BasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasketForm.Designer.cs">
+    <Compile Include="Forms\BasketForm.Designer.cs">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddClient.resx">
-      <DependentUpon>AddClient.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChooseUser.resx">
-      <DependentUpon>ChooseUser.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UserMenuForm.resx">
+      <DependentUpon>UserMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartsCatalog.resx">
-      <DependentUpon>PartsCatalog.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PartsCatalogForm.resx">
+      <DependentUpon>PartsCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockManagerForm.resx">
+    <EmbeddedResource Include="Forms\StockManagerForm.resx">
       <DependentUpon>StockManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="supplier_orders.cs">
@@ -202,44 +202,44 @@
     <Compile Include="supplier_orders.Designer.cs">
       <DependentUpon>supplier_orders.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ManagerMenus.resx">
-      <DependentUpon>ManagerMenus.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ManagerMenuForm.resx">
+      <DependentUpon>ManagerMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddPart.resx">
-      <DependentUpon>AddPart.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddPartForm.resx">
+      <DependentUpon>AddPartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewModel.resx">
-      <DependentUpon>NewModel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewBikeModelForm.resx">
+      <DependentUpon>NewBikeModelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PartsStock.resx">
-      <DependentUpon>PartsStock.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PartsStockForm.resx">
+      <DependentUpon>PartsStockForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BrokenPart.resx">
-      <DependentUpon>BrokenPart.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BrokenPartForm.resx">
+      <DependentUpon>BrokenPartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FitterForm.resx">
+    <EmbeddedResource Include="Forms\FitterForm.resx">
       <DependentUpon>FitterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
+    <EmbeddedResource Include="Forms\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BikeCustomisationForm.resx">
+    <EmbeddedResource Include="Forms\BikeCustomisationForm.resx">
       <DependentUpon>BikeCustomisationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BasketForm.resx">
+    <EmbeddedResource Include="Forms\BasketForm.resx">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientSearch.resx">
-      <DependentUpon>ClientSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ClientSearchForm.resx">
+      <DependentUpon>ClientSearchForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stocks.resx">
-      <DependentUpon>Stocks.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewBikeStockForm.resx">
+      <DependentUpon>NewBikeStockForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewCatalogForm.resx">
-      <DependentUpon>NewCatalogForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BikeCatalogForm.resx">
+      <DependentUpon>BikeCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Password.resx">
-      <DependentUpon>Password.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
