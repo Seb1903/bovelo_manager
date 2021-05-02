@@ -29,7 +29,7 @@ namespace Bovelo
             {
                 Console.WriteLine("Password Confirmed");
                 this.Hide();
-                ManagerMenus form = new ManagerMenus();
+                var form = new PartsStock();
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
                 form.FormClosing += delegate { this.Close(); };
