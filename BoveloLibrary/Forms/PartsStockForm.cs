@@ -129,5 +129,45 @@ namespace Bovelo
         {
             searchCriteria = comboBox2.SelectedItem.ToString();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var newPart = new AddPart();
+            newPart.Location = this.Location;
+            newPart.StartPosition = FormStartPosition.Manual;
+            newPart.FormClosing += delegate { this.Show(); };
+            newPart.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new ManagerMenus();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new ManagerForm();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new Stocks();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
     }
 }

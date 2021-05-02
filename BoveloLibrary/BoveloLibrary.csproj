@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database.cs" />
     <Compile Include="Forms\AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,7 +160,6 @@
     <Compile Include="Forms\ClientSearchForm.Designer.cs">
       <DependentUpon>ClientSearchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
     <Compile Include="Forms\NewBikeStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
