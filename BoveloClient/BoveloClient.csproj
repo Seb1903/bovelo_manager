@@ -71,7 +71,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoveloProject\BoveloLibrary.csproj">
+    <ProjectReference Include="..\BoveloLibrary\BoveloLibrary.csproj">
       <Project>{e914382b-93f6-4b4c-a4eb-b536b232f171}</Project>
       <Name>BoveloLibrary</Name>
     </ProjectReference>
