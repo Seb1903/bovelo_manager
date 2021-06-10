@@ -4,7 +4,7 @@
 
 ## Presentation
 
-We have created this application to provide help the startup bovelo to manage its bike production and management.
+We have created this application to provide help the startup bovelo to manage its bike production and order.
 
 It provides a GUI that displays their products line and records orders from clients. The application features a planning and organisation chart for the production process.  
 
