@@ -83,7 +83,7 @@ namespace Bovelo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DataTable datas;
-            datas = GetData(String.Format("Select * From part_stock_view where {0} like '{1}%'", searchCriteria, textBox1.Text));
+            datas = GetData(String.Format("Select * From parts_stock_view where {0} like '{1}%'", searchCriteria, textBox1.Text));
             datas.Columns.RemoveAt(0);
             dataGridView1.DataSource = datas;
             
