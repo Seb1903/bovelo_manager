@@ -20,7 +20,7 @@ To have more clarity in the operation of the application, we made other diagrams
 
 ## Requirements
 
-Now it's time to try this app. You have to clone the repository in a local folder on your computer. Then create a new file named `Database.cs` and copy the bellow lines of code to paste it.
+Now it's time to try this app. You have to clone the repository in a local folder on your computer. Then create a new file named `Database.cs` and copy the bellow lines of code to paste it. If this file is not in the project, it will produce **Build errors** ! 
 
 ```C#
 using System;
