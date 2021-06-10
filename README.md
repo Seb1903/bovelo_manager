@@ -53,7 +53,7 @@ You need to change the following values (don't share your information, it must b
 - Password
 - Database_name
 
-Build the solution and select either the `BoveloInternal` or `BoveloClient` as the main the projuct to run the specific application.
+Build the solution and select either the `BoveloInternal` or `BoveloClient` as the main the project to run the specific application.
 
 ## Group Members
 
