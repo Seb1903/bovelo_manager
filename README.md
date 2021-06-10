@@ -10,7 +10,7 @@ We created this application to provide some organization to startups (more preci
 
 It contains a GUI that displays their products and eventually records orders. The backend of the application can also organize a schedule to manage the different orders.  
 
-The whole data management uses MySql's database and its setup is already done. Here's the [Database Diagram](https://user-images.githubusercontent.com/75576766/109031543-1ea9a000-76c5-11eb-927e-e4f394e8fbf1.png).  
+The whole data management uses MySql's database and its setup is already done. Here's the [Database Diagram](https://github.com/smarbal/bovelo_manager/issues/8#issuecomment-817109381).  
 
 To have more clarity in the operation of the application, we made other diagrams :
 
