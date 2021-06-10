@@ -1,26 +1,29 @@
-# Bike manager - BOVELO
+# BOVELO Project
 
 ![set text](https://i.imgur.com/Vq0UU1Q.png)
 
-![set text](https://www.travis-ci.com/Seb1903/bovelo_manager.svg?branch=repo_organization)
+## Presentation
 
-## Presentation :information_source:
+We have created this application to provide help the startup bovelo to manage its bike production and management.
 
-We created this application to provide some organization to startups (more precisely a bicycle startup).  
+It provides a GUI that displays their products line and records orders from clients. The application features a planning and organisation chart for the production process.  
 
-It contains a GUI that displays their products and eventually records orders. The backend of the application can also organize a schedule to manage the different orders.  
+The database structure is based on MySql and we include the [Database Diagram](https://github.com/smarbal/bovelo_manager/issues/8#issuecomment-817109381).  
 
-The whole data management uses MySql's database and its setup is already done. Here's the [Database Diagram](https://github.com/smarbal/bovelo_manager/issues/8#issuecomment-817109381).  
-
-To have more clarity in the operation of the application, we made other diagrams :
+Further diagrams are listed below:
 
 - [The Use Case Diagram](https://app.lucidchart.com/documents/image/a46ee63b-3627-4046-a257-9277f3b090aa/0/1000/1)  
 - [The Sequence Diagram](https://app.lucidchart.com/documents/image/570fe02b-57dd-400f-bd7d-0c7af648c352/0/1000/1)  
 - [The Class Diagram](https://lucid.app/documents/view/c6953fb9-22ae-4676-a6b1-a276b2a08189)  
 
-## Requirements
+## Prerequisites
+### .NET Framework
+Install .NET Framework version [4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) **Developer Pack** for building and running C# applications.
+### MySQL Connector/NET
+Download the version [8.0.23](https://downloads.mysql.com/archives/c-net/) of MySQL Connector that provides usefull tools for accessing the database and add MySql.Data reference to BoveloLibrary if you have building issues.
 
-Now it's time to try this app. You have to clone the repository in a local folder on your computer. Then create a new file named `Database.cs` and copy the bellow lines of code to paste it. If this file is not in the project, it will produce **Build errors** ! 
+## Setup
+Clone the repository in a local folder on your computer. Then create a new file named `Database.cs` in `BoveloLibrary` folder and copy the following lines. 
 
 ```C#
 using System;
@@ -42,8 +45,7 @@ public string MyConnection = "server=XXX.XXX.XXX.XX;user=3BE-GRP5;database=bovel
 }
 }
 ```
-
-Once you've done that, change the following values (don't share your information, it must be kept **confidential**) :
+You need to change the following values (don't share your information, it must be kept **confidential**) :
 
 - IP_address
 - Port
@@ -51,7 +53,7 @@ Once you've done that, change the following values (don't share your information
 - Password
 - Database_name
 
-And now enjoy the app !
+Build the solution and select either the `BoveloInternal` or `BoveloClient` as the main the projuct to run the specific application.
 
 ## Group Members
 
