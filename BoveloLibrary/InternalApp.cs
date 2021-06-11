@@ -114,7 +114,7 @@ namespace Bovelo
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
             foreach (KeyValuePair<string, int> part in necessaryPartList)
             {
-                Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
+                //Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
                 using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @quantity WHERE reference = @id_part", MyConn)
                 {
                     CommandType = CommandType.Text

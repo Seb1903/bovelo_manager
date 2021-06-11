@@ -169,5 +169,15 @@ namespace Bovelo
             form.FormClosing += delegate { this.Show(); };
             form.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new StockManagerForm();
+            form.Location = this.Location;
+            form.StartPosition = FormStartPosition.Manual;
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
+        }
     }
 }
