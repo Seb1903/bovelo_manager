@@ -113,7 +113,7 @@ namespace Bovelo
         {
             foreach(KeyValuePair<string, int> parts in OrderStock.partsQuantityOrder)
             {
-                Console.WriteLine("Clé : {0}, valeur : {1}", parts.Key, parts.Value);
+                //Console.WriteLine("Clé : {0}, valeur : {1}", parts.Key, parts.Value);
                 OrderStock.OrderToSupplier(parts.Key, parts.Value);
                 OrderStock.SetNewNecessaryStock(parts.Key, parts.Value);
             }
