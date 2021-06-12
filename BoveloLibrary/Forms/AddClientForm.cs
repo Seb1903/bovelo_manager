@@ -66,6 +66,11 @@ namespace Bovelo
                 MessageBox.Show("Missing required personnal details");
             }
         }
-        
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

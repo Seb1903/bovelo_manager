@@ -100,5 +100,11 @@ namespace Bovelo
         {
             searchCriteria = comboBox1.SelectedItem.ToString();
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }
