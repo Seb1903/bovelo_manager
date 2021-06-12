@@ -18,11 +18,11 @@ namespace Bovelo
         public string street;
         public int number;
         public int zipcode;
-        public string adress;
+        public string address;
         public string phoneNumber;
-        public string emailAdress;
+        public string emailAddress;
 
-        public Client( string lastname, string firstname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAdress)
+        public Client( string lastname, string firstname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAddress)
         {
             this.firstname = firstname;
             this.lastname = lastname;
@@ -32,9 +32,9 @@ namespace Bovelo
             this.number = number;
             this.zipcode = zipcode;
             this.phoneNumber = phoneNumber;
-            this.emailAdress = emailAdress;
+            this.emailAddress = emailAddress;
         }
-        public Client(int id, string lastname, string firstname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAdress)
+        public Client(int id, string lastname, string firstname, string country, string city, string street, int number, int zipcode, string phoneNumber, string emailAddress)
         {
             this.clientID = id; //Create method to search from known elements ... 
             this.firstname = firstname;
@@ -45,16 +45,17 @@ namespace Bovelo
             this.number = number;
             this.zipcode = zipcode;
             this.phoneNumber = phoneNumber;
-            this.emailAdress = emailAdress;
+            this.emailAddress = emailAddress;
         }
         public void Save()
         {
             try
             {
-                Database db = new Database();   //Let's us protect the password by having a class database with a public string containing the credentials
+                Database db = new Database();   
+                // Protect the password by having a class database with a public string containing the credentials
                 //This is my connection string i have assigned the database file address path  
                 //This is my insert query in which i am taking input from the user through windows forms  
-                string Query = "insert into client(lastname,firstname,country,city,street,number,zipcode,phoneNumber,emailAddress) values('" + this.lastname + "','" + this.firstname + "','" + this.country+ "','" + this.city+ "','" + this.street+ "','" + this.number + "','" + this.zipcode + "','" + this.phoneNumber + "','" + emailAdress + "');";
+                string Query = "insert into client(lastname,firstname,country,city,street,number,zipcode,phoneNumber,emailAddress) values('" + this.lastname + "','" + this.firstname + "','" + this.country+ "','" + this.city+ "','" + this.street+ "','" + this.number + "','" + this.zipcode + "','" + this.phoneNumber + "','" + emailAddress + "');";
                 //This is  MySqlConnection here i have created the object and pass my connection string.  
                 MySqlConnection MyConn2 = new MySqlConnection(db.MyConnection);
                 //This is command class which will handle the query and connection object.  
