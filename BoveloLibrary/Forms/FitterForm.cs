@@ -255,13 +255,13 @@ namespace Bovelo
                     switch(state)
                     {
                         case "Active":
-                            bike.ModifyState("Active");
+                            bike.UpdateState("Active");
                             break;
                         case "Done":
                             bike.Build();
                             break;
                         case "Not active":
-                            bike.ModifyState("Not active");
+                            bike.UpdateState("Not active");
                             break;
                         default:
                             break;

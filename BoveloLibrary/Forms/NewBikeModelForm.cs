@@ -28,7 +28,7 @@ namespace Bovelo
         private void LoadModelTable()  //updates the whole table with the added parts 
         {
             var bs = new BindingSource();   //not optimal but only works like this
-            bs.DataSource = bike.partList;
+            bs.DataSource = bike.GetPartList();
             dataGridView2.DataSource = bs;
             dataGridView2.Update();
             dataGridView2.Refresh();
