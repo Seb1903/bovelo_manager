@@ -14,6 +14,7 @@ namespace Bovelo
     public partial class PartsStock : Form
     {
         string searchCriteria = "reference";
+        string searchModelCriteria = "name";
         string partInfo = "";
         List<string> clientParams = new List<string>();
         public PartsStock()
@@ -30,6 +31,8 @@ namespace Bovelo
 
             string[]  searchCriterions = new string[] { "reference", "name" };
             comboBox1.Items.AddRange(searchCriterions);
+            string[] searchModelCriterions = new string[] { "name", "price" };
+            comboBox2.Items.AddRange(searchModelCriterions);
         }
 
         private static DataTable GetData(string sqlCommand)
@@ -119,7 +122,7 @@ namespace Bovelo
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             DataTable datas;
-            datas = GetData(String.Format("Select * From bike_models_view where {0} like '{1}%'", searchCriteria, textBox2.Text));
+            datas = GetData(String.Format("Select * From bike_models_view where {0} like '{1}%'", searchModelCriteria, textBox2.Text));
             datas.Columns.RemoveAt(0);
             dataGridView2.DataSource = datas;
 
@@ -127,7 +130,7 @@ namespace Bovelo
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            searchCriteria = comboBox2.SelectedItem.ToString();
+            searchModelCriteria = comboBox2.SelectedItem.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
