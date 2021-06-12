@@ -170,6 +170,7 @@ namespace Bovelo
         private void empty_cart_btn_Click(object sender, EventArgs e)
         {
             Bovelo.order.Empty();
+            Bovelo.order.client = null;
             UpdateForm();
             CheckEmptyCart();
         }
