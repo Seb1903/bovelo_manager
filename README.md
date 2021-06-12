@@ -16,6 +16,7 @@ Further diagrams are listed below:
 - [The Sequence Diagram](https://app.lucidchart.com/documents/image/570fe02b-57dd-400f-bd7d-0c7af648c352/0/1000/1)  
 - [The Class Diagram](https://lucid.app/documents/view/c6953fb9-22ae-4676-a6b1-a276b2a08189)  
 - [The Supplier Order Sequence Diagram](https://lucid.app/documents/embeddedchart/cec42233-dc50-458f-ae1c-218914939d81)
+- [The Fitter Sequence Diagram](https://lucid.app/documents/embeddedchart/98403bf0-496c-453e-b62d-8a8212890689)
 
 ## Prerequisites
 ### .NET Framework
