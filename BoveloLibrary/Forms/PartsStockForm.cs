@@ -87,7 +87,7 @@ namespace Bovelo
         {
             DataTable datas;
             datas = GetData(String.Format("Select * From parts_stock_view where {0} like '{1}%'", searchCriteria, textBox1.Text));
-            datas.Columns.RemoveAt(0);
+            //datas.Columns.RemoveAt(0);
             dataGridView1.DataSource = datas;
             
         }
@@ -123,7 +123,7 @@ namespace Bovelo
         {
             DataTable datas;
             datas = GetData(String.Format("Select * From bike_models_view where {0} like '{1}%'", searchModelCriteria, textBox2.Text));
-            datas.Columns.RemoveAt(0);
+            //datas.Columns.RemoveAt(0);
             dataGridView2.DataSource = datas;
 
         }
