@@ -159,7 +159,7 @@ namespace Bovelo
                 if (bike.id == id)
                 {
                     bike.cstr_date = (sender as idDatePicker).Value;
-                    bike.ModifyDate(date);
+                    bike.UpdateDate(date);
                 }
 
             }

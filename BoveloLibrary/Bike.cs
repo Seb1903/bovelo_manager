@@ -11,15 +11,16 @@ namespace Bovelo
 {
     public class Bike
     {
+        public DateTime cstr_date; 
         public int id;
         public int model;
-        public string type;
+        public int price;
         public string color;
         public string size;
-        public int price;
+        public string type;
         public string state;
-        public List<Part> partList = new List<Part>();
-        public DateTime cstr_date; 
+
+        private List<Part> partList = new List<Part>();
 
         public Bike(int id)
         {
@@ -53,7 +54,7 @@ namespace Bovelo
                 this.AddPart(part);
                 part.Use(); 
             }
-            this.ModifyState("Done"); //Comment for testing
+            this.UpdateState("Done"); //Comment for testing
         }
         public void AddPart(Part part) //Useful for NewModels, partList can thus become a private attribute
         {
@@ -64,15 +65,19 @@ namespace Bovelo
             var itemToRemove = partList.Single(r => r.reference == reference);
             partList.Remove(itemToRemove);
         }
+        public List<Part> GetPartList()
+        {
+            return partList;
+        }
         public override string ToString()
         {
             return (type + " " + size + " " + color);
         }
-        public void ModifyDate(string date)
+        public void UpdateDate(string date)
         {
             InternalApp.ExecuteQuery($"UPDATE planning SET date='{date}' WHERE bike='{this.id}'");
         }
-        public void ModifyState(string state)
+        public void UpdateState(string state)
         {
             this.state = state;
             InternalApp.ExecuteQuery($"UPDATE bike SET cstr_status='{state}' WHERE id='{this.id}'");
