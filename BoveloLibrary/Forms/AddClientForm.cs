@@ -55,12 +55,17 @@ namespace Bovelo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Client client = new Client( this.textBox_lastname.Text, this.textBox_firstname.Text, this.textBox_country.Text, this.textBox_city.Text, this.textBox_street.Text,Convert.ToInt32(this.numericUpDown1.Value), Convert.ToInt32(this.numericUpDown_zipcode.Value) , this.textBox_phonenumber.Text, this.textBox_email.Text);
-            client.Save();
-
-            show_table(); //call function defined earlier to connect to database and show data on a label 
+            if (this.textBox_lastname.Text != null && this.textBox_firstname.Text != null && this.textBox_country.Text != null && this.textBox_city.Text != null && this.textBox_street.Text != null && Convert.ToInt32(this.numericUpDown1.Value) > 0 && Convert.ToInt32(this.numericUpDown_zipcode.Value) > 0 && this.textBox_phonenumber.Text != null && this.textBox_email.Text != null)
+            {
+                Client client = new Client(this.textBox_lastname.Text, this.textBox_firstname.Text, this.textBox_country.Text, this.textBox_city.Text, this.textBox_street.Text, Convert.ToInt32(this.numericUpDown1.Value), Convert.ToInt32(this.numericUpDown_zipcode.Value), this.textBox_phonenumber.Text, this.textBox_email.Text);
+                client.Save();
+                show_table(); //call function defined earlier to connect to database and show data on a label 
             }
-
+            else
+            {
+                MessageBox.Show("Missing required personnal details");
+            }
+        }
         
     }
 }
