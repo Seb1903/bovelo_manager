@@ -47,7 +47,7 @@ namespace Bovelo
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(74, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -56,13 +56,13 @@ namespace Bovelo
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 204);
+            this.dataGridView1.Size = new System.Drawing.Size(466, 234);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 311);
+            this.button1.Location = new System.Drawing.Point(374, 319);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 27);
@@ -82,7 +82,7 @@ namespace Bovelo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 29);
+            this.textBox1.Location = new System.Drawing.Point(255, 40);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 20);
@@ -92,7 +92,7 @@ namespace Bovelo
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 72);
+            this.comboBox1.Location = new System.Drawing.Point(11, 39);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 21);
@@ -102,7 +102,7 @@ namespace Bovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 57);
+            this.label1.Location = new System.Drawing.Point(8, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
@@ -112,7 +112,7 @@ namespace Bovelo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 14);
+            this.label3.Location = new System.Drawing.Point(252, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
@@ -121,7 +121,7 @@ namespace Bovelo
             // 
             // back_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(74, 311);
+            this.back_btn.Location = new System.Drawing.Point(12, 319);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(82, 27);
             this.back_btn.TabIndex = 8;

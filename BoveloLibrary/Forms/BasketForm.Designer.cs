@@ -54,6 +54,7 @@ namespace Bovelo
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.deliveryTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,12 +62,11 @@ namespace Bovelo
             // 
             this.validate_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.validate_btn.Location = new System.Drawing.Point(920, 538);
-            this.validate_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.validate_btn.MaximumSize = new System.Drawing.Size(158, 35);
-            this.validate_btn.MinimumSize = new System.Drawing.Size(158, 35);
+            this.validate_btn.Location = new System.Drawing.Point(613, 350);
+            this.validate_btn.MaximumSize = new System.Drawing.Size(105, 23);
+            this.validate_btn.MinimumSize = new System.Drawing.Size(105, 23);
             this.validate_btn.Name = "validate_btn";
-            this.validate_btn.Size = new System.Drawing.Size(158, 35);
+            this.validate_btn.Size = new System.Drawing.Size(105, 23);
             this.validate_btn.TabIndex = 14;
             this.validate_btn.Text = "Confirm";
             this.validate_btn.UseVisualStyleBackColor = true;
@@ -75,22 +75,20 @@ namespace Bovelo
             // bike_list_label
             // 
             this.bike_list_label.AutoSize = true;
-            this.bike_list_label.Location = new System.Drawing.Point(20, 20);
-            this.bike_list_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bike_list_label.Location = new System.Drawing.Point(13, 13);
             this.bike_list_label.Name = "bike_list_label";
-            this.bike_list_label.Size = new System.Drawing.Size(0, 20);
+            this.bike_list_label.Size = new System.Drawing.Size(0, 13);
             this.bike_list_label.TabIndex = 15;
             // 
             // back_btn
             // 
             this.back_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.back_btn.Location = new System.Drawing.Point(752, 538);
-            this.back_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.back_btn.MaximumSize = new System.Drawing.Size(158, 35);
-            this.back_btn.MinimumSize = new System.Drawing.Size(158, 35);
+            this.back_btn.Location = new System.Drawing.Point(501, 350);
+            this.back_btn.MaximumSize = new System.Drawing.Size(105, 23);
+            this.back_btn.MinimumSize = new System.Drawing.Size(105, 23);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(158, 35);
+            this.back_btn.Size = new System.Drawing.Size(105, 23);
             this.back_btn.TabIndex = 16;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = true;
@@ -104,12 +102,11 @@ namespace Bovelo
             // 
             this.empty_cart_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.empty_cart_btn.Location = new System.Drawing.Point(24, 538);
-            this.empty_cart_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.empty_cart_btn.MaximumSize = new System.Drawing.Size(158, 35);
-            this.empty_cart_btn.MinimumSize = new System.Drawing.Size(158, 35);
+            this.empty_cart_btn.Location = new System.Drawing.Point(16, 350);
+            this.empty_cart_btn.MaximumSize = new System.Drawing.Size(105, 23);
+            this.empty_cart_btn.MinimumSize = new System.Drawing.Size(105, 23);
             this.empty_cart_btn.Name = "empty_cart_btn";
-            this.empty_cart_btn.Size = new System.Drawing.Size(158, 35);
+            this.empty_cart_btn.Size = new System.Drawing.Size(105, 23);
             this.empty_cart_btn.TabIndex = 17;
             this.empty_cart_btn.Text = "Empty Cart";
             this.empty_cart_btn.UseVisualStyleBackColor = true;
@@ -118,27 +115,26 @@ namespace Bovelo
             // delivery_name
             // 
             this.delivery_name.AutoSize = true;
-            this.delivery_name.Location = new System.Drawing.Point(24, 480);
-            this.delivery_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.delivery_name.Location = new System.Drawing.Point(16, 312);
             this.delivery_name.Name = "delivery_name";
-            this.delivery_name.Size = new System.Drawing.Size(144, 20);
+            this.delivery_name.Size = new System.Drawing.Size(97, 13);
             this.delivery_name.TabIndex = 18;
             this.delivery_name.Text = "Estimated Delivery:";
             // 
             // delivery_time_label
             // 
             this.delivery_time_label.AutoSize = true;
-            this.delivery_time_label.Location = new System.Drawing.Point(214, 480);
-            this.delivery_time_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.delivery_time_label.Location = new System.Drawing.Point(143, 312);
             this.delivery_time_label.Name = "delivery_time_label";
-            this.delivery_time_label.Size = new System.Drawing.Size(0, 20);
+            this.delivery_time_label.Size = new System.Drawing.Size(0, 13);
             this.delivery_time_label.TabIndex = 19;
             // 
             // new_Client
             // 
-            this.new_Client.Location = new System.Drawing.Point(752, 440);
+            this.new_Client.Location = new System.Drawing.Point(501, 286);
+            this.new_Client.Margin = new System.Windows.Forms.Padding(2);
             this.new_Client.Name = "new_Client";
-            this.new_Client.Size = new System.Drawing.Size(158, 39);
+            this.new_Client.Size = new System.Drawing.Size(105, 25);
             this.new_Client.TabIndex = 20;
             this.new_Client.Text = "New Client";
             this.new_Client.UseVisualStyleBackColor = true;
@@ -146,9 +142,10 @@ namespace Bovelo
             // 
             // select_Client
             // 
-            this.select_Client.Location = new System.Drawing.Point(920, 440);
+            this.select_Client.Location = new System.Drawing.Point(613, 286);
+            this.select_Client.Margin = new System.Windows.Forms.Padding(2);
             this.select_Client.Name = "select_Client";
-            this.select_Client.Size = new System.Drawing.Size(158, 39);
+            this.select_Client.Size = new System.Drawing.Size(105, 25);
             this.select_Client.TabIndex = 21;
             this.select_Client.Text = "Select Client";
             this.select_Client.UseVisualStyleBackColor = true;
@@ -157,9 +154,10 @@ namespace Bovelo
             // label_selectedClient
             // 
             this.label_selectedClient.AutoSize = true;
-            this.label_selectedClient.Location = new System.Drawing.Point(24, 440);
+            this.label_selectedClient.Location = new System.Drawing.Point(16, 286);
+            this.label_selectedClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_selectedClient.Name = "label_selectedClient";
-            this.label_selectedClient.Size = new System.Drawing.Size(53, 20);
+            this.label_selectedClient.Size = new System.Drawing.Size(36, 13);
             this.label_selectedClient.TabIndex = 22;
             this.label_selectedClient.Text = "Client:";
             // 
@@ -167,7 +165,8 @@ namespace Bovelo
             // 
             this.label_clientName.AutoSize = true;
             this.label_clientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clientName.Location = new System.Drawing.Point(182, 440);
+            this.label_clientName.Location = new System.Drawing.Point(121, 286);
+            this.label_clientName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_clientName.Name = "label_clientName";
             this.label_clientName.Size = new System.Drawing.Size(0, 20);
             this.label_clientName.TabIndex = 23;
@@ -176,17 +175,19 @@ namespace Bovelo
             // 
             this.label_price.AutoSize = true;
             this.label_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_price.Location = new System.Drawing.Point(20, 400);
+            this.label_price.Location = new System.Drawing.Point(11, 260);
+            this.label_price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(64, 20);
+            this.label_price.Size = new System.Drawing.Size(96, 20);
             this.label_price.TabIndex = 24;
-            this.label_price.Text = " Total: ";
+            this.label_price.Text = " TT HTVA: ";
             // 
             // price
             // 
             this.price.AutoSize = true;
             this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(152, 400);
+            this.price.Location = new System.Drawing.Point(86, 260);
+            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(57, 20);
             this.price.TabIndex = 25;
@@ -209,34 +210,48 @@ namespace Bovelo
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Statuslabel,
             this.StatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 592);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 374);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1108, 32);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(739, 32);
             this.statusStrip1.TabIndex = 26;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(28, 39);
+            this.panel1.Location = new System.Drawing.Point(19, 51);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(882, 336);
+            this.panel1.Size = new System.Drawing.Size(588, 192);
             this.panel1.TabIndex = 27;
             // 
             // deliveryTime
             // 
             this.deliveryTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliveryTime.Location = new System.Drawing.Point(214, 480);
-            this.deliveryTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.deliveryTime.Location = new System.Drawing.Point(117, 312);
+            this.deliveryTime.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.deliveryTime.Name = "deliveryTime";
-            this.deliveryTime.Size = new System.Drawing.Size(288, 20);
+            this.deliveryTime.Size = new System.Drawing.Size(192, 13);
             this.deliveryTime.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(555, 20);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "   Product:     Color:        Size:       Quantity:                              " +
+    "   PPU:";
             // 
             // BasketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 624);
+            this.ClientSize = new System.Drawing.Size(739, 406);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.deliveryTime);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -253,8 +268,9 @@ namespace Bovelo
             this.Controls.Add(this.bike_list_label);
             this.Controls.Add(this.validate_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1130, 680);
-            this.MinimumSize = new System.Drawing.Size(1130, 680);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(761, 462);
+            this.MinimumSize = new System.Drawing.Size(761, 462);
             this.Name = "BasketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Basket";
@@ -285,5 +301,6 @@ namespace Bovelo
         private StatusStrip statusStrip1;
         private Panel panel1;
         private Label deliveryTime;
+        private Label label1;
     }
 }
