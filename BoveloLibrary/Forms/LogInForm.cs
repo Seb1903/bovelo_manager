@@ -25,7 +25,7 @@ namespace Bovelo
         private void Confirmbtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Confirm button pushed");
-            if (password_txt.Text == InternalApp.managerPassword)
+            if (InternalApp.CheckPassword(password_txt.Text))
             {
                 Console.WriteLine("Password Confirmed");
                 this.Hide();
@@ -47,7 +47,7 @@ namespace Bovelo
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (password_txt.Text == InternalApp.managerPassword)
+                if (InternalApp.CheckPassword(password_txt.Text))
                 {
                     this.Hide();
                     var form = new PartsStock();

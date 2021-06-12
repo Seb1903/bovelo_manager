@@ -9,15 +9,14 @@ namespace Bovelo
 {
     public class InternalApp
     {
-        // Check TODO.txt Issue #3
-        public static string managerPassword = "1234";
         public static DataTable bikeTable ;
         public static DataTable planningTable ;
         public static DataTable bikeModelTable;
         public static List<Bike> bikeList = new List<Bike>();
         public static Dictionary<string, int> necessaryPartList = new Dictionary<string, int>();
         public static string[] bikeStateList = new string[] { "Active", "Not active", "Done" };  
-        
+
+        private static string managerPassword = "1234";
         public InternalApp()
         {
             SetBikeList();
@@ -29,6 +28,17 @@ namespace Bovelo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ChooseUser());
+        }
+        public static bool CheckPassword(string input)
+        {
+            if (input == managerPassword)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public static DataTable GetDataTable(string sqlCommand)
         {
