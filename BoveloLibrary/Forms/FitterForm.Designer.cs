@@ -34,7 +34,6 @@ namespace Bovelo
             this.dateOfToday_label = new System.Windows.Forms.Label();
             this.fitterPanel = new System.Windows.Forms.Panel();
             this.Back = new System.Windows.Forms.Button();
-            this.validate_button = new System.Windows.Forms.Button();
             this.report_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,17 +79,6 @@ namespace Bovelo
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // validate_button
-            // 
-            this.validate_button.Location = new System.Drawing.Point(664, 489);
-            this.validate_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.validate_button.Name = "validate_button";
-            this.validate_button.Size = new System.Drawing.Size(123, 36);
-            this.validate_button.TabIndex = 5;
-            this.validate_button.Text = "Refresh";
-            this.validate_button.UseVisualStyleBackColor = true;
-            this.validate_button.Click += new System.EventHandler(this.validate_button_Click);
-            // 
             // report_button
             // 
             this.report_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -110,7 +98,6 @@ namespace Bovelo
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 558);
-            this.Controls.Add(this.validate_button);
             this.Controls.Add(this.report_button);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.fitterPanel);
@@ -134,7 +121,6 @@ namespace Bovelo
         private System.Windows.Forms.Label dateOfToday_label;
         private System.Windows.Forms.Panel fitterPanel;
         private System.Windows.Forms.Button Back;
-        private System.Windows.Forms.Button validate_button;
         private System.Windows.Forms.Button report_button;
     }
 }
