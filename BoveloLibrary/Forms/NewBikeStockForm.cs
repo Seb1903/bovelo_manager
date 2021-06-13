@@ -83,6 +83,11 @@ namespace Bovelo
                 Console.WriteLine(e.Message);
                 return null;
             }
-        } 
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
