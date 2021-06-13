@@ -19,7 +19,6 @@ namespace Bovelo
             string supplierQuery = $"SELECT * FROM supplier";
             DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
             DataTable nameReader = InternalApp.GetDataTable(nameQuery);
-            DataTable supplierReader = InternalApp.GetDataTable(supplierQuery);
             int size_datatable = quantityReader.Rows.Count;
             try
             {
@@ -36,8 +35,9 @@ namespace Bovelo
                     partList.Add(new Part(partID, partName, partTotalStock, partsNcryStock));
                 }
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e);
             }
         }
 
@@ -67,82 +67,11 @@ namespace Bovelo
                 {
                     command.ExecuteNonQuery();
                 }
-                catch
+                catch (Exception e)
                 {
+                    Console.WriteLine(e);
                 }
                 MyConn.Close();
-            }
-        }
-        public static void SetNewNecessaryStock(string partID, int quantity, int stock)
-        {
-            string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{partID}'";
-            DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
-            int necessaryStock = Convert.ToInt32(quantityReader.Rows[0]["necessary"].ToString());
-            if (quantity <= necessaryStock)
-            {
-                Database db = new Database();
-                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = necessary - @quantity - @stock WHERE reference = @id_part", MyConn)
-                {
-                    CommandType = CommandType.Text
-                })
-                {
-                    command.Parameters.AddWithValue("@id_part", partID);
-                    command.Parameters.AddWithValue("@stock", stock);
-                    command.Parameters.AddWithValue("@quantity", quantity);
-                    MyConn.Open();
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                    }
-                    MyConn.Close();
-                }
-            }
-            else if(quantity > necessaryStock)
-            {
-                Database db = new Database();
-                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = 0 WHERE reference = @id_part", MyConn)
-                {
-                    CommandType = CommandType.Text
-                })
-                {
-                    command.Parameters.AddWithValue("@id_part", partID);
-                    MyConn.Open();
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                    }
-                    MyConn.Close();
-                }
-            }
-            else
-            {
-                Database db = new Database();
-                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @necessary WHERE reference = @id_part", MyConn)
-                {
-                    CommandType = CommandType.Text
-                })
-                {
-                    command.Parameters.AddWithValue("@id_part", partID);
-                    command.Parameters.AddWithValue("@necessary", necessaryStock);
-                    MyConn.Open();
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                    }
-                    MyConn.Close();
-                }
             }
         }
     }

@@ -92,7 +92,7 @@ namespace Bovelo
                 if(part.quantity>0)
                 {
                     OrderStock.OrderToSupplier(part.reference, part.quantity);
-                    OrderStock.SetNewNecessaryStock(part.reference, part.quantity, part.stock);
+                    //OrderStock.SetNewNecessaryStock(part.reference, part.quantity, part.stock);
                 }
                 
             }
