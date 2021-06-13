@@ -90,45 +90,6 @@ namespace Bovelo
                 part_stock_panel.Controls.Add(partNameLbl);
                 part_stock_panel.Controls.Add(currentStockLbl);
             }
-
-            //position = 1;
-            //
-            //foreach (string supplierName in OrderStock.partsSuppliersNames)
-            //{
-            //    
-            //
-            //    
-            //
-            //    position = position + 2;
-            //
-            //    
-            //}
-            //
-            //position = 1;
-            //
-            //foreach (string partName in OrderStock.partsNames)
-            //{
-            //    
-            //
-            //    
-            //
-            //    position = position + 2;
-            //
-            //    
-            //}
-            //
-            //position = 1;
-            //
-            //foreach (int partStock in OrderStock.partsStock)
-            //{
-            //    
-            //
-            //    
-            //
-            //    position = position + 2;
-            //
-            //    
-            //}
         }
 
         private void Order_Button_Click(object sender, EventArgs e)
