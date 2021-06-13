@@ -100,12 +100,6 @@
     <Compile Include="Forms\UserMenuForm.Designer.cs">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StockManagerForm.Designer.cs">
-      <DependentUpon>StockManagerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ManagerMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,7 +112,6 @@
     <Compile Include="Forms\NewBikeModelForm.Designer.cs">
       <DependentUpon>NewBikeModelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderStock.cs" />
     <Compile Include="Forms\PartsStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserMenuForm.resx">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockManagerForm.resx">
-      <DependentUpon>StockManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="supplier_orders.cs">
       <SubType>UserControl</SubType>

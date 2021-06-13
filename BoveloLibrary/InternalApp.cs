@@ -100,7 +100,6 @@ namespace Bovelo
         {
             necessaryPartList = new Dictionary<string, int>();
             UpdateBikeTable();
-            OrderStock.GetPartCatalog();
             foreach (DataRow part in bikeModelTable.Rows)
             {
                 int quantity = 0;
