@@ -23,13 +23,35 @@ namespace Bovelo
 
         private void FitterForm_Load(object sender, EventArgs e)
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            int position = 1;
+            DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
+            InternalApp.bikeList.Clear();
+            InternalApp.SetBikeList();
+            this.dateOfToday_label.Text = date.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         
         private void FitterFormCharge()
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            int position = 1;
+            DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
+            this.dateOfToday_label.Text = date.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         
@@ -37,6 +59,14 @@ namespace Bovelo
         {
             int position = 1;
             DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
             int count = Planning.BikeByDay(date);
             //List<Bike> bikeList = Planning.BikeListGenerator();
 

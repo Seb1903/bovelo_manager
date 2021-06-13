@@ -17,8 +17,7 @@ namespace Bovelo
         {
             InitializeComponent();
             DataTable datas;
-            datas = GetData(String.Format("Select * From bike"));
-            datas.Columns.RemoveAt(0);
+            datas = GetData(String.Format("Select * From bike ORDER BY id DESC"));
             dataGridView1.DataSource = datas;
         }
 
