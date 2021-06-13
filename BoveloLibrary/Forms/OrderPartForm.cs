@@ -17,7 +17,7 @@ namespace Bovelo
         {
             this.part = part; 
             InitializeComponent();
-            label_text.Text = "How many " + part.name + "do you want to order ? ";
+            label_text.Text = "How many " + part.name + " do you want to order ? ";
             numericUpDown1.Value = stock_necessary; 
         }
 
