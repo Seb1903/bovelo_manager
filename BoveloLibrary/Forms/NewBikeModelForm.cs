@@ -145,11 +145,18 @@ namespace Bovelo
                 bike.SaveModel();
                 this.bike = new Bike();
                 LoadModelTable();
+                save_result_lbl.Text = "New model saved";
             }
             else
             {
-                MessageBox.Show("Insert a name for the model and a price ");
+                MessageBox.Show("Insert a name for the model and a price");
+                save_result_lbl.Text = "Error: bike not saved";
             }
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -178,7 +178,7 @@ namespace Bovelo
             var form = new Stocks();
             form.Location = this.Location;
             form.StartPosition = FormStartPosition.Manual;
-            form.FormClosing += delegate { this.Show(); };
+            form.FormClosing += delegate { this.Show(); UpdateBikesTable(); };
             form.Show();
         }
 

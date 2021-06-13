@@ -39,6 +39,7 @@ namespace Bovelo
             this.comboBox_bike = new System.Windows.Forms.ComboBox();
             this.comboBox_color = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.back_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,9 +62,9 @@ namespace Bovelo
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(349, 239);
+            this.button_save.Location = new System.Drawing.Point(360, 252);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(142, 47);
+            this.button_save.Size = new System.Drawing.Size(131, 34);
             this.button_save.TabIndex = 4;
             this.button_save.Text = "Add";
             this.button_save.UseVisualStyleBackColor = true;
@@ -144,11 +145,22 @@ namespace Bovelo
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 11;
             // 
+            // back_btn
+            // 
+            this.back_btn.Location = new System.Drawing.Point(32, 252);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(92, 34);
+            this.back_btn.TabIndex = 12;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 304);
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.comboBox_color);
             this.Controls.Add(this.comboBox_bike);
@@ -181,5 +193,6 @@ namespace Bovelo
         private System.Windows.Forms.ComboBox comboBox_bike;
         private System.Windows.Forms.ComboBox comboBox_color;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button back_btn;
     }
 }
