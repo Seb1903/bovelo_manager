@@ -13,14 +13,17 @@ namespace Bovelo
         public static Dictionary<string, int> partsNecessaryStock = new Dictionary<string, int>(); // part ID - necessary stock
         public static List<string> partsNames = new List<string>();
         public static List<int> partsStock = new List<int>();
-        public static List<int> partsSuppliersID = new List<int>();
         public static List<string> partsSuppliersNames = new List<string>();
         public static Dictionary<string, int> partsQuantityOrder = new Dictionary<string, int>(); // part ID - stock ordered
 
         public static void GetPartCatalog()
         {
-            string quantityQuery = $"SELECT * FROM parts_stock ";//WHERE necessary != 0";
+            string quantityQuery = $"SELECT * FROM parts_stock";//WHERE necessary != 0";
+            string nameQuery = $"SELECT * FROM parts_catalog";
+            string supplierQuery = $"SELECT * FROM supplier";
             DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
+            DataTable nameReader = InternalApp.GetDataTable(nameQuery);
+            DataTable supplierReader = InternalApp.GetDataTable(supplierQuery);
             int size_datatable = quantityReader.Rows.Count;
             try
             {
@@ -32,25 +35,21 @@ namespace Bovelo
                     int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
                     partsNecessaryStock.Add(partsIDs, partsNcryStock);
 
-                    string nameQuery = $"SELECT * FROM parts_catalog WHERE reference='{partsIDs}'";
-                    DataTable nameReader = InternalApp.GetDataTable(nameQuery);
-                    int size_datatable_ = nameReader.Rows.Count;
+                    string partName = nameReader.Rows[i]["name"].ToString();
+                    partsNames.Add(partName);
 
-                    partsNames.Add(nameReader.Rows[0]["name"].ToString());
-                    int supplierID = Convert.ToInt32(nameReader.Rows[0]["provider"].ToString());
-                    partsSuppliersID.Add(supplierID);
+                    string supplierID = nameReader.Rows[i]["provider"].ToString();
+                    
+                    foreach(DataRow supplierRow in supplierReader.Rows)
+                    {
+                        if (supplierRow.Field<string>("id_supplier") == supplierID)
+                        {
+                            partsSuppliersNames.Add(supplierRow.Field<string>("id_supplier"));
+                        }
+                    }
+                    
+                    
 
-                    string qtyQuery = $"SELECT * FROM supplier WHERE id_supplier='{supplierID}'";
-                    DataTable qtyReader = InternalApp.GetDataTable(qtyQuery);
-                    int size_table = qtyReader.Rows.Count;
-                    if (size_table <= 0)
-                    {
-                        partsSuppliersNames.Add("No supplier");
-                    }
-                    else
-                    {
-                        partsSuppliersNames.Add(qtyReader.Rows[0]["supplier_name"].ToString());
-                    }
                 }
             }
             catch
