@@ -184,17 +184,65 @@ namespace Bovelo
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form = new StockManagerForm();
-            form.Location = this.Location;
-            form.StartPosition = FormStartPosition.Manual;
-            form.FormClosing += delegate { this.Show(); };
-            form.Show();
+            try
+            {
+                Part part = new Part(clientParams[0], clientParams[1]);
+                var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]));
+                form.Location = this.Location;
+                form.StartPosition = FormStartPosition.Manual;
+                form.FormClosing += delegate { this.Show(); };
+                form.Show();
+            }
+            catch
+            {
+
+            }
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void DataGridViewCellPaintingEventArgs(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv != null)
+            {
+                if (e.ColumnIndex == 4)
+                {
+                    Color c;
+                    if (e.Value != null)
+                    {
+                        int value;
+                        try
+                        {
+                            value = Convert.ToInt32(e.Value);
+                        }
+                        catch
+                        {
+                            value = 0;
+                        }
+                        if (value > 0)
+                        {
+                            c = Color.Salmon;
+                        }
+
+                        /* else if (value < 0)
+                        {
+                            c = Color.Salmon;
+                        }
+                        else
+                        */
+                        else 
+                        {
+                            c = dgv.DefaultCellStyle.BackColor;
+                        } 
+                        e.CellStyle.BackColor = c;
+                    }
+                }
+            }
         }
     }
 }
