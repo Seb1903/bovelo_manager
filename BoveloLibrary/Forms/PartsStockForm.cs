@@ -195,7 +195,7 @@ namespace Bovelo
             }
             catch
             {
-
+                partInfo = "Please select an item";
             }
         }
 
