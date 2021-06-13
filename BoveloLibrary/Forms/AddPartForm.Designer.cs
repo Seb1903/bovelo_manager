@@ -40,7 +40,7 @@
             // 
             // name_texte
             // 
-            this.name_texte.Location = new System.Drawing.Point(255, 230);
+            this.name_texte.Location = new System.Drawing.Point(182, 177);
             this.name_texte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.name_texte.Name = "name_texte";
             this.name_texte.Size = new System.Drawing.Size(168, 26);
@@ -49,7 +49,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 229);
+            this.label1.Location = new System.Drawing.Point(28, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 1;
@@ -57,10 +57,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(318, 435);
+            this.button1.Location = new System.Drawing.Point(245, 302);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 29);
+            this.button1.Size = new System.Drawing.Size(105, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 81);
+            this.label2.Location = new System.Drawing.Point(27, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 29);
             this.label2.TabIndex = 3;
@@ -79,7 +79,7 @@
             // validation_label
             // 
             this.validation_label.AutoSize = true;
-            this.validation_label.Location = new System.Drawing.Point(97, 294);
+            this.validation_label.Location = new System.Drawing.Point(28, 241);
             this.validation_label.Name = "validation_label";
             this.validation_label.Size = new System.Drawing.Size(51, 20);
             this.validation_label.TabIndex = 4;
@@ -88,10 +88,10 @@
             // 
             // button_back
             // 
-            this.button_back.Location = new System.Drawing.Point(100, 435);
+            this.button_back.Location = new System.Drawing.Point(28, 302);
             this.button_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(84, 29);
+            this.button_back.Size = new System.Drawing.Size(84, 35);
             this.button_back.TabIndex = 5;
             this.button_back.Text = "Back";
             this.button_back.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 168);
+            this.label3.Location = new System.Drawing.Point(28, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // reference_texte
             // 
-            this.reference_texte.Location = new System.Drawing.Point(255, 168);
+            this.reference_texte.Location = new System.Drawing.Point(182, 115);
             this.reference_texte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reference_texte.Name = "reference_texte";
             this.reference_texte.Size = new System.Drawing.Size(168, 26);
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 514);
+            this.ClientSize = new System.Drawing.Size(393, 379);
             this.Controls.Add(this.reference_texte);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button_back);
