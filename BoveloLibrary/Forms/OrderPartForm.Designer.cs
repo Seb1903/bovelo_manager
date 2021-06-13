@@ -47,6 +47,11 @@ namespace Bovelo
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(917, 86);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown1.TabIndex = 1;
