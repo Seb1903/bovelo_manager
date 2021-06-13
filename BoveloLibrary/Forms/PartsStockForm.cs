@@ -62,6 +62,7 @@ namespace Bovelo
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             partInfo = "";
+            clientParams = new List<string>();
             int column = 0;
             try
             {
@@ -190,7 +191,9 @@ namespace Bovelo
                 var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]));
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
-                form.FormClosing += delegate { this.Show(); };
+                form.FormClosing += delegate { this.Show(); UpdatePartsTable(); };
+
+
                 form.Show();
             }
             catch
