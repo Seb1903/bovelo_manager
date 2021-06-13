@@ -104,6 +104,12 @@ namespace Bovelo
                 DataTable planningTable = InternalApp.GetDataTable(planningQuery);
                 DataRow firstDateRow = planningTable.Rows[planningTable.Rows.Count - 1];
                 DateTime firstDateAvailable = Convert.ToDateTime(firstDateRow["date"]);
+                DateTime today = DateTime.Now;
+                int result = DateTime.Compare(firstDateAvailable, today);
+                if (result < 0)
+                {
+                    firstDateAvailable = today;
+                }
                 float speed = 9; // TEMPORARY speed fixed at 9 bikes per week
                 float delay = (totalItems / speed) + 3; // Convert delay in days + add 3 days for the delivery
                 DateTime newDeliveryDate = firstDateAvailable.AddDays(Math.Ceiling(delay));
