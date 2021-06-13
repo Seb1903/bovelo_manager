@@ -58,7 +58,7 @@ You need to change the following values (don't share your information, it must b
 - Database_name
 
 Build the solution and select either the `BoveloInternal` or `BoveloClient` folder as the main project to run the specific application.  
-You can find the backup file for the database in this repo (Bovelo_Database.sql). The schema name is 'bovelo', just create it and use the backup in the "Import data" section in MySQL Workbench. 
+You can find the backup file for the database in this repo: [Bovelo_Database.sql](https://github.com/smarbal/bovelo_manager/blob/main/Bovelo_Database.sql). The schema name is 'bovelo', just create it and use the backup in the "Import data" section in MySQL Workbench. 
 
 ## Group Members
 
