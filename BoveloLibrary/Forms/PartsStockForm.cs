@@ -20,7 +20,7 @@ namespace Bovelo
         public PartsStock()
         {
             InitializeComponent();
-            DataTable parts = GetData(String.Format("Select * from parts_catalog"));
+            DataTable parts = GetData(String.Format("Select * from parts_stock_view"));
             dataGridView1.DataSource = parts;
 
             DataTable bikes = GetData(String.Format("Select * from bike_models_view"));
