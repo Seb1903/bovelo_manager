@@ -19,7 +19,7 @@ namespace Bovelo
 
         public static void GetPartCatalog()
         {
-            string quantityQuery = $"SELECT * FROM parts_stock WHERE necessary != 0";
+            string quantityQuery = $"SELECT * FROM parts_stock ";//WHERE necessary != 0";
             DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
             int size_datatable = quantityReader.Rows.Count;
             try
@@ -28,7 +28,8 @@ namespace Bovelo
                 {
                     string partsIDs = quantityReader.Rows[i]["reference"].ToString();
                     int partStock = Convert.ToInt32(quantityReader.Rows[i]["quantity"].ToString());
-                    partsStock.Add(partStock);
+                    int partOrdered = Convert.ToInt32(quantityReader.Rows[i]["ordered"].ToString());
+                    partsStock.Add(partStock+partOrdered);
                     int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
                     partsNecessaryStock.Add(partsIDs, partsNcryStock);
                 }

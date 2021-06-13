@@ -99,6 +99,7 @@ namespace Bovelo
         public static void SetRequiredPartsList()
         {
             UpdateBikeTable();
+            OrderStock.GetPartCatalog();
             foreach (DataRow part in bikeModelTable.Rows)
             {
                 int quantity = 0;
@@ -120,6 +121,8 @@ namespace Bovelo
                     necessaryPartList.Add(part.Field<string>("reference"), quantity);
                 }             
             }
+            int i = 0;
+            int necessaryStock = 0;
             Database db = new Database();
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
             foreach (KeyValuePair<string, int> part in necessaryPartList)
@@ -131,7 +134,15 @@ namespace Bovelo
                 })
                 {
                     command.Parameters.AddWithValue("@id_part", part.Key);
-                    command.Parameters.AddWithValue("@quantity", part.Value);
+                    if(OrderStock.partsStock[i] < part.Value)
+                    {
+                        necessaryStock = part.Value - OrderStock.partsStock[i];
+                    }
+                    else
+                    {
+                        necessaryStock = 0;
+                    }
+                    command.Parameters.AddWithValue("@quantity", necessaryStock);
                     MyConn.Open();
                     try
                     {

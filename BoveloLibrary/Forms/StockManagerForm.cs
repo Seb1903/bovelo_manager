@@ -19,7 +19,7 @@ namespace Bovelo
 
         private void StockManagerForm_Load(object sender, EventArgs e)
         {
-            OrderStock.GetPartCatalog();
+            //OrderStock.GetPartCatalog();
 
             int position = 1;
             int i = 0;
@@ -77,7 +77,7 @@ namespace Bovelo
                 currentStockLbl.Text = OrderStock.partsStock[i].ToString();
                 currentStockLbl.Top = position * 20;
                 currentStockLbl.Left = 225;
-                currentStockLbl.Size = new Size(30, 16);
+                currentStockLbl.Size = new Size(40, 16);
                 currentStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                 position = position + 2;
