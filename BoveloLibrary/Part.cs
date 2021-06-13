@@ -56,13 +56,14 @@ namespace Bovelo
         }      
         public void Order(int quantity)
         {
+            /*
             string strQuantity; 
             DataTable temp_stock = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{this.reference}'");
             DataRow partDataRow = temp_stock.Rows[0];
-            strQuantity = partDataRow["quantity"].ToString();
+            strQuantity = partDataRow["ordered"].ToString();
             this.stock = Int32.Parse(strQuantity);
             this.stock += quantity;
-            InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'");
+            InternalApp.ExecuteQuery($"UPDATE parts_stock SET ordered={this.stock} WHERE reference='{reference}'"); */
             OrderToSupplier(quantity);
 
         }

@@ -188,11 +188,11 @@ namespace Bovelo
             try
             {
                 Part part = new Part(clientParams[0], clientParams[1]);
-                if(clientParams[4] == "")
+                if(clientParams[5] == "")
                 {
-                    clientParams[4] = "0" ; //Abit hardcoded, means that if no data for necessary, default 0 is given. (necessary is bot fixed because no models use that specific part yet)
+                    clientParams[5] = "0" ; //Abit hardcoded, means that if no data for necessary, default 0 is given. (necessary is bot fixed because no models use that specific part yet)
                 }
-                var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]) - Convert.ToInt32(clientParams[3]));
+                var form = new OrderPartForm(part, Convert.ToInt32(clientParams[5]) - (Convert.ToInt32(clientParams[3]) + Convert.ToInt32(clientParams[4])));
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
                 form.FormClosing += delegate { this.Show(); UpdatePartsTable(); InternalApp.SetRequiredPartsList(); };
@@ -215,7 +215,7 @@ namespace Bovelo
             DataGridView dgv = sender as DataGridView;
             if (dgv != null)
             {
-                if (e.ColumnIndex == 4)
+                if (e.ColumnIndex == 5)
                 {
                     Color c;
                     if (e.Value != null)
@@ -225,8 +225,9 @@ namespace Bovelo
                         try
                         {
                             necessary_value = Convert.ToInt32(e.Value);
-                            int p_stock = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[e.ColumnIndex -1].Value);
-                            to_order = necessary_value - p_stock; 
+                            int p_ordered = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[e.ColumnIndex -1].Value);
+                            int p_stock = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[e.ColumnIndex - 2].Value);
+                            to_order = necessary_value - (p_stock + p_ordered); 
                         }
                         catch
                         {
