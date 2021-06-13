@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace Bovelo
 {
@@ -22,13 +23,13 @@ namespace Bovelo
 
         private void FitterForm_Load(object sender, EventArgs e)
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
+            this.dateOfToday_label.Text = DateTime.Now.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         
         private void FitterFormCharge()
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
+            this.dateOfToday_label.Text = DateTime.Now.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         

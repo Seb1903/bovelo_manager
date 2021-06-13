@@ -83,7 +83,7 @@ namespace Bovelo
             // validate_button
             // 
             this.validate_button.AutoSize = true;
-            this.validate_button.Location = new System.Drawing.Point(510, 391);
+            this.validate_button.Location = new System.Drawing.Point(495, 391);
             this.validate_button.Name = "validate_button";
             this.validate_button.Size = new System.Drawing.Size(109, 29);
             this.validate_button.TabIndex = 5;
@@ -97,9 +97,9 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.report_button.AutoSize = true;
-            this.report_button.Location = new System.Drawing.Point(625, 391);
+            this.report_button.Location = new System.Drawing.Point(635, 391);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(159, 29);
+            this.report_button.Size = new System.Drawing.Size(131, 29);
             this.report_button.TabIndex = 5;
             this.report_button.Text = "Report Part";
             this.report_button.UseVisualStyleBackColor = true;
