@@ -71,7 +71,6 @@ namespace Bovelo
             this.Back = new System.Windows.Forms.Button();
             this.autoplanner_label = new System.Windows.Forms.Label();
             this.refresh_button = new System.Windows.Forms.Button();
-            this.button_production = new System.Windows.Forms.Button();
             this.day_panel2.SuspendLayout();
             this.day_panel3.SuspendLayout();
             this.day_panel4.SuspendLayout();
@@ -106,7 +105,7 @@ namespace Bovelo
             this.day_panel2.Controls.Add(this.label6);
             this.day_panel2.Location = new System.Drawing.Point(302, 192);
             this.day_panel2.Name = "day_panel2";
-            this.day_panel2.Size = new System.Drawing.Size(946, 144);
+            this.day_panel2.Size = new System.Drawing.Size(679, 144);
             this.day_panel2.TabIndex = 2;
             // 
             // dateTimePicker2
@@ -160,7 +159,7 @@ namespace Bovelo
             this.day_panel3.Controls.Add(this.label9);
             this.day_panel3.Location = new System.Drawing.Point(302, 355);
             this.day_panel3.Name = "day_panel3";
-            this.day_panel3.Size = new System.Drawing.Size(946, 144);
+            this.day_panel3.Size = new System.Drawing.Size(679, 144);
             this.day_panel3.TabIndex = 3;
             // 
             // dateTimePicker3
@@ -214,7 +213,7 @@ namespace Bovelo
             this.day_panel4.Controls.Add(this.label12);
             this.day_panel4.Location = new System.Drawing.Point(302, 518);
             this.day_panel4.Name = "day_panel4";
-            this.day_panel4.Size = new System.Drawing.Size(946, 144);
+            this.day_panel4.Size = new System.Drawing.Size(679, 144);
             this.day_panel4.TabIndex = 4;
             // 
             // dateTimePicker4
@@ -268,7 +267,7 @@ namespace Bovelo
             this.day_panel5.Controls.Add(this.label15);
             this.day_panel5.Location = new System.Drawing.Point(302, 681);
             this.day_panel5.Name = "day_panel5";
-            this.day_panel5.Size = new System.Drawing.Size(946, 144);
+            this.day_panel5.Size = new System.Drawing.Size(679, 144);
             this.day_panel5.TabIndex = 5;
             // 
             // dateTimePicker5
@@ -403,14 +402,14 @@ namespace Bovelo
             this.day_panel1.Controls.Add(this.label1);
             this.day_panel1.Location = new System.Drawing.Point(302, 29);
             this.day_panel1.Name = "day_panel1";
-            this.day_panel1.Size = new System.Drawing.Size(946, 144);
+            this.day_panel1.Size = new System.Drawing.Size(679, 144);
             this.day_panel1.TabIndex = 1;
             // 
             // AutoPlanner_Btn
             // 
-            this.AutoPlanner_Btn.Location = new System.Drawing.Point(19, 617);
+            this.AutoPlanner_Btn.Location = new System.Drawing.Point(13, 493);
             this.AutoPlanner_Btn.Name = "AutoPlanner_Btn";
-            this.AutoPlanner_Btn.Size = new System.Drawing.Size(183, 36);
+            this.AutoPlanner_Btn.Size = new System.Drawing.Size(183, 29);
             this.AutoPlanner_Btn.TabIndex = 9;
             this.AutoPlanner_Btn.Text = "Auto Manage";
             this.AutoPlanner_Btn.UseVisualStyleBackColor = true;
@@ -418,7 +417,7 @@ namespace Bovelo
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(18, 772);
+            this.Back.Location = new System.Drawing.Point(13, 570);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(183, 30);
             this.Back.TabIndex = 10;
@@ -438,28 +437,17 @@ namespace Bovelo
             // 
             // refresh_button
             // 
-            this.refresh_button.Location = new System.Drawing.Point(18, 733);
+            this.refresh_button.Location = new System.Drawing.Point(13, 531);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(183, 29);
             this.refresh_button.TabIndex = 12;
-            this.refresh_button.Text = "Refresh";
+            this.refresh_button.Text = "Apply";
             this.refresh_button.UseVisualStyleBackColor = true;
             this.refresh_button.Click += new System.EventHandler(this.refresh_button_Click);
             // 
-            // button_production
-            // 
-            this.button_production.Location = new System.Drawing.Point(19, 668);
-            this.button_production.Name = "button_production";
-            this.button_production.Size = new System.Drawing.Size(182, 53);
-            this.button_production.TabIndex = 13;
-            this.button_production.Text = "Update Stock";
-            this.button_production.UseVisualStyleBackColor = true;
-            this.button_production.Click += new System.EventHandler(this.button_production_Click);
-            // 
             // ManagerForm
             // 
-            this.ClientSize = new System.Drawing.Size(1260, 834);
-            this.Controls.Add(this.button_production);
+            this.ClientSize = new System.Drawing.Size(993, 837);
             this.Controls.Add(this.refresh_button);
             this.Controls.Add(this.autoplanner_label);
             this.Controls.Add(this.Back);
@@ -531,6 +519,5 @@ namespace Bovelo
         private Button Back;
         private Label autoplanner_label;
         private Button refresh_button;
-        private Button button_production;
     }
 }

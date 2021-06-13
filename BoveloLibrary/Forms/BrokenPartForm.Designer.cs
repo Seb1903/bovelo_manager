@@ -42,7 +42,7 @@ namespace Bovelo
             // 
             // search_textbox
             // 
-            this.search_textbox.Location = new System.Drawing.Point(99, 64);
+            this.search_textbox.Location = new System.Drawing.Point(131, 37);
             this.search_textbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.search_textbox.Name = "search_textbox";
             this.search_textbox.Size = new System.Drawing.Size(144, 26);
@@ -53,7 +53,7 @@ namespace Bovelo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 364);
+            this.label2.Location = new System.Drawing.Point(128, 337);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 3;
@@ -62,7 +62,7 @@ namespace Bovelo
             // validation_button
             // 
             this.validation_button.AutoSize = true;
-            this.validation_button.Location = new System.Drawing.Point(581, 469);
+            this.validation_button.Location = new System.Drawing.Point(533, 421);
             this.validation_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.validation_button.Name = "validation_button";
             this.validation_button.Size = new System.Drawing.Size(84, 34);
@@ -74,7 +74,7 @@ namespace Bovelo
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(99, 469);
+            this.button2.Location = new System.Drawing.Point(131, 421);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
@@ -86,7 +86,7 @@ namespace Bovelo
             // selectedPart_label
             // 
             this.selectedPart_label.AutoSize = true;
-            this.selectedPart_label.Location = new System.Drawing.Point(215, 364);
+            this.selectedPart_label.Location = new System.Drawing.Point(247, 337);
             this.selectedPart_label.Name = "selectedPart_label";
             this.selectedPart_label.Size = new System.Drawing.Size(51, 20);
             this.selectedPart_label.TabIndex = 6;
@@ -98,7 +98,7 @@ namespace Bovelo
             this.stock_dataGridView.AllowUserToAddRows = false;
             this.stock_dataGridView.AllowUserToDeleteRows = false;
             this.stock_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stock_dataGridView.Location = new System.Drawing.Point(99, 125);
+            this.stock_dataGridView.Location = new System.Drawing.Point(131, 71);
             this.stock_dataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.stock_dataGridView.MultiSelect = false;
             this.stock_dataGridView.Name = "stock_dataGridView";
@@ -107,7 +107,7 @@ namespace Bovelo
             this.stock_dataGridView.RowHeadersWidth = 51;
             this.stock_dataGridView.RowTemplate.Height = 24;
             this.stock_dataGridView.RowTemplate.ReadOnly = true;
-            this.stock_dataGridView.Size = new System.Drawing.Size(566, 209);
+            this.stock_dataGridView.Size = new System.Drawing.Size(486, 262);
             this.stock_dataGridView.TabIndex = 7;
             this.stock_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.stock_dataGridView_CellMouseClick);
             // 
@@ -115,7 +115,7 @@ namespace Bovelo
             // 
             this.information_label.AutoSize = true;
             this.information_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.information_label.Location = new System.Drawing.Point(96, 406);
+            this.information_label.Location = new System.Drawing.Point(128, 379);
             this.information_label.Name = "information_label";
             this.information_label.Size = new System.Drawing.Size(57, 20);
             this.information_label.TabIndex = 8;

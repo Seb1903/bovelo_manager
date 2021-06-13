@@ -59,10 +59,10 @@ namespace Bovelo
             this.stock += quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'");
         }             
-        public void SaveNewPart(string name)
+        public void SaveNewPart(string name, string provider, string description)
         {
             this.name = name;
-            string query = $"INSERT INTO `parts_catalog` (`reference`, `name`) VALUES ('{this.reference}', '{this.name}')";
+            string query = $"INSERT INTO `parts_catalog` (`reference`, `name`, `provider`, `description`) VALUES ('{this.reference}', '{this.name}', '{provider}', '{description}')";
             InternalApp.ExecuteQuery(query);
         }
     }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace Bovelo
 {
@@ -22,13 +23,33 @@ namespace Bovelo
 
         private void FitterForm_Load(object sender, EventArgs e)
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
+            DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
+            InternalApp.bikeList.Clear();
+            InternalApp.SetBikeList();
+            this.dateOfToday_label.Text = date.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         
         private void FitterFormCharge()
         {
-            this.dateOfToday_label.Text = DateTime.Now.ToString("dddd, dd MMMM");
+            DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
+            this.dateOfToday_label.Text = date.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
             ShowDayPlanning(fitterPanel);
         }
         
@@ -36,6 +57,14 @@ namespace Bovelo
         {
             int position = 1;
             DateTime date = DateTime.Now;
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                date = date.AddDays(2);
+            }
+            if (date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
             int count = Planning.BikeByDay(date);
             //List<Bike> bikeList = Planning.BikeListGenerator();
 
@@ -150,8 +179,10 @@ namespace Bovelo
                     stateBox.Size = new Size(121, 24);
                     stateBox.SelectedItem = bike.state;
 
-
-
+                    stateBox.SelectedIndexChanged += (s, e) =>
+                    {
+                        UpdateState(stateBox.Text, bike.id);
+                    };
 
                     ComboBox makersComboBox = new ComboBox();
                     makersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -274,20 +305,16 @@ namespace Bovelo
         
         private void Back_Click(object sender, EventArgs e)
         {
+            InternalApp.bikeList.Clear();
+            InternalApp.SetBikeList();
             this.Close();
         }
 
         private void validate_button_Click(object sender, EventArgs e)
         {
-            foreach (ComboBox box in stateBike)
-            {
-                string state = box.SelectedItem.ToString();
-                int id = Convert.ToInt32(box.Name);
-                UpdateState(state, id);
-            }
+            
             InternalApp.bikeList.Clear();
             InternalApp.SetBikeList();
-
 
             //this.Hide();
             //var fitterForm = new FitterForm();

@@ -48,6 +48,8 @@ namespace Bovelo
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
+            this.save_result_lbl = new System.Windows.Forms.Label();
+            this.back_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_quantity)).BeginInit();
@@ -237,6 +239,11 @@ namespace Bovelo
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(1288, 154);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
             this.numericUpDown1.TabIndex = 18;
@@ -250,11 +257,31 @@ namespace Bovelo
             this.label9.TabIndex = 19;
             this.label9.Text = "Price: ";
             // 
+            // save_result_lbl
+            // 
+            this.save_result_lbl.AutoSize = true;
+            this.save_result_lbl.Location = new System.Drawing.Point(892, 778);
+            this.save_result_lbl.Name = "save_result_lbl";
+            this.save_result_lbl.Size = new System.Drawing.Size(0, 20);
+            this.save_result_lbl.TabIndex = 20;
+            // 
+            // back_btn
+            // 
+            this.back_btn.Location = new System.Drawing.Point(78, 699);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(87, 42);
+            this.back_btn.TabIndex = 21;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // NewModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1568, 894);
+            this.Controls.Add(this.back_btn);
+            this.Controls.Add(this.save_result_lbl);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label8);
@@ -309,5 +336,7 @@ namespace Bovelo
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label save_result_lbl;
+        private System.Windows.Forms.Button back_btn;
     }
 }

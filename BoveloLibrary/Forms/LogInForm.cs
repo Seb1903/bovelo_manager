@@ -42,27 +42,5 @@ namespace Bovelo
                 MessageBox.Show(Text);
             }
         }
-
-        private void password_txt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (InternalApp.CheckPassword(password_txt.Text))
-                {
-                    this.Hide();
-                    var form = new PartsStock();
-                    form.Location = this.Location;
-                    form.StartPosition = FormStartPosition.Manual;
-                    form.FormClosing += delegate { this.Show(); };
-                    form.Show();
-
-                }
-                else
-                {
-                    Text = "Password or username invalid";
-                    MessageBox.Show(Text);
-                }
-            }
-        }
     }
 }
