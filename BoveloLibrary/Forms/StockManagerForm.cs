@@ -48,14 +48,10 @@ namespace Bovelo
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                 orderStockUpDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-                if (OrderStock.partsQuantityOrder[parts.Key] >= OrderStock.partsStock[i])
+                orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key];// - OrderStock.partsStock[i] + 10; //minimal stock : 10 parts
+                if (OrderStock.partsQuantityOrder[parts.Key] != 0)
                 {
-                    orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key] - OrderStock.partsStock[i] + 10; //minimal stock : 10 parts
                     orderStockUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-                }
-                else
-                {
-                    orderStockUpDown.Value = 0;
                 }
                 orderStockUpDown.Top = position * 20;
                 orderStockUpDown.Left = 572;
@@ -97,8 +93,12 @@ namespace Bovelo
             foreach(KeyValuePair<string, int> parts in OrderStock.partsQuantityOrder)
             {
                 //Console.WriteLine("Clé : {0}, valeur : {1}", parts.Key, parts.Value);
-                OrderStock.OrderToSupplier(parts.Key, parts.Value);
-                OrderStock.SetNewNecessaryStock(parts.Key, parts.Value);
+                if(parts.Value>0)
+                {
+                    OrderStock.OrderToSupplier(parts.Key, parts.Value);
+                    OrderStock.SetNewNecessaryStock(parts.Key, parts.Value);
+                }
+                
             }
             orderDone_Lbl.Text = "Order sent to the suppliers";
         }
@@ -108,16 +108,6 @@ namespace Bovelo
             int new_quantity = Convert.ToInt32((sender as idNumericUpDown).Value.ToString());
             string id = (sender as idNumericUpDown).id;
             OrderStock.ChangeQuantity(id, new_quantity);
-        }
-
-        private void Add_Part_Button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            PartsCatalog form = new PartsCatalog();
-            form.Location = this.Location;
-            form.StartPosition = FormStartPosition.Manual;
-            form.FormClosing += delegate { this.Show(); };
-            form.Show();
         }
     }
 

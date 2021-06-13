@@ -94,12 +94,6 @@
     <Compile Include="Forms\UserMenuForm.Designer.cs">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PartsCatalogForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PartsCatalogForm.Designer.cs">
-      <DependentUpon>PartsCatalogForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\StockManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserMenuForm.resx">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PartsCatalogForm.resx">
-      <DependentUpon>PartsCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StockManagerForm.resx">
       <DependentUpon>StockManagerForm.cs</DependentUpon>

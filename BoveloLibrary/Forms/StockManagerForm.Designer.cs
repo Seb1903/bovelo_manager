@@ -37,7 +37,6 @@ namespace Bovelo
             this.supplier_title_lbl = new System.Windows.Forms.Label();
             this.part_stock_panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.addPart_btn = new System.Windows.Forms.Button();
             this.orderDone_Lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -142,17 +141,6 @@ namespace Bovelo
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Order_Button_Click);
             // 
-            // addPart_btn
-            // 
-            this.addPart_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addPart_btn.Location = new System.Drawing.Point(592, 745);
-            this.addPart_btn.Name = "addPart_btn";
-            this.addPart_btn.Size = new System.Drawing.Size(135, 29);
-            this.addPart_btn.TabIndex = 8;
-            this.addPart_btn.Text = "Add another part";
-            this.addPart_btn.UseVisualStyleBackColor = true;
-            this.addPart_btn.Click += new System.EventHandler(this.Add_Part_Button_Click);
-            // 
             // orderDone_Lbl
             // 
             this.orderDone_Lbl.AutoSize = true;
@@ -182,7 +170,6 @@ namespace Bovelo
             this.ClientSize = new System.Drawing.Size(892, 780);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderDone_Lbl);
-            this.Controls.Add(this.addPart_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.part_stock_panel);
             this.Controls.Add(this.supplier_title_lbl);
@@ -209,7 +196,6 @@ namespace Bovelo
         private System.Windows.Forms.Label supplier_title_lbl;
         private System.Windows.Forms.Panel part_stock_panel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button addPart_btn;
         private System.Windows.Forms.Label orderDone_Lbl;
         private System.Windows.Forms.Label label1;
     }

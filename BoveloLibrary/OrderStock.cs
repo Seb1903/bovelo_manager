@@ -28,25 +28,18 @@ namespace Bovelo
                 {
                     string partsIDs = quantityReader.Rows[i]["reference"].ToString();
                     int partStock = Convert.ToInt32(quantityReader.Rows[i]["quantity"].ToString());
-                    int partOrdered = Convert.ToInt32(quantityReader.Rows[i]["ordered"].ToString());
-                    partsStock.Add(partStock+partOrdered);
+                    partsStock.Add(partStock);
                     int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
                     partsNecessaryStock.Add(partsIDs, partsNcryStock);
-                }
-                foreach (KeyValuePair<string, int> parts in partsNecessaryStock)
-                {
-                    string nameQuery = $"SELECT * FROM parts_catalog WHERE reference='{parts.Key}'";
+
+                    string nameQuery = $"SELECT * FROM parts_catalog WHERE reference='{partsIDs}'";
                     DataTable nameReader = InternalApp.GetDataTable(nameQuery);
                     int size_datatable_ = nameReader.Rows.Count;
-                    for (int i = 0; i < size_datatable_; i++)
-                    {
-                        partsNames.Add(nameReader.Rows[i]["name"].ToString());
-                        int supplierID = Convert.ToInt32(nameReader.Rows[i]["provider"].ToString());
-                        partsSuppliersID.Add(supplierID);
-                    }
-                }
-                foreach (int supplierID in partsSuppliersID)
-                {
+
+                    partsNames.Add(nameReader.Rows[0]["name"].ToString());
+                    int supplierID = Convert.ToInt32(nameReader.Rows[0]["provider"].ToString());
+                    partsSuppliersID.Add(supplierID);
+
                     string qtyQuery = $"SELECT * FROM supplier WHERE id_supplier='{supplierID}'";
                     DataTable qtyReader = InternalApp.GetDataTable(qtyQuery);
                     int size_table = qtyReader.Rows.Count;
@@ -91,27 +84,24 @@ namespace Bovelo
         }
         public static void OrderToSupplier(string partID, int quantity)
         {
-            if (quantity > 0)
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            using (var command = new MySqlCommand("part_order", MyConn)
             {
-                Database db = new Database();
-                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                using (var command = new MySqlCommand("part_order", MyConn)
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                command.Parameters.AddWithValue("@id_part", partID);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                MyConn.Open();
+                try
                 {
-                    CommandType = CommandType.StoredProcedure
-                })
-                {
-                    command.Parameters.AddWithValue("@id_part", partID);
-                    command.Parameters.AddWithValue("@quantity", quantity);
-                    MyConn.Open();
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch
-                    {
-                    }
-                    MyConn.Close();
+                    command.ExecuteNonQuery();
                 }
+                catch
+                {
+                }
+                MyConn.Close();
             }
         }
         public static void SetNewNecessaryStock(string partID, int quantity)
@@ -141,7 +131,7 @@ namespace Bovelo
                     MyConn.Close();
                 }
             }
-            else
+            else if(quantity > necessaryStock)
             {
                 Database db = new Database();
                 MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
@@ -162,38 +152,27 @@ namespace Bovelo
                     MyConn.Close();
                 }
             }
-        }
-        public static void GetNewPart(string partID)
-        {
-            ChangeQuantity(partID, 1);
-            string stockQuery = $"SELECT * FROM parts_stock WHERE reference = {partID}";
-            DataTable stockReader = InternalApp.GetDataTable(stockQuery);
-            try
+            else
             {
-                partsNecessaryStock.Add(partID, Convert.ToInt32(stockReader.Rows[0]["necessary"].ToString()));
-                partsStock.Add(Convert.ToInt32(stockReader.Rows[0]["quantity"].ToString()));
-            }
-            catch
-            {
-            }
-            string nameQuery = $"SELECT * FROM parts_catalog WHERE reference = {partID}";
-            DataTable nameReader = InternalApp.GetDataTable(nameQuery);
-            try
-            {
-                partsNames.Add(nameReader.Rows[0]["name"].ToString());
-                partsSuppliersID.Add(Convert.ToInt32(nameReader.Rows[0]["provider"].ToString()));
-            }
-            catch
-            {
-            }
-            string supplierQuery = $"SELECT * FROM supplier WHERE id_supplier = {partsSuppliersID.Last()}";
-            DataTable supplierReader = InternalApp.GetDataTable(supplierQuery);
-            try
-            {
-                partsSuppliersNames.Add(supplierReader.Rows[0]["supplier_name"].ToString());
-            }
-            catch
-            {
+                Database db = new Database();
+                MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @necessary WHERE reference = @id_part", MyConn)
+                {
+                    CommandType = CommandType.Text
+                })
+                {
+                    command.Parameters.AddWithValue("@id_part", partID);
+                    command.Parameters.AddWithValue("@necessary", necessaryStock);
+                    MyConn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                    }
+                    MyConn.Close();
+                }
             }
         }
     }
