@@ -23,7 +23,6 @@ namespace Bovelo
 
         private void FitterForm_Load(object sender, EventArgs e)
         {
-            int position = 1;
             DateTime date = DateTime.Now;
             if (date.DayOfWeek == DayOfWeek.Saturday)
             {
@@ -41,7 +40,6 @@ namespace Bovelo
         
         private void FitterFormCharge()
         {
-            int position = 1;
             DateTime date = DateTime.Now;
             if (date.DayOfWeek == DayOfWeek.Saturday)
             {
