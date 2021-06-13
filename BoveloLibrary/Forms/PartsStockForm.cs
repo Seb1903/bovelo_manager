@@ -182,5 +182,10 @@ namespace Bovelo
             form.FormClosing += delegate { this.Show(); };
             form.Show();
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
