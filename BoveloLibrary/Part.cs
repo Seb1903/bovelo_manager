@@ -56,14 +56,44 @@ namespace Bovelo
         }      
         public void Order(int quantity)
         {
+            string strQuantity; 
+            DataTable temp_stock = InternalApp.GetDataTable($"SELECT * FROM parts_stock WHERE reference='{this.reference}'");
+            DataRow partDataRow = temp_stock.Rows[0];
+            strQuantity = partDataRow["quantity"].ToString();
+            this.stock = Int32.Parse(strQuantity);
             this.stock += quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={this.stock} WHERE reference='{reference}'");
-        }             
+            OrderToSupplier(quantity);
+
+        }
         public void SaveNewPart(string name, string provider, string description)
         {
             this.name = name;
             string query = $"INSERT INTO `parts_catalog` (`reference`, `name`, `provider`, `description`) VALUES ('{this.reference}', '{this.name}', '{provider}', '{description}')";
             InternalApp.ExecuteQuery(query);
+        }
+        private void OrderToSupplier(int quantity)
+        {
+            Database db = new Database();
+            MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
+            using (var command = new MySqlCommand("part_order", MyConn)
+            {
+                CommandType = CommandType.StoredProcedure
+            })
+            {
+                command.Parameters.AddWithValue("@id_part", this.reference);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                MyConn.Open();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                }
+                MyConn.Close();
+                
+            }
         }
     }
 }
