@@ -288,7 +288,7 @@ namespace Bovelo
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "PartsStock";
-            this.Text = "Stock";
+            this.Text = "Manager Menu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
