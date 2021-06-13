@@ -191,9 +191,7 @@ namespace Bovelo
                 var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]));
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
-                form.FormClosing += delegate { this.Show(); UpdatePartsTable(); };
-
-
+                form.FormClosing += delegate { this.Show(); UpdatePartsTable(); InternalApp.SetRequiredPartsList(); };
                 form.Show();
             }
             catch
@@ -218,16 +216,21 @@ namespace Bovelo
                     Color c;
                     if (e.Value != null)
                     {
-                        int value;
+                        int necessary_value;
+                        int to_order;
                         try
                         {
-                            value = Convert.ToInt32(e.Value);
+                            necessary_value = Convert.ToInt32(e.Value);
+                            int p_stock = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[e.ColumnIndex -1].Value);
+                            to_order = necessary_value - p_stock; 
                         }
                         catch
                         {
-                            value = 0;
+                            to_order = 0;
                         }
-                        if (value > 0)
+
+
+                        if (to_order > 0)
                         {
                             c = Color.Salmon;
                         }
