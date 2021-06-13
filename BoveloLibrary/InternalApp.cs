@@ -99,6 +99,7 @@ namespace Bovelo
         public static void SetRequiredPartsList()
         {
             UpdateBikeTable();
+            OrderStock.GetPartCatalog();
             foreach (DataRow part in bikeModelTable.Rows)
             {
                 int quantity = 0;
@@ -122,7 +123,7 @@ namespace Bovelo
             }
             Database db = new Database();
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-            foreach (KeyValuePair<string, int> part in necessaryPartList)
+            foreach (KeyValuePair<string, int> necessaryPart in necessaryPartList)
             {
                 //Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
                 using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @quantity WHERE reference = @id_part", MyConn)
@@ -130,8 +131,18 @@ namespace Bovelo
                     CommandType = CommandType.Text
                 })
                 {
-                    command.Parameters.AddWithValue("@id_part", part.Key);
-                    command.Parameters.AddWithValue("@quantity", part.Value);
+                    command.Parameters.AddWithValue("@id_part", necessaryPart.Key);
+                    //if(OrderStock.partList[i].stock < necessaryPart.Value)
+                    //{
+                    //    necessaryStock = necessaryPart.Value - OrderStock.partList[i].stock;
+                    //}
+                    //else
+                    //{
+                    //    necessaryStock = 0;
+                    //}
+
+                    command.Parameters.AddWithValue("@quantity", necessaryPart.Value);
+
                     MyConn.Open();
                     try
                     {

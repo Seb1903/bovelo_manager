@@ -31,6 +31,9 @@ namespace Bovelo
         [DisplayName("Stock")]
         public int stock { get; set; }
 
+        [DisplayName("Necessary")]
+        public int necessary { get; set; }
+
         public Part(string reference, int quantity)
         {
             string strQuantity;
@@ -44,10 +47,12 @@ namespace Bovelo
             this.stock = Int32.Parse(strQuantity);
         }
         // Check TODO.txt Issue #4
-        public Part(string reference, string name)
+        public Part(string reference, string name, int stock, int necessary)
         {
             this.reference = reference;
             this.name = name;
+            this.stock = stock;
+            this.necessary = necessary;
         }
         public void Use()
         {
@@ -64,6 +69,10 @@ namespace Bovelo
             this.name = name;
             string query = $"INSERT INTO `parts_catalog` (`reference`, `name`, `provider`, `description`) VALUES ('{this.reference}', '{this.name}', '{provider}', '{description}')";
             InternalApp.ExecuteQuery(query);
+        }
+        public void ChangeQuantity(int quantity)
+        {
+            this.quantity = quantity;
         }
     }
 }
