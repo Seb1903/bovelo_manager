@@ -1,4 +1,5 @@
 
+
 # BOVELO Project
 
 ![set text](https://i.imgur.com/Vq0UU1Q.png)
@@ -8,6 +9,11 @@ Bovélo is a fictive company that produces and delivers different customizable b
 `BoveloInternal` allows the manager to control and order parts stock and add new bikes to the current stock. The bike fitter can also use this application to see the production planning, validate an assembled bike when it is ready and reports broken bike parts. 
 
 `BoveloClient` enables the company to make orders for its client with customizable bikes. It features client management and allows to register new clients to the company database.
+
+## Installation
+For users, you can run the `BoveloSetup.exe` file included in the repository to install both applications on your local machine. It runs on **Windows 10 32/64 bits** systems and requires [**.NET Framework 4.7.2 Runtime**](https://dotnet.microsoft.com/download/dotnet-framework/net472).
+
+# For Developers
 
 The database structure is based on MySql and here is the included [Database Diagram](https://github.com/smarbal/bovelo_manager/issues/8#issuecomment-817109381).  
 
@@ -21,10 +27,13 @@ Further UML diagrams are listed below:
 
 ## Prerequisites
 ### .NET Framework
-Download and install .NET Framework version [4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) **Developer Pack** for building and running C# applications.
+Download and install [**.NET Framework 4.7.2 Developer Pack**](https://dotnet.microsoft.com/download/dotnet-framework/net472) for building and running C# applications.
 
 ### MySQL Connector/NET
-Download and install the version [8.0.23](https://downloads.mysql.com/archives/c-net/) of MySQL Connector that provides useful tools for accessing the database in C# applications and add `MySql.Data` reference to BoveloLibrary if you have building issues.
+Download and install [**MySQL Connector 8.0.23**](https://downloads.mysql.com/archives/c-net/) that provides useful tools for accessing the database in C# applications and add `MySql.Data` reference to BoveloLibrary if you have building issues.
+
+## Database Import
+You can find the backup file for the database on [**BoveloDatabase.sql**](https://github.com/smarbal/bovelo_manager/blob/main/Bovelo_Database.sql). The schema name is `bovelo`, just create it and use the backup in the "Import data" section in MySQL Workbench. 
 
 ## Run
 Clone the repository in a local folder on your computer. Then create a new file named `Database.cs` in the `BoveloLibrary` folder and copy the following lines. 
@@ -49,7 +58,7 @@ public string MyConnection = "server=XXX.XXX.XXX.XX;user=3BE-GRP5;database=bovel
 }
 }
 ```
-You need to change the following values (don't share your information, it must be kept **confidential**) :
+You need to change the following values :
 
 - IP_address
 - Port
@@ -57,10 +66,11 @@ You need to change the following values (don't share your information, it must b
 - Password
 - Database_name
 
-Build the solution and select either the `BoveloInternal` or `BoveloClient` folder as the main project to run the specific application.  
-You can find the backup file for the database in this repo: [Bovelo_Database.sql](https://github.com/smarbal/bovelo_manager/blob/main/Bovelo_Database.sql). The schema name is 'bovelo', just create it and use the backup in the "Import data" section in MySQL Workbench. 
+*Never share your information, it must remain confidential.*
 
-## Group Members
+Build the solution and select either the `BoveloInternal` or `BoveloClient` folder as the main project to run the specific application.  
+
+# Developer Team
 
 ```text
 Demarcin Louis [18090]
