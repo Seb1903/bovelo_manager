@@ -41,18 +41,18 @@ namespace Bovelo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 32);
+            this.label1.Location = new System.Drawing.Point(80, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Today:";
             // 
             // dateOfToday_label
             // 
             this.dateOfToday_label.AutoSize = true;
-            this.dateOfToday_label.Location = new System.Drawing.Point(151, 32);
+            this.dateOfToday_label.Location = new System.Drawing.Point(170, 40);
             this.dateOfToday_label.Name = "dateOfToday_label";
-            this.dateOfToday_label.Size = new System.Drawing.Size(46, 17);
+            this.dateOfToday_label.Size = new System.Drawing.Size(51, 20);
             this.dateOfToday_label.TabIndex = 2;
             this.dateOfToday_label.Text = "label2";
             // 
@@ -62,19 +62,19 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fitterPanel.AutoScroll = true;
-            this.fitterPanel.AutoSize = true;
             this.fitterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fitterPanel.Location = new System.Drawing.Point(71, 64);
+            this.fitterPanel.Location = new System.Drawing.Point(80, 80);
+            this.fitterPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fitterPanel.Name = "fitterPanel";
-            this.fitterPanel.Size = new System.Drawing.Size(695, 312);
+            this.fitterPanel.Size = new System.Drawing.Size(858, 390);
             this.fitterPanel.TabIndex = 3;
             // 
             // Back
             // 
-            this.Back.AutoSize = true;
-            this.Back.Location = new System.Drawing.Point(71, 391);
+            this.Back.Location = new System.Drawing.Point(80, 489);
+            this.Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(83, 29);
+            this.Back.Size = new System.Drawing.Size(93, 36);
             this.Back.TabIndex = 4;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -82,10 +82,10 @@ namespace Bovelo
             // 
             // validate_button
             // 
-            this.validate_button.AutoSize = true;
-            this.validate_button.Location = new System.Drawing.Point(495, 391);
+            this.validate_button.Location = new System.Drawing.Point(664, 489);
+            this.validate_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.validate_button.Name = "validate_button";
-            this.validate_button.Size = new System.Drawing.Size(109, 29);
+            this.validate_button.Size = new System.Drawing.Size(123, 36);
             this.validate_button.TabIndex = 5;
             this.validate_button.Text = "Refresh";
             this.validate_button.UseVisualStyleBackColor = true;
@@ -96,10 +96,10 @@ namespace Bovelo
             this.report_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.report_button.AutoSize = true;
-            this.report_button.Location = new System.Drawing.Point(635, 391);
+            this.report_button.Location = new System.Drawing.Point(793, 489);
+            this.report_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.report_button.Name = "report_button";
-            this.report_button.Size = new System.Drawing.Size(131, 29);
+            this.report_button.Size = new System.Drawing.Size(145, 36);
             this.report_button.TabIndex = 5;
             this.report_button.Text = "Report Part";
             this.report_button.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@ namespace Bovelo
             // 
             // FitterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 451);
+            this.ClientSize = new System.Drawing.Size(1045, 558);
             this.Controls.Add(this.validate_button);
             this.Controls.Add(this.report_button);
             this.Controls.Add(this.Back);
@@ -117,8 +117,9 @@ namespace Bovelo
             this.Controls.Add(this.dateOfToday_label);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(951, 502);
-            this.MinimumSize = new System.Drawing.Size(818, 471);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1067, 614);
+            this.MinimumSize = new System.Drawing.Size(918, 575);
             this.Name = "FitterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fitter";

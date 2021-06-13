@@ -25,9 +25,6 @@ namespace Bovelo
 
             DataTable bikes = GetData(String.Format("Select * from bike_models_view"));
             dataGridView2.DataSource = bikes;
-            this.dataGridView2.Columns[0].Width = 35;
-            this.dataGridView2.Columns[1].Width = 150;
-            this.dataGridView2.Columns[2].Width = 55;
 
             string[]  searchCriterions = new string[] { "reference", "name" };
             comboBox1.Items.AddRange(searchCriterions);
@@ -57,7 +54,7 @@ namespace Bovelo
             var newModel = new NewModel();
             newModel.Location = this.Location;
             newModel.StartPosition = FormStartPosition.Manual;
-            newModel.FormClosing += delegate {this.Show(); };
+            newModel.FormClosing += delegate {this.Show(); UpdateBikesTable(); };
             newModel.Show();
             this.Hide();
         }
@@ -133,12 +130,24 @@ namespace Bovelo
             searchModelCriteria = comboBox2.SelectedItem.ToString();
         }
 
+        private void UpdatePartsTable()
+        {
+            DataTable parts = GetData(String.Format("Select * from parts_stock_view"));
+            dataGridView1.DataSource = parts;
+        }
+
+        private void UpdateBikesTable()
+        {
+            DataTable bikes = GetData(String.Format("Select * from bike_models_view"));
+            dataGridView2.DataSource = bikes;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             var newPart = new AddPart();
             newPart.Location = this.Location;
             newPart.StartPosition = FormStartPosition.Manual;
-            newPart.FormClosing += delegate { this.Show(); };
+            newPart.FormClosing += delegate { this.Show(); UpdatePartsTable(); };
             newPart.Show();
             this.Hide();
         }

@@ -38,7 +38,7 @@
             // password_txt
             // 
             this.password_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password_txt.Location = new System.Drawing.Point(153, 28);
+            this.password_txt.Location = new System.Drawing.Point(153, 52);
             this.password_txt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.password_txt.MaxLength = 20;
             this.password_txt.Name = "password_txt";
@@ -52,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 31);
+            this.label2.Location = new System.Drawing.Point(24, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 3;
@@ -62,7 +62,7 @@
             // 
             this.Back.AutoSize = true;
             this.Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Location = new System.Drawing.Point(29, 136);
+            this.Back.Location = new System.Drawing.Point(29, 112);
             this.Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(97, 39);
@@ -75,7 +75,7 @@
             // 
             this.Confirmbtn.AutoSize = true;
             this.Confirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirmbtn.Location = new System.Drawing.Point(290, 136);
+            this.Confirmbtn.Location = new System.Drawing.Point(290, 112);
             this.Confirmbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Confirmbtn.Name = "Confirmbtn";
             this.Confirmbtn.Size = new System.Drawing.Size(107, 39);
