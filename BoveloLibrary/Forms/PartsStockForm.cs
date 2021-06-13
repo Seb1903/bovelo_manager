@@ -188,6 +188,10 @@ namespace Bovelo
             try
             {
                 Part part = new Part(clientParams[0], clientParams[1]);
+                if(clientParams[4] == "")
+                {
+                    clientParams[4] = "0" ; //Abit hardcoded, means that if no data for necessary, default 0 is given. (necessary is bot fixed because no models use that specific part yet)
+                }
                 var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]) - Convert.ToInt32(clientParams[3]));
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
