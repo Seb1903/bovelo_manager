@@ -47,12 +47,10 @@ namespace Bovelo
             this.stock = Int32.Parse(strQuantity);
         }
         // Check TODO.txt Issue #4
-        public Part(string reference, string name, int stock, int necessary)
+        public Part(string reference, string name)
         {
             this.reference = reference;
             this.name = name;
-            this.stock = stock;
-            this.necessary = necessary;
         }
         public void Use()
         {
