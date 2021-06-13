@@ -305,6 +305,8 @@ namespace Bovelo
         
         private void Back_Click(object sender, EventArgs e)
         {
+            InternalApp.bikeList.Clear();
+            InternalApp.SetBikeList();
             this.Close();
         }
 
