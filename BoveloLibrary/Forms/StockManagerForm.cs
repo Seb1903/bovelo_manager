@@ -19,37 +19,41 @@ namespace Bovelo
 
         private void StockManagerForm_Load(object sender, EventArgs e)
         {
-            //OrderStock.GetPartCatalog();
-
             int position = 1;
-            int i = 0;
 
-            foreach (KeyValuePair<string, int> parts in OrderStock.partsNecessaryStock)
+            foreach (Part part in OrderStock.partList)
             {
-                OrderStock.ChangeQuantity(parts.Key, parts.Value);
+                if(part.necessary - part.stock > 0)
+                {
+                    OrderStock.ChangeQuantity(part.reference, part.necessary - part.stock); // necessary - (stock+ordered) = quantity of parts to order
+                }
+                else
+                {
+                    OrderStock.ChangeQuantity(part.reference, 0);
+                }
 
                 Label partIDLbl = new Label();
                 Label necessaryStockLbl = new Label();
-                idNumericUpDown orderStockUpDown = new idNumericUpDown(parts.Key);
+                idNumericUpDown orderStockUpDown = new idNumericUpDown(part.reference);
                 Label supplierNameLbl = new Label();
                 Label partNameLbl = new Label();
                 Label currentStockLbl = new Label();
 
-                partIDLbl.Text = parts.Key;
+                partIDLbl.Text = part.reference;
                 partIDLbl.Top = position * 20;
                 partIDLbl.Left = 10;
                 partIDLbl.Size = new Size(40, 16);
                 partIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                necessaryStockLbl.Text = parts.Value.ToString();
+                necessaryStockLbl.Text = part.necessary.ToString();
                 necessaryStockLbl.Top = position * 20;
                 necessaryStockLbl.Left = 410;
                 necessaryStockLbl.Size = new Size(30, 16);
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                 orderStockUpDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-                orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key];// - OrderStock.partsStock[i] + 10; //minimal stock : 10 parts
-                if (OrderStock.partsQuantityOrder[parts.Key] != 0)
+                orderStockUpDown.Value = part.quantity;
+                if (orderStockUpDown.Value != 0)
                 {
                     orderStockUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
                 }
@@ -58,26 +62,19 @@ namespace Bovelo
                 orderStockUpDown.Size = new Size(61, 20);
                 orderStockUpDown.ValueChanged += OrderStockUpDown_ValueChanged;
 
-                supplierNameLbl.Text = OrderStock.partsSuppliersNames[i];
-                supplierNameLbl.Top = position * 20;
-                supplierNameLbl.Left = 700;
-                supplierNameLbl.Size = new Size(120, 20);
-                supplierNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-                partNameLbl.Text = OrderStock.partsNames[i];
+                partNameLbl.Text = part.name;
                 partNameLbl.Top = position * 20;
                 partNameLbl.Left = 63;
                 partNameLbl.Size = new Size(120, 20);
                 partNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                currentStockLbl.Text = OrderStock.partsStock[i].ToString();
+                currentStockLbl.Text = part.stock.ToString();
                 currentStockLbl.Top = position * 20;
                 currentStockLbl.Left = 225;
                 currentStockLbl.Size = new Size(40, 16);
                 currentStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                 position = position + 2;
-                i++;
 
                 part_stock_panel.Controls.Add(partIDLbl);
                 part_stock_panel.Controls.Add(necessaryStockLbl);
@@ -90,13 +87,12 @@ namespace Bovelo
 
         private void Order_Button_Click(object sender, EventArgs e)
         {
-            foreach(KeyValuePair<string, int> parts in OrderStock.partsQuantityOrder)
+            foreach(Part part in OrderStock.partList)
             {
-                //Console.WriteLine("Clé : {0}, valeur : {1}", parts.Key, parts.Value);
-                if(parts.Value>0)
+                if(part.quantity>0)
                 {
-                    OrderStock.OrderToSupplier(parts.Key, parts.Value);
-                    OrderStock.SetNewNecessaryStock(parts.Key, parts.Value);
+                    OrderStock.OrderToSupplier(part.reference, part.quantity);
+                    OrderStock.SetNewNecessaryStock(part.reference, part.quantity, part.stock);
                 }
                 
             }

@@ -34,7 +34,6 @@ namespace Bovelo
             this.stock_title_lbl = new System.Windows.Forms.Label();
             this.necessary_title_lbl = new System.Windows.Forms.Label();
             this.quantity_title_lbl = new System.Windows.Forms.Label();
-            this.supplier_title_lbl = new System.Windows.Forms.Label();
             this.part_stock_panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.orderDone_Lbl = new System.Windows.Forms.Label();
@@ -61,7 +60,7 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.name_title_lbl.AutoSize = true;
             this.name_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_title_lbl.Location = new System.Drawing.Point(89, 22);
+            this.name_title_lbl.Location = new System.Drawing.Point(93, 22);
             this.name_title_lbl.Name = "name_title_lbl";
             this.name_title_lbl.Size = new System.Drawing.Size(85, 18);
             this.name_title_lbl.TabIndex = 1;
@@ -74,7 +73,7 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stock_title_lbl.AutoSize = true;
             this.stock_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stock_title_lbl.Location = new System.Drawing.Point(198, 22);
+            this.stock_title_lbl.Location = new System.Drawing.Point(202, 22);
             this.stock_title_lbl.Name = "stock_title_lbl";
             this.stock_title_lbl.Size = new System.Drawing.Size(113, 18);
             this.stock_title_lbl.TabIndex = 2;
@@ -87,7 +86,7 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.necessary_title_lbl.AutoSize = true;
             this.necessary_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.necessary_title_lbl.Location = new System.Drawing.Point(359, 13);
+            this.necessary_title_lbl.Location = new System.Drawing.Point(363, 13);
             this.necessary_title_lbl.Name = "necessary_title_lbl";
             this.necessary_title_lbl.Size = new System.Drawing.Size(135, 18);
             this.necessary_title_lbl.TabIndex = 3;
@@ -106,19 +105,6 @@ namespace Bovelo
             this.quantity_title_lbl.TabIndex = 4;
             this.quantity_title_lbl.Text = "Quantity to order";
             // 
-            // supplier_title_lbl
-            // 
-            this.supplier_title_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.supplier_title_lbl.AutoSize = true;
-            this.supplier_title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplier_title_lbl.Location = new System.Drawing.Point(726, 22);
-            this.supplier_title_lbl.Name = "supplier_title_lbl";
-            this.supplier_title_lbl.Size = new System.Drawing.Size(103, 18);
-            this.supplier_title_lbl.TabIndex = 5;
-            this.supplier_title_lbl.Text = "Part supplier";
-            // 
             // part_stock_panel
             // 
             this.part_stock_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -127,13 +113,13 @@ namespace Bovelo
             this.part_stock_panel.AutoScroll = true;
             this.part_stock_panel.Location = new System.Drawing.Point(13, 53);
             this.part_stock_panel.Name = "part_stock_panel";
-            this.part_stock_panel.Size = new System.Drawing.Size(869, 670);
+            this.part_stock_panel.Size = new System.Drawing.Size(702, 670);
             this.part_stock_panel.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(747, 745);
+            this.button1.Location = new System.Drawing.Point(580, 745);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 31);
             this.button1.TabIndex = 7;
@@ -157,7 +143,7 @@ namespace Bovelo
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(343, 31);
+            this.label1.Location = new System.Drawing.Point(347, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 18);
             this.label1.TabIndex = 10;
@@ -167,12 +153,11 @@ namespace Bovelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 780);
+            this.ClientSize = new System.Drawing.Size(725, 780);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.orderDone_Lbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.part_stock_panel);
-            this.Controls.Add(this.supplier_title_lbl);
             this.Controls.Add(this.quantity_title_lbl);
             this.Controls.Add(this.necessary_title_lbl);
             this.Controls.Add(this.stock_title_lbl);
@@ -193,7 +178,6 @@ namespace Bovelo
         private System.Windows.Forms.Label stock_title_lbl;
         private System.Windows.Forms.Label necessary_title_lbl;
         private System.Windows.Forms.Label quantity_title_lbl;
-        private System.Windows.Forms.Label supplier_title_lbl;
         private System.Windows.Forms.Panel part_stock_panel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label orderDone_Lbl;

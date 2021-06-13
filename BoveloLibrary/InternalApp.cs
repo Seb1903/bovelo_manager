@@ -121,11 +121,9 @@ namespace Bovelo
                     necessaryPartList.Add(part.Field<string>("reference"), quantity);
                 }             
             }
-            int i = 0;
-            int necessaryStock = 0;
             Database db = new Database();
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-            foreach (KeyValuePair<string, int> part in necessaryPartList)
+            foreach (KeyValuePair<string, int> necessaryPart in necessaryPartList)
             {
                 //Console.WriteLine("Part reference: {0}, Quantity: {1}", part.Key, part.Value);
                 using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = @quantity WHERE reference = @id_part", MyConn)
@@ -133,16 +131,18 @@ namespace Bovelo
                     CommandType = CommandType.Text
                 })
                 {
-                    command.Parameters.AddWithValue("@id_part", part.Key);
-                    if(OrderStock.partsStock[i] < part.Value)
-                    {
-                        necessaryStock = part.Value - OrderStock.partsStock[i];
-                    }
-                    else
-                    {
-                        necessaryStock = 0;
-                    }
-                    command.Parameters.AddWithValue("@quantity", necessaryStock);
+                    command.Parameters.AddWithValue("@id_part", necessaryPart.Key);
+                    //if(OrderStock.partList[i].stock < necessaryPart.Value)
+                    //{
+                    //    necessaryStock = necessaryPart.Value - OrderStock.partList[i].stock;
+                    //}
+                    //else
+                    //{
+                    //    necessaryStock = 0;
+                    //}
+
+                    command.Parameters.AddWithValue("@quantity", necessaryPart.Value);
+
                     MyConn.Open();
                     try
                     {

@@ -10,15 +10,11 @@ namespace Bovelo
 {
     class OrderStock
     {
-        public static Dictionary<string, int> partsNecessaryStock = new Dictionary<string, int>(); // part ID - necessary stock
-        public static List<string> partsNames = new List<string>();
-        public static List<int> partsStock = new List<int>();
-        public static List<string> partsSuppliersNames = new List<string>();
-        public static Dictionary<string, int> partsQuantityOrder = new Dictionary<string, int>(); // part ID - stock ordered
+        public static List<Part> partList = new List<Part>();
 
         public static void GetPartCatalog()
         {
-            string quantityQuery = $"SELECT * FROM parts_stock";//WHERE necessary != 0";
+            string quantityQuery = $"SELECT * FROM parts_stock";
             string nameQuery = $"SELECT * FROM parts_catalog";
             string supplierQuery = $"SELECT * FROM supplier";
             DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
@@ -29,56 +25,30 @@ namespace Bovelo
             {
                 for (int i = 0; i < size_datatable; i++)
                 {
-                    string partsIDs = quantityReader.Rows[i]["reference"].ToString();
+                    string partID = quantityReader.Rows[i]["reference"].ToString();
                     int partStock = Convert.ToInt32(quantityReader.Rows[i]["quantity"].ToString());
-                    partsStock.Add(partStock);
+                    int partOrdered = Convert.ToInt32(quantityReader.Rows[i]["ordered"].ToString());
                     int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
-                    partsNecessaryStock.Add(partsIDs, partsNcryStock);
-
                     string partName = nameReader.Rows[i]["name"].ToString();
-                    partsNames.Add(partName);
 
-                    string supplierID = nameReader.Rows[i]["provider"].ToString();
-                    
-                    foreach(DataRow supplierRow in supplierReader.Rows)
-                    {
-                        if (supplierRow.Field<string>("id_supplier") == supplierID)
-                        {
-                            partsSuppliersNames.Add(supplierRow.Field<string>("id_supplier"));
-                        }
-                    }
-                    
-                    
+                    int partTotalStock = partStock + partOrdered;
 
+                    partList.Add(new Part(partID, partName, partTotalStock, partsNcryStock));
                 }
             }
             catch
             {
             }
         }
-        public static int GetPartStock(string ID)
-        {
-            string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{ID}'";
-            DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
-            try
-            {
-                return Convert.ToInt32(quantityReader.Rows[0]["quantity"].ToString());
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+
         public static void ChangeQuantity(string id, int quantity)
         {
-            try
+            foreach (Part part in partList)
             {
-                partsQuantityOrder.Add(id, quantity);
-            }
-
-            catch
-            {
-                partsQuantityOrder[id] = quantity;
+                if(part.reference == id)
+                {
+                    part.ChangeQuantity(quantity);
+                }
             }
         }
         public static void OrderToSupplier(string partID, int quantity)
@@ -103,7 +73,7 @@ namespace Bovelo
                 MyConn.Close();
             }
         }
-        public static void SetNewNecessaryStock(string partID, int quantity)
+        public static void SetNewNecessaryStock(string partID, int quantity, int stock)
         {
             string quantityQuery = $"SELECT * FROM parts_stock WHERE reference='{partID}'";
             DataTable quantityReader = InternalApp.GetDataTable(quantityQuery);
@@ -112,12 +82,13 @@ namespace Bovelo
             {
                 Database db = new Database();
                 MySqlConnection MyConn = new MySqlConnection(db.MyConnection);
-                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = necessary - @quantity WHERE reference = @id_part", MyConn)
+                using (var command = new MySqlCommand("UPDATE parts_stock SET necessary = necessary - @quantity - @stock WHERE reference = @id_part", MyConn)
                 {
                     CommandType = CommandType.Text
                 })
                 {
                     command.Parameters.AddWithValue("@id_part", partID);
+                    command.Parameters.AddWithValue("@stock", stock);
                     command.Parameters.AddWithValue("@quantity", quantity);
                     MyConn.Open();
                     try
