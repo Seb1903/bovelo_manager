@@ -31,9 +31,6 @@ namespace Bovelo
         [DisplayName("Stock")]
         public int stock { get; set; }
 
-        [DisplayName("Necessary")]
-        public int necessary { get; set; }
-
         public Part(string reference, int quantity)
         {
             string strQuantity;
@@ -57,13 +54,14 @@ namespace Bovelo
             stock -= quantity;
             InternalApp.ExecuteQuery($"UPDATE parts_stock SET quantity={stock} WHERE reference='{reference}'");
         }      
+        
         public void SaveNewPart(string name, string provider, string description)
         {
             this.name = name;
             string query = $"INSERT INTO `parts_catalog` (`reference`, `name`, `provider`, `description`) VALUES ('{this.reference}', '{this.name}', '{provider}', '{description}')";
             InternalApp.ExecuteQuery(query);
         }
-        private void OrderToSupplier(int quantity)
+        public void OrderToSupplier(int quantity)
         {
             Database db = new Database();
             MySqlConnection MyConn = new MySqlConnection(db.MyConnection);

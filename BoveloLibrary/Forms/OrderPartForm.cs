@@ -33,7 +33,7 @@ namespace Bovelo
             DialogResult result = MessageBox.Show($"Do you want to order {numericUpDown1.Value} {part.name} for the stocks ?", "Order for stocks", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                this.part.Order(Convert.ToInt32(numericUpDown1.Value));
+                this.part.OrderToSupplier(Convert.ToInt32(numericUpDown1.Value));
                 this.Close();
             }
 
