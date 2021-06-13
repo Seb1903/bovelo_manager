@@ -36,11 +36,15 @@
             this.button_back = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.reference_texte = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.provider_box = new System.Windows.Forms.TextBox();
+            this.description_box = new System.Windows.Forms.TextBox();
+            this.Description = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // name_texte
             // 
-            this.name_texte.Location = new System.Drawing.Point(182, 177);
+            this.name_texte.Location = new System.Drawing.Point(182, 116);
             this.name_texte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.name_texte.Name = "name_texte";
             this.name_texte.Size = new System.Drawing.Size(168, 26);
@@ -49,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 176);
+            this.label1.Location = new System.Drawing.Point(28, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 1;
@@ -57,7 +61,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 302);
+            this.button1.Location = new System.Drawing.Point(232, 297);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 35);
@@ -79,16 +83,15 @@
             // validation_label
             // 
             this.validation_label.AutoSize = true;
-            this.validation_label.Location = new System.Drawing.Point(28, 241);
+            this.validation_label.Location = new System.Drawing.Point(28, 240);
             this.validation_label.Name = "validation_label";
-            this.validation_label.Size = new System.Drawing.Size(51, 20);
+            this.validation_label.Size = new System.Drawing.Size(0, 20);
             this.validation_label.TabIndex = 4;
-            this.validation_label.Text = "label3";
             this.validation_label.Visible = false;
             // 
             // button_back
             // 
-            this.button_back.Location = new System.Drawing.Point(28, 302);
+            this.button_back.Location = new System.Drawing.Point(28, 297);
             this.button_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(84, 35);
@@ -100,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 115);
+            this.label3.Location = new System.Drawing.Point(28, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 6;
@@ -108,17 +111,53 @@
             // 
             // reference_texte
             // 
-            this.reference_texte.Location = new System.Drawing.Point(182, 115);
+            this.reference_texte.Location = new System.Drawing.Point(182, 79);
             this.reference_texte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reference_texte.Name = "reference_texte";
             this.reference_texte.Size = new System.Drawing.Size(168, 26);
             this.reference_texte.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 158);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Provider";
+            // 
+            // provider_box
+            // 
+            this.provider_box.Location = new System.Drawing.Point(182, 158);
+            this.provider_box.Name = "provider_box";
+            this.provider_box.Size = new System.Drawing.Size(168, 26);
+            this.provider_box.TabIndex = 9;
+            // 
+            // description_box
+            // 
+            this.description_box.Location = new System.Drawing.Point(182, 197);
+            this.description_box.Name = "description_box";
+            this.description_box.Size = new System.Drawing.Size(168, 26);
+            this.description_box.TabIndex = 10;
+            // 
+            // Description
+            // 
+            this.Description.AutoSize = true;
+            this.Description.Location = new System.Drawing.Point(28, 200);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(89, 20);
+            this.Description.TabIndex = 11;
+            this.Description.Text = "Description";
+            // 
             // AddPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 379);
+            this.ClientSize = new System.Drawing.Size(393, 422);
+            this.Controls.Add(this.Description);
+            this.Controls.Add(this.description_box);
+            this.Controls.Add(this.provider_box);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.reference_texte);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button_back);
@@ -145,5 +184,9 @@
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox reference_texte;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox provider_box;
+        private System.Windows.Forms.TextBox description_box;
+        private System.Windows.Forms.Label Description;
     }
 }
