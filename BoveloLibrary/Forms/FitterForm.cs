@@ -151,8 +151,10 @@ namespace Bovelo
                     stateBox.Size = new Size(121, 24);
                     stateBox.SelectedItem = bike.state;
 
-
-
+                    stateBox.SelectedIndexChanged += (s, e) =>
+                    {
+                        UpdateState(stateBox.Text, bike.id);
+                    };
 
                     ComboBox makersComboBox = new ComboBox();
                     makersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -280,15 +282,9 @@ namespace Bovelo
 
         private void validate_button_Click(object sender, EventArgs e)
         {
-            foreach (ComboBox box in stateBike)
-            {
-                string state = box.SelectedItem.ToString();
-                int id = Convert.ToInt32(box.Name);
-                UpdateState(state, id);
-            }
+            
             InternalApp.bikeList.Clear();
             InternalApp.SetBikeList();
-
 
             //this.Hide();
             //var fitterForm = new FitterForm();
