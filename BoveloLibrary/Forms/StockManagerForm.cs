@@ -22,6 +22,7 @@ namespace Bovelo
             OrderStock.GetPartCatalog();
 
             int position = 1;
+            int i = 0;
 
             foreach (KeyValuePair<string, int> parts in OrderStock.partsNecessaryStock)
             {
@@ -30,6 +31,9 @@ namespace Bovelo
                 Label partIDLbl = new Label();
                 Label necessaryStockLbl = new Label();
                 idNumericUpDown orderStockUpDown = new idNumericUpDown(parts.Key);
+                Label supplierNameLbl = new Label();
+                Label partNameLbl = new Label();
+                Label currentStockLbl = new Label();
 
                 partIDLbl.Text = parts.Key;
                 partIDLbl.Top = position * 20;
@@ -43,70 +47,88 @@ namespace Bovelo
                 necessaryStockLbl.Size = new Size(30, 16);
                 necessaryStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                orderStockUpDown.Maximum = new decimal(new int[] {1000, 0, 0, 0});
-                orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key];
+                orderStockUpDown.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+                if (OrderStock.partsQuantityOrder[parts.Key] >= OrderStock.partsStock[i])
+                {
+                    orderStockUpDown.Value = OrderStock.partsQuantityOrder[parts.Key] - OrderStock.partsStock[i] + 10; //minimal stock : 10 parts
+                    orderStockUpDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+                }
+                else
+                {
+                    orderStockUpDown.Value = 0;
+                }
                 orderStockUpDown.Top = position * 20;
                 orderStockUpDown.Left = 572;
                 orderStockUpDown.Size = new Size(61, 20);
                 orderStockUpDown.ValueChanged += OrderStockUpDown_ValueChanged;
-               
-                position = position + 2;
 
-                part_stock_panel.Controls.Add(partIDLbl);
-                part_stock_panel.Controls.Add(necessaryStockLbl);
-                part_stock_panel.Controls.Add(orderStockUpDown);
-            }
-
-            position = 1;
-
-            foreach (string supplierName in OrderStock.partsSuppliersNames)
-            {
-                Label supplierNameLbl = new Label();
-
-                supplierNameLbl.Text = supplierName;
+                supplierNameLbl.Text = OrderStock.partsSuppliersNames[i];
                 supplierNameLbl.Top = position * 20;
-                supplierNameLbl.Left = 680;
+                supplierNameLbl.Left = 700;
                 supplierNameLbl.Size = new Size(120, 20);
                 supplierNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                position = position + 2;
-
-                part_stock_panel.Controls.Add(supplierNameLbl);
-            }
-
-            position = 1;
-
-            foreach (string partName in OrderStock.partsNames)
-            {
-                Label partNameLbl = new Label();
-
-                partNameLbl.Text = partName;
+                partNameLbl.Text = OrderStock.partsNames[i];
                 partNameLbl.Top = position * 20;
                 partNameLbl.Left = 63;
                 partNameLbl.Size = new Size(120, 20);
                 partNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                position = position + 2;
-
-                part_stock_panel.Controls.Add(partNameLbl);
-            }
-
-            position = 1;
-
-            foreach (int partStock in OrderStock.partsStock)
-            {
-                Label currentStockLbl = new Label();
-
-                currentStockLbl.Text = partStock.ToString();
+                currentStockLbl.Text = OrderStock.partsStock[i].ToString();
                 currentStockLbl.Top = position * 20;
                 currentStockLbl.Left = 225;
                 currentStockLbl.Size = new Size(30, 16);
                 currentStockLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
                 position = position + 2;
+                i++;
 
+                part_stock_panel.Controls.Add(partIDLbl);
+                part_stock_panel.Controls.Add(necessaryStockLbl);
+                part_stock_panel.Controls.Add(orderStockUpDown);
+                part_stock_panel.Controls.Add(supplierNameLbl);
+                part_stock_panel.Controls.Add(partNameLbl);
                 part_stock_panel.Controls.Add(currentStockLbl);
             }
+
+            //position = 1;
+            //
+            //foreach (string supplierName in OrderStock.partsSuppliersNames)
+            //{
+            //    
+            //
+            //    
+            //
+            //    position = position + 2;
+            //
+            //    
+            //}
+            //
+            //position = 1;
+            //
+            //foreach (string partName in OrderStock.partsNames)
+            //{
+            //    
+            //
+            //    
+            //
+            //    position = position + 2;
+            //
+            //    
+            //}
+            //
+            //position = 1;
+            //
+            //foreach (int partStock in OrderStock.partsStock)
+            //{
+            //    
+            //
+            //    
+            //
+            //    position = position + 2;
+            //
+            //    
+            //}
         }
 
         private void Order_Button_Click(object sender, EventArgs e)

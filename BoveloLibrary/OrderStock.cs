@@ -27,10 +27,10 @@ namespace Bovelo
                 for (int i = 0; i < size_datatable; i++)
                 {
                     string partsIDs = quantityReader.Rows[i]["reference"].ToString();
-                    int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
-                    partsNecessaryStock.Add(partsIDs, partsNcryStock);
                     int partStock = Convert.ToInt32(quantityReader.Rows[i]["quantity"].ToString());
                     partsStock.Add(partStock);
+                    int partsNcryStock = Convert.ToInt32(quantityReader.Rows[i]["necessary"].ToString());
+                    partsNecessaryStock.Add(partsIDs, partsNcryStock);
                 }
                 foreach (KeyValuePair<string, int> parts in partsNecessaryStock)
                 {
@@ -164,7 +164,7 @@ namespace Bovelo
         }
         public static void GetNewPart(string partID)
         {
-            ChangeQuantity(partID, 0);
+            ChangeQuantity(partID, 1);
             string stockQuery = $"SELECT * FROM parts_stock WHERE reference = {partID}";
             DataTable stockReader = InternalApp.GetDataTable(stockQuery);
             try
