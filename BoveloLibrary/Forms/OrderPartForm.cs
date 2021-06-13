@@ -18,7 +18,14 @@ namespace Bovelo
             this.part = part; 
             InitializeComponent();
             label_text.Text = "How many " + part.name + " do you want to order ? ";
-            numericUpDown1.Value = stock_necessary; 
+            if (stock_necessary > 0)
+            {
+                numericUpDown1.Value = stock_necessary;
+            }
+            else
+            {
+                numericUpDown1.Value = 1;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,6 +34,7 @@ namespace Bovelo
             if (result == DialogResult.Yes)
             {
                 this.part.Order(Convert.ToInt32(numericUpDown1.Value));
+                this.Close();
             }
 
         }

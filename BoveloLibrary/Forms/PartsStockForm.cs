@@ -188,7 +188,7 @@ namespace Bovelo
             try
             {
                 Part part = new Part(clientParams[0], clientParams[1]);
-                var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]));
+                var form = new OrderPartForm(part, Convert.ToInt32(clientParams[4]) - Convert.ToInt32(clientParams[3]));
                 form.Location = this.Location;
                 form.StartPosition = FormStartPosition.Manual;
                 form.FormClosing += delegate { this.Show(); UpdatePartsTable(); InternalApp.SetRequiredPartsList(); };
