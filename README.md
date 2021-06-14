@@ -22,7 +22,7 @@ Further UML diagrams are listed below:
 - [The Use Case Diagram](https://app.lucidchart.com/documents/image/a46ee63b-3627-4046-a257-9277f3b090aa/0/1000/1)  
 - [The Sequence Diagram](https://app.lucidchart.com/documents/image/570fe02b-57dd-400f-bd7d-0c7af648c352/0/1000/1)  
 - [The Class Diagram](https://lucid.app/documents/embeddedchart/c6953fb9-22ae-4676-a6b1-a276b2a08189)  
-- [The Supplier Order Sequence Diagram](https://lucid.app/documents/embeddedchart/cec42233-dc50-458f-ae1c-218914939d81)
+- [The Supplier Order Sequence Diagram](https://lucid.app/documents/embeddedchart/9d8bd2ac-e7c2-4b73-9a76-d67fc0b0ff67)
 - [The Fitter Sequence Diagram](https://lucid.app/documents/embeddedchart/98403bf0-496c-453e-b62d-8a8212890689)
 
 ## Prerequisites
